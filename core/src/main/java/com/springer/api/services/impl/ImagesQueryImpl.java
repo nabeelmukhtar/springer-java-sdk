@@ -24,7 +24,7 @@ import com.springer.api.services.ImagesQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
- * The Class IncomeLevelQueryImpl.
+ * The Class ImagesQueryImpl.
  */
 public class ImagesQueryImpl extends BaseSpringerQuery<IncomeLevel> implements
 	ImagesQuery {
@@ -34,7 +34,7 @@ public class ImagesQueryImpl extends BaseSpringerQuery<IncomeLevel> implements
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.INCOME_LEVELS_URL);
+		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.IMAGES_URL);
 	}
 
 	/* (non-Javadoc)

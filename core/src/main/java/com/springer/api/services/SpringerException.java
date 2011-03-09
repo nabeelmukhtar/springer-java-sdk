@@ -17,7 +17,7 @@
 package com.springer.api.services;
 
 /**
- * The Class WorldBankException.
+ * The Class SpringerException.
  */
 public class SpringerException extends RuntimeException {
 
@@ -25,12 +25,12 @@ public class SpringerException extends RuntimeException {
 	private static final long serialVersionUID = -2392119987027760999L;
 
 	/**
-	 * Instantiates a new world bank exception.
+	 * Instantiates a new springer exception.
 	 */
 	public SpringerException() {}
 
 	/**
-	 * Instantiates a new world bank exception.
+	 * Instantiates a new springer exception.
 	 * 
 	 * @param message the message
 	 */
@@ -39,7 +39,7 @@ public class SpringerException extends RuntimeException {
 	}
 
 	/**
-	 * Instantiates a new world bank exception.
+	 * Instantiates a new springer exception.
 	 * 
 	 * @param cause the cause
 	 */
@@ -48,7 +48,7 @@ public class SpringerException extends RuntimeException {
 	}
 
 	/**
-	 * Instantiates a new world bank exception.
+	 * Instantiates a new springer exception.
 	 * 
 	 * @param message the message
 	 * @param cause the cause

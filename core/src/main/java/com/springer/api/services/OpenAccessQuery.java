@@ -21,7 +21,7 @@ import com.springer.api.schema.Indicator;
 
 
 /**
- * The Interface IndicatorQuery.
+ * The Interface OpenAccessQuery.
  */
 public interface OpenAccessQuery extends SpringerQuery<Indicator> {
 }

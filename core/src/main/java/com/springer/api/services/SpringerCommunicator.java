@@ -19,7 +19,7 @@ package com.springer.api.services;
 import java.util.Map;
 
 /**
- * The Interface WorldBankCommunicator.
+ * The Interface SpringerCommunicator.
  */
 public interface SpringerCommunicator {
 

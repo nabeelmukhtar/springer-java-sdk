@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.worldbank.api</groupId>
-    <artifactId>worldbank-java-sdk</artifactId>
+    <groupId>com.springer.api</groupId>
+    <artifactId>springer-java-sdk</artifactId>
     <version>1.0</version>
   </parent>
-  <artifactId>worldbank-java-core</artifactId>
+  <artifactId>springer-java-core</artifactId>
   <packaging>jar</packaging>
 	
 <build>
@@ -29,8 +29,8 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>org.worldbank.api</groupId>
-      <artifactId>worldbank-java-schema</artifactId>
+      <groupId>org.springer.api</groupId>
+      <artifactId>springer-java-schema</artifactId>
       <version>1.0</version>
       <scope>compile</scope>
     </dependency>

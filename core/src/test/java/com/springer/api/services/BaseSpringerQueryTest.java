@@ -30,7 +30,7 @@ import org.junit.Before;
 import com.springer.api.services.SpringerQueryFactory;
 
 /**
- * The Class BaseWorldBankQueryTest.
+ * The Class BaseSpringerQueryTest.
  */
 public class BaseSpringerQueryTest extends TestCase {
     

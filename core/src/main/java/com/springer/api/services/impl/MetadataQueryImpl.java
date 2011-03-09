@@ -24,7 +24,7 @@ import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
- * The Class CountryQueryImpl.
+ * The Class MetadataQueryImpl.
  */
 public class MetadataQueryImpl extends BaseSpringerQuery<Country> implements
 	MetadataQuery {
@@ -34,7 +34,7 @@ public class MetadataQueryImpl extends BaseSpringerQuery<Country> implements
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.COUNTRIES_URL);
+		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.METADATA_URL);
 	}
 
 	/* (non-Javadoc)

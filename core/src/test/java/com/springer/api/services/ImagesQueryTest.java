@@ -25,7 +25,7 @@ import com.springer.api.schema.IncomeLevel;
 import com.springer.api.services.ImagesQuery;
 
 /**
- * The Class IncomeLevelQueryTest.
+ * The Class ImagesQueryTest.
  */
 public class ImagesQueryTest extends BaseSpringerQueryTest {
 	

@@ -21,7 +21,7 @@ import com.springer.api.schema.Country;
 
 
 /**
- * The Interface CountryQuery.
+ * The Interface MetadataQuery.
  */
 public interface MetadataQuery extends SpringerQuery<Country> {
 }

@@ -25,7 +25,7 @@ import com.springer.api.services.SpringerQueryFactory;
 
 
 /**
- * The Class IncomeLevelQuerySample.
+ * The Class ImagesQuerySample.
  */
 public class ImagesQuerySample {
 

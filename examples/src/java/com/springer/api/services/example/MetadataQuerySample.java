@@ -25,7 +25,7 @@ import com.springer.api.services.SpringerQueryFactory;
 
 
 /**
- * The Class CountryQuerySample.
+ * The Class MetadataQuerySample.
  */
 public class MetadataQuerySample {
 

@@ -39,7 +39,7 @@ import com.springer.api.services.constant.ApplicationConstants;
 
 
 /**
- * The Class WorldBankApiGateway.
+ * The Class SpringerApiGateway.
  */
 public abstract class SpringerApiGateway {
 	

@@ -31,55 +31,43 @@ import com.springer.api.common.ValueEnum;
 
 
 /**
- * The Class WorldBankApiUrls.
+ * The Class SpringerApiUrls.
  */
 public final class SpringerApiUrls {
 
     /** The Constant API_URLS_FILE. */
-    public static final String API_URLS_FILE = "WorldBankApiUrls.properties";
+    public static final String API_URLS_FILE = "SpringerApiUrls.properties";
 
     /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SpringerApiUrls.class.getCanonicalName());
     
-    /** The Constant worldBankApiUrls. */
-    private static final Properties worldBankApiUrls = new Properties();
+    /** The Constant springerApiUrls. */
+    private static final Properties springerApiUrls = new Properties();
 
     static {
         try {
-            worldBankApiUrls.load(SpringerApiUrls.class.getResourceAsStream(API_URLS_FILE));
+            springerApiUrls.load(SpringerApiUrls.class.getResourceAsStream(API_URLS_FILE));
         } catch (IOException e) {
         	logger.log(Level.SEVERE, "An error occurred while loading urls.", e);
         }
     }
     
-    /** The Constant SOURCES_URL. */
-    public static final String SOURCES_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.sources");
+    /** The Constant METADATA_URL. */
+    public static final String METADATA_URL = springerApiUrls.getProperty("com.springer.api.services.metadata");
     
-    /** The Constant COUNTRIES_URL. */
-    public static final String COUNTRIES_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.countries");
+    /** The Constant IMAGES_URL. */
+    public static final String IMAGES_URL = springerApiUrls.getProperty("com.springer.api.services.images");
     
-    /** The Constant INCOME_LEVELS_URL. */
-    public static final String INCOME_LEVELS_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.incomeLevels");
-    
-    /** The Constant INDICATORS_URL. */
-    public static final String INDICATORS_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.indicators");
-    
-    /** The Constant INDICATORS_BY_TOPIC_URL. */
-    public static final String INDICATORS_BY_TOPIC_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.indicatorsByTopic");
-    
-    /** The Constant LENDING_TYPES_URL. */
-    public static final String LENDING_TYPES_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.lendingTypes");
-    
-    /** The Constant TOPICS_URL. */
-    public static final String TOPICS_URL = worldBankApiUrls.getProperty("org.worldbank.api.services.topics");
+    /** The Constant OPEN_ACCESS_URL. */
+    public static final String OPEN_ACCESS_URL = springerApiUrls.getProperty("com.springer.api.services.openAccess");
     
     /**
-     * Instantiates a new world bank api urls.
+     * Instantiates a new springer api urls.
      */
     private SpringerApiUrls() {}
 
     /**
-     * The Class WorldBankApiUrlBuilder.
+     * The Class SpringerApiUrlBuilder.
      */
     public static class SpringerApiUrlBuilder {
         
@@ -99,7 +87,7 @@ public final class SpringerApiUrls {
 		private Map<String, String> fieldsMap = new HashMap<String, String>();
 	    
     	/**
-	     * Instantiates a new world bank api url builder.
+	     * Instantiates a new springer api url builder.
 	     * 
 	     * @param urlFormat the url format
 	     */
@@ -108,7 +96,7 @@ public final class SpringerApiUrls {
     	}
     	
     	/**
-	     * Instantiates a new world bank api url builder.
+	     * Instantiates a new springer api url builder.
 	     * 
 	     * @param urlFormat the url format
 	     * @param apiVersion the api version
@@ -116,7 +104,6 @@ public final class SpringerApiUrls {
 	     */
 	    public SpringerApiUrlBuilder(String urlFormat, String apiVersion, String format) {
     		this.urlFormat = urlFormat;
-    		fieldsMap.put(ParameterNames.VERSION, apiVersion);
     		fieldsMap.put(ParameterNames.FORMAT, format);
     	}
 	    
@@ -126,7 +113,7 @@ public final class SpringerApiUrls {
 	     * @param name the name
 	     * @param value the value
 	     * 
-	     * @return the world bank api url builder
+	     * @return the springer api url builder
 	     */
 	    public SpringerApiUrlBuilder withParameter(String name, String value) {
 	    	if (value != null && value.length() > 0) {
@@ -142,7 +129,7 @@ public final class SpringerApiUrls {
 	     * @param name the name
 	     * @param value the value
 	     * 
-	     * @return the world bank api url builder
+	     * @return the springer api url builder
 	     */
 	    public SpringerApiUrlBuilder withParameterEnum(String name, ValueEnum value) {
 	    	withParameter(name, value.value());
@@ -157,7 +144,7 @@ public final class SpringerApiUrls {
 	     * @param enumSet the enum set
 	     * @param separator the separator
 	     * 
-	     * @return the world bank api url builder
+	     * @return the springer api url builder
 	     */
 	    public SpringerApiUrlBuilder withParameterEnumSet(String name, Set<? extends ValueEnum> enumSet, String separator) {
 	    	StringBuilder builder = new StringBuilder();
@@ -179,7 +166,7 @@ public final class SpringerApiUrls {
 		 * 
 		 * @param name the name
 		 * 
-		 * @return the world bank api url builder
+		 * @return the springer api url builder
 		 */
 		public SpringerApiUrlBuilder withEmptyField(String name) {
 			fieldsMap.put(name, "");
@@ -193,7 +180,7 @@ public final class SpringerApiUrls {
 		 * @param name the name
 		 * @param value the value
 		 * 
-		 * @return the world bank api url builder
+		 * @return the springer api url builder
 		 */
 		public SpringerApiUrlBuilder withField(String name, String value) {
 			withField(name, value, false);
@@ -208,7 +195,7 @@ public final class SpringerApiUrls {
 		 * @param value the value
 		 * @param escape the escape
 		 * 
-		 * @return the world bank api url builder
+		 * @return the springer api url builder
 		 */
 		public SpringerApiUrlBuilder withField(String name, String value,
 				boolean escape) {
@@ -227,7 +214,7 @@ public final class SpringerApiUrls {
 		 * @param name the name
 		 * @param value the value
 		 * 
-		 * @return the world bank api url builder
+		 * @return the springer api url builder
 		 */
 		public SpringerApiUrlBuilder withFieldEnum(String name, ValueEnum value) {
 			if (value.value() == null || value.value().length() == 0) {

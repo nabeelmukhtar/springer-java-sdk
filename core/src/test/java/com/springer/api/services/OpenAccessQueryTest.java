@@ -25,7 +25,7 @@ import com.springer.api.schema.Indicator;
 import com.springer.api.services.OpenAccessQuery;
 
 /**
- * The Class IndicatorQueryTest.
+ * The Class OpenAccessQueryTest.
  */
 public class OpenAccessQueryTest extends BaseSpringerQueryTest {
 	

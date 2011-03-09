@@ -21,7 +21,7 @@ import com.springer.api.schema.IncomeLevel;
 
 
 /**
- * The Interface IncomeLevelQuery.
+ * The Interface ImagesQuery.
  */
 public interface ImagesQuery extends SpringerQuery<IncomeLevel> {
 }

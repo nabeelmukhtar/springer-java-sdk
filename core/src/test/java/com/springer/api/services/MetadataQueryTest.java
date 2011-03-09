@@ -25,7 +25,7 @@ import com.springer.api.schema.Country;
 import com.springer.api.services.MetadataQuery;
 
 /**
- * The Class CountryQueryTest.
+ * The Class MetadataQueryTest.
  */
 public class MetadataQueryTest extends BaseSpringerQueryTest {
 	

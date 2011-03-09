@@ -24,12 +24,12 @@ import com.springer.api.services.impl.OpenAccessQueryImpl;
 
 
 /**
- * A factory for creating WorldBankQuery objects.
+ * A factory for creating SpringerQuery objects.
  */
 public class SpringerQueryFactory {
 
     /**
-     * Instantiates a new world bank query factory.
+     * Instantiates a new springer query factory.
      */
 	private SpringerQueryFactory() {
     }
@@ -37,34 +37,34 @@ public class SpringerQueryFactory {
     /**
      * New instance.
      * 
-     * @return the world bank query factory
+     * @return the springer query factory
      */
     public static SpringerQueryFactory newInstance() {
         return new SpringerQueryFactory();
     }
     
     /**
-     * Creates a new WorldBankQuery object.
+     * Creates a new SpringerQuery object.
      * 
-     * @return the country query
+     * @return the metadata query
      */
     public MetadataQuery createCountryQuery() {
     	return new MetadataQueryImpl();
     }
     
     /**
-     * Creates a new WorldBankQuery object.
+     * Creates a new SpringerQuery object.
      * 
-     * @return the income level query
+     * @return the images query
      */
     public ImagesQuery createIncomeLevelQuery() {
     	return new ImagesQueryImpl();
     }
     
     /**
-     * Creates a new WorldBankQuery object.
+     * Creates a new SpringerQuery object.
      * 
-     * @return the indicator query
+     * @return the open access query
      */
     public OpenAccessQuery createIndicatorQuery() {
     	return new OpenAccessQueryImpl();

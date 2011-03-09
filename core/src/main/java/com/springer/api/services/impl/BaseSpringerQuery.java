@@ -35,7 +35,7 @@ import com.springer.api.services.constant.ApplicationConstants;
 import com.springer.api.services.constant.SpringerApiUrls.SpringerApiUrlBuilder;
 
 /**
- * The Class BaseWorldBankQuery.
+ * The Class BaseSpringerQuery.
  */
 public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements SpringerQuery<E> {
 	
@@ -49,7 +49,7 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	protected SpringerApiUrlBuilder apiUrlBuilder;
     
 	/**
-	 * Instantiates a new base world bank query.
+	 * Instantiates a new base springer query.
 	 */
 	public BaseSpringerQuery() {
         // by default we compress contents
@@ -58,7 +58,7 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	}
 
 	/**
-	 * Instantiates a new base world bank query.
+	 * Instantiates a new base springer query.
 	 * 
 	 * @param apiVersion the api version
 	 */
@@ -176,7 +176,7 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	 * 
 	 * @param urlFormat the url format
 	 * 
-	 * @return the world bank api url builder
+	 * @return the springer api url builder
 	 */
 	protected SpringerApiUrlBuilder createWorldBankApiUrlBuilder(String urlFormat) {
 		return new SpringerApiUrlBuilder(urlFormat);

@@ -25,7 +25,7 @@ import com.springer.api.services.SpringerQueryFactory;
 
 
 /**
- * The Class IndicatorQuerySample.
+ * The Class OpenAccessQuerySample.
  */
 public class OpenAccessQuerySample {
 

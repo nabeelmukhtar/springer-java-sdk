@@ -19,7 +19,7 @@ package com.springer.api.services;
 import com.springer.api.common.PagedList;
 
 /**
- * The Interface WorldBankQuery.
+ * The Interface SpringerQuery.
  */
 public interface SpringerQuery<E> extends SpringerCommunicator {
 	

@@ -46,22 +46,22 @@ public final class ApplicationConstants {
     }
 
     /** The Constant CONTENT_ENCODING. */
-    public static final String CONTENT_ENCODING = getProperty("org.worldbank.api.services.encoding");
+    public static final String CONTENT_ENCODING = getProperty("com.springer.api.services.encoding");
 
     /** The Constant DEFAULT_API_VERSION. */
-    public static final String DEFAULT_API_VERSION = getProperty("org.worldbank.api.services.defaultApiVersion");
+    public static final String DEFAULT_API_VERSION = getProperty("com.springer.api.services.defaultApiVersion");
     
     /** The Constant DEFAULT_FORMAT. */
-    public static final String DEFAULT_FORMAT = getProperty("org.worldbank.api.services.defaultFormat");
+    public static final String DEFAULT_FORMAT = getProperty("com.springer.api.services.defaultFormat");
     
     /** The Constant DATE_FORMAT. */
-    public static final String DATE_FORMAT = getProperty("org.worldbank.api.services.dateFormat");
+    public static final String DATE_FORMAT = getProperty("com.springer.api.services.dateFormat");
     
     /** The Constant CONNECT_TIMEOUT. */
-    public static final int CONNECT_TIMEOUT = getIntProperty("org.worldbank.api.services.connectTimeout");
+    public static final int CONNECT_TIMEOUT = getIntProperty("com.springer.api.services.connectTimeout");
     
     /** The Constant READ_TIMEOUT. */
-    public static final int READ_TIMEOUT = getIntProperty("org.worldbank.api.services.readTimeout");
+    public static final int READ_TIMEOUT = getIntProperty("com.springer.api.services.readTimeout");
     
     /**
      * Instantiates a new application constants.

@@ -21,12 +21,18 @@ package com.springer.api.services.constant;
  */
 public interface ParameterNames {
 
-	/** The Constant VERSION. */
-	public static final String VERSION = "version";
+	/** The Constant QUERY. */
+	public static final String QUERY = "q";
+	
+	/** The Constant API_KEY. */
+	public static final String API_KEY = "api_key";
+	
+	/** The Constant INDEX. */
+	public static final String INDEX = "s";
+	
+	/** The Constant COUNT. */
+	public static final String COUNT = "p";
 	
 	/** The Constant FORMAT. */
 	public static final String FORMAT = "format";
-	
-	/** The Constant PAGE. */
-	public static final String PAGE = "page";
 }

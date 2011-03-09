@@ -24,7 +24,7 @@ import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
- * The Class IndicatorQueryImpl.
+ * The Class OpenAccessQueryImpl.
  */
 public class OpenAccessQueryImpl extends BaseSpringerQuery<Indicator> implements
 	OpenAccessQuery {
@@ -34,7 +34,7 @@ public class OpenAccessQueryImpl extends BaseSpringerQuery<Indicator> implements
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.INDICATORS_URL);
+		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.OPEN_ACCESS_URL);
 	}
 
 	/* (non-Javadoc)
