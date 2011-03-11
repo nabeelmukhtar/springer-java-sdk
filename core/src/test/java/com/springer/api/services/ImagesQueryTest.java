@@ -38,7 +38,7 @@ public class ImagesQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createIncomeLevelQuery();
+		service = factory.createImagesQuery();
 	}
 
 	/* (non-Javadoc)

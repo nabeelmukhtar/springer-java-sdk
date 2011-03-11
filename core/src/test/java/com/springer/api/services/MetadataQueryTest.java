@@ -38,7 +38,7 @@ public class MetadataQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createCountryQuery();
+		service = factory.createMetadataQuery();
 	}
 
 	/* (non-Javadoc)

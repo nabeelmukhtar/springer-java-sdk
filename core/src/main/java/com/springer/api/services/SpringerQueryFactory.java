@@ -48,7 +48,7 @@ public class SpringerQueryFactory {
      * 
      * @return the metadata query
      */
-    public MetadataQuery createCountryQuery() {
+    public MetadataQuery createMetadataQuery() {
     	return new MetadataQueryImpl();
     }
     
@@ -57,7 +57,7 @@ public class SpringerQueryFactory {
      * 
      * @return the images query
      */
-    public ImagesQuery createIncomeLevelQuery() {
+    public ImagesQuery createImagesQuery() {
     	return new ImagesQueryImpl();
     }
     
@@ -66,7 +66,7 @@ public class SpringerQueryFactory {
      * 
      * @return the open access query
      */
-    public OpenAccessQuery createIndicatorQuery() {
+    public OpenAccessQuery createOpenAccessQuery() {
     	return new OpenAccessQueryImpl();
     }
 }

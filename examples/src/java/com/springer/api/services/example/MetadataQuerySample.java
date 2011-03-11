@@ -38,7 +38,7 @@ public class MetadataQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		MetadataQuery service = factory.createCountryQuery();
+		MetadataQuery service = factory.createMetadataQuery();
 		List<Country> countries = service.list();
 		for (Country country : countries) {
 			printResult(country);

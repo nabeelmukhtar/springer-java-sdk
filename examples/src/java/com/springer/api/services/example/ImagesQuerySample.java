@@ -38,7 +38,7 @@ public class ImagesQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		ImagesQuery service = factory.createIncomeLevelQuery();
+		ImagesQuery service = factory.createImagesQuery();
 		List<IncomeLevel> incomeLevels = service.list();
 		for (IncomeLevel incomeLevel : incomeLevels) {
 			printResult(incomeLevel);

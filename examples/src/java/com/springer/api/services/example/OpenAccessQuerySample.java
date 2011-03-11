@@ -38,7 +38,7 @@ public class OpenAccessQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		OpenAccessQuery service = factory.createIndicatorQuery();
+		OpenAccessQuery service = factory.createOpenAccessQuery();
 		List<Indicator> indicators = service.list();
 		for (Indicator indicator : indicators) {
 			printResult(indicator);

@@ -38,7 +38,7 @@ public class OpenAccessQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createIndicatorQuery();
+		service = factory.createOpenAccessQuery();
 	}
 
 	/* (non-Javadoc)
