@@ -1169,10 +1169,10 @@
   </xs:element>
   <xs:complexType name="ImageObject">
     <xs:sequence>
-      <xs:element ref="ImageObject"/>
+      <xs:element ref="ImageObjectElement"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ImageObject">
+  <xs:element name="ImageObjectElement">
     <xs:complexType>
       <xs:attribute name="Color" use="required" type="xs:NCName"/>
       <xs:attribute name="FileRef" use="required"/>

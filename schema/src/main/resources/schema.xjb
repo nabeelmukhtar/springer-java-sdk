@@ -6,7 +6,6 @@
 	<globalBindings localScoping="toplevel">
 		<javaType name="double" xmlType="xs:double"/>
 		<javaType name="long" xmlType="xs:integer"/>
-		<xjc:superInterface name="RequestEntity"/>
 		<xjc:serializable uid="2461660169443089969"/>
 	</globalBindings>
 	<nameXmlTransform>
