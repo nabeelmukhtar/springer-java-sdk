@@ -21,7 +21,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.springer.api.common.PagedList;
-import com.springer.api.schema.Indicator;
+import com.springer.api.images.Indicator;
 import com.springer.api.services.OpenAccessQuery;
 
 /**

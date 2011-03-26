@@ -21,7 +21,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.springer.api.common.PagedList;
-import com.springer.api.schema.IncomeLevel;
+import com.springer.api.images.IncomeLevel;
 import com.springer.api.services.ImagesQuery;
 
 /**

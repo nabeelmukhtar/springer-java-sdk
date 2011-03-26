@@ -19,7 +19,7 @@ package com.springer.api.services.example;
 import java.util.List;
 
 
-import com.springer.api.schema.Indicator;
+import com.springer.api.images.Indicator;
 import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.SpringerQueryFactory;
 

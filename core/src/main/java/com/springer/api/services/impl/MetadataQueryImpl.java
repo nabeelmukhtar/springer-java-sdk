@@ -19,7 +19,7 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.schema.Country;
+import com.springer.api.images.Country;
 import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 

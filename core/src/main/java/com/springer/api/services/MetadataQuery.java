@@ -16,7 +16,7 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.schema.Country;
+import com.springer.api.images.Country;
 
 
 

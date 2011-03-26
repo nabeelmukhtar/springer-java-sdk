@@ -19,7 +19,7 @@ package com.springer.api.services.example;
 import java.util.List;
 
 
-import com.springer.api.schema.Country;
+import com.springer.api.images.Country;
 import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.SpringerQueryFactory;
 
