@@ -23,20 +23,26 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import com.springer.api.Response;
 import com.springer.api.services.SpringerApiClient;
 import com.springer.api.services.SpringerException;
+import com.springer.api.services.constant.ParameterNames;
+import com.springer.api.services.constant.SpringerApiUrls;
 import com.springer.api.services.constant.SpringerApiUrls.SpringerApiUrlBuilder;
 
 /**
  * The Class SpringerApiJaxbClient.
  */
-public class SpringerApiJaxbClient implements SpringerApiClient {
+public class SpringerApiJaxbClient extends SpringerApiGateway implements SpringerApiClient {
 
     /** The Constant JAXB_PACKAGE_NAME. */
     private static final String JAXB_PACKAGE_NAME = "com.springer.api";
     
     /** The JAX b_ context. */
     private static JAXBContext JAXB_CONTEXT;
+    
+    /** The api key. */
+    private String apiKey;
 
     /**
      * Instantiates a new springer api jaxb client.
@@ -44,6 +50,7 @@ public class SpringerApiJaxbClient implements SpringerApiClient {
      * @param apiKey the api key
      */
     public SpringerApiJaxbClient(String apiKey) {
+    	this.apiKey = apiKey;
     }
 
     /**
@@ -89,11 +96,12 @@ public class SpringerApiJaxbClient implements SpringerApiClient {
 	 * Creates the springer api url builder.
 	 * 
 	 * @param urlFormat the url format
+	 * @param format the format
 	 * 
 	 * @return the springer api url builder
 	 */
-	protected SpringerApiUrlBuilder createSpringerApiUrlBuilder(String urlFormat) {
-		return new SpringerApiUrlBuilder(urlFormat);
+	protected SpringerApiUrlBuilder createSpringerApiUrlBuilder(String urlFormat, String format) {
+		return new SpringerApiUrlBuilder(urlFormat, format);
 	}
 
     /**
@@ -117,5 +125,35 @@ public class SpringerApiJaxbClient implements SpringerApiClient {
      */
 	protected void setJaxbContext(JAXBContext context) {
 		JAXB_CONTEXT = context;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.springer.api.services.SpringerApiClient#images(java.lang.String)
+	 */
+	@Override
+	public Response images(String query) {
+		SpringerApiUrlBuilder builder = createSpringerApiUrlBuilder(SpringerApiUrls.IMAGES_URL, "xml");
+		String apiUrl = builder.withParameter(ParameterNames.API_KEY, apiKey).withParameter(ParameterNames.QUERY, query).buildUrl();
+		return unmarshallObject(Response.class, callApiGet(apiUrl));
+	}
+
+	/* (non-Javadoc)
+	 * @see com.springer.api.services.SpringerApiClient#metadata(java.lang.String)
+	 */
+	@Override
+	public Response metadata(String query) {
+		SpringerApiUrlBuilder builder = createSpringerApiUrlBuilder(SpringerApiUrls.METADATA_URL, "pam");
+		String apiUrl = builder.withParameter(ParameterNames.API_KEY, apiKey).withParameter(ParameterNames.QUERY, query).buildUrl();
+		return unmarshallObject(Response.class, callApiGet(apiUrl));
+	}
+
+	/* (non-Javadoc)
+	 * @see com.springer.api.services.SpringerApiClient#openAccess(java.lang.String)
+	 */
+	@Override
+	public Response openAccess(String query) {
+		SpringerApiUrlBuilder builder = createSpringerApiUrlBuilder(SpringerApiUrls.OPEN_ACCESS_URL, "app");
+		String apiUrl = builder.withParameter(ParameterNames.API_KEY, apiKey).withParameter(ParameterNames.QUERY, query).buildUrl();
+		return unmarshallObject(Response.class, callApiGet(apiUrl));
 	}
 }

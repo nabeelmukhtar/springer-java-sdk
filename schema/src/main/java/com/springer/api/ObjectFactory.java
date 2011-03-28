@@ -25,6 +25,8 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+
+import org.w3._1999.xhtml.P;
 import org.w3._2001.xmlschema.Adapter1;
 
 

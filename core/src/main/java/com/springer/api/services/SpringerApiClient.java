@@ -16,9 +16,14 @@
  */
 package com.springer.api.services;
 
+import com.springer.api.Response;
+
 /**
  * The Interface SpringerApiClient.
  */
 public interface SpringerApiClient {
+	public Response images(String query);
+	public Response metadata(String query);
+	public Response openAccess(String query);
 
 }

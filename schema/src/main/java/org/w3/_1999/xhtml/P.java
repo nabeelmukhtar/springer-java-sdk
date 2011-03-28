@@ -15,7 +15,7 @@
  * 
  */
 
-package com.springer.api;
+package org.w3._1999.xhtml;
 
 import java.io.Serializable;
 import java.util.ArrayList;

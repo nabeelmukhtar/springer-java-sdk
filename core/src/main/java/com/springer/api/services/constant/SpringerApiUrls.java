@@ -102,6 +102,17 @@ public final class SpringerApiUrls {
 	     * @param apiVersion the api version
 	     * @param format the format
 	     */
+	    public SpringerApiUrlBuilder(String urlFormat, String format) {
+	    	this(urlFormat, ApplicationConstants.DEFAULT_API_VERSION, format);
+    	}
+	    
+    	/**
+	     * Instantiates a new springer api url builder.
+	     * 
+	     * @param urlFormat the url format
+	     * @param apiVersion the api version
+	     * @param format the format
+	     */
 	    public SpringerApiUrlBuilder(String urlFormat, String apiVersion, String format) {
     		this.urlFormat = urlFormat;
     		fieldsMap.put(ParameterNames.FORMAT, format);
