@@ -18,8 +18,9 @@ package com.springer.api.services.example;
 
 import java.util.List;
 
-
-import com.springer.api.images.IncomeLevel;
+import com.springer.api.common.Facet;
+import com.springer.api.common.FacetValue;
+import com.springer.api.schema.Image;
 import com.springer.api.services.ImagesQuery;
 import com.springer.api.services.SpringerQueryFactory;
 
@@ -38,10 +39,17 @@ public class ImagesQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		ImagesQuery service = factory.createImagesQuery();
-		List<IncomeLevel> incomeLevels = service.list();
-		for (IncomeLevel incomeLevel : incomeLevels) {
-			printResult(incomeLevel);
+		ImagesQuery service = factory.createImagesQuery("j65srxyg73axn74fks3aj2p4");
+		List<Image> images = service.withQuery("mapreduce").list();
+		for (Image image : images) {
+			printResult(image);
+		}
+		List<Facet> facets = service.facets();
+		for (Facet facet : facets) {
+			System.out.println(facet.getName());
+			for (FacetValue facetValue : facet.getValues()) {
+				System.out.println(facetValue.getValue() + ":" + facetValue.getCount());
+			}
 		}
 	}
 
@@ -50,7 +58,7 @@ public class ImagesQuerySample {
 	 * 
 	 * @param incomeLevel the income level
 	 */
-	private static void printResult(IncomeLevel incomeLevel) {
-		System.out.println(incomeLevel.getId() + ":" + incomeLevel.getValue());
+	private static void printResult(Image incomeLevel) {
+		System.out.println(incomeLevel.getArticleTitle() + ":" + incomeLevel.getCaption());
 	}
 }

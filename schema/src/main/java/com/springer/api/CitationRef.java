@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,21 +30,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>integer">
- *       &lt;attribute name="CitationID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class CitationRef.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -38,57 +40,50 @@ import org.w3._2001.xmlschema.Adapter1;
 public class CitationRef implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The value. */
     @XmlValue
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long value;
+    
+    /** The citation id. */
     @XmlAttribute(name = "CitationID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String citationID;
 
     /**
-     * Gets the value of the value property.
+     * Gets the value.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the value
      */
     public Long getValue() {
         return value;
     }
 
     /**
-     * Sets the value of the value property.
+     * Sets the value.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new value
      */
     public void setValue(Long value) {
         this.value = value;
     }
 
     /**
-     * Gets the value of the citationID property.
+     * Gets the citation id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the citation id
      */
     public String getCitationID() {
         return citationID;
     }
 
     /**
-     * Sets the value of the citationID property.
+     * Sets the citation id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new citation id
      */
     public void setCitationID(String value) {
         this.citationID = value;

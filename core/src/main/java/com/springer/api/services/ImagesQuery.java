@@ -16,12 +16,12 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.images.IncomeLevel;
+import com.springer.api.schema.Image;
 
 
 
 /**
  * The Interface ImagesQuery.
  */
-public interface ImagesQuery extends SpringerQuery<IncomeLevel> {
+public interface ImagesQuery extends SpringerQuery<Image> {
 }

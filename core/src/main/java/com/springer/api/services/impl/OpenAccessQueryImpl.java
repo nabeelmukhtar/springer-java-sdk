@@ -19,42 +19,39 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.images.Indicator;
+import com.springer.api.schema.OpenAccess;
 import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
  * The Class OpenAccessQueryImpl.
  */
-public class OpenAccessQueryImpl extends BaseSpringerQuery<Indicator> implements
+public class OpenAccessQueryImpl extends BaseSpringerQuery<OpenAccess> implements
 	OpenAccessQuery {
+
+	/**
+	 * Instantiates a new open access query impl.
+	 * 
+	 * @param apiKey the api key
+	 */
+	public OpenAccessQueryImpl(String apiKey) {
+		super(apiKey);
+	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.WorldBankQuery#reset()
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.OPEN_ACCESS_URL);
+		apiUrlBuilder = createSpringerApiUrlBuilder(SpringerApiUrls.OPEN_ACCESS_URL);
 	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.impl.BaseWorldBankQuery#unmarshall(com.google.gson.JsonElement)
 	 */
 	@Override
-	protected Indicator unmarshall(JsonElement response) {
+	protected OpenAccess unmarshall(JsonElement response) {
 		Gson gson = getGsonBuilder().create();
-		return gson.fromJson(response, Indicator.class);
+		return gson.fromJson(response, OpenAccess.class);
 	}
-
-	/* (non-Javadoc)
-	 * @see com.github.api.v2.services.OrganizationService#addTeamMember(java.lang.String, java.lang.String)
-	 */
-//	@Override
-//	public void addTeamMember(String teamId, String userName) {
-//		GitHubApiUrlBuilder builder = createGitHubApiUrlBuilder(WorldBankApiUrls.ADD_TEAM_MEMBER_URL);
-//        String                apiUrl  = builder.withField(ParameterNames.TEAM_ID, teamId).buildUrl();
-//        Map<String, String> parameters = new HashMap<String, String>();
-//        parameters.put(ParameterNames.NAME, userName);
-//        unmarshall(callApiPost(apiUrl, parameters));
-//	}
 }

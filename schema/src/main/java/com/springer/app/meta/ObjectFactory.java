@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.app.meta;
 
@@ -11,103 +27,128 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the com.springer.app.meta package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
- * provided in this class.
- * 
+ * A factory for creating Object objects.
  */
 @XmlRegistry
 public class ObjectFactory {
 
+    /** The Constant _OrgName_QNAME. */
     private final static QName _OrgName_QNAME = new QName("http://www.springer.com/app/meta", "OrgName");
+    
+    /** The Constant _Type_QNAME. */
     private final static QName _Type_QNAME = new QName("http://www.springer.com/app/meta", "Type");
+    
+    /** The Constant _PublicationType_QNAME. */
     private final static QName _PublicationType_QNAME = new QName("http://www.springer.com/app/meta", "PublicationType");
+    
+    /** The Constant _GeoOrg_QNAME. */
     private final static QName _GeoOrg_QNAME = new QName("http://www.springer.com/app/meta", "GeoOrg");
+    
+    /** The Constant _DOI_QNAME. */
     private final static QName _DOI_QNAME = new QName("http://www.springer.com/app/meta", "DOI");
+    
+    /** The Constant _Journal_QNAME. */
     private final static QName _Journal_QNAME = new QName("http://www.springer.com/app/meta", "Journal");
+    
+    /** The Constant _PubName_QNAME. */
     private final static QName _PubName_QNAME = new QName("http://www.springer.com/app/meta", "PubName");
+    
+    /** The Constant _ArticleFirstPage_QNAME. */
     private final static QName _ArticleFirstPage_QNAME = new QName("http://www.springer.com/app/meta", "ArticleFirstPage");
+    
+    /** The Constant _Author_QNAME. */
     private final static QName _Author_QNAME = new QName("http://www.springer.com/app/meta", "Author");
+    
+    /** The Constant _ISXN_QNAME. */
     private final static QName _ISXN_QNAME = new QName("http://www.springer.com/app/meta", "ISXN");
+    
+    /** The Constant _Country_QNAME. */
     private final static QName _Country_QNAME = new QName("http://www.springer.com/app/meta", "Country");
+    
+    /** The Constant _DateLoaded_QNAME. */
     private final static QName _DateLoaded_QNAME = new QName("http://www.springer.com/app/meta", "DateLoaded");
+    
+    /** The Constant _Publication_QNAME. */
     private final static QName _Publication_QNAME = new QName("http://www.springer.com/app/meta", "Publication");
+    
+    /** The Constant _Date_QNAME. */
     private final static QName _Date_QNAME = new QName("http://www.springer.com/app/meta", "Date");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.springer.app.meta
-     * 
+     * Instantiates a new object factory.
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Title }
+     * Creates a new Object object.
      * 
+     * @return the title
      */
     public Title createTitle() {
         return new Title();
     }
 
     /**
-     * Create an instance of {@link SubjectGroup }
+     * Creates a new Object object.
      * 
+     * @return the subject group
      */
     public SubjectGroup createSubjectGroup() {
         return new SubjectGroup();
     }
 
     /**
-     * Create an instance of {@link Info }
+     * Creates a new Object object.
      * 
+     * @return the info
      */
     public Info createInfo() {
         return new Info();
     }
 
     /**
-     * Create an instance of {@link Authors }
+     * Creates a new Object object.
      * 
+     * @return the authors
      */
     public Authors createAuthors() {
         return new Authors();
     }
 
     /**
-     * Create an instance of {@link Subject }
+     * Creates a new Object object.
      * 
+     * @return the subject
      */
     public Subject createSubject() {
         return new Subject();
     }
 
     /**
-     * Create an instance of {@link Institution }
+     * Creates a new Object object.
      * 
+     * @return the institution
      */
     public Institution createInstitution() {
         return new Institution();
     }
 
     /**
-     * Create an instance of {@link Institutions }
+     * Creates a new Object object.
      * 
+     * @return the institutions
      */
     public Institutions createInstitutions() {
         return new Institutions();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "OrgName")
     public JAXBElement<String> createOrgName(String value) {
@@ -115,8 +156,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Type")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -125,8 +169,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "PublicationType")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -135,8 +182,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "GeoOrg")
     public JAXBElement<String> createGeoOrg(String value) {
@@ -144,8 +194,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "DOI")
     public JAXBElement<String> createDOI(String value) {
@@ -153,8 +206,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Journal")
     public JAXBElement<String> createJournal(String value) {
@@ -162,8 +218,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "PubName")
     public JAXBElement<String> createPubName(String value) {
@@ -171,8 +230,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -181,8 +243,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Author")
     public JAXBElement<String> createAuthor(String value) {
@@ -190,8 +255,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "ISXN")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -200,8 +268,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Country")
     public JAXBElement<String> createCountry(String value) {
@@ -209,8 +280,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< xml gregorian calendar>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "DateLoaded")
     public JAXBElement<XMLGregorianCalendar> createDateLoaded(XMLGregorianCalendar value) {
@@ -218,8 +292,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Publication")
     public JAXBElement<String> createPublication(String value) {
@@ -227,8 +304,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Date")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,32 +30,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}JournalID"/>
- *         &lt;element ref="{}JournalPrintISSN"/>
- *         &lt;element ref="{}JournalElectronicISSN"/>
- *         &lt;element ref="{}JournalSPIN" minOccurs="0"/>
- *         &lt;element ref="{}JournalTitle"/>
- *         &lt;element ref="{}JournalSubTitle" minOccurs="0"/>
- *         &lt;element ref="{}JournalAbbreviatedTitle"/>
- *         &lt;element ref="{}JournalSubjectGroup"/>
- *       &lt;/sequence>
- *       &lt;attribute name="JournalProductType" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="NumberingStyle" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class JournalInfo.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -57,268 +48,229 @@ public class JournalInfo
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The journal id. */
     @XmlElement(name = "JournalID", required = true)
     protected String journalID;
+    
+    /** The journal print issn. */
     @XmlElement(name = "JournalPrintISSN", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String journalPrintISSN;
+    
+    /** The journal electronic issn. */
     @XmlElement(name = "JournalElectronicISSN", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String journalElectronicISSN;
+    
+    /** The journal spin. */
     @XmlElement(name = "JournalSPIN", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long journalSPIN;
+    
+    /** The journal title. */
     @XmlElement(name = "JournalTitle", required = true)
     protected String journalTitle;
+    
+    /** The journal sub title. */
     @XmlElement(name = "JournalSubTitle")
     protected String journalSubTitle;
+    
+    /** The journal abbreviated title. */
     @XmlElement(name = "JournalAbbreviatedTitle", required = true)
     protected String journalAbbreviatedTitle;
+    
+    /** The journal subject group. */
     @XmlElement(name = "JournalSubjectGroup", required = true)
     protected JournalSubjectGroup journalSubjectGroup;
+    
+    /** The journal product type. */
     @XmlAttribute(name = "JournalProductType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String journalProductType;
+    
+    /** The numbering style. */
     @XmlAttribute(name = "NumberingStyle", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String numberingStyle;
 
     /**
-     * Gets the value of the journalID property.
+     * Gets the journal id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal id
      */
     public String getJournalID() {
         return journalID;
     }
 
     /**
-     * Sets the value of the journalID property.
+     * Sets the journal id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal id
      */
     public void setJournalID(String value) {
         this.journalID = value;
     }
 
     /**
-     * Gets the value of the journalPrintISSN property.
+     * Gets the journal print issn.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal print issn
      */
     public String getJournalPrintISSN() {
         return journalPrintISSN;
     }
 
     /**
-     * Sets the value of the journalPrintISSN property.
+     * Sets the journal print issn.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal print issn
      */
     public void setJournalPrintISSN(String value) {
         this.journalPrintISSN = value;
     }
 
     /**
-     * Gets the value of the journalElectronicISSN property.
+     * Gets the journal electronic issn.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal electronic issn
      */
     public String getJournalElectronicISSN() {
         return journalElectronicISSN;
     }
 
     /**
-     * Sets the value of the journalElectronicISSN property.
+     * Sets the journal electronic issn.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal electronic issn
      */
     public void setJournalElectronicISSN(String value) {
         this.journalElectronicISSN = value;
     }
 
     /**
-     * Gets the value of the journalSPIN property.
+     * Gets the journal spin.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal spin
      */
     public Long getJournalSPIN() {
         return journalSPIN;
     }
 
     /**
-     * Sets the value of the journalSPIN property.
+     * Sets the journal spin.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal spin
      */
     public void setJournalSPIN(Long value) {
         this.journalSPIN = value;
     }
 
     /**
-     * Gets the value of the journalTitle property.
+     * Gets the journal title.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal title
      */
     public String getJournalTitle() {
         return journalTitle;
     }
 
     /**
-     * Sets the value of the journalTitle property.
+     * Sets the journal title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal title
      */
     public void setJournalTitle(String value) {
         this.journalTitle = value;
     }
 
     /**
-     * Gets the value of the journalSubTitle property.
+     * Gets the journal sub title.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal sub title
      */
     public String getJournalSubTitle() {
         return journalSubTitle;
     }
 
     /**
-     * Sets the value of the journalSubTitle property.
+     * Sets the journal sub title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal sub title
      */
     public void setJournalSubTitle(String value) {
         this.journalSubTitle = value;
     }
 
     /**
-     * Gets the value of the journalAbbreviatedTitle property.
+     * Gets the journal abbreviated title.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal abbreviated title
      */
     public String getJournalAbbreviatedTitle() {
         return journalAbbreviatedTitle;
     }
 
     /**
-     * Sets the value of the journalAbbreviatedTitle property.
+     * Sets the journal abbreviated title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal abbreviated title
      */
     public void setJournalAbbreviatedTitle(String value) {
         this.journalAbbreviatedTitle = value;
     }
 
     /**
-     * Gets the value of the journalSubjectGroup property.
+     * Gets the journal subject group.
      * 
-     * @return
-     *     possible object is
-     *     {@link JournalSubjectGroup }
-     *     
+     * @return the journal subject group
      */
     public JournalSubjectGroup getJournalSubjectGroup() {
         return journalSubjectGroup;
     }
 
     /**
-     * Sets the value of the journalSubjectGroup property.
+     * Sets the journal subject group.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link JournalSubjectGroup }
-     *     
+     * @param value the new journal subject group
      */
     public void setJournalSubjectGroup(JournalSubjectGroup value) {
         this.journalSubjectGroup = value;
     }
 
     /**
-     * Gets the value of the journalProductType property.
+     * Gets the journal product type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal product type
      */
     public String getJournalProductType() {
         return journalProductType;
     }
 
     /**
-     * Sets the value of the journalProductType property.
+     * Sets the journal product type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal product type
      */
     public void setJournalProductType(String value) {
         this.journalProductType = value;
     }
 
     /**
-     * Gets the value of the numberingStyle property.
+     * Gets the numbering style.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the numbering style
      */
     public String getNumberingStyle() {
         return numberingStyle;
     }
 
     /**
-     * Sets the value of the numberingStyle property.
+     * Sets the numbering style.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new numbering style
      */
     public void setNumberingStyle(String value) {
         this.numberingStyle = value;

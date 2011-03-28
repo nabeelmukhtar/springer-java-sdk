@@ -21,17 +21,20 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.springer.api.common.Facet;
 import com.springer.api.common.PagedArrayList;
 import com.springer.api.common.PagedList;
+import com.springer.api.common.PagedArrayList.Cursor;
 import com.springer.api.services.SpringerException;
 import com.springer.api.services.SpringerQuery;
 import com.springer.api.services.constant.ApplicationConstants;
+import com.springer.api.services.constant.ParameterNames;
 import com.springer.api.services.constant.SpringerApiUrls.SpringerApiUrlBuilder;
 
 /**
@@ -48,22 +51,79 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	/** The api url builder. */
 	protected SpringerApiUrlBuilder apiUrlBuilder;
     
-	/**
-	 * Instantiates a new base springer query.
-	 */
-	public BaseSpringerQuery() {
-        // by default we compress contents
-        requestHeaders.put("Accept-Encoding", "gzip, deflate");
-        reset();
-	}
+   	/** The api key. */
+	   private String apiKey;
+   	
+	   /** The facets. */
+	   private List<Facet> facets;
+   	
+	   /** The query. */
+	   private String query;
 
 	/**
 	 * Instantiates a new base springer query.
 	 * 
-	 * @param apiVersion the api version
+	 * @param apiKey the api key
 	 */
-	public BaseSpringerQuery(String apiVersion) {
-		setApiVersion(apiVersion);
+	public BaseSpringerQuery(String apiKey) {
+        // by default we compress contents
+        requestHeaders.put("Accept-Encoding", "gzip, deflate");
+        this.apiKey = apiKey;
+        reset();
+	}
+	
+ 	/**
+	  * Gets the api key.
+	  * 
+	  * @return the api key
+	  */
+	 public String getApiKey(){
+		return this.apiKey;
+	}
+	
+	/**
+	 * Sets the api key.
+	 * 
+	 * @param apiKey the new api key
+	 */
+	public void setApiKey(String apiKey){
+		this.apiKey = apiKey;
+	}
+ 	
+	 /**
+	  * Gets the facets.
+	  * 
+	  * @return the facets
+	  */
+	 public List<Facet> getFacets(){
+		return this.facets;
+	}
+	
+	/**
+	 * Sets the facets.
+	 * 
+	 * @param facets the new facets
+	 */
+	public void setFacets(List<Facet> facets){
+		this.facets = facets;
+	}
+ 	
+	 /**
+	  * Gets the query.
+	  * 
+	  * @return the query
+	  */
+	 public String getQuery(){
+		return this.query;
+	}
+	
+	/**
+	 * Sets the query.
+	 * 
+	 * @param query the new query
+	 */
+	public void setQuery(String query){
+		this.query = query;
 	}
 	
 	/* (non-Javadoc)
@@ -75,9 +135,31 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
         try {
         	jsonContent = callApiGet(apiUrlBuilder.buildUrl());
         	JsonElement response = parser.parse(new InputStreamReader(jsonContent, UTF_8_CHAR_SET));
-        	if (response.isJsonArray()) {
-        		PagedList<E> responseList = unmarshallList(response.getAsJsonArray());
-//        		notifyObservers(responseList);
+        	if (response.isJsonObject()) {
+        		JsonObject object = response.getAsJsonObject();
+        		setApiKey(object.get("apiKey").getAsString());
+        		setQuery(object.get("query").getAsString());
+        		List<Cursor> cursors = getGsonBuilder().create().fromJson(object.get("result"), new TypeToken<List<Cursor>>() {}.getType());
+        		PagedArrayList<E> responseList = new PagedArrayList<E>();;
+        		if (!cursors.isEmpty()) {
+            		responseList.setCursor(cursors.get(0));
+        		}
+        		JsonElement jsonElement = object.get("records");
+        		if (jsonElement.isJsonArray()) {
+        			JsonArray results = jsonElement.getAsJsonArray();
+        			for (JsonElement result : results) {
+        				E element = unmarshall(result);
+        				responseList.add(element);
+        			}
+        		}
+        		
+        		jsonElement = object.get("facets");
+        		
+        		if (jsonElement != null) {
+        			List<Facet> facets = getGsonBuilder().create().fromJson(jsonElement, new TypeToken<List<Facet>>() {}.getType());
+					setFacets(facets);
+        		}
+        		
     			return responseList;
         	}
         	throw new SpringerException("Unknown content found in response:" + response.toString());
@@ -97,29 +179,21 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 		return (list.isEmpty())? null : list.get(0);
 	}
 	
-	/**
-	 * Unmarshall list.
-	 * 
-	 * @param jsonArray the json array
-	 * 
-	 * @return the paged list< e>
+	/* (non-Javadoc)
+	 * @see com.springer.api.services.SpringerQuery#withQuery(java.lang.String)
 	 */
-	protected PagedList<E> unmarshallList(JsonArray jsonArray) {
-		PagedArrayList<E> list = new PagedArrayList<E>();
-		if (jsonArray.size() == 2) {
-			JsonObject cursor = jsonArray.get(0).getAsJsonObject();
-			if (cursor != null) {
-				list.setCursor(getGsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create().fromJson(cursor, PagedArrayList.Cursor.class));
-			}
-			JsonArray results = jsonArray.get(1).getAsJsonArray();
-			for (JsonElement object : results) {
-				E element = unmarshall(object);
-				list.add(element);
-			}
-		}
-		return list;
+	@Override
+	public SpringerQuery<E> withQuery(String query) {
+		apiUrlBuilder.withParameter(ParameterNames.QUERY, query);
+		return this;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.springer.api.services.SpringerQuery#facets()
+	 */
+	public List<Facet> facets() {
+		return facets;
+	}
 	
 	/**
 	 * Unmarshall.
@@ -172,13 +246,15 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	}
 	
 	/**
-	 * Creates the world bank api url builder.
+	 * Creates the springer api url builder.
 	 * 
 	 * @param urlFormat the url format
 	 * 
 	 * @return the springer api url builder
 	 */
-	protected SpringerApiUrlBuilder createWorldBankApiUrlBuilder(String urlFormat) {
-		return new SpringerApiUrlBuilder(urlFormat);
+	protected SpringerApiUrlBuilder createSpringerApiUrlBuilder(String urlFormat) {
+		SpringerApiUrlBuilder builder = new SpringerApiUrlBuilder(urlFormat);
+		builder.withParameter(ParameterNames.API_KEY, apiKey);
+		return builder;
 	}
 }

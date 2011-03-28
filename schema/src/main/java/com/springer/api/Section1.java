@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -15,27 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Heading"/>
- *         &lt;element ref="{}Para" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}Section2" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="Type" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Section1.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -48,65 +44,53 @@ public class Section1
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     @XmlElement(name = "Heading", required = true)
     protected Heading heading;
+    
+    /** The para. */
     @XmlElement(name = "Para")
     protected List<Para> para;
+    
+    /** The section2. */
     @XmlElement(name = "Section2")
     protected List<Section2> section2;
+    
+    /** The id. */
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
+    
+    /** The type. */
     @XmlAttribute(name = "Type")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
 
     /**
-     * Gets the value of the heading property.
+     * Gets the heading.
      * 
-     * @return
-     *     possible object is
-     *     {@link Heading }
-     *     
+     * @return the heading
      */
     public Heading getHeading() {
         return heading;
     }
 
     /**
-     * Sets the value of the heading property.
+     * Sets the heading.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Heading }
-     *     
+     * @param value the new heading
      */
     public void setHeading(Heading value) {
         this.heading = value;
     }
 
     /**
-     * Gets the value of the para property.
+     * Gets the para.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the para property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPara().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Para }
-     * 
-     * 
+     * @return the para
      */
     public List<Para> getPara() {
         if (para == null) {
@@ -116,26 +100,9 @@ public class Section1
     }
 
     /**
-     * Gets the value of the section2 property.
+     * Gets the section2.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the section2 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSection2().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Section2 }
-     * 
-     * 
+     * @return the section2
      */
     public List<Section2> getSection2() {
         if (section2 == null) {
@@ -145,48 +112,36 @@ public class Section1
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;

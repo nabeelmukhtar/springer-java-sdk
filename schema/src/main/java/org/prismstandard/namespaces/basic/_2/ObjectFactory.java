@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package org.prismstandard.namespaces.basic._2;
 
@@ -10,57 +26,65 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the org.prismstandard.namespaces.basic._2 package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
- * provided in this class.
- * 
+ * A factory for creating Object objects.
  */
 @XmlRegistry
 public class ObjectFactory {
 
+    /** The Constant _PublicationName_QNAME. */
     private final static QName _PublicationName_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "publicationName");
+    
+    /** The Constant _Url_QNAME. */
     private final static QName _Url_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "url");
+    
+    /** The Constant _PublicationDate_QNAME. */
     private final static QName _PublicationDate_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "publicationDate");
+    
+    /** The Constant _StartingPage_QNAME. */
     private final static QName _StartingPage_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "startingPage");
+    
+    /** The Constant _Copyright_QNAME. */
     private final static QName _Copyright_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "copyright");
+    
+    /** The Constant _Isbn_QNAME. */
     private final static QName _Isbn_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "isbn");
+    
+    /** The Constant _Issn_QNAME. */
     private final static QName _Issn_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "issn");
+    
+    /** The Constant _Doi_QNAME. */
     private final static QName _Doi_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "doi");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.prismstandard.namespaces.basic._2
-     * 
+     * Instantiates a new object factory.
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Volume }
+     * Creates a new Object object.
      * 
+     * @return the volume
      */
     public Volume createVolume() {
         return new Volume();
     }
 
     /**
-     * Create an instance of {@link Number }
+     * Creates a new Object object.
      * 
+     * @return the number
      */
     public Number createNumber() {
         return new Number();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "publicationName")
     public JAXBElement<String> createPublicationName(String value) {
@@ -68,8 +92,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "url")
     public JAXBElement<String> createUrl(String value) {
@@ -77,8 +104,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "publicationDate")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -87,8 +117,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "startingPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -97,8 +130,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "copyright")
     public JAXBElement<String> createCopyright(String value) {
@@ -106,8 +142,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "isbn")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -116,8 +155,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "issn")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -126,8 +168,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "doi")
     public JAXBElement<String> createDoi(String value) {

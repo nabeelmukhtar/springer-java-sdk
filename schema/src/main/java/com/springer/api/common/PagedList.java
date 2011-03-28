@@ -24,18 +24,11 @@ import java.util.List;
 public interface PagedList<E> extends List<E> {
 
 	/**
-	 * Page.
+	 * Start.
 	 * 
 	 * @return the long
 	 */
-	public long page();
-	
-	/**
-	 * Pages.
-	 * 
-	 * @return the long
-	 */
-	public long pages();
+	public long start();
 	
 	/**
 	 * Per page.

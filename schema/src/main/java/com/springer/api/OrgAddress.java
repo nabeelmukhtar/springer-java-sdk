@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -17,29 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Street" minOccurs="0"/>
- *         &lt;choice maxOccurs="unbounded">
- *           &lt;element ref="{}City"/>
- *           &lt;element ref="{}Postcode"/>
- *         &lt;/choice>
- *         &lt;element ref="{}State" minOccurs="0"/>
- *         &lt;element ref="{}Country" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class OrgAddress.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -53,66 +47,51 @@ public class OrgAddress
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The street. */
     @XmlElement(name = "Street")
     protected String street;
+    
+    /** The city or postcode. */
     @XmlElementRefs({
         @XmlElementRef(name = "City", type = JAXBElement.class),
         @XmlElementRef(name = "Postcode", type = JAXBElement.class)
     })
     protected List<JAXBElement<String>> cityOrPostcode;
+    
+    /** The state. */
     @XmlElement(name = "State")
     protected String state;
+    
+    /** The country. */
     @XmlElement(name = "Country")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String country;
 
     /**
-     * Gets the value of the street property.
+     * Gets the street.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the street
      */
     public String getStreet() {
         return street;
     }
 
     /**
-     * Sets the value of the street property.
+     * Sets the street.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new street
      */
     public void setStreet(String value) {
         this.street = value;
     }
 
     /**
-     * Gets the value of the cityOrPostcode property.
+     * Gets the city or postcode.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cityOrPostcode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCityOrPostcode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * 
+     * @return the city or postcode
      */
     public List<JAXBElement<String>> getCityOrPostcode() {
         if (cityOrPostcode == null) {
@@ -122,48 +101,36 @@ public class OrgAddress
     }
 
     /**
-     * Gets the value of the state property.
+     * Gets the state.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the state
      */
     public String getState() {
         return state;
     }
 
     /**
-     * Sets the value of the state property.
+     * Sets the state.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new state
      */
     public void setState(String value) {
         this.state = value;
     }
 
     /**
-     * Gets the value of the country property.
+     * Gets the country.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the country
      */
     public String getCountry() {
         return country;
     }
 
     /**
-     * Sets the value of the country property.
+     * Sets the country.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new country
      */
     public void setCountry(String value) {
         this.country = value;

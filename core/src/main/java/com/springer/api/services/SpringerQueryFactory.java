@@ -46,27 +46,33 @@ public class SpringerQueryFactory {
     /**
      * Creates a new SpringerQuery object.
      * 
+     * @param apiKey the api key
+     * 
      * @return the metadata query
      */
-    public MetadataQuery createMetadataQuery() {
-    	return new MetadataQueryImpl();
+    public MetadataQuery createMetadataQuery(String apiKey) {
+    	return new MetadataQueryImpl(apiKey);
     }
     
     /**
      * Creates a new SpringerQuery object.
+     * 
+     * @param apiKey the api key
      * 
      * @return the images query
      */
-    public ImagesQuery createImagesQuery() {
-    	return new ImagesQueryImpl();
+    public ImagesQuery createImagesQuery(String apiKey) {
+    	return new ImagesQueryImpl(apiKey);
     }
     
     /**
      * Creates a new SpringerQuery object.
      * 
+     * @param apiKey the api key
+     * 
      * @return the open access query
      */
-    public OpenAccessQuery createOpenAccessQuery() {
-    	return new OpenAccessQueryImpl();
+    public OpenAccessQuery createOpenAccessQuery(String apiKey) {
+    	return new OpenAccessQueryImpl(apiKey);
     }
 }

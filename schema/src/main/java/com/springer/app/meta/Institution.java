@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.app.meta;
 
@@ -11,26 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.springer.com/app/meta}OrgName"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}GeoOrg" minOccurs="0"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Country"/>
- *       &lt;/sequence>
- *       &lt;attribute name="geo" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Institution.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -43,107 +40,92 @@ public class Institution
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The org name. */
     @XmlElement(name = "OrgName", required = true)
     protected String orgName;
+    
+    /** The geo org. */
     @XmlElement(name = "GeoOrg")
     protected String geoOrg;
+    
+    /** The country. */
     @XmlElement(name = "Country", required = true)
     protected String country;
+    
+    /** The geo. */
     @XmlAttribute
     protected String geo;
 
     /**
-     * Gets the value of the orgName property.
+     * Gets the org name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the org name
      */
     public String getOrgName() {
         return orgName;
     }
 
     /**
-     * Sets the value of the orgName property.
+     * Sets the org name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new org name
      */
     public void setOrgName(String value) {
         this.orgName = value;
     }
 
     /**
-     * Gets the value of the geoOrg property.
+     * Gets the geo org.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the geo org
      */
     public String getGeoOrg() {
         return geoOrg;
     }
 
     /**
-     * Sets the value of the geoOrg property.
+     * Sets the geo org.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new geo org
      */
     public void setGeoOrg(String value) {
         this.geoOrg = value;
     }
 
     /**
-     * Gets the value of the country property.
+     * Gets the country.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the country
      */
     public String getCountry() {
         return country;
     }
 
     /**
-     * Sets the value of the country property.
+     * Sets the country.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new country
      */
     public void setCountry(String value) {
         this.country = value;
     }
 
     /**
-     * Gets the value of the geo property.
+     * Gets the geo.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the geo
      */
     public String getGeo() {
         return geo;
     }
 
     /**
-     * Sets the value of the geo property.
+     * Sets the geo.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new geo
      */
     public void setGeo(String value) {
         this.geo = value;

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -10,27 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}RegistrationDate" minOccurs="0"/>
- *         &lt;element ref="{}Received" minOccurs="0"/>
- *         &lt;element ref="{}Revised" minOccurs="0"/>
- *         &lt;element ref="{}Accepted" minOccurs="0"/>
- *         &lt;element ref="{}OnlineDate" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ArticleHistory.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,133 +41,114 @@ public class ArticleHistory
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The registration date. */
     @XmlElement(name = "RegistrationDate")
     protected RegistrationDate registrationDate;
+    
+    /** The received. */
     @XmlElement(name = "Received")
     protected Received received;
+    
+    /** The revised. */
     @XmlElement(name = "Revised")
     protected Revised revised;
+    
+    /** The accepted. */
     @XmlElement(name = "Accepted")
     protected Accepted accepted;
+    
+    /** The online date. */
     @XmlElement(name = "OnlineDate")
     protected OnlineDate onlineDate;
 
     /**
-     * Gets the value of the registrationDate property.
+     * Gets the registration date.
      * 
-     * @return
-     *     possible object is
-     *     {@link RegistrationDate }
-     *     
+     * @return the registration date
      */
     public RegistrationDate getRegistrationDate() {
         return registrationDate;
     }
 
     /**
-     * Sets the value of the registrationDate property.
+     * Sets the registration date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link RegistrationDate }
-     *     
+     * @param value the new registration date
      */
     public void setRegistrationDate(RegistrationDate value) {
         this.registrationDate = value;
     }
 
     /**
-     * Gets the value of the received property.
+     * Gets the received.
      * 
-     * @return
-     *     possible object is
-     *     {@link Received }
-     *     
+     * @return the received
      */
     public Received getReceived() {
         return received;
     }
 
     /**
-     * Sets the value of the received property.
+     * Sets the received.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Received }
-     *     
+     * @param value the new received
      */
     public void setReceived(Received value) {
         this.received = value;
     }
 
     /**
-     * Gets the value of the revised property.
+     * Gets the revised.
      * 
-     * @return
-     *     possible object is
-     *     {@link Revised }
-     *     
+     * @return the revised
      */
     public Revised getRevised() {
         return revised;
     }
 
     /**
-     * Sets the value of the revised property.
+     * Sets the revised.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Revised }
-     *     
+     * @param value the new revised
      */
     public void setRevised(Revised value) {
         this.revised = value;
     }
 
     /**
-     * Gets the value of the accepted property.
+     * Gets the accepted.
      * 
-     * @return
-     *     possible object is
-     *     {@link Accepted }
-     *     
+     * @return the accepted
      */
     public Accepted getAccepted() {
         return accepted;
     }
 
     /**
-     * Sets the value of the accepted property.
+     * Sets the accepted.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Accepted }
-     *     
+     * @param value the new accepted
      */
     public void setAccepted(Accepted value) {
         this.accepted = value;
     }
 
     /**
-     * Gets the value of the onlineDate property.
+     * Gets the online date.
      * 
-     * @return
-     *     possible object is
-     *     {@link OnlineDate }
-     *     
+     * @return the online date
      */
     public OnlineDate getOnlineDate() {
         return onlineDate;
     }
 
     /**
-     * Sets the value of the onlineDate property.
+     * Sets the online date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link OnlineDate }
-     *     
+     * @param value the new online date
      */
     public void setOnlineDate(OnlineDate value) {
         this.onlineDate = value;

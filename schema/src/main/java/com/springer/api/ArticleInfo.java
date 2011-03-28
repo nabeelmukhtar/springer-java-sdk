@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,41 +30,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}ArticleID"/>
- *         &lt;element ref="{}ArticleDOI"/>
- *         &lt;element ref="{}ArticleSequenceNumber"/>
- *         &lt;element ref="{}ArticleTitle"/>
- *         &lt;element ref="{}ArticleSubTitle" minOccurs="0"/>
- *         &lt;element ref="{}ArticleCategory" minOccurs="0"/>
- *         &lt;element ref="{}ArticleFirstPage"/>
- *         &lt;element ref="{}ArticleLastPage"/>
- *         &lt;element ref="{}ArticleHistory"/>
- *         &lt;element ref="{}ArticleEditorialResponsibility" minOccurs="0"/>
- *         &lt;element ref="{}ArticleCopyright"/>
- *         &lt;element ref="{}ArticleGrants"/>
- *         &lt;element ref="{}ArticleContext" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="ArticleCitation" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="ArticleType" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="ContainsESM" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="Language" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="NumberingStyle" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="TocLevels" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ArticleInfo.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -71,506 +53,431 @@ public class ArticleInfo
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The article id. */
     @XmlElement(name = "ArticleID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleID;
+    
+    /** The article doi. */
     @XmlElement(name = "ArticleDOI", required = true)
     protected String articleDOI;
+    
+    /** The article sequence number. */
     @XmlElement(name = "ArticleSequenceNumber", required = true)
     protected String articleSequenceNumber;
+    
+    /** The article title. */
     @XmlElement(name = "ArticleTitle", required = true)
     protected ArticleTitle articleTitle;
+    
+    /** The article sub title. */
     @XmlElement(name = "ArticleSubTitle")
     protected ArticleSubTitle articleSubTitle;
+    
+    /** The article category. */
     @XmlElement(name = "ArticleCategory")
     protected String articleCategory;
+    
+    /** The article first page. */
     @XmlElement(name = "ArticleFirstPage", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleFirstPage;
+    
+    /** The article last page. */
     @XmlElement(name = "ArticleLastPage", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleLastPage;
+    
+    /** The article history. */
     @XmlElement(name = "ArticleHistory", required = true)
     protected ArticleHistory articleHistory;
+    
+    /** The article editorial responsibility. */
     @XmlElement(name = "ArticleEditorialResponsibility")
     protected ArticleEditorialResponsibility articleEditorialResponsibility;
+    
+    /** The article copyright. */
     @XmlElement(name = "ArticleCopyright", required = true)
     protected ArticleCopyright articleCopyright;
+    
+    /** The article grants. */
     @XmlElement(name = "ArticleGrants", required = true)
     protected ArticleGrants articleGrants;
+    
+    /** The article context. */
     @XmlElement(name = "ArticleContext")
     protected ArticleContext articleContext;
+    
+    /** The article citation. */
     @XmlAttribute(name = "ArticleCitation")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleCitation;
+    
+    /** The article type. */
     @XmlAttribute(name = "ArticleType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleType;
+    
+    /** The contains esm. */
     @XmlAttribute(name = "ContainsESM", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String containsESM;
+    
+    /** The language. */
     @XmlAttribute(name = "Language", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
+    
+    /** The numbering style. */
     @XmlAttribute(name = "NumberingStyle", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String numberingStyle;
+    
+    /** The toc levels. */
     @XmlAttribute(name = "TocLevels", required = true)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long tocLevels;
 
     /**
-     * Gets the value of the articleID property.
+     * Gets the article id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article id
      */
     public String getArticleID() {
         return articleID;
     }
 
     /**
-     * Sets the value of the articleID property.
+     * Sets the article id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article id
      */
     public void setArticleID(String value) {
         this.articleID = value;
     }
 
     /**
-     * Gets the value of the articleDOI property.
+     * Gets the article doi.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article doi
      */
     public String getArticleDOI() {
         return articleDOI;
     }
 
     /**
-     * Sets the value of the articleDOI property.
+     * Sets the article doi.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article doi
      */
     public void setArticleDOI(String value) {
         this.articleDOI = value;
     }
 
     /**
-     * Gets the value of the articleSequenceNumber property.
+     * Gets the article sequence number.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article sequence number
      */
     public String getArticleSequenceNumber() {
         return articleSequenceNumber;
     }
 
     /**
-     * Sets the value of the articleSequenceNumber property.
+     * Sets the article sequence number.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article sequence number
      */
     public void setArticleSequenceNumber(String value) {
         this.articleSequenceNumber = value;
     }
 
     /**
-     * Gets the value of the articleTitle property.
+     * Gets the article title.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleTitle }
-     *     
+     * @return the article title
      */
     public ArticleTitle getArticleTitle() {
         return articleTitle;
     }
 
     /**
-     * Sets the value of the articleTitle property.
+     * Sets the article title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleTitle }
-     *     
+     * @param value the new article title
      */
     public void setArticleTitle(ArticleTitle value) {
         this.articleTitle = value;
     }
 
     /**
-     * Gets the value of the articleSubTitle property.
+     * Gets the article sub title.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleSubTitle }
-     *     
+     * @return the article sub title
      */
     public ArticleSubTitle getArticleSubTitle() {
         return articleSubTitle;
     }
 
     /**
-     * Sets the value of the articleSubTitle property.
+     * Sets the article sub title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleSubTitle }
-     *     
+     * @param value the new article sub title
      */
     public void setArticleSubTitle(ArticleSubTitle value) {
         this.articleSubTitle = value;
     }
 
     /**
-     * Gets the value of the articleCategory property.
+     * Gets the article category.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article category
      */
     public String getArticleCategory() {
         return articleCategory;
     }
 
     /**
-     * Sets the value of the articleCategory property.
+     * Sets the article category.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article category
      */
     public void setArticleCategory(String value) {
         this.articleCategory = value;
     }
 
     /**
-     * Gets the value of the articleFirstPage property.
+     * Gets the article first page.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article first page
      */
     public String getArticleFirstPage() {
         return articleFirstPage;
     }
 
     /**
-     * Sets the value of the articleFirstPage property.
+     * Sets the article first page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article first page
      */
     public void setArticleFirstPage(String value) {
         this.articleFirstPage = value;
     }
 
     /**
-     * Gets the value of the articleLastPage property.
+     * Gets the article last page.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article last page
      */
     public String getArticleLastPage() {
         return articleLastPage;
     }
 
     /**
-     * Sets the value of the articleLastPage property.
+     * Sets the article last page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article last page
      */
     public void setArticleLastPage(String value) {
         this.articleLastPage = value;
     }
 
     /**
-     * Gets the value of the articleHistory property.
+     * Gets the article history.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleHistory }
-     *     
+     * @return the article history
      */
     public ArticleHistory getArticleHistory() {
         return articleHistory;
     }
 
     /**
-     * Sets the value of the articleHistory property.
+     * Sets the article history.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleHistory }
-     *     
+     * @param value the new article history
      */
     public void setArticleHistory(ArticleHistory value) {
         this.articleHistory = value;
     }
 
     /**
-     * Gets the value of the articleEditorialResponsibility property.
+     * Gets the article editorial responsibility.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleEditorialResponsibility }
-     *     
+     * @return the article editorial responsibility
      */
     public ArticleEditorialResponsibility getArticleEditorialResponsibility() {
         return articleEditorialResponsibility;
     }
 
     /**
-     * Sets the value of the articleEditorialResponsibility property.
+     * Sets the article editorial responsibility.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleEditorialResponsibility }
-     *     
+     * @param value the new article editorial responsibility
      */
     public void setArticleEditorialResponsibility(ArticleEditorialResponsibility value) {
         this.articleEditorialResponsibility = value;
     }
 
     /**
-     * Gets the value of the articleCopyright property.
+     * Gets the article copyright.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleCopyright }
-     *     
+     * @return the article copyright
      */
     public ArticleCopyright getArticleCopyright() {
         return articleCopyright;
     }
 
     /**
-     * Sets the value of the articleCopyright property.
+     * Sets the article copyright.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleCopyright }
-     *     
+     * @param value the new article copyright
      */
     public void setArticleCopyright(ArticleCopyright value) {
         this.articleCopyright = value;
     }
 
     /**
-     * Gets the value of the articleGrants property.
+     * Gets the article grants.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleGrants }
-     *     
+     * @return the article grants
      */
     public ArticleGrants getArticleGrants() {
         return articleGrants;
     }
 
     /**
-     * Sets the value of the articleGrants property.
+     * Sets the article grants.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleGrants }
-     *     
+     * @param value the new article grants
      */
     public void setArticleGrants(ArticleGrants value) {
         this.articleGrants = value;
     }
 
     /**
-     * Gets the value of the articleContext property.
+     * Gets the article context.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleContext }
-     *     
+     * @return the article context
      */
     public ArticleContext getArticleContext() {
         return articleContext;
     }
 
     /**
-     * Sets the value of the articleContext property.
+     * Sets the article context.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleContext }
-     *     
+     * @param value the new article context
      */
     public void setArticleContext(ArticleContext value) {
         this.articleContext = value;
     }
 
     /**
-     * Gets the value of the articleCitation property.
+     * Gets the article citation.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article citation
      */
     public String getArticleCitation() {
         return articleCitation;
     }
 
     /**
-     * Sets the value of the articleCitation property.
+     * Sets the article citation.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article citation
      */
     public void setArticleCitation(String value) {
         this.articleCitation = value;
     }
 
     /**
-     * Gets the value of the articleType property.
+     * Gets the article type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article type
      */
     public String getArticleType() {
         return articleType;
     }
 
     /**
-     * Sets the value of the articleType property.
+     * Sets the article type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article type
      */
     public void setArticleType(String value) {
         this.articleType = value;
     }
 
     /**
-     * Gets the value of the containsESM property.
+     * Gets the contains esm.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the contains esm
      */
     public String getContainsESM() {
         return containsESM;
     }
 
     /**
-     * Sets the value of the containsESM property.
+     * Sets the contains esm.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new contains esm
      */
     public void setContainsESM(String value) {
         this.containsESM = value;
     }
 
     /**
-     * Gets the value of the language property.
+     * Gets the language.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the language
      */
     public String getLanguage() {
         return language;
     }
 
     /**
-     * Sets the value of the language property.
+     * Sets the language.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new language
      */
     public void setLanguage(String value) {
         this.language = value;
     }
 
     /**
-     * Gets the value of the numberingStyle property.
+     * Gets the numbering style.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the numbering style
      */
     public String getNumberingStyle() {
         return numberingStyle;
     }
 
     /**
-     * Sets the value of the numberingStyle property.
+     * Sets the numbering style.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new numbering style
      */
     public void setNumberingStyle(String value) {
         this.numberingStyle = value;
     }
 
     /**
-     * Gets the value of the tocLevels property.
+     * Gets the toc levels.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the toc levels
      */
     public Long getTocLevels() {
         return tocLevels;
     }
 
     /**
-     * Sets the value of the tocLevels property.
+     * Sets the toc levels.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new toc levels
      */
     public void setTocLevels(Long value) {
         this.tocLevels = value;

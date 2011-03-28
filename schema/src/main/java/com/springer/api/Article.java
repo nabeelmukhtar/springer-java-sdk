@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -15,29 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}ArticleInfo"/>
- *         &lt;element ref="{}ArticleHeader"/>
- *         &lt;element ref="{}Body" minOccurs="0"/>
- *         &lt;element ref="{}BodyRef" maxOccurs="unbounded"/>
- *         &lt;element ref="{}ArticleBackmatter"/>
- *       &lt;/sequence>
- *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="OutputMedium" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Article.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -52,117 +46,97 @@ public class Article
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The article info. */
     @XmlElement(name = "ArticleInfo", required = true)
     protected ArticleInfo articleInfo;
+    
+    /** The article header. */
     @XmlElement(name = "ArticleHeader", required = true)
     protected ArticleHeader articleHeader;
+    
+    /** The body. */
     @XmlElement(name = "Body")
     protected Body body;
+    
+    /** The body ref. */
     @XmlElement(name = "BodyRef", required = true)
     protected List<BodyRef> bodyRef;
+    
+    /** The article backmatter. */
     @XmlElement(name = "ArticleBackmatter", required = true)
     protected ArticleBackmatter articleBackmatter;
+    
+    /** The id. */
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
+    
+    /** The output medium. */
     @XmlAttribute(name = "OutputMedium")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
 
     /**
-     * Gets the value of the articleInfo property.
+     * Gets the article info.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleInfo }
-     *     
+     * @return the article info
      */
     public ArticleInfo getArticleInfo() {
         return articleInfo;
     }
 
     /**
-     * Sets the value of the articleInfo property.
+     * Sets the article info.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleInfo }
-     *     
+     * @param value the new article info
      */
     public void setArticleInfo(ArticleInfo value) {
         this.articleInfo = value;
     }
 
     /**
-     * Gets the value of the articleHeader property.
+     * Gets the article header.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleHeader }
-     *     
+     * @return the article header
      */
     public ArticleHeader getArticleHeader() {
         return articleHeader;
     }
 
     /**
-     * Sets the value of the articleHeader property.
+     * Sets the article header.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleHeader }
-     *     
+     * @param value the new article header
      */
     public void setArticleHeader(ArticleHeader value) {
         this.articleHeader = value;
     }
 
     /**
-     * Gets the value of the body property.
+     * Gets the body.
      * 
-     * @return
-     *     possible object is
-     *     {@link Body }
-     *     
+     * @return the body
      */
     public Body getBody() {
         return body;
     }
 
     /**
-     * Sets the value of the body property.
+     * Sets the body.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Body }
-     *     
+     * @param value the new body
      */
     public void setBody(Body value) {
         this.body = value;
     }
 
     /**
-     * Gets the value of the bodyRef property.
+     * Gets the body ref.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bodyRef property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBodyRef().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BodyRef }
-     * 
-     * 
+     * @return the body ref
      */
     public List<BodyRef> getBodyRef() {
         if (bodyRef == null) {
@@ -172,72 +146,54 @@ public class Article
     }
 
     /**
-     * Gets the value of the articleBackmatter property.
+     * Gets the article backmatter.
      * 
-     * @return
-     *     possible object is
-     *     {@link ArticleBackmatter }
-     *     
+     * @return the article backmatter
      */
     public ArticleBackmatter getArticleBackmatter() {
         return articleBackmatter;
     }
 
     /**
-     * Sets the value of the articleBackmatter property.
+     * Sets the article backmatter.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ArticleBackmatter }
-     *     
+     * @param value the new article backmatter
      */
     public void setArticleBackmatter(ArticleBackmatter value) {
         this.articleBackmatter = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;
     }
 
     /**
-     * Gets the value of the outputMedium property.
+     * Gets the output medium.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the output medium
      */
     public String getOutputMedium() {
         return outputMedium;
     }
 
     /**
-     * Sets the value of the outputMedium property.
+     * Sets the output medium.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new output medium
      */
     public void setOutputMedium(String value) {
         this.outputMedium = value;

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,29 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}MetadataGrant"/>
- *         &lt;element ref="{}AbstractGrant"/>
- *         &lt;element ref="{}BodyPDFGrant"/>
- *         &lt;element ref="{}BodyHTMLGrant"/>
- *         &lt;element ref="{}BibliographyGrant"/>
- *         &lt;element ref="{}ESMGrant"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ArticleGrants.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -51,186 +45,159 @@ public class ArticleGrants
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The metadata grant. */
     @XmlElement(name = "MetadataGrant", required = true)
     protected MetadataGrant metadataGrant;
+    
+    /** The abstract grant. */
     @XmlElement(name = "AbstractGrant", required = true)
     protected AbstractGrant abstractGrant;
+    
+    /** The body pdf grant. */
     @XmlElement(name = "BodyPDFGrant", required = true)
     protected BodyPDFGrant bodyPDFGrant;
+    
+    /** The body html grant. */
     @XmlElement(name = "BodyHTMLGrant", required = true)
     protected BodyHTMLGrant bodyHTMLGrant;
+    
+    /** The bibliography grant. */
     @XmlElement(name = "BibliographyGrant", required = true)
     protected BibliographyGrant bibliographyGrant;
+    
+    /** The esm grant. */
     @XmlElement(name = "ESMGrant", required = true)
     protected ESMGrant esmGrant;
+    
+    /** The type. */
     @XmlAttribute(name = "Type", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
 
     /**
-     * Gets the value of the metadataGrant property.
+     * Gets the metadata grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link MetadataGrant }
-     *     
+     * @return the metadata grant
      */
     public MetadataGrant getMetadataGrant() {
         return metadataGrant;
     }
 
     /**
-     * Sets the value of the metadataGrant property.
+     * Sets the metadata grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link MetadataGrant }
-     *     
+     * @param value the new metadata grant
      */
     public void setMetadataGrant(MetadataGrant value) {
         this.metadataGrant = value;
     }
 
     /**
-     * Gets the value of the abstractGrant property.
+     * Gets the abstract grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link AbstractGrant }
-     *     
+     * @return the abstract grant
      */
     public AbstractGrant getAbstractGrant() {
         return abstractGrant;
     }
 
     /**
-     * Sets the value of the abstractGrant property.
+     * Sets the abstract grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link AbstractGrant }
-     *     
+     * @param value the new abstract grant
      */
     public void setAbstractGrant(AbstractGrant value) {
         this.abstractGrant = value;
     }
 
     /**
-     * Gets the value of the bodyPDFGrant property.
+     * Gets the body pdf grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link BodyPDFGrant }
-     *     
+     * @return the body pdf grant
      */
     public BodyPDFGrant getBodyPDFGrant() {
         return bodyPDFGrant;
     }
 
     /**
-     * Sets the value of the bodyPDFGrant property.
+     * Sets the body pdf grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BodyPDFGrant }
-     *     
+     * @param value the new body pdf grant
      */
     public void setBodyPDFGrant(BodyPDFGrant value) {
         this.bodyPDFGrant = value;
     }
 
     /**
-     * Gets the value of the bodyHTMLGrant property.
+     * Gets the body html grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link BodyHTMLGrant }
-     *     
+     * @return the body html grant
      */
     public BodyHTMLGrant getBodyHTMLGrant() {
         return bodyHTMLGrant;
     }
 
     /**
-     * Sets the value of the bodyHTMLGrant property.
+     * Sets the body html grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BodyHTMLGrant }
-     *     
+     * @param value the new body html grant
      */
     public void setBodyHTMLGrant(BodyHTMLGrant value) {
         this.bodyHTMLGrant = value;
     }
 
     /**
-     * Gets the value of the bibliographyGrant property.
+     * Gets the bibliography grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link BibliographyGrant }
-     *     
+     * @return the bibliography grant
      */
     public BibliographyGrant getBibliographyGrant() {
         return bibliographyGrant;
     }
 
     /**
-     * Sets the value of the bibliographyGrant property.
+     * Sets the bibliography grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BibliographyGrant }
-     *     
+     * @param value the new bibliography grant
      */
     public void setBibliographyGrant(BibliographyGrant value) {
         this.bibliographyGrant = value;
     }
 
     /**
-     * Gets the value of the esmGrant property.
+     * Gets the eSM grant.
      * 
-     * @return
-     *     possible object is
-     *     {@link ESMGrant }
-     *     
+     * @return the eSM grant
      */
     public ESMGrant getESMGrant() {
         return esmGrant;
     }
 
     /**
-     * Sets the value of the esmGrant property.
+     * Sets the eSM grant.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ESMGrant }
-     *     
+     * @param value the new eSM grant
      */
     public void setESMGrant(ESMGrant value) {
         this.esmGrant = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;

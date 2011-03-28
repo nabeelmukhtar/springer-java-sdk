@@ -16,12 +16,12 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.images.Indicator;
+import com.springer.api.schema.OpenAccess;
 
 
 
 /**
  * The Interface OpenAccessQuery.
  */
-public interface OpenAccessQuery extends SpringerQuery<Indicator> {
+public interface OpenAccessQuery extends SpringerQuery<OpenAccess> {
 }

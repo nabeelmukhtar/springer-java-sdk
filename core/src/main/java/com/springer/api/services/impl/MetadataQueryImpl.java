@@ -19,42 +19,39 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.images.Country;
+import com.springer.api.schema.Metadata;
 import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
  * The Class MetadataQueryImpl.
  */
-public class MetadataQueryImpl extends BaseSpringerQuery<Country> implements
+public class MetadataQueryImpl extends BaseSpringerQuery<Metadata> implements
 	MetadataQuery {
+
+	/**
+	 * Instantiates a new metadata query impl.
+	 * 
+	 * @param apiKey the api key
+	 */
+	public MetadataQueryImpl(String apiKey) {
+		super(apiKey);
+	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.WorldBankQuery#reset()
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.METADATA_URL);
+		apiUrlBuilder = createSpringerApiUrlBuilder(SpringerApiUrls.METADATA_URL);
 	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.impl.BaseWorldBankQuery#unmarshall(com.google.gson.JsonElement)
 	 */
 	@Override
-	protected Country unmarshall(JsonElement response) {
+	protected Metadata unmarshall(JsonElement response) {
 		Gson gson = getGsonBuilder().create();
-		return gson.fromJson(response, Country.class);
+		return gson.fromJson(response, Metadata.class);
 	}
-
-	/* (non-Javadoc)
-	 * @see com.github.api.v2.services.OrganizationService#addTeamMember(java.lang.String, java.lang.String)
-	 */
-//	@Override
-//	public void addTeamMember(String teamId, String userName) {
-//		GitHubApiUrlBuilder builder = createGitHubApiUrlBuilder(WorldBankApiUrls.ADD_TEAM_MEMBER_URL);
-//        String                apiUrl  = builder.withField(ParameterNames.TEAM_ID, teamId).buildUrl();
-//        Map<String, String> parameters = new HashMap<String, String>();
-//        parameters.put(ParameterNames.NAME, userName);
-//        unmarshall(callApiPost(apiUrl, parameters));
-//	}
 }

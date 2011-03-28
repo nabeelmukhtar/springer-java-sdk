@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -17,27 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
- *         &lt;element ref="{}AuthorName"/>
- *         &lt;element ref="{}Biography"/>
- *         &lt;element ref="{}Contact"/>
- *       &lt;/choice>
- *       &lt;attribute name="AffiliationIDS" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *       &lt;attribute name="CorrespondingAffiliationID" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Author.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -48,7 +44,10 @@ public class Author
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The content. */
     @XmlElementRefs({
         @XmlElementRef(name = "AuthorName", type = AuthorName.class),
         @XmlElementRef(name = "Biography", type = Biography.class),
@@ -56,36 +55,20 @@ public class Author
     })
     @XmlMixed
     protected List<Object> content;
+    
+    /** The affiliation ids. */
     @XmlAttribute(name = "AffiliationIDS")
     protected String affiliationIDS;
+    
+    /** The corresponding affiliation id. */
     @XmlAttribute(name = "CorrespondingAffiliationID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String correspondingAffiliationID;
 
     /**
-     * Gets the value of the content property.
+     * Gets the content.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getContent().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * {@link AuthorName }
-     * {@link Biography }
-     * {@link Contact }
-     * 
-     * 
+     * @return the content
      */
     public List<Object> getContent() {
         if (content == null) {
@@ -95,48 +78,36 @@ public class Author
     }
 
     /**
-     * Gets the value of the affiliationIDS property.
+     * Gets the affiliation ids.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the affiliation ids
      */
     public String getAffiliationIDS() {
         return affiliationIDS;
     }
 
     /**
-     * Sets the value of the affiliationIDS property.
+     * Sets the affiliation ids.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new affiliation ids
      */
     public void setAffiliationIDS(String value) {
         this.affiliationIDS = value;
     }
 
     /**
-     * Gets the value of the correspondingAffiliationID property.
+     * Gets the corresponding affiliation id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the corresponding affiliation id
      */
     public String getCorrespondingAffiliationID() {
         return correspondingAffiliationID;
     }
 
     /**
-     * Sets the value of the correspondingAffiliationID property.
+     * Sets the corresponding affiliation id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new corresponding affiliation id
      */
     public void setCorrespondingAffiliationID(String value) {
         this.correspondingAffiliationID = value;

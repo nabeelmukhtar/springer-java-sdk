@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -15,29 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Heading"/>
- *         &lt;element ref="{}Para" minOccurs="0"/>
- *         &lt;choice>
- *           &lt;element ref="{}Figure"/>
- *           &lt;element ref="{}Section4" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;/choice>
- *       &lt;/sequence>
- *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Section3.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -51,112 +45,88 @@ public class Section3
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     @XmlElement(name = "Heading", required = true)
     protected Heading heading;
+    
+    /** The para. */
     @XmlElement(name = "Para")
     protected Para para;
+    
+    /** The figure. */
     @XmlElement(name = "Figure")
     protected Figure figure;
+    
+    /** The section4. */
     @XmlElement(name = "Section4")
     protected List<Section4> section4;
+    
+    /** The id. */
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
 
     /**
-     * Gets the value of the heading property.
+     * Gets the heading.
      * 
-     * @return
-     *     possible object is
-     *     {@link Heading }
-     *     
+     * @return the heading
      */
     public Heading getHeading() {
         return heading;
     }
 
     /**
-     * Sets the value of the heading property.
+     * Sets the heading.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Heading }
-     *     
+     * @param value the new heading
      */
     public void setHeading(Heading value) {
         this.heading = value;
     }
 
     /**
-     * Gets the value of the para property.
+     * Gets the para.
      * 
-     * @return
-     *     possible object is
-     *     {@link Para }
-     *     
+     * @return the para
      */
     public Para getPara() {
         return para;
     }
 
     /**
-     * Sets the value of the para property.
+     * Sets the para.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Para }
-     *     
+     * @param value the new para
      */
     public void setPara(Para value) {
         this.para = value;
     }
 
     /**
-     * Gets the value of the figure property.
+     * Gets the figure.
      * 
-     * @return
-     *     possible object is
-     *     {@link Figure }
-     *     
+     * @return the figure
      */
     public Figure getFigure() {
         return figure;
     }
 
     /**
-     * Sets the value of the figure property.
+     * Sets the figure.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Figure }
-     *     
+     * @param value the new figure
      */
     public void setFigure(Figure value) {
         this.figure = value;
     }
 
     /**
-     * Gets the value of the section4 property.
+     * Gets the section4.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the section4 property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSection4().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Section4 }
-     * 
-     * 
+     * @return the section4
      */
     public List<Section4> getSection4() {
         if (section4 == null) {
@@ -166,24 +136,18 @@ public class Section3
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;

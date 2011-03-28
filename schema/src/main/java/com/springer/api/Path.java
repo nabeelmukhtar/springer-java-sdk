@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,21 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>anyURI">
- *       &lt;attribute name="Type" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Path.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -38,56 +40,49 @@ public class Path
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The value. */
     @XmlValue
     protected String value;
+    
+    /** The type. */
     @XmlAttribute(name = "Type")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
 
     /**
-     * Gets the value of the value property.
+     * Gets the value.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the value
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * Sets the value of the value property.
+     * Sets the value.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new value
      */
     public void setValue(String value) {
         this.value = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;

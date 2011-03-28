@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -10,27 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}JournalID"/>
- *         &lt;element ref="{}VolumeIDStart"/>
- *         &lt;element ref="{}VolumeIDEnd"/>
- *         &lt;element ref="{}IssueIDStart"/>
- *         &lt;element ref="{}IssueIDEnd"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ArticleContext.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,133 +41,114 @@ public class ArticleContext
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The journal id. */
     @XmlElement(name = "JournalID", required = true)
     protected String journalID;
+    
+    /** The volume id start. */
     @XmlElement(name = "VolumeIDStart", required = true)
     protected String volumeIDStart;
+    
+    /** The volume id end. */
     @XmlElement(name = "VolumeIDEnd", required = true)
     protected String volumeIDEnd;
+    
+    /** The issue id start. */
     @XmlElement(name = "IssueIDStart", required = true)
     protected String issueIDStart;
+    
+    /** The issue id end. */
     @XmlElement(name = "IssueIDEnd", required = true)
     protected String issueIDEnd;
 
     /**
-     * Gets the value of the journalID property.
+     * Gets the journal id.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the journal id
      */
     public String getJournalID() {
         return journalID;
     }
 
     /**
-     * Sets the value of the journalID property.
+     * Sets the journal id.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new journal id
      */
     public void setJournalID(String value) {
         this.journalID = value;
     }
 
     /**
-     * Gets the value of the volumeIDStart property.
+     * Gets the volume id start.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume id start
      */
     public String getVolumeIDStart() {
         return volumeIDStart;
     }
 
     /**
-     * Sets the value of the volumeIDStart property.
+     * Sets the volume id start.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume id start
      */
     public void setVolumeIDStart(String value) {
         this.volumeIDStart = value;
     }
 
     /**
-     * Gets the value of the volumeIDEnd property.
+     * Gets the volume id end.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume id end
      */
     public String getVolumeIDEnd() {
         return volumeIDEnd;
     }
 
     /**
-     * Sets the value of the volumeIDEnd property.
+     * Sets the volume id end.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume id end
      */
     public void setVolumeIDEnd(String value) {
         this.volumeIDEnd = value;
     }
 
     /**
-     * Gets the value of the issueIDStart property.
+     * Gets the issue id start.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the issue id start
      */
     public String getIssueIDStart() {
         return issueIDStart;
     }
 
     /**
-     * Sets the value of the issueIDStart property.
+     * Sets the issue id start.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new issue id start
      */
     public void setIssueIDStart(String value) {
         this.issueIDStart = value;
     }
 
     /**
-     * Gets the value of the issueIDEnd property.
+     * Gets the issue id end.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the issue id end
      */
     public String getIssueIDEnd() {
         return issueIDEnd;
     }
 
     /**
-     * Sets the value of the issueIDEnd property.
+     * Sets the issue id end.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new issue id end
      */
     public void setIssueIDEnd(String value) {
         this.issueIDEnd = value;

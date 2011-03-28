@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -15,25 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Heading" minOccurs="0"/>
- *         &lt;element ref="{}Keyword" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Language" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class KeywordGroup.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,60 +43,44 @@ public class KeywordGroup
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     @XmlElement(name = "Heading")
     protected Heading heading;
+    
+    /** The keyword. */
     @XmlElement(name = "Keyword", required = true)
     protected List<String> keyword;
+    
+    /** The language. */
     @XmlAttribute(name = "Language", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
 
     /**
-     * Gets the value of the heading property.
+     * Gets the heading.
      * 
-     * @return
-     *     possible object is
-     *     {@link Heading }
-     *     
+     * @return the heading
      */
     public Heading getHeading() {
         return heading;
     }
 
     /**
-     * Sets the value of the heading property.
+     * Sets the heading.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Heading }
-     *     
+     * @param value the new heading
      */
     public void setHeading(Heading value) {
         this.heading = value;
     }
 
     /**
-     * Gets the value of the keyword property.
+     * Gets the keyword.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the keyword property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getKeyword().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
+     * @return the keyword
      */
     public List<String> getKeyword() {
         if (keyword == null) {
@@ -108,24 +90,18 @@ public class KeywordGroup
     }
 
     /**
-     * Gets the value of the language property.
+     * Gets the language.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the language
      */
     public String getLanguage() {
         return language;
     }
 
     /**
-     * Sets the value of the language property.
+     * Sets the language.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new language
      */
     public void setLanguage(String value) {
         this.language = value;

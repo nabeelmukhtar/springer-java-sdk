@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,25 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}InlineMediaObject"/>
- *         &lt;element ref="{}EquationSource"/>
- *       &lt;/sequence>
- *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class InlineEquation.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -42,82 +40,71 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class InlineEquation implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The inline media object. */
     @XmlElement(name = "InlineMediaObject", required = true)
     protected ImageObject inlineMediaObject;
+    
+    /** The equation source. */
     @XmlElement(name = "EquationSource", required = true)
     protected EquationSource equationSource;
+    
+    /** The id. */
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
 
     /**
-     * Gets the value of the inlineMediaObject property.
+     * Gets the inline media object.
      * 
-     * @return
-     *     possible object is
-     *     {@link ImageObject }
-     *     
+     * @return the inline media object
      */
     public ImageObject getInlineMediaObject() {
         return inlineMediaObject;
     }
 
     /**
-     * Sets the value of the inlineMediaObject property.
+     * Sets the inline media object.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ImageObject }
-     *     
+     * @param value the new inline media object
      */
     public void setInlineMediaObject(ImageObject value) {
         this.inlineMediaObject = value;
     }
 
     /**
-     * Gets the value of the equationSource property.
+     * Gets the equation source.
      * 
-     * @return
-     *     possible object is
-     *     {@link EquationSource }
-     *     
+     * @return the equation source
      */
     public EquationSource getEquationSource() {
         return equationSource;
     }
 
     /**
-     * Sets the value of the equationSource property.
+     * Sets the equation source.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link EquationSource }
-     *     
+     * @param value the new equation source
      */
     public void setEquationSource(EquationSource value) {
         this.equationSource = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -12,28 +28,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}OnlineDate" minOccurs="0"/>
- *         &lt;element ref="{}PrintDate"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}CoverDate"/>
- *           &lt;element ref="{}PricelistYear"/>
- *         &lt;/sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class IssueHistory.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -47,108 +42,93 @@ public class IssueHistory
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The online date. */
     @XmlElement(name = "OnlineDate")
     protected OnlineDate onlineDate;
+    
+    /** The print date. */
     @XmlElement(name = "PrintDate", required = true)
     protected PrintDate printDate;
+    
+    /** The cover date. */
     @XmlElement(name = "CoverDate")
     protected CoverDate coverDate;
+    
+    /** The pricelist year. */
     @XmlElement(name = "PricelistYear", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long pricelistYear;
 
     /**
-     * Gets the value of the onlineDate property.
+     * Gets the online date.
      * 
-     * @return
-     *     possible object is
-     *     {@link OnlineDate }
-     *     
+     * @return the online date
      */
     public OnlineDate getOnlineDate() {
         return onlineDate;
     }
 
     /**
-     * Sets the value of the onlineDate property.
+     * Sets the online date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link OnlineDate }
-     *     
+     * @param value the new online date
      */
     public void setOnlineDate(OnlineDate value) {
         this.onlineDate = value;
     }
 
     /**
-     * Gets the value of the printDate property.
+     * Gets the prints the date.
      * 
-     * @return
-     *     possible object is
-     *     {@link PrintDate }
-     *     
+     * @return the prints the date
      */
     public PrintDate getPrintDate() {
         return printDate;
     }
 
     /**
-     * Sets the value of the printDate property.
+     * Sets the prints the date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link PrintDate }
-     *     
+     * @param value the new prints the date
      */
     public void setPrintDate(PrintDate value) {
         this.printDate = value;
     }
 
     /**
-     * Gets the value of the coverDate property.
+     * Gets the cover date.
      * 
-     * @return
-     *     possible object is
-     *     {@link CoverDate }
-     *     
+     * @return the cover date
      */
     public CoverDate getCoverDate() {
         return coverDate;
     }
 
     /**
-     * Sets the value of the coverDate property.
+     * Sets the cover date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CoverDate }
-     *     
+     * @param value the new cover date
      */
     public void setCoverDate(CoverDate value) {
         this.coverDate = value;
     }
 
     /**
-     * Gets the value of the pricelistYear property.
+     * Gets the pricelist year.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the pricelist year
      */
     public Long getPricelistYear() {
         return pricelistYear;
     }
 
     /**
-     * Sets the value of the pricelistYear property.
+     * Sets the pricelist year.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new pricelist year
      */
     public void setPricelistYear(Long value) {
         this.pricelistYear = value;

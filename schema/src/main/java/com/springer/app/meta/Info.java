@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.app.meta;
 
@@ -18,38 +34,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.springer.com/app/meta}DateLoaded" minOccurs="0"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Authors"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Institutions"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Date"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Type"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}DOI"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Title"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}ISXN"/>
- *         &lt;choice maxOccurs="unbounded">
- *           &lt;element ref="{http://www.springer.com/app/meta}Journal"/>
- *           &lt;element ref="{http://www.springer.com/app/meta}PubName"/>
- *         &lt;/choice>
- *         &lt;element ref="{http://www.springer.com/app/meta}ArticleFirstPage" minOccurs="0"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Publication"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}PublicationType"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}SubjectGroup"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Info.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -72,256 +57,217 @@ public class Info
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The date loaded. */
     @XmlElement(name = "DateLoaded")
     protected XMLGregorianCalendar dateLoaded;
+    
+    /** The authors. */
     @XmlElement(name = "Authors", required = true)
     protected Authors authors;
+    
+    /** The institutions. */
     @XmlElement(name = "Institutions", required = true)
     protected Institutions institutions;
+    
+    /** The date. */
     @XmlElement(name = "Date", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String date;
+    
+    /** The type. */
     @XmlElement(name = "Type", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
+    
+    /** The doi. */
     @XmlElement(name = "DOI", required = true)
     protected String doi;
+    
+    /** The title. */
     @XmlElement(name = "Title", required = true)
     protected Title title;
+    
+    /** The isxn. */
     @XmlElement(name = "ISXN", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String isxn;
+    
+    /** The journal or pub name. */
     @XmlElementRefs({
         @XmlElementRef(name = "PubName", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class),
         @XmlElementRef(name = "Journal", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class)
     })
     protected List<JAXBElement<String>> journalOrPubName;
+    
+    /** The article first page. */
     @XmlElement(name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleFirstPage;
+    
+    /** The publication. */
     @XmlElement(name = "Publication", required = true)
     protected String publication;
+    
+    /** The publication type. */
     @XmlElement(name = "PublicationType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String publicationType;
+    
+    /** The subject group. */
     @XmlElement(name = "SubjectGroup", required = true)
     protected SubjectGroup subjectGroup;
 
     /**
-     * Gets the value of the dateLoaded property.
+     * Gets the date loaded.
      * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @return the date loaded
      */
     public XMLGregorianCalendar getDateLoaded() {
         return dateLoaded;
     }
 
     /**
-     * Sets the value of the dateLoaded property.
+     * Sets the date loaded.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     * @param value the new date loaded
      */
     public void setDateLoaded(XMLGregorianCalendar value) {
         this.dateLoaded = value;
     }
 
     /**
-     * Gets the value of the authors property.
+     * Gets the authors.
      * 
-     * @return
-     *     possible object is
-     *     {@link Authors }
-     *     
+     * @return the authors
      */
     public Authors getAuthors() {
         return authors;
     }
 
     /**
-     * Sets the value of the authors property.
+     * Sets the authors.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Authors }
-     *     
+     * @param value the new authors
      */
     public void setAuthors(Authors value) {
         this.authors = value;
     }
 
     /**
-     * Gets the value of the institutions property.
+     * Gets the institutions.
      * 
-     * @return
-     *     possible object is
-     *     {@link Institutions }
-     *     
+     * @return the institutions
      */
     public Institutions getInstitutions() {
         return institutions;
     }
 
     /**
-     * Sets the value of the institutions property.
+     * Sets the institutions.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Institutions }
-     *     
+     * @param value the new institutions
      */
     public void setInstitutions(Institutions value) {
         this.institutions = value;
     }
 
     /**
-     * Gets the value of the date property.
+     * Gets the date.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the date
      */
     public String getDate() {
         return date;
     }
 
     /**
-     * Sets the value of the date property.
+     * Sets the date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new date
      */
     public void setDate(String value) {
         this.date = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;
     }
 
     /**
-     * Gets the value of the doi property.
+     * Gets the dOI.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the dOI
      */
     public String getDOI() {
         return doi;
     }
 
     /**
-     * Sets the value of the doi property.
+     * Sets the dOI.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new dOI
      */
     public void setDOI(String value) {
         this.doi = value;
     }
 
     /**
-     * Gets the value of the title property.
+     * Gets the title.
      * 
-     * @return
-     *     possible object is
-     *     {@link Title }
-     *     
+     * @return the title
      */
     public Title getTitle() {
         return title;
     }
 
     /**
-     * Sets the value of the title property.
+     * Sets the title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Title }
-     *     
+     * @param value the new title
      */
     public void setTitle(Title value) {
         this.title = value;
     }
 
     /**
-     * Gets the value of the isxn property.
+     * Gets the iSXN.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iSXN
      */
     public String getISXN() {
         return isxn;
     }
 
     /**
-     * Sets the value of the isxn property.
+     * Sets the iSXN.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iSXN
      */
     public void setISXN(String value) {
         this.isxn = value;
     }
 
     /**
-     * Gets the value of the journalOrPubName property.
+     * Gets the journal or pub name.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the journalOrPubName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getJournalOrPubName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * 
+     * @return the journal or pub name
      */
     public List<JAXBElement<String>> getJournalOrPubName() {
         if (journalOrPubName == null) {
@@ -331,96 +277,72 @@ public class Info
     }
 
     /**
-     * Gets the value of the articleFirstPage property.
+     * Gets the article first page.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the article first page
      */
     public String getArticleFirstPage() {
         return articleFirstPage;
     }
 
     /**
-     * Sets the value of the articleFirstPage property.
+     * Sets the article first page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new article first page
      */
     public void setArticleFirstPage(String value) {
         this.articleFirstPage = value;
     }
 
     /**
-     * Gets the value of the publication property.
+     * Gets the publication.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the publication
      */
     public String getPublication() {
         return publication;
     }
 
     /**
-     * Sets the value of the publication property.
+     * Sets the publication.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new publication
      */
     public void setPublication(String value) {
         this.publication = value;
     }
 
     /**
-     * Gets the value of the publicationType property.
+     * Gets the publication type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the publication type
      */
     public String getPublicationType() {
         return publicationType;
     }
 
     /**
-     * Sets the value of the publicationType property.
+     * Sets the publication type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new publication type
      */
     public void setPublicationType(String value) {
         this.publicationType = value;
     }
 
     /**
-     * Gets the value of the subjectGroup property.
+     * Gets the subject group.
      * 
-     * @return
-     *     possible object is
-     *     {@link SubjectGroup }
-     *     
+     * @return the subject group
      */
     public SubjectGroup getSubjectGroup() {
         return subjectGroup;
     }
 
     /**
-     * Sets the value of the subjectGroup property.
+     * Sets the subject group.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SubjectGroup }
-     *     
+     * @param value the new subject group
      */
     public void setSubjectGroup(SubjectGroup value) {
         this.subjectGroup = value;

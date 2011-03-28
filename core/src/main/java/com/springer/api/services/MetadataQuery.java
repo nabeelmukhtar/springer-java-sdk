@@ -16,12 +16,12 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.images.Country;
+import com.springer.api.schema.Metadata;
 
 
 
 /**
  * The Interface MetadataQuery.
  */
-public interface MetadataQuery extends SpringerQuery<Country> {
+public interface MetadataQuery extends SpringerQuery<Metadata> {
 }

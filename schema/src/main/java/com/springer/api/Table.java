@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,30 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Table" minOccurs="0"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}Caption"/>
- *           &lt;element ref="{}tgroup"/>
- *         &lt;/sequence>
- *         &lt;element ref="{}tfooter" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Float" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="ID" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Table.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -49,159 +42,136 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Table implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The table. */
     @XmlElement(name = "Table")
     protected Table table;
+    
+    /** The caption. */
     @XmlElement(name = "Caption")
     protected Caption caption;
+    
+    /** The tgroup. */
     protected Tgroup tgroup;
+    
+    /** The tfooter. */
     protected Tfooter tfooter;
+    
+    /** The _float. */
     @XmlAttribute(name = "Float")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String _float;
+    
+    /** The id. */
     @XmlAttribute(name = "ID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
 
     /**
-     * Gets the value of the table property.
+     * Gets the table.
      * 
-     * @return
-     *     possible object is
-     *     {@link Table }
-     *     
+     * @return the table
      */
     public Table getTable() {
         return table;
     }
 
     /**
-     * Sets the value of the table property.
+     * Sets the table.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Table }
-     *     
+     * @param value the new table
      */
     public void setTable(Table value) {
         this.table = value;
     }
 
     /**
-     * Gets the value of the caption property.
+     * Gets the caption.
      * 
-     * @return
-     *     possible object is
-     *     {@link Caption }
-     *     
+     * @return the caption
      */
     public Caption getCaption() {
         return caption;
     }
 
     /**
-     * Sets the value of the caption property.
+     * Sets the caption.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Caption }
-     *     
+     * @param value the new caption
      */
     public void setCaption(Caption value) {
         this.caption = value;
     }
 
     /**
-     * Gets the value of the tgroup property.
+     * Gets the tgroup.
      * 
-     * @return
-     *     possible object is
-     *     {@link Tgroup }
-     *     
+     * @return the tgroup
      */
     public Tgroup getTgroup() {
         return tgroup;
     }
 
     /**
-     * Sets the value of the tgroup property.
+     * Sets the tgroup.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Tgroup }
-     *     
+     * @param value the new tgroup
      */
     public void setTgroup(Tgroup value) {
         this.tgroup = value;
     }
 
     /**
-     * Gets the value of the tfooter property.
+     * Gets the tfooter.
      * 
-     * @return
-     *     possible object is
-     *     {@link Tfooter }
-     *     
+     * @return the tfooter
      */
     public Tfooter getTfooter() {
         return tfooter;
     }
 
     /**
-     * Sets the value of the tfooter property.
+     * Sets the tfooter.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Tfooter }
-     *     
+     * @param value the new tfooter
      */
     public void setTfooter(Tfooter value) {
         this.tfooter = value;
     }
 
     /**
-     * Gets the value of the float property.
+     * Gets the float.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the float
      */
     public String getFloat() {
         return _float;
     }
 
     /**
-     * Sets the value of the float property.
+     * Sets the float.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new float
      */
     public void setFloat(String value) {
         this._float = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;

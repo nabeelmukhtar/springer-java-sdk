@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -12,37 +28,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}BibAuthorName" maxOccurs="unbounded"/>
- *         &lt;element ref="{}Year"/>
- *         &lt;element ref="{}ChapterTitle"/>
- *         &lt;element ref="{}BookTitle"/>
- *         &lt;element ref="{}ConfEventLocation" minOccurs="0"/>
- *         &lt;element ref="{}ConfEventDate" minOccurs="0"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}PublisherName"/>
- *           &lt;element ref="{}PublisherLocation"/>
- *         &lt;/sequence>
- *         &lt;element ref="{}BibComments" minOccurs="0"/>
- *         &lt;element ref="{}NumberInSeries" minOccurs="0"/>
- *         &lt;element ref="{}FirstPage" minOccurs="0"/>
- *         &lt;element ref="{}LastPage" minOccurs="0"/>
- *         &lt;element ref="{}Occurrence" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class BibChapter.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -65,55 +51,65 @@ public class BibChapter
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The bib author name. */
     @XmlElement(name = "BibAuthorName", required = true)
     protected List<BibAuthorName> bibAuthorName;
+    
+    /** The year. */
     @XmlElement(name = "Year", required = true)
     protected String year;
+    
+    /** The chapter title. */
     @XmlElement(name = "ChapterTitle", required = true)
     protected ChapterTitle chapterTitle;
+    
+    /** The book title. */
     @XmlElement(name = "BookTitle", required = true)
     protected String bookTitle;
+    
+    /** The conf event location. */
     @XmlElement(name = "ConfEventLocation")
     protected String confEventLocation;
+    
+    /** The conf event date. */
     @XmlElement(name = "ConfEventDate")
     protected String confEventDate;
+    
+    /** The publisher name. */
     @XmlElement(name = "PublisherName")
     protected String publisherName;
+    
+    /** The publisher location. */
     @XmlElement(name = "PublisherLocation")
     protected String publisherLocation;
+    
+    /** The bib comments. */
     @XmlElement(name = "BibComments")
     protected String bibComments;
+    
+    /** The number in series. */
     @XmlElement(name = "NumberInSeries")
     protected String numberInSeries;
+    
+    /** The first page. */
     @XmlElement(name = "FirstPage")
     protected String firstPage;
+    
+    /** The last page. */
     @XmlElement(name = "LastPage")
     protected String lastPage;
+    
+    /** The occurrence. */
     @XmlElement(name = "Occurrence")
     protected Occurrence occurrence;
 
     /**
-     * Gets the value of the bibAuthorName property.
+     * Gets the bib author name.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bibAuthorName property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBibAuthorName().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BibAuthorName }
-     * 
-     * 
+     * @return the bib author name
      */
     public List<BibAuthorName> getBibAuthorName() {
         if (bibAuthorName == null) {
@@ -123,288 +119,216 @@ public class BibChapter
     }
 
     /**
-     * Gets the value of the year property.
+     * Gets the year.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the year
      */
     public String getYear() {
         return year;
     }
 
     /**
-     * Sets the value of the year property.
+     * Sets the year.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new year
      */
     public void setYear(String value) {
         this.year = value;
     }
 
     /**
-     * Gets the value of the chapterTitle property.
+     * Gets the chapter title.
      * 
-     * @return
-     *     possible object is
-     *     {@link ChapterTitle }
-     *     
+     * @return the chapter title
      */
     public ChapterTitle getChapterTitle() {
         return chapterTitle;
     }
 
     /**
-     * Sets the value of the chapterTitle property.
+     * Sets the chapter title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ChapterTitle }
-     *     
+     * @param value the new chapter title
      */
     public void setChapterTitle(ChapterTitle value) {
         this.chapterTitle = value;
     }
 
     /**
-     * Gets the value of the bookTitle property.
+     * Gets the book title.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the book title
      */
     public String getBookTitle() {
         return bookTitle;
     }
 
     /**
-     * Sets the value of the bookTitle property.
+     * Sets the book title.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new book title
      */
     public void setBookTitle(String value) {
         this.bookTitle = value;
     }
 
     /**
-     * Gets the value of the confEventLocation property.
+     * Gets the conf event location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the conf event location
      */
     public String getConfEventLocation() {
         return confEventLocation;
     }
 
     /**
-     * Sets the value of the confEventLocation property.
+     * Sets the conf event location.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new conf event location
      */
     public void setConfEventLocation(String value) {
         this.confEventLocation = value;
     }
 
     /**
-     * Gets the value of the confEventDate property.
+     * Gets the conf event date.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the conf event date
      */
     public String getConfEventDate() {
         return confEventDate;
     }
 
     /**
-     * Sets the value of the confEventDate property.
+     * Sets the conf event date.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new conf event date
      */
     public void setConfEventDate(String value) {
         this.confEventDate = value;
     }
 
     /**
-     * Gets the value of the publisherName property.
+     * Gets the publisher name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the publisher name
      */
     public String getPublisherName() {
         return publisherName;
     }
 
     /**
-     * Sets the value of the publisherName property.
+     * Sets the publisher name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new publisher name
      */
     public void setPublisherName(String value) {
         this.publisherName = value;
     }
 
     /**
-     * Gets the value of the publisherLocation property.
+     * Gets the publisher location.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the publisher location
      */
     public String getPublisherLocation() {
         return publisherLocation;
     }
 
     /**
-     * Sets the value of the publisherLocation property.
+     * Sets the publisher location.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new publisher location
      */
     public void setPublisherLocation(String value) {
         this.publisherLocation = value;
     }
 
     /**
-     * Gets the value of the bibComments property.
+     * Gets the bib comments.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the bib comments
      */
     public String getBibComments() {
         return bibComments;
     }
 
     /**
-     * Sets the value of the bibComments property.
+     * Sets the bib comments.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new bib comments
      */
     public void setBibComments(String value) {
         this.bibComments = value;
     }
 
     /**
-     * Gets the value of the numberInSeries property.
+     * Gets the number in series.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the number in series
      */
     public String getNumberInSeries() {
         return numberInSeries;
     }
 
     /**
-     * Sets the value of the numberInSeries property.
+     * Sets the number in series.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new number in series
      */
     public void setNumberInSeries(String value) {
         this.numberInSeries = value;
     }
 
     /**
-     * Gets the value of the firstPage property.
+     * Gets the first page.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the first page
      */
     public String getFirstPage() {
         return firstPage;
     }
 
     /**
-     * Sets the value of the firstPage property.
+     * Sets the first page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new first page
      */
     public void setFirstPage(String value) {
         this.firstPage = value;
     }
 
     /**
-     * Gets the value of the lastPage property.
+     * Gets the last page.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the last page
      */
     public String getLastPage() {
         return lastPage;
     }
 
     /**
-     * Sets the value of the lastPage property.
+     * Sets the last page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new last page
      */
     public void setLastPage(String value) {
         this.lastPage = value;
     }
 
     /**
-     * Gets the value of the occurrence property.
+     * Gets the occurrence.
      * 
-     * @return
-     *     possible object is
-     *     {@link Occurrence }
-     *     
+     * @return the occurrence
      */
     public Occurrence getOccurrence() {
         return occurrence;
     }
 
     /**
-     * Sets the value of the occurrence property.
+     * Sets the occurrence.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Occurrence }
-     *     
+     * @param value the new occurrence
      */
     public void setOccurrence(Occurrence value) {
         this.occurrence = value;

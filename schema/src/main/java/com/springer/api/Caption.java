@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,26 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}p" minOccurs="0"/>
- *         &lt;element ref="{}CaptionNumber" minOccurs="0"/>
- *         &lt;element ref="{}CaptionContent" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Language" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Caption.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,107 +42,92 @@ public class Caption
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The p. */
     protected P p;
+    
+    /** The caption number. */
     @XmlElement(name = "CaptionNumber")
     protected String captionNumber;
+    
+    /** The caption content. */
     @XmlElement(name = "CaptionContent")
     protected CaptionContent captionContent;
+    
+    /** The language. */
     @XmlAttribute(name = "Language")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
 
     /**
-     * Gets the value of the p property.
+     * Gets the p.
      * 
-     * @return
-     *     possible object is
-     *     {@link P }
-     *     
+     * @return the p
      */
     public P getP() {
         return p;
     }
 
     /**
-     * Sets the value of the p property.
+     * Sets the p.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link P }
-     *     
+     * @param value the new p
      */
     public void setP(P value) {
         this.p = value;
     }
 
     /**
-     * Gets the value of the captionNumber property.
+     * Gets the caption number.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the caption number
      */
     public String getCaptionNumber() {
         return captionNumber;
     }
 
     /**
-     * Sets the value of the captionNumber property.
+     * Sets the caption number.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new caption number
      */
     public void setCaptionNumber(String value) {
         this.captionNumber = value;
     }
 
     /**
-     * Gets the value of the captionContent property.
+     * Gets the caption content.
      * 
-     * @return
-     *     possible object is
-     *     {@link CaptionContent }
-     *     
+     * @return the caption content
      */
     public CaptionContent getCaptionContent() {
         return captionContent;
     }
 
     /**
-     * Sets the value of the captionContent property.
+     * Sets the caption content.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CaptionContent }
-     *     
+     * @param value the new caption content
      */
     public void setCaptionContent(CaptionContent value) {
         this.captionContent = value;
     }
 
     /**
-     * Gets the value of the language property.
+     * Gets the language.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the language
      */
     public String getLanguage() {
         return language;
     }
 
     /**
-     * Sets the value of the language property.
+     * Sets the language.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new language
      */
     public void setLanguage(String value) {
         this.language = value;

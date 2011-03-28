@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,27 +30,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}VolumeIDStart"/>
- *         &lt;element ref="{}VolumeIDEnd"/>
- *         &lt;element ref="{}VolumeIssueCount"/>
- *       &lt;/sequence>
- *       &lt;attribute name="TocLevels" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="VolumeType" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class VolumeInfo.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -47,135 +43,116 @@ public class VolumeInfo
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The volume id start. */
     @XmlElement(name = "VolumeIDStart", required = true)
     protected String volumeIDStart;
+    
+    /** The volume id end. */
     @XmlElement(name = "VolumeIDEnd", required = true)
     protected String volumeIDEnd;
+    
+    /** The volume issue count. */
     @XmlElement(name = "VolumeIssueCount", required = true)
     protected String volumeIssueCount;
+    
+    /** The toc levels. */
     @XmlAttribute(name = "TocLevels", required = true)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long tocLevels;
+    
+    /** The volume type. */
     @XmlAttribute(name = "VolumeType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String volumeType;
 
     /**
-     * Gets the value of the volumeIDStart property.
+     * Gets the volume id start.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume id start
      */
     public String getVolumeIDStart() {
         return volumeIDStart;
     }
 
     /**
-     * Sets the value of the volumeIDStart property.
+     * Sets the volume id start.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume id start
      */
     public void setVolumeIDStart(String value) {
         this.volumeIDStart = value;
     }
 
     /**
-     * Gets the value of the volumeIDEnd property.
+     * Gets the volume id end.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume id end
      */
     public String getVolumeIDEnd() {
         return volumeIDEnd;
     }
 
     /**
-     * Sets the value of the volumeIDEnd property.
+     * Sets the volume id end.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume id end
      */
     public void setVolumeIDEnd(String value) {
         this.volumeIDEnd = value;
     }
 
     /**
-     * Gets the value of the volumeIssueCount property.
+     * Gets the volume issue count.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume issue count
      */
     public String getVolumeIssueCount() {
         return volumeIssueCount;
     }
 
     /**
-     * Sets the value of the volumeIssueCount property.
+     * Sets the volume issue count.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume issue count
      */
     public void setVolumeIssueCount(String value) {
         this.volumeIssueCount = value;
     }
 
     /**
-     * Gets the value of the tocLevels property.
+     * Gets the toc levels.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the toc levels
      */
     public Long getTocLevels() {
         return tocLevels;
     }
 
     /**
-     * Sets the value of the tocLevels property.
+     * Sets the toc levels.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new toc levels
      */
     public void setTocLevels(Long value) {
         this.tocLevels = value;
     }
 
     /**
-     * Gets the value of the volumeType property.
+     * Gets the volume type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the volume type
      */
     public String getVolumeType() {
         return volumeType;
     }
 
     /**
-     * Sets the value of the volumeType property.
+     * Sets the volume type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new volume type
      */
     public void setVolumeType(String value) {
         this.volumeType = value;

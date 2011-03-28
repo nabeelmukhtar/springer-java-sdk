@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,25 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}GivenName"/>
- *         &lt;element ref="{}FamilyName"/>
- *       &lt;/sequence>
- *       &lt;attribute name="DisplayOrder" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class AuthorName.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -42,83 +40,72 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class AuthorName implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The given name. */
     @XmlElement(name = "GivenName", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String givenName;
+    
+    /** The family name. */
     @XmlElement(name = "FamilyName", required = true)
     protected String familyName;
+    
+    /** The display order. */
     @XmlAttribute(name = "DisplayOrder", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String displayOrder;
 
     /**
-     * Gets the value of the givenName property.
+     * Gets the given name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the given name
      */
     public String getGivenName() {
         return givenName;
     }
 
     /**
-     * Sets the value of the givenName property.
+     * Sets the given name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new given name
      */
     public void setGivenName(String value) {
         this.givenName = value;
     }
 
     /**
-     * Gets the value of the familyName property.
+     * Gets the family name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the family name
      */
     public String getFamilyName() {
         return familyName;
     }
 
     /**
-     * Sets the value of the familyName property.
+     * Sets the family name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new family name
      */
     public void setFamilyName(String value) {
         this.familyName = value;
     }
 
     /**
-     * Gets the value of the displayOrder property.
+     * Gets the display order.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the display order
      */
     public String getDisplayOrder() {
         return displayOrder;
     }
 
     /**
-     * Sets the value of the displayOrder property.
+     * Sets the display order.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new display order
      */
     public void setDisplayOrder(String value) {
         this.displayOrder = value;

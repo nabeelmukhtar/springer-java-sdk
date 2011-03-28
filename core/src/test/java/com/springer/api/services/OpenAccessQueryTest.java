@@ -21,8 +21,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.springer.api.common.PagedList;
-import com.springer.api.images.Indicator;
-import com.springer.api.services.OpenAccessQuery;
+import com.springer.api.schema.OpenAccess;
+import com.springer.api.services.constant.TestConstants;
 
 /**
  * The Class OpenAccessQueryTest.
@@ -38,7 +38,7 @@ public class OpenAccessQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createOpenAccessQuery();
+		service = factory.createOpenAccessQuery(TestConstants.TEST_OPEN_ACCESS_KEY);
 	}
 
 	/* (non-Javadoc)
@@ -55,7 +55,7 @@ public class OpenAccessQueryTest extends BaseSpringerQueryTest {
 	 */
 	@Test
 	public void testList() {
-		PagedList<Indicator> indicators = service.list();
-		assertNotNullOrEmpty("Indicators must not be null or empty.", indicators);
+		PagedList<OpenAccess> openAccess = service.withQuery(TestConstants.TEST_QUERY).list();
+		assertNotNullOrEmpty("Open Access must not be null or empty.", openAccess);
 	}
 }

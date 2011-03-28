@@ -16,6 +16,9 @@
  */
 package com.springer.api.services;
 
+import java.util.List;
+
+import com.springer.api.common.Facet;
 import com.springer.api.common.PagedList;
 
 /**
@@ -38,6 +41,13 @@ public interface SpringerQuery<E> extends SpringerCommunicator {
 	public PagedList<E> list();
 	
 	/**
+	 * Facets.
+	 * 
+	 * @return the list< facet>
+	 */
+	public List<Facet> facets();
+	
+	/**
 	 * Reset.
 	 */
 //	public void addResonseHandler(AsyncResponseHandler<List<T>> handler);
@@ -46,5 +56,14 @@ public interface SpringerQuery<E> extends SpringerCommunicator {
 	 * Reset.
 	 */
 	public void reset();
+	
+	/**
+	 * With query.
+	 * 
+	 * @param query the query
+	 * 
+	 * @return the springer query< e>
+	 */
+	public SpringerQuery<E> withQuery(String query);
 
 }

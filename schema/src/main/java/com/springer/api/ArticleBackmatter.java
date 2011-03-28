@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -10,24 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Acknowledgments" minOccurs="0"/>
- *         &lt;element ref="{}Bibliography"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ArticleBackmatter.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -39,55 +38,48 @@ public class ArticleBackmatter
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The acknowledgments. */
     @XmlElement(name = "Acknowledgments")
     protected Acknowledgments acknowledgments;
+    
+    /** The bibliography. */
     @XmlElement(name = "Bibliography", required = true)
     protected Bibliography bibliography;
 
     /**
-     * Gets the value of the acknowledgments property.
+     * Gets the acknowledgments.
      * 
-     * @return
-     *     possible object is
-     *     {@link Acknowledgments }
-     *     
+     * @return the acknowledgments
      */
     public Acknowledgments getAcknowledgments() {
         return acknowledgments;
     }
 
     /**
-     * Sets the value of the acknowledgments property.
+     * Sets the acknowledgments.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Acknowledgments }
-     *     
+     * @param value the new acknowledgments
      */
     public void setAcknowledgments(Acknowledgments value) {
         this.acknowledgments = value;
     }
 
     /**
-     * Gets the value of the bibliography property.
+     * Gets the bibliography.
      * 
-     * @return
-     *     possible object is
-     *     {@link Bibliography }
-     *     
+     * @return the bibliography
      */
     public Bibliography getBibliography() {
         return bibliography;
     }
 
     /**
-     * Sets the value of the bibliography property.
+     * Sets the bibliography.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Bibliography }
-     *     
+     * @param value the new bibliography
      */
     public void setBibliography(Bibliography value) {
         this.bibliography = value;

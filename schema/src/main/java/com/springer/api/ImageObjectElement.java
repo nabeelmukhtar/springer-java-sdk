@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -12,25 +28,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Color" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="FileRef" use="required" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
- *       &lt;attribute name="Format" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="Rendition" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class ImageObjectElement.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -39,137 +37,118 @@ public class ImageObjectElement
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The color. */
     @XmlAttribute(name = "Color", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String color;
+    
+    /** The file ref. */
     @XmlAttribute(name = "FileRef", required = true)
     protected String fileRef;
+    
+    /** The format. */
     @XmlAttribute(name = "Format", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String format;
+    
+    /** The rendition. */
     @XmlAttribute(name = "Rendition", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String rendition;
+    
+    /** The type. */
     @XmlAttribute(name = "Type", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
 
     /**
-     * Gets the value of the color property.
+     * Gets the color.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the color
      */
     public String getColor() {
         return color;
     }
 
     /**
-     * Sets the value of the color property.
+     * Sets the color.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new color
      */
     public void setColor(String value) {
         this.color = value;
     }
 
     /**
-     * Gets the value of the fileRef property.
+     * Gets the file ref.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the file ref
      */
     public String getFileRef() {
         return fileRef;
     }
 
     /**
-     * Sets the value of the fileRef property.
+     * Sets the file ref.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new file ref
      */
     public void setFileRef(String value) {
         this.fileRef = value;
     }
 
     /**
-     * Gets the value of the format property.
+     * Gets the format.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the format
      */
     public String getFormat() {
         return format;
     }
 
     /**
-     * Sets the value of the format property.
+     * Sets the format.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new format
      */
     public void setFormat(String value) {
         this.format = value;
     }
 
     /**
-     * Gets the value of the rendition property.
+     * Gets the rendition.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the rendition
      */
     public String getRendition() {
         return rendition;
     }
 
     /**
-     * Sets the value of the rendition property.
+     * Sets the rendition.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new rendition
      */
     public void setRendition(String value) {
         this.rendition = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;

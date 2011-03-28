@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,26 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}IssueInfo"/>
- *         &lt;element ref="{}Article"/>
- *       &lt;/sequence>
- *       &lt;attribute name="IssueType" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="OutputMedium" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Issue.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -44,109 +41,94 @@ public class Issue
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The issue info. */
     @XmlElement(name = "IssueInfo", required = true)
     protected IssueInfo issueInfo;
+    
+    /** The article. */
     @XmlElement(name = "Article", required = true)
     protected Article article;
+    
+    /** The issue type. */
     @XmlAttribute(name = "IssueType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String issueType;
+    
+    /** The output medium. */
     @XmlAttribute(name = "OutputMedium")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
 
     /**
-     * Gets the value of the issueInfo property.
+     * Gets the issue info.
      * 
-     * @return
-     *     possible object is
-     *     {@link IssueInfo }
-     *     
+     * @return the issue info
      */
     public IssueInfo getIssueInfo() {
         return issueInfo;
     }
 
     /**
-     * Sets the value of the issueInfo property.
+     * Sets the issue info.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link IssueInfo }
-     *     
+     * @param value the new issue info
      */
     public void setIssueInfo(IssueInfo value) {
         this.issueInfo = value;
     }
 
     /**
-     * Gets the value of the article property.
+     * Gets the article.
      * 
-     * @return
-     *     possible object is
-     *     {@link Article }
-     *     
+     * @return the article
      */
     public Article getArticle() {
         return article;
     }
 
     /**
-     * Sets the value of the article property.
+     * Sets the article.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Article }
-     *     
+     * @param value the new article
      */
     public void setArticle(Article value) {
         this.article = value;
     }
 
     /**
-     * Gets the value of the issueType property.
+     * Gets the issue type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the issue type
      */
     public String getIssueType() {
         return issueType;
     }
 
     /**
-     * Sets the value of the issueType property.
+     * Sets the issue type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new issue type
      */
     public void setIssueType(String value) {
         this.issueType = value;
     }
 
     /**
-     * Gets the value of the outputMedium property.
+     * Gets the output medium.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the output medium
      */
     public String getOutputMedium() {
         return outputMedium;
     }
 
     /**
-     * Sets the value of the outputMedium property.
+     * Sets the output medium.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new output medium
      */
     public void setOutputMedium(String value) {
         this.outputMedium = value;

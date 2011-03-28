@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,28 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}Color"/>
- *           &lt;element ref="{}Format"/>
- *         &lt;/sequence>
- *         &lt;element ref="{}Path" maxOccurs="unbounded"/>
- *         &lt;element ref="{}Type" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class File.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -48,87 +43,67 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class File implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The color. */
     @XmlElement(name = "Color")
     protected Boolean color;
+    
+    /** The format. */
     @XmlElement(name = "Format")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String format;
+    
+    /** The path. */
     @XmlElement(name = "Path", required = true)
     protected List<Path> path;
+    
+    /** The type. */
     @XmlElement(name = "Type")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
 
     /**
-     * Gets the value of the color property.
+     * Checks if is color.
      * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     * @return the boolean
      */
     public Boolean isColor() {
         return color;
     }
 
     /**
-     * Sets the value of the color property.
+     * Sets the color.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     * @param value the new color
      */
     public void setColor(Boolean value) {
         this.color = value;
     }
 
     /**
-     * Gets the value of the format property.
+     * Gets the format.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the format
      */
     public String getFormat() {
         return format;
     }
 
     /**
-     * Sets the value of the format property.
+     * Sets the format.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new format
      */
     public void setFormat(String value) {
         this.format = value;
     }
 
     /**
-     * Gets the value of the path property.
+     * Gets the path.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the path property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPath().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Path }
-     * 
-     * 
+     * @return the path
      */
     public List<Path> getPath() {
         if (path == null) {
@@ -138,24 +113,18 @@ public class File implements Serializable
     }
 
     /**
-     * Gets the value of the type property.
+     * Gets the type.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the type
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new type
      */
     public void setType(String value) {
         this.type = value;

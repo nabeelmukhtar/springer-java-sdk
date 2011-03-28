@@ -21,8 +21,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.springer.api.common.PagedList;
-import com.springer.api.images.IncomeLevel;
-import com.springer.api.services.ImagesQuery;
+import com.springer.api.schema.Image;
+import com.springer.api.services.constant.TestConstants;
 
 /**
  * The Class ImagesQueryTest.
@@ -38,7 +38,7 @@ public class ImagesQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createImagesQuery();
+		service = factory.createImagesQuery(TestConstants.TEST_IMAGES_KEY);
 	}
 
 	/* (non-Javadoc)
@@ -55,7 +55,7 @@ public class ImagesQueryTest extends BaseSpringerQueryTest {
 	 */
 	@Test
 	public void testList() {
-		PagedList<IncomeLevel> incomeLevels = service.list();
-		assertNotNullOrEmpty("Income levels must not be null or empty.", incomeLevels);
+		PagedList<Image> images = service.withQuery(TestConstants.TEST_QUERY).list();
+		assertNotNullOrEmpty("Images must not be null or empty.", images);
 	}
 }

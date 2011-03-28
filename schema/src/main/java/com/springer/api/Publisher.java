@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,26 +30,7 @@ import com.springer.app.meta.Info;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}PublisherInfo"/>
- *         &lt;element ref="{}Journal"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Info"/>
- *       &lt;/sequence>
- *       &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang use="required""/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Publisher.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -46,108 +43,93 @@ public class Publisher
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The publisher info. */
     @XmlElement(name = "PublisherInfo", required = true)
     protected PublisherInfo publisherInfo;
+    
+    /** The journal. */
     @XmlElement(name = "Journal", required = true)
     protected Journal journal;
+    
+    /** The info. */
     @XmlElement(name = "Info", namespace = "http://www.springer.com/app/meta", required = true)
     protected Info info;
+    
+    /** The lang. */
     @XmlAttribute(namespace = "http://www.w3.org/XML/1998/namespace", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String lang;
 
     /**
-     * Gets the value of the publisherInfo property.
+     * Gets the publisher info.
      * 
-     * @return
-     *     possible object is
-     *     {@link PublisherInfo }
-     *     
+     * @return the publisher info
      */
     public PublisherInfo getPublisherInfo() {
         return publisherInfo;
     }
 
     /**
-     * Sets the value of the publisherInfo property.
+     * Sets the publisher info.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link PublisherInfo }
-     *     
+     * @param value the new publisher info
      */
     public void setPublisherInfo(PublisherInfo value) {
         this.publisherInfo = value;
     }
 
     /**
-     * Gets the value of the journal property.
+     * Gets the journal.
      * 
-     * @return
-     *     possible object is
-     *     {@link Journal }
-     *     
+     * @return the journal
      */
     public Journal getJournal() {
         return journal;
     }
 
     /**
-     * Sets the value of the journal property.
+     * Sets the journal.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Journal }
-     *     
+     * @param value the new journal
      */
     public void setJournal(Journal value) {
         this.journal = value;
     }
 
     /**
-     * Gets the value of the info property.
+     * Gets the info.
      * 
-     * @return
-     *     possible object is
-     *     {@link Info }
-     *     
+     * @return the info
      */
     public Info getInfo() {
         return info;
     }
 
     /**
-     * Sets the value of the info property.
+     * Sets the info.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Info }
-     *     
+     * @param value the new info
      */
     public void setInfo(Info value) {
         this.info = value;
     }
 
     /**
-     * Gets the value of the lang property.
+     * Gets the lang.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the lang
      */
     public String getLang() {
         return lang;
     }
 
     /**
-     * Sets the value of the lang property.
+     * Sets the lang.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new lang
      */
     public void setLang(String value) {
         this.lang = value;

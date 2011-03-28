@@ -18,8 +18,9 @@ package com.springer.api.services.example;
 
 import java.util.List;
 
-
-import com.springer.api.images.Indicator;
+import com.springer.api.common.Facet;
+import com.springer.api.common.FacetValue;
+import com.springer.api.schema.OpenAccess;
 import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.SpringerQueryFactory;
 
@@ -38,19 +39,27 @@ public class OpenAccessQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		OpenAccessQuery service = factory.createOpenAccessQuery();
-		List<Indicator> indicators = service.list();
-		for (Indicator indicator : indicators) {
-			printResult(indicator);
+		OpenAccessQuery service = factory.createOpenAccessQuery("jqs3v62pb9q84z87b98mem59");
+		List<OpenAccess> openaccess = service.withQuery("mapreduce").list();
+		for (OpenAccess oa : openaccess) {
+			printResult(oa);
+		}
+		
+		List<Facet> facets = service.facets();
+		for (Facet facet : facets) {
+			System.out.println(facet.getName());
+			for (FacetValue facetValue : facet.getValues()) {
+				System.out.println(facetValue.getValue() + ":" + facetValue.getCount());
+			}
 		}
 	}
 
 	/**
 	 * Prints the result.
 	 * 
-	 * @param indicator the indicator
+	 * @param oa the oa
 	 */
-	private static void printResult(Indicator indicator) {
-		System.out.println(indicator.getId() + ":" + indicator.getName());
+	private static void printResult(OpenAccess oa) {
+		System.out.println(oa.getIdentifier() + ":" + oa.getPublicationName());
 	}
 }

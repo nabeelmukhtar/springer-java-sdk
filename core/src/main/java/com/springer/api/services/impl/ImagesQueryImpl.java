@@ -19,42 +19,39 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.images.IncomeLevel;
+import com.springer.api.schema.Image;
 import com.springer.api.services.ImagesQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 
 /**
  * The Class ImagesQueryImpl.
  */
-public class ImagesQueryImpl extends BaseSpringerQuery<IncomeLevel> implements
+public class ImagesQueryImpl extends BaseSpringerQuery<Image> implements
 	ImagesQuery {
+
+	/**
+	 * Instantiates a new images query impl.
+	 * 
+	 * @param apiKey the api key
+	 */
+	public ImagesQueryImpl(String apiKey) {
+		super(apiKey);
+	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.WorldBankQuery#reset()
 	 */
 	@Override
 	public void reset() {
-		apiUrlBuilder = createWorldBankApiUrlBuilder(SpringerApiUrls.IMAGES_URL);
+		apiUrlBuilder = createSpringerApiUrlBuilder(SpringerApiUrls.IMAGES_URL);
 	}
 
 	/* (non-Javadoc)
 	 * @see org.worldbank.api.services.impl.BaseWorldBankQuery#unmarshall(com.google.gson.JsonElement)
 	 */
 	@Override
-	protected IncomeLevel unmarshall(JsonElement response) {
+	protected Image unmarshall(JsonElement response) {
 		Gson gson = getGsonBuilder().create();
-		return gson.fromJson(response, IncomeLevel.class);
+		return gson.fromJson(response, Image.class);
 	}
-
-	/* (non-Javadoc)
-	 * @see com.github.api.v2.services.OrganizationService#addTeamMember(java.lang.String, java.lang.String)
-	 */
-//	@Override
-//	public void addTeamMember(String teamId, String userName) {
-//		GitHubApiUrlBuilder builder = createGitHubApiUrlBuilder(WorldBankApiUrls.ADD_TEAM_MEMBER_URL);
-//        String                apiUrl  = builder.withField(ParameterNames.TEAM_ID, teamId).buildUrl();
-//        Map<String, String> parameters = new HashMap<String, String>();
-//        parameters.put(ParameterNames.NAME, userName);
-//        unmarshall(callApiPost(apiUrl, parameters));
-//	}
 }

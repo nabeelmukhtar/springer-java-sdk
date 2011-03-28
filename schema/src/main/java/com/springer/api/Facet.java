@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -15,24 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}facet-value" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Facet.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -43,34 +42,22 @@ public class Facet
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The facet value. */
     @XmlElement(name = "facet-value", required = true)
     protected List<FacetValue> facetValue;
+    
+    /** The name. */
     @XmlAttribute(required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String name;
 
     /**
-     * Gets the value of the facetValue property.
+     * Gets the facet value.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the facetValue property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFacetValue().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link FacetValue }
-     * 
-     * 
+     * @return the facet value
      */
     public List<FacetValue> getFacetValue() {
         if (facetValue == null) {
@@ -80,24 +67,18 @@ public class Facet
     }
 
     /**
-     * Gets the value of the name property.
+     * Gets the name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new name
      */
     public void setName(String value) {
         this.name = value;

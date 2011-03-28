@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -14,28 +30,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}SimplePara" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="align" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="colname" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="morerows" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="nameend" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="namest" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Entry.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -46,164 +41,141 @@ public class Entry
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The simple para. */
     @XmlElement(name = "SimplePara")
     protected SimplePara simplePara;
+    
+    /** The align. */
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String align;
+    
+    /** The colname. */
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String colname;
+    
+    /** The morerows. */
     @XmlAttribute
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long morerows;
+    
+    /** The nameend. */
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String nameend;
+    
+    /** The namest. */
     @XmlAttribute
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String namest;
 
     /**
-     * Gets the value of the simplePara property.
+     * Gets the simple para.
      * 
-     * @return
-     *     possible object is
-     *     {@link SimplePara }
-     *     
+     * @return the simple para
      */
     public SimplePara getSimplePara() {
         return simplePara;
     }
 
     /**
-     * Sets the value of the simplePara property.
+     * Sets the simple para.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SimplePara }
-     *     
+     * @param value the new simple para
      */
     public void setSimplePara(SimplePara value) {
         this.simplePara = value;
     }
 
     /**
-     * Gets the value of the align property.
+     * Gets the align.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the align
      */
     public String getAlign() {
         return align;
     }
 
     /**
-     * Sets the value of the align property.
+     * Sets the align.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new align
      */
     public void setAlign(String value) {
         this.align = value;
     }
 
     /**
-     * Gets the value of the colname property.
+     * Gets the colname.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the colname
      */
     public String getColname() {
         return colname;
     }
 
     /**
-     * Sets the value of the colname property.
+     * Sets the colname.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new colname
      */
     public void setColname(String value) {
         this.colname = value;
     }
 
     /**
-     * Gets the value of the morerows property.
+     * Gets the morerows.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the morerows
      */
     public Long getMorerows() {
         return morerows;
     }
 
     /**
-     * Sets the value of the morerows property.
+     * Sets the morerows.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new morerows
      */
     public void setMorerows(Long value) {
         this.morerows = value;
     }
 
     /**
-     * Gets the value of the nameend property.
+     * Gets the nameend.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the nameend
      */
     public String getNameend() {
         return nameend;
     }
 
     /**
-     * Sets the value of the nameend property.
+     * Sets the nameend.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new nameend
      */
     public void setNameend(String value) {
         this.nameend = value;
     }
 
     /**
-     * Gets the value of the namest property.
+     * Gets the namest.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the namest
      */
     public String getNamest() {
         return namest;
     }
 
     /**
-     * Sets the value of the namest property.
+     * Sets the namest.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new namest
      */
     public void setNamest(String value) {
         this.namest = value;

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,26 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}OrgDivision" minOccurs="0"/>
- *         &lt;element ref="{}OrgName"/>
- *         &lt;element ref="{}OrgAddress"/>
- *       &lt;/sequence>
- *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Affiliation.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -45,108 +42,93 @@ public class Affiliation
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The org division. */
     @XmlElement(name = "OrgDivision")
     protected String orgDivision;
+    
+    /** The org name. */
     @XmlElement(name = "OrgName", required = true)
     protected String orgName;
+    
+    /** The org address. */
     @XmlElement(name = "OrgAddress", required = true)
     protected OrgAddress orgAddress;
+    
+    /** The id. */
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
 
     /**
-     * Gets the value of the orgDivision property.
+     * Gets the org division.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the org division
      */
     public String getOrgDivision() {
         return orgDivision;
     }
 
     /**
-     * Sets the value of the orgDivision property.
+     * Sets the org division.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new org division
      */
     public void setOrgDivision(String value) {
         this.orgDivision = value;
     }
 
     /**
-     * Gets the value of the orgName property.
+     * Gets the org name.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the org name
      */
     public String getOrgName() {
         return orgName;
     }
 
     /**
-     * Sets the value of the orgName property.
+     * Sets the org name.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new org name
      */
     public void setOrgName(String value) {
         this.orgName = value;
     }
 
     /**
-     * Gets the value of the orgAddress property.
+     * Gets the org address.
      * 
-     * @return
-     *     possible object is
-     *     {@link OrgAddress }
-     *     
+     * @return the org address
      */
     public OrgAddress getOrgAddress() {
         return orgAddress;
     }
 
     /**
-     * Sets the value of the orgAddress property.
+     * Sets the org address.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link OrgAddress }
-     *     
+     * @param value the new org address
      */
     public void setOrgAddress(OrgAddress value) {
         this.orgAddress = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the iD.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the iD
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the iD.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new iD
      */
     public void setID(String value) {
         this.id = value;

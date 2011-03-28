@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -10,25 +26,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Heading"/>
- *         &lt;element ref="{}SimplePara"/>
- *         &lt;element ref="{}FormalPara"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class Acknowledgments.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -41,81 +39,70 @@ public class Acknowledgments
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     @XmlElement(name = "Heading", required = true)
     protected Heading heading;
+    
+    /** The simple para. */
     @XmlElement(name = "SimplePara", required = true)
     protected SimplePara simplePara;
+    
+    /** The formal para. */
     @XmlElement(name = "FormalPara", required = true)
     protected FormalPara formalPara;
 
     /**
-     * Gets the value of the heading property.
+     * Gets the heading.
      * 
-     * @return
-     *     possible object is
-     *     {@link Heading }
-     *     
+     * @return the heading
      */
     public Heading getHeading() {
         return heading;
     }
 
     /**
-     * Sets the value of the heading property.
+     * Sets the heading.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Heading }
-     *     
+     * @param value the new heading
      */
     public void setHeading(Heading value) {
         this.heading = value;
     }
 
     /**
-     * Gets the value of the simplePara property.
+     * Gets the simple para.
      * 
-     * @return
-     *     possible object is
-     *     {@link SimplePara }
-     *     
+     * @return the simple para
      */
     public SimplePara getSimplePara() {
         return simplePara;
     }
 
     /**
-     * Sets the value of the simplePara property.
+     * Sets the simple para.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SimplePara }
-     *     
+     * @param value the new simple para
      */
     public void setSimplePara(SimplePara value) {
         this.simplePara = value;
     }
 
     /**
-     * Gets the value of the formalPara property.
+     * Gets the formal para.
      * 
-     * @return
-     *     possible object is
-     *     {@link FormalPara }
-     *     
+     * @return the formal para
      */
     public FormalPara getFormalPara() {
         return formalPara;
     }
 
     /**
-     * Sets the value of the formalPara property.
+     * Sets the formal para.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link FormalPara }
-     *     
+     * @param value the new formal para
      */
     public void setFormalPara(FormalPara value) {
         this.formalPara = value;

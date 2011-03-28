@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api;
 
@@ -13,26 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Heading"/>
- *         &lt;element ref="{}Para"/>
- *       &lt;/sequence>
- *       &lt;attribute name="OutputMedium" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       &lt;attribute name="RenderingStyle" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * The Class FormalPara.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -44,109 +41,94 @@ public class FormalPara
     implements Serializable
 {
 
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     @XmlElement(name = "Heading", required = true)
     protected Heading heading;
+    
+    /** The para. */
     @XmlElement(name = "Para", required = true)
     protected Para para;
+    
+    /** The output medium. */
     @XmlAttribute(name = "OutputMedium")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
+    
+    /** The rendering style. */
     @XmlAttribute(name = "RenderingStyle", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String renderingStyle;
 
     /**
-     * Gets the value of the heading property.
+     * Gets the heading.
      * 
-     * @return
-     *     possible object is
-     *     {@link Heading }
-     *     
+     * @return the heading
      */
     public Heading getHeading() {
         return heading;
     }
 
     /**
-     * Sets the value of the heading property.
+     * Sets the heading.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Heading }
-     *     
+     * @param value the new heading
      */
     public void setHeading(Heading value) {
         this.heading = value;
     }
 
     /**
-     * Gets the value of the para property.
+     * Gets the para.
      * 
-     * @return
-     *     possible object is
-     *     {@link Para }
-     *     
+     * @return the para
      */
     public Para getPara() {
         return para;
     }
 
     /**
-     * Sets the value of the para property.
+     * Sets the para.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Para }
-     *     
+     * @param value the new para
      */
     public void setPara(Para value) {
         this.para = value;
     }
 
     /**
-     * Gets the value of the outputMedium property.
+     * Gets the output medium.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the output medium
      */
     public String getOutputMedium() {
         return outputMedium;
     }
 
     /**
-     * Sets the value of the outputMedium property.
+     * Sets the output medium.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new output medium
      */
     public void setOutputMedium(String value) {
         this.outputMedium = value;
     }
 
     /**
-     * Gets the value of the renderingStyle property.
+     * Gets the rendering style.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     * @return the rendering style
      */
     public String getRenderingStyle() {
         return renderingStyle;
     }
 
     /**
-     * Sets the value of the renderingStyle property.
+     * Sets the rendering style.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * @param value the new rendering style
      */
     public void setRenderingStyle(String value) {
         this.renderingStyle = value;

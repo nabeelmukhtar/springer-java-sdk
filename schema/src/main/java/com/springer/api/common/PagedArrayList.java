@@ -34,16 +34,8 @@ public class PagedArrayList<E> extends ArrayList<E> implements PagedList<E> {
 	 * @see org.worldbank.api.common.PagedList#page()
 	 */
 	@Override
-	public long page() {
-		return cursor.getPage();
-	}
-
-	/* (non-Javadoc)
-	 * @see org.worldbank.api.common.PagedList#pages()
-	 */
-	@Override
-	public long pages() {
-		return cursor.getPages();
+	public long start() {
+		return cursor.getStart();
 	}
 
 	/* (non-Javadoc)
@@ -51,7 +43,7 @@ public class PagedArrayList<E> extends ArrayList<E> implements PagedList<E> {
 	 */
 	@Override
 	public long perPage() {
-		return cursor.getPerPage();
+		return cursor.getPageLength();
 	}
 
 	/* (non-Javadoc)
@@ -85,79 +77,58 @@ public class PagedArrayList<E> extends ArrayList<E> implements PagedList<E> {
 	 */
 	public static class Cursor {
 		
-		/** The page. */
-		private long page;
-		
-		/** The pages. */
-		private long pages;
-		
-		/** The per page. */
-		private long perPage;
-		
-		/** The total. */
-		private long total;
-		
-		/**
-		 * Gets the page.
-		 * 
-		 * @return the page
-		 */
-		public long getPage() {
-			return page;
+	   	/** The page length. */
+	   	private long pageLength;
+	   	
+	   	/** The start. */
+	   	private long start;
+	   	
+	   	/** The total. */
+	   	private long total;
+
+	 	/**
+	 	 * Gets the page length.
+	 	 * 
+	 	 * @return the page length
+	 	 */
+	 	public long getPageLength(){
+			return this.pageLength;
 		}
 		
 		/**
-		 * Sets the page.
+		 * Sets the page length.
 		 * 
-		 * @param page the new page
+		 * @param pageLength the new page length
 		 */
-		public void setPage(long page) {
-			this.page = page;
+		public void setPageLength(long pageLength){
+			this.pageLength = pageLength;
+		}
+	 	
+	 	/**
+	 	 * Gets the start.
+	 	 * 
+	 	 * @return the start
+	 	 */
+	 	public long getStart(){
+			return this.start;
 		}
 		
 		/**
-		 * Gets the pages.
+		 * Sets the start.
 		 * 
-		 * @return the pages
+		 * @param start the new start
 		 */
-		public long getPages() {
-			return pages;
+		public void setStart(long start){
+			this.start = start;
 		}
-		
-		/**
-		 * Sets the pages.
-		 * 
-		 * @param pages the new pages
-		 */
-		public void setPages(long pages) {
-			this.pages = pages;
-		}
-		
-		/**
-		 * Gets the per page.
-		 * 
-		 * @return the per page
-		 */
-		public long getPerPage() {
-			return perPage;
-		}
-		
-		/**
-		 * Sets the per page.
-		 * 
-		 * @param perPage the new per page
-		 */
-		public void setPerPage(long perPage) {
-			this.perPage = perPage;
-		}
-		
-		/**
-		 * Gets the total.
-		 * 
-		 * @return the total
-		 */
-		public long getTotal() {
-			return total;
+	 	
+	 	/**
+	 	 * Gets the total.
+	 	 * 
+	 	 * @return the total
+	 	 */
+	 	public long getTotal(){
+			return this.total;
 		}
 		
 		/**
@@ -165,7 +136,7 @@ public class PagedArrayList<E> extends ArrayList<E> implements PagedList<E> {
 		 * 
 		 * @param total the new total
 		 */
-		public void setTotal(long total) {
+		public void setTotal(long total){
 			this.total = total;
 		}
 	}

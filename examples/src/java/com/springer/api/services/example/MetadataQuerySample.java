@@ -18,8 +18,9 @@ package com.springer.api.services.example;
 
 import java.util.List;
 
-
-import com.springer.api.images.Country;
+import com.springer.api.common.Facet;
+import com.springer.api.common.FacetValue;
+import com.springer.api.schema.Metadata;
 import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.SpringerQueryFactory;
 
@@ -38,19 +39,27 @@ public class MetadataQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		MetadataQuery service = factory.createMetadataQuery();
-		List<Country> countries = service.list();
-		for (Country country : countries) {
-			printResult(country);
+		MetadataQuery service = factory.createMetadataQuery("gunwy4dr9rkvpbv4nq3effqy");
+		List<Metadata> metadata = service.withQuery("mapreduce").list();
+		for (Metadata data : metadata) {
+			printResult(data);
+		}
+		
+		List<Facet> facets = service.facets();
+		for (Facet facet : facets) {
+			System.out.println(facet.getName());
+			for (FacetValue facetValue : facet.getValues()) {
+				System.out.println(facetValue.getValue() + ":" + facetValue.getCount());
+			}
 		}
 	}
 
 	/**
 	 * Prints the result.
 	 * 
-	 * @param country the country
+	 * @param data the data
 	 */
-	private static void printResult(Country country) {
-		System.out.println(country.getId() + ":" + country.getName());
+	private static void printResult(Metadata data) {
+		System.out.println(data.getPublicationName() + ":" + data.getPublisher());
 	}
 }

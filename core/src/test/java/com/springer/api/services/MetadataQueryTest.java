@@ -21,8 +21,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.springer.api.common.PagedList;
-import com.springer.api.images.Country;
-import com.springer.api.services.MetadataQuery;
+import com.springer.api.schema.Metadata;
+import com.springer.api.services.constant.TestConstants;
 
 /**
  * The Class MetadataQueryTest.
@@ -38,7 +38,7 @@ public class MetadataQueryTest extends BaseSpringerQueryTest {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		service = factory.createMetadataQuery();
+		service = factory.createMetadataQuery(TestConstants.TEST_METADATA_KEY);
 	}
 
 	/* (non-Javadoc)
@@ -55,7 +55,7 @@ public class MetadataQueryTest extends BaseSpringerQueryTest {
 	 */
 	@Test
 	public void testList() {
-		PagedList<Country> countries = service.list();
-		assertNotNullOrEmpty("Countries must not be null or empty.", countries);
+		PagedList<Metadata> metadata = service.withQuery(TestConstants.TEST_QUERY).list();
+		assertNotNullOrEmpty("Metadata must not be null or empty.", metadata);
 	}
 }
