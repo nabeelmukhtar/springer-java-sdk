@@ -1,90 +1,71 @@
-/*
- * Copyright 2010-2011 Nabeel Mukhtar 
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
- * 
- *  http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and
- * limitations under the License. 
- * 
- */
 
 package org.prismstandard.namespaces.pam._2;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import org.w3._1999.xhtml.Body;
 import org.w3._1999.xhtml.Head;
 
 
 /**
- * The Class Message.
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element ref="{http://www.w3.org/1999/xhtml}head"/>
+ *         &lt;element ref="{http://www.w3.org/1999/xhtml}body"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "head",
-    "body"
-})
-@XmlRootElement(name = "message")
-public class Message
-    implements Serializable
-{
+public interface Message {
 
-    /** The Constant serialVersionUID. */
-    private final static long serialVersionUID = 2461660169443089969L;
-    
-    /** The head. */
-    @XmlElement(namespace = "http://www.w3.org/1999/xhtml", required = true)
-    protected Head head;
-    
-    /** The body. */
-    @XmlElement(namespace = "http://www.w3.org/1999/xhtml", required = true)
-    protected Body body;
 
     /**
-     * Gets the head.
+     * Gets the value of the head property.
      * 
-     * @return the head
+     * @return
+     *     possible object is
+     *     {@link Head }
+     *     
      */
-    public Head getHead() {
-        return head;
-    }
+    Head getHead();
 
     /**
-     * Sets the head.
+     * Sets the value of the head property.
      * 
-     * @param value the new head
+     * @param value
+     *     allowed object is
+     *     {@link Head }
+     *     
      */
-    public void setHead(Head value) {
-        this.head = value;
-    }
+    void setHead(Head value);
 
     /**
-     * Gets the body.
+     * Gets the value of the body property.
      * 
-     * @return the body
+     * @return
+     *     possible object is
+     *     {@link Body }
+     *     
      */
-    public Body getBody() {
-        return body;
-    }
+    Body getBody();
 
     /**
-     * Sets the body.
+     * Sets the value of the body property.
      * 
-     * @param value the new body
+     * @param value
+     *     allowed object is
+     *     {@link Body }
+     *     
      */
-    public void setBody(Body value) {
-        this.body = value;
-    }
+    void setBody(Body value);
 
 }

@@ -1,368 +1,332 @@
-/*
- * Copyright 2010-2011 Nabeel Mukhtar 
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
- * 
- *  http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and
- * limitations under the License. 
- * 
- */
 
 package org.prismstandard.namespaces.pam._2;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.prismstandard.namespaces.basic._2.Number;
 import org.prismstandard.namespaces.basic._2.Volume;
 
 
 /**
- * The Class Article.
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element ref="{http://purl.org/dc/elements/1.1/}identifier"/>
+ *         &lt;element ref="{http://purl.org/dc/elements/1.1/}title"/>
+ *         &lt;element ref="{http://purl.org/dc/elements/1.1/}creator" maxOccurs="unbounded"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationName"/>
+ *         &lt;choice>
+ *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}isbn"/>
+ *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}issn"/>
+ *         &lt;/choice>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}doi"/>
+ *         &lt;element ref="{http://purl.org/dc/elements/1.1/}publisher"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationDate"/>
+ *         &lt;sequence minOccurs="0">
+ *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}volume"/>
+ *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}number"/>
+ *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}startingPage"/>
+ *         &lt;/sequence>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}url"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}copyright"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "identifier",
-    "title",
-    "creator",
-    "publicationName",
-    "isbn",
-    "issn",
-    "doi",
-    "publisher",
-    "publicationDate",
-    "volume",
-    "number",
-    "startingPage",
-    "url",
-    "copyright"
-})
-@XmlRootElement(name = "article")
-public class Article
-    implements Serializable
-{
+public interface Article {
 
-    /** The Constant serialVersionUID. */
-    private final static long serialVersionUID = 2461660169443089969L;
-    
-    /** The identifier. */
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected String identifier;
-    
-    /** The title. */
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected String title;
-    
-    /** The creator. */
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected List<String> creator;
-    
-    /** The publication name. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    protected String publicationName;
-    
-    /** The isbn. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String isbn;
-    
-    /** The issn. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String issn;
-    
-    /** The doi. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    protected String doi;
-    
-    /** The publisher. */
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected String publisher;
-    
-    /** The publication date. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String publicationDate;
-    
-    /** The volume. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    protected Volume volume;
-    
-    /** The number. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    protected Number number;
-    
-    /** The starting page. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String startingPage;
-    
-    /** The url. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    protected String url;
-    
-    /** The copyright. */
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    protected String copyright;
 
     /**
-     * Gets the identifier.
+     * Gets the value of the identifier property.
      * 
-     * @return the identifier
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getIdentifier() {
-        return identifier;
-    }
+    String getIdentifier();
 
     /**
-     * Sets the identifier.
+     * Sets the value of the identifier property.
      * 
-     * @param value the new identifier
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setIdentifier(String value) {
-        this.identifier = value;
-    }
+    void setIdentifier(String value);
 
     /**
-     * Gets the title.
+     * Gets the value of the title property.
      * 
-     * @return the title
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getTitle() {
-        return title;
-    }
+    String getTitle();
 
     /**
-     * Sets the title.
+     * Sets the value of the title property.
      * 
-     * @param value the new title
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setTitle(String value) {
-        this.title = value;
-    }
+    void setTitle(String value);
 
     /**
-     * Gets the creator.
+     * Gets the value of the creator property.
      * 
-     * @return the creator
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the creator property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCreator().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
      */
-    public List<String> getCreator() {
-        if (creator == null) {
-            creator = new ArrayList<String>();
-        }
-        return this.creator;
-    }
+    List<String> getCreator();
 
     /**
-     * Gets the publication name.
+     * Gets the value of the publicationName property.
      * 
-     * @return the publication name
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getPublicationName() {
-        return publicationName;
-    }
+    String getPublicationName();
 
     /**
-     * Sets the publication name.
+     * Sets the value of the publicationName property.
      * 
-     * @param value the new publication name
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setPublicationName(String value) {
-        this.publicationName = value;
-    }
+    void setPublicationName(String value);
 
     /**
-     * Gets the isbn.
+     * Gets the value of the isbn property.
      * 
-     * @return the isbn
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getIsbn() {
-        return isbn;
-    }
+    String getIsbn();
 
     /**
-     * Sets the isbn.
+     * Sets the value of the isbn property.
      * 
-     * @param value the new isbn
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setIsbn(String value) {
-        this.isbn = value;
-    }
+    void setIsbn(String value);
 
     /**
-     * Gets the issn.
+     * Gets the value of the issn property.
      * 
-     * @return the issn
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getIssn() {
-        return issn;
-    }
+    String getIssn();
 
     /**
-     * Sets the issn.
+     * Sets the value of the issn property.
      * 
-     * @param value the new issn
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setIssn(String value) {
-        this.issn = value;
-    }
+    void setIssn(String value);
 
     /**
-     * Gets the doi.
+     * Gets the value of the doi property.
      * 
-     * @return the doi
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getDoi() {
-        return doi;
-    }
+    String getDoi();
 
     /**
-     * Sets the doi.
+     * Sets the value of the doi property.
      * 
-     * @param value the new doi
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setDoi(String value) {
-        this.doi = value;
-    }
+    void setDoi(String value);
 
     /**
-     * Gets the publisher.
+     * Gets the value of the publisher property.
      * 
-     * @return the publisher
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getPublisher() {
-        return publisher;
-    }
+    String getPublisher();
 
     /**
-     * Sets the publisher.
+     * Sets the value of the publisher property.
      * 
-     * @param value the new publisher
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setPublisher(String value) {
-        this.publisher = value;
-    }
+    void setPublisher(String value);
 
     /**
-     * Gets the publication date.
+     * Gets the value of the publicationDate property.
      * 
-     * @return the publication date
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getPublicationDate() {
-        return publicationDate;
-    }
+    String getPublicationDate();
 
     /**
-     * Sets the publication date.
+     * Sets the value of the publicationDate property.
      * 
-     * @param value the new publication date
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setPublicationDate(String value) {
-        this.publicationDate = value;
-    }
+    void setPublicationDate(String value);
 
     /**
-     * Gets the volume.
+     * Gets the value of the volume property.
      * 
-     * @return the volume
+     * @return
+     *     possible object is
+     *     {@link Volume }
+     *     
      */
-    public Volume getVolume() {
-        return volume;
-    }
+    Volume getVolume();
 
     /**
-     * Sets the volume.
+     * Sets the value of the volume property.
      * 
-     * @param value the new volume
+     * @param value
+     *     allowed object is
+     *     {@link Volume }
+     *     
      */
-    public void setVolume(Volume value) {
-        this.volume = value;
-    }
+    void setVolume(Volume value);
 
     /**
-     * Gets the number.
+     * Gets the value of the number property.
      * 
-     * @return the number
+     * @return
+     *     possible object is
+     *     {@link Number }
+     *     
      */
-    public Number getNumber() {
-        return number;
-    }
+    Number getNumber();
 
     /**
-     * Sets the number.
+     * Sets the value of the number property.
      * 
-     * @param value the new number
+     * @param value
+     *     allowed object is
+     *     {@link Number }
+     *     
      */
-    public void setNumber(Number value) {
-        this.number = value;
-    }
+    void setNumber(Number value);
 
     /**
-     * Gets the starting page.
+     * Gets the value of the startingPage property.
      * 
-     * @return the starting page
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getStartingPage() {
-        return startingPage;
-    }
+    String getStartingPage();
 
     /**
-     * Sets the starting page.
+     * Sets the value of the startingPage property.
      * 
-     * @param value the new starting page
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setStartingPage(String value) {
-        this.startingPage = value;
-    }
+    void setStartingPage(String value);
 
     /**
-     * Gets the url.
+     * Gets the value of the url property.
      * 
-     * @return the url
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getUrl() {
-        return url;
-    }
+    String getUrl();
 
     /**
-     * Sets the url.
+     * Sets the value of the url property.
      * 
-     * @param value the new url
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setUrl(String value) {
-        this.url = value;
-    }
+    void setUrl(String value);
 
     /**
-     * Gets the copyright.
+     * Gets the value of the copyright property.
      * 
-     * @return the copyright
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getCopyright() {
-        return copyright;
-    }
+    String getCopyright();
 
     /**
-     * Sets the copyright.
+     * Sets the value of the copyright property.
      * 
-     * @param value the new copyright
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setCopyright(String value) {
-        this.copyright = value;
-    }
+    void setCopyright(String value);
 
 }

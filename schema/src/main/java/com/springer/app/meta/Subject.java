@@ -1,115 +1,87 @@
-/*
- * Copyright 2010-2011 Nabeel Mukhtar 
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
- * 
- *  http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and
- * limitations under the License. 
- * 
- */
 
 package com.springer.app.meta;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
- * The Class Subject.
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;attribute name="Priority" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "content"
-})
-@XmlRootElement(name = "Subject")
-public class Subject
-    implements Serializable
-{
+public interface Subject {
 
-    /** The Constant serialVersionUID. */
-    private final static long serialVersionUID = 2461660169443089969L;
-    
-    /** The content. */
-    @XmlValue
-    protected String content;
-    
-    /** The priority. */
-    @XmlAttribute(name = "Priority")
-    @XmlJavaTypeAdapter(Adapter1 .class)
-    protected Long priority;
-    
-    /** The type. */
-    @XmlAttribute(name = "Type", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String type;
 
     /**
-     * Gets the content.
+     * Gets the value of the content property.
      * 
-     * @return the content
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getContent() {
-        return content;
-    }
+    String getContent();
 
     /**
-     * Sets the content.
+     * Sets the value of the content property.
      * 
-     * @param value the new content
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setContent(String value) {
-        this.content = value;
-    }
+    void setContent(String value);
 
     /**
-     * Gets the priority.
+     * Gets the value of the priority property.
      * 
-     * @return the priority
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Long getPriority() {
-        return priority;
-    }
+    Long getPriority();
 
     /**
-     * Sets the priority.
+     * Sets the value of the priority property.
      * 
-     * @param value the new priority
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setPriority(Long value) {
-        this.priority = value;
-    }
+    void setPriority(Long value);
 
     /**
-     * Gets the type.
+     * Gets the value of the type property.
      * 
-     * @return the type
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getType() {
-        return type;
-    }
+    String getType();
 
     /**
-     * Sets the type.
+     * Sets the value of the type property.
      * 
-     * @param value the new type
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setType(String value) {
-        this.type = value;
-    }
+    void setType(String value);
 
 }

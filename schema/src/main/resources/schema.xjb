@@ -3,7 +3,7 @@
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
     extensionBindingPrefixes="xjc"
     schemaLocation="springer.xsd" node="/xs:schema">
-	<globalBindings localScoping="toplevel">
+	<globalBindings localScoping="toplevel" generateValueClass="false">
 		<javaType name="double" xmlType="xs:double"/>
 		<javaType name="long" xmlType="xs:integer"/>
 		<xjc:serializable uid="2461660169443089969"/>
