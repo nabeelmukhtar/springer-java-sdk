@@ -27,7 +27,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.springer.api.common.ValueEnum;
+import com.springer.api.schema.common.ValueEnum;
 
 
 /**

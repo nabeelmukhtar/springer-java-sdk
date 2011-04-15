@@ -16,7 +16,7 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.Response;
+import com.springer.api.schema.Response;
 
 /**
  * The Interface SpringerApiClient.

@@ -19,7 +19,7 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.schema.Image;
+import com.springer.api.schema.json.Image;
 import com.springer.api.services.ImagesQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 

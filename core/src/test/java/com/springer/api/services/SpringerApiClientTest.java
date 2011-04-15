@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.springer.api.Response;
+import com.springer.api.schema.Response;
 import com.springer.api.services.constant.TestConstants;
 import com.springer.api.services.impl.SpringerApiJaxbClient;
 

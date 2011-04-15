@@ -19,7 +19,7 @@ package com.springer.api.services.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.springer.api.schema.OpenAccess;
+import com.springer.api.schema.json.OpenAccess;
 import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.constant.SpringerApiUrls;
 

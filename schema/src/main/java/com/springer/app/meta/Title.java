@@ -3,7 +3,7 @@ package com.springer.app.meta;
 
 import java.util.List;
 
-import com.springer.api.Emphasis;
+import com.springer.api.schema.Emphasis;
 
 
 /**

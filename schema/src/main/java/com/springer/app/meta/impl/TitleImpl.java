@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.springer.api.impl.EmphasisImpl;
+import com.springer.api.schema.impl.EmphasisImpl;
 import com.springer.app.meta.Title;
 
 @XmlAccessorType(XmlAccessType.FIELD)

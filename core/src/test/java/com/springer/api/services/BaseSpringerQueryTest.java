@@ -27,8 +27,6 @@ import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 
-import com.springer.api.services.SpringerQueryFactory;
-
 /**
  * The Class BaseSpringerQueryTest.
  */

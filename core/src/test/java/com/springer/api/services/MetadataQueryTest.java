@@ -20,8 +20,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.springer.api.common.PagedList;
-import com.springer.api.schema.Metadata;
+import com.springer.api.schema.common.PagedList;
+import com.springer.api.schema.json.Metadata;
 import com.springer.api.services.constant.TestConstants;
 
 /**

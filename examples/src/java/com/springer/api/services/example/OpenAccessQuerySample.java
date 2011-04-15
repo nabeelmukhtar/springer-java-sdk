@@ -18,9 +18,9 @@ package com.springer.api.services.example;
 
 import java.util.List;
 
-import com.springer.api.common.Facet;
-import com.springer.api.common.FacetValue;
-import com.springer.api.schema.OpenAccess;
+import com.springer.api.schema.common.Facet;
+import com.springer.api.schema.common.FacetValue;
+import com.springer.api.schema.json.OpenAccess;
 import com.springer.api.services.OpenAccessQuery;
 import com.springer.api.services.SpringerQueryFactory;
 

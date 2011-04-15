@@ -23,7 +23,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import com.springer.api.Response;
+import com.springer.api.schema.Response;
 import com.springer.api.services.SpringerApiClient;
 import com.springer.api.services.SpringerException;
 import com.springer.api.services.constant.ParameterNames;
@@ -36,7 +36,7 @@ import com.springer.api.services.constant.SpringerApiUrls.SpringerApiUrlBuilder;
 public class SpringerApiJaxbClient extends SpringerApiGateway implements SpringerApiClient {
 
     /** The Constant JAXB_PACKAGE_NAME. */
-    private static final String JAXB_PACKAGE_NAME = "com.springer.api";
+    private static final String JAXB_PACKAGE_NAME = "com.springer.api.schema";
     
     /** The JAX b_ context. */
     private static JAXBContext JAXB_CONTEXT;

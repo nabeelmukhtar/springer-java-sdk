@@ -16,7 +16,7 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.schema.OpenAccess;
+import com.springer.api.schema.json.OpenAccess;
 
 
 

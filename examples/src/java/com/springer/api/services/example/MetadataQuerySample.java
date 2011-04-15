@@ -18,9 +18,9 @@ package com.springer.api.services.example;
 
 import java.util.List;
 
-import com.springer.api.common.Facet;
-import com.springer.api.common.FacetValue;
-import com.springer.api.schema.Metadata;
+import com.springer.api.schema.common.Facet;
+import com.springer.api.schema.common.FacetValue;
+import com.springer.api.schema.json.Metadata;
 import com.springer.api.services.MetadataQuery;
 import com.springer.api.services.SpringerQueryFactory;
 

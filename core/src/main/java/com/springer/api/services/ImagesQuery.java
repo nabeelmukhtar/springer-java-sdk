@@ -16,7 +16,7 @@
  */
 package com.springer.api.services;
 
-import com.springer.api.schema.Image;
+import com.springer.api.schema.json.Image;
 
 
 

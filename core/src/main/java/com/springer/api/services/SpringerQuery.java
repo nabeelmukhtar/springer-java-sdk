@@ -18,8 +18,8 @@ package com.springer.api.services;
 
 import java.util.List;
 
-import com.springer.api.common.Facet;
-import com.springer.api.common.PagedList;
+import com.springer.api.schema.common.Facet;
+import com.springer.api.schema.common.PagedList;
 
 /**
  * The Interface SpringerQuery.
