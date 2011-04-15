@@ -22,7 +22,7 @@ import com.springer.api.schema.MediaObject;
     "mediaObject"
 })
 @XmlRootElement(name = "Figure")
-public class FigureImpl implements Serializable, Figure
+public class FigureImpl extends BaseSchemaEntity implements Figure
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

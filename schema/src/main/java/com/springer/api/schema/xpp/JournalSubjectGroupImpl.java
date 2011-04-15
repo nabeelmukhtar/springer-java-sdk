@@ -20,7 +20,7 @@ import com.springer.api.schema.JournalSubjectGroup;
 })
 @XmlRootElement(name = "JournalSubjectGroup")
 public class JournalSubjectGroupImpl
-    implements Serializable, JournalSubjectGroup
+    extends BaseSchemaEntity implements JournalSubjectGroup
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -20,7 +20,7 @@ import com.springer.api.schema.Row;
 })
 @XmlRootElement(name = "row")
 public class RowImpl
-    implements Serializable, Row
+    extends BaseSchemaEntity implements Row
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

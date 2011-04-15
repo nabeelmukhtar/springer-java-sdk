@@ -20,7 +20,7 @@ import com.springer.api.schema.Para;
     "content"
 })
 @XmlRootElement(name = "Para")
-public class ParaImpl implements Serializable, Para
+public class ParaImpl extends BaseSchemaEntity implements Para
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

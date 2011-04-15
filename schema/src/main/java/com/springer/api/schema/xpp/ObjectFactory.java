@@ -15,9 +15,6 @@ import org.w3._1999.xhtml.P;
 import org.w3._1999.xhtml.impl.PImpl;
 import org.w3._2001.xmlschema.Adapter1;
 
-import com.springer.api.schema.*;
-
-
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 

@@ -20,7 +20,7 @@ import com.springer.api.schema.Heading;
 })
 @XmlRootElement(name = "Heading")
 public class HeadingImpl
-    implements Serializable, Heading
+    extends BaseSchemaEntity implements Heading
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

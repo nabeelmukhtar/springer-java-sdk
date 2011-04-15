@@ -20,7 +20,7 @@ import com.springer.api.schema.Subjects;
 })
 @XmlRootElement(name = "Subjects")
 public class SubjectsImpl
-    implements Serializable, Subjects
+    extends BaseSchemaEntity implements Subjects
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

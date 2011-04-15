@@ -18,7 +18,7 @@ import com.springer.app.meta.SubjectGroup;
 })
 @XmlRootElement(name = "SubjectGroup")
 public class SubjectGroupImpl
-    implements Serializable, SubjectGroup
+    extends BaseSchemaEntity implements SubjectGroup
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

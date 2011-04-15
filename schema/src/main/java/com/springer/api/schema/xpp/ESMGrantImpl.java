@@ -16,7 +16,7 @@ import com.springer.api.schema.ESMGrant;
 @XmlType(name = "")
 @XmlRootElement(name = "ESMGrant")
 public class ESMGrantImpl
-    implements Serializable, ESMGrant
+    extends BaseSchemaEntity implements ESMGrant
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

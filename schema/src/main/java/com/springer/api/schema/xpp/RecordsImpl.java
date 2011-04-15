@@ -26,7 +26,7 @@ import com.springer.api.schema.Result;
 })
 @XmlRootElement(name = "records")
 public class RecordsImpl
-    implements Serializable, Records
+    extends BaseSchemaEntity implements Records
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

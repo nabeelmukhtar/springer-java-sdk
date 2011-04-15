@@ -18,7 +18,7 @@ import com.springer.api.schema.Thead;
 })
 @XmlRootElement(name = "thead")
 public class TheadImpl
-    implements Serializable, Thead
+    extends BaseSchemaEntity implements Thead
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

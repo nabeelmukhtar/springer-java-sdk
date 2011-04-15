@@ -16,7 +16,7 @@ import com.springer.api.schema.BodyPDFGrant;
 @XmlType(name = "")
 @XmlRootElement(name = "BodyPDFGrant")
 public class BodyPDFGrantImpl
-    implements Serializable, BodyPDFGrant
+    extends BaseSchemaEntity implements BodyPDFGrant
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

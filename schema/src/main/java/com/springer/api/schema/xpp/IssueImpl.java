@@ -23,7 +23,7 @@ import com.springer.api.schema.IssueInfo;
 })
 @XmlRootElement(name = "Issue")
 public class IssueImpl
-    implements Serializable, Issue
+    extends BaseSchemaEntity implements Issue
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

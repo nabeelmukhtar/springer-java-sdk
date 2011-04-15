@@ -17,7 +17,7 @@ import com.springer.api.schema.Colspec;
 @XmlType(name = "")
 @XmlRootElement(name = "colspec")
 public class ColspecImpl
-    implements Serializable, Colspec
+    extends BaseSchemaEntity implements Colspec
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

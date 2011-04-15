@@ -17,7 +17,7 @@ import com.springer.app.meta.Authors;
 })
 @XmlRootElement(name = "Authors")
 public class AuthorsImpl
-    implements Serializable, Authors
+    extends BaseSchemaEntity implements Authors
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

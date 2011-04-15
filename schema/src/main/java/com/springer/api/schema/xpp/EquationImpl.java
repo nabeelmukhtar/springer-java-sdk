@@ -25,7 +25,7 @@ import com.springer.api.schema.MediaObject;
     "equationSource"
 })
 @XmlRootElement(name = "Equation")
-public class EquationImpl implements Serializable, Equation
+public class EquationImpl extends BaseSchemaEntity implements Equation
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

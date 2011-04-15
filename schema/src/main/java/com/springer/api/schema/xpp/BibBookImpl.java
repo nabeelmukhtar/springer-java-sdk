@@ -27,7 +27,7 @@ import com.springer.api.schema.Occurrence;
 })
 @XmlRootElement(name = "BibBook")
 public class BibBookImpl
-    implements Serializable, BibBook
+    extends BaseSchemaEntity implements BibBook
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

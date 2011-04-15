@@ -24,7 +24,7 @@ import com.springer.api.schema.Path;
     "type"
 })
 @XmlRootElement(name = "File")
-public class FileImpl implements Serializable, File
+public class FileImpl extends BaseSchemaEntity implements File
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -16,7 +16,7 @@ import com.springer.api.schema.BodyRef;
 @XmlType(name = "")
 @XmlRootElement(name = "BodyRef")
 public class BodyRefImpl
-    implements Serializable, BodyRef
+    extends BaseSchemaEntity implements BodyRef
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

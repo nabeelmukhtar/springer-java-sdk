@@ -18,7 +18,7 @@ import com.springer.api.schema.TextObject;
 })
 @XmlRootElement(name = "TextObject")
 public class TextObjectImpl
-    implements Serializable, TextObject
+    extends BaseSchemaEntity implements TextObject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

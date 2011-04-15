@@ -21,7 +21,7 @@ import com.springer.api.schema.BibUnstructured;
 })
 @XmlRootElement(name = "BibUnstructured")
 public class BibUnstructuredImpl
-    implements Serializable, BibUnstructured
+    extends BaseSchemaEntity implements BibUnstructured
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

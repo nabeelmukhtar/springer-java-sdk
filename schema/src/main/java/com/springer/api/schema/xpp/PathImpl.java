@@ -19,7 +19,7 @@ import com.springer.api.schema.Path;
 })
 @XmlRootElement(name = "Path")
 public class PathImpl
-    implements Serializable, Path
+    extends BaseSchemaEntity implements Path
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

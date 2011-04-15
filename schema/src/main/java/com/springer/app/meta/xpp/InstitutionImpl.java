@@ -18,7 +18,7 @@ import com.springer.app.meta.Institution;
 })
 @XmlRootElement(name = "Institution")
 public class InstitutionImpl
-    implements Serializable, Institution
+    extends BaseSchemaEntity implements Institution
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

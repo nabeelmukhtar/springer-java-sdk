@@ -20,7 +20,7 @@ import com.springer.api.schema.Images;
 })
 @XmlRootElement(name = "Images")
 public class ImagesImpl
-    implements Serializable, Images
+    extends BaseSchemaEntity implements Images
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

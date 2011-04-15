@@ -22,7 +22,7 @@ import com.springer.api.schema.VolumeInfo;
 })
 @XmlRootElement(name = "VolumeInfo")
 public class VolumeInfoImpl
-    implements Serializable, VolumeInfo
+    extends BaseSchemaEntity implements VolumeInfo
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

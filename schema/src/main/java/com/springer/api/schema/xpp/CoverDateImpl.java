@@ -17,7 +17,7 @@ import com.springer.api.schema.CoverDate;
 })
 @XmlRootElement(name = "CoverDate")
 public class CoverDateImpl
-    implements Serializable, CoverDate
+    extends BaseSchemaEntity implements CoverDate
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

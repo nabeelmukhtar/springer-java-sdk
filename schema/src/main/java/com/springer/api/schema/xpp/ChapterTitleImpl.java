@@ -19,7 +19,7 @@ import com.springer.api.schema.ChapterTitle;
 })
 @XmlRootElement(name = "ChapterTitle")
 public class ChapterTitleImpl
-    implements Serializable, ChapterTitle
+    extends BaseSchemaEntity implements ChapterTitle
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

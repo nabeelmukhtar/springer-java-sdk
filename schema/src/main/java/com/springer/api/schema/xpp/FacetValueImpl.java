@@ -19,7 +19,7 @@ import com.springer.api.schema.FacetValue;
 })
 @XmlRootElement(name = "facet-value")
 public class FacetValueImpl
-    implements Serializable, FacetValue
+    extends BaseSchemaEntity implements FacetValue
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

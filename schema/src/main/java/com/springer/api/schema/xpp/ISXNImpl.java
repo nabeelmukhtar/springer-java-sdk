@@ -19,7 +19,7 @@ import com.springer.api.schema.ISXN;
 })
 @XmlRootElement(name = "ISXN")
 public class ISXNImpl
-    implements Serializable, ISXN
+    extends BaseSchemaEntity implements ISXN
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

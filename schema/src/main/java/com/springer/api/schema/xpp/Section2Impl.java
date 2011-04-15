@@ -27,7 +27,7 @@ import com.springer.api.schema.Section3;
 })
 @XmlRootElement(name = "Section2")
 public class Section2Impl
-    implements Serializable, Section2
+    extends BaseSchemaEntity implements Section2
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

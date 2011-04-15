@@ -26,7 +26,7 @@ import com.springer.api.schema.OrgAddress;
 })
 @XmlRootElement(name = "OrgAddress")
 public class OrgAddressImpl
-    implements Serializable, OrgAddress
+    extends BaseSchemaEntity implements OrgAddress
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -16,7 +16,7 @@ import com.springer.api.schema.BibliographyGrant;
 @XmlType(name = "")
 @XmlRootElement(name = "BibliographyGrant")
 public class BibliographyGrantImpl
-    implements Serializable, BibliographyGrant
+    extends BaseSchemaEntity implements BibliographyGrant
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

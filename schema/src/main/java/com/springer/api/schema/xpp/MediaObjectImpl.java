@@ -19,7 +19,7 @@ import com.springer.api.schema.TextObject;
 @XmlRootElement(name = "MediaObject")
 public class MediaObjectImpl
     extends ImageObjectImpl
-    implements Serializable, MediaObject
+    extends BaseSchemaEntity implements MediaObject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

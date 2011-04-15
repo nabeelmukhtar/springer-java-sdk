@@ -20,7 +20,7 @@ import com.springer.api.schema.Section1;
 })
 @XmlRootElement(name = "Body")
 public class BodyImpl
-    implements Serializable, Body
+    extends BaseSchemaEntity implements Body
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

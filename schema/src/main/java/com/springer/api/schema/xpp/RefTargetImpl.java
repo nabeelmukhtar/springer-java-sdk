@@ -16,7 +16,7 @@ import com.springer.api.schema.RefTarget;
 @XmlType(name = "")
 @XmlRootElement(name = "RefTarget")
 public class RefTargetImpl
-    implements Serializable, RefTarget
+    extends BaseSchemaEntity implements RefTarget
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

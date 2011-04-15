@@ -18,7 +18,7 @@ import com.springer.api.schema.Tfooter;
 })
 @XmlRootElement(name = "tfooter")
 public class TfooterImpl
-    implements Serializable, Tfooter
+    extends BaseSchemaEntity implements Tfooter
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

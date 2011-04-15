@@ -29,7 +29,7 @@ import com.springer.api.schema.Thead;
 })
 @XmlRootElement(name = "tgroup")
 public class TgroupImpl
-    implements Serializable, Tgroup
+    extends BaseSchemaEntity implements Tgroup
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

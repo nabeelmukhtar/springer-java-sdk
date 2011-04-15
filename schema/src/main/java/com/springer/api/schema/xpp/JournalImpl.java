@@ -25,7 +25,7 @@ import com.springer.api.schema.Volume;
 })
 @XmlRootElement(name = "Journal")
 public class JournalImpl
-    implements Serializable, Journal
+    extends BaseSchemaEntity implements Journal
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -18,7 +18,7 @@ import com.springer.api.schema.Para;
 })
 @XmlRootElement(name = "Description")
 public class DescriptionImpl
-    implements Serializable, Description
+    extends BaseSchemaEntity implements Description
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

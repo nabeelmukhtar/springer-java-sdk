@@ -19,7 +19,7 @@ import com.springer.api.schema.CitationRef;
     "value"
 })
 @XmlRootElement(name = "CitationRef")
-public class CitationRefImpl implements Serializable, CitationRef
+public class CitationRefImpl extends BaseSchemaEntity implements CitationRef
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

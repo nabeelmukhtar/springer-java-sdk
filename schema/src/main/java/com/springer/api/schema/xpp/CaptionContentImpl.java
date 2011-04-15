@@ -18,7 +18,7 @@ import com.springer.api.schema.SimplePara;
 })
 @XmlRootElement(name = "CaptionContent")
 public class CaptionContentImpl
-    implements Serializable, CaptionContent
+    extends BaseSchemaEntity implements CaptionContent
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

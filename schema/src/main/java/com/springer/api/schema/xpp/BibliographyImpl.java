@@ -25,7 +25,7 @@ import com.springer.api.schema.Heading;
 })
 @XmlRootElement(name = "Bibliography")
 public class BibliographyImpl
-    implements Serializable, Bibliography
+    extends BaseSchemaEntity implements Bibliography
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

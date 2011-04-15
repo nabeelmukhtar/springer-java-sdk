@@ -20,7 +20,7 @@ import com.springer.app.meta.Title;
 })
 @XmlRootElement(name = "Title")
 public class TitleImpl
-    implements Serializable, Title
+    extends BaseSchemaEntity implements Title
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

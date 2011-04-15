@@ -1,7 +1,7 @@
 
 package com.springer.api.schema.xpp;
 
-import java.io.Serializable;
+import java.io.IOException;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,6 +11,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.AbstractGrant;
 import com.springer.api.schema.ArticleGrants;
@@ -31,7 +35,7 @@ import com.springer.api.schema.MetadataGrant;
 })
 @XmlRootElement(name = "ArticleGrants")
 public class ArticleGrantsImpl
-    implements Serializable, ArticleGrants
+    extends BaseSchemaEntity implements ArticleGrants
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
@@ -106,5 +110,18 @@ public class ArticleGrantsImpl
     public void setType(String value) {
         this.type = value;
     }
+
+	@Override
+	public void init(XmlPullParser parser) throws IOException,
+			XmlPullParserException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void toXml(XmlSerializer serializer) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

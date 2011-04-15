@@ -20,7 +20,7 @@ import com.springer.api.schema.Term;
 })
 @XmlRootElement(name = "DefinitionListEntry")
 public class DefinitionListEntryImpl
-    implements Serializable, DefinitionListEntry
+    extends BaseSchemaEntity implements DefinitionListEntry
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

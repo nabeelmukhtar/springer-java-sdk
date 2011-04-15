@@ -20,7 +20,7 @@ import com.springer.api.schema.Term;
 })
 @XmlRootElement(name = "Term")
 public class TermImpl
-    implements Serializable, Term
+    extends BaseSchemaEntity implements Term
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

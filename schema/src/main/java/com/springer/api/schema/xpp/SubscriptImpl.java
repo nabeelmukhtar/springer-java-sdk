@@ -19,7 +19,7 @@ import com.springer.api.schema.Subscript;
     "content"
 })
 @XmlRootElement(name = "Subscript")
-public class SubscriptImpl implements Serializable, Subscript
+public class SubscriptImpl extends BaseSchemaEntity implements Subscript
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

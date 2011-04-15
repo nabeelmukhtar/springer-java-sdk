@@ -26,7 +26,7 @@ import com.springer.api.schema.PrintDate;
 })
 @XmlRootElement(name = "IssueHistory")
 public class IssueHistoryImpl
-    implements Serializable, IssueHistory
+    extends BaseSchemaEntity implements IssueHistory
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

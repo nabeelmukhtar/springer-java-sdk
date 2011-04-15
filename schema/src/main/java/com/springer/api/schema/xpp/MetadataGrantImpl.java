@@ -16,7 +16,7 @@ import com.springer.api.schema.MetadataGrant;
 @XmlType(name = "")
 @XmlRootElement(name = "MetadataGrant")
 public class MetadataGrantImpl
-    implements Serializable, MetadataGrant
+    extends BaseSchemaEntity implements MetadataGrant
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

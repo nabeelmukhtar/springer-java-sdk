@@ -20,7 +20,7 @@ import com.springer.api.schema.Para;
     "para"
 })
 @XmlRootElement(name = "Footnote")
-public class FootnoteImpl implements Serializable, Footnote
+public class FootnoteImpl extends BaseSchemaEntity implements Footnote
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

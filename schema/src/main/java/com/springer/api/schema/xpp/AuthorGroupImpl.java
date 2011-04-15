@@ -22,7 +22,7 @@ import com.springer.api.schema.AuthorGroup;
 })
 @XmlRootElement(name = "AuthorGroup")
 public class AuthorGroupImpl
-    implements Serializable, AuthorGroup
+    extends BaseSchemaEntity implements AuthorGroup
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

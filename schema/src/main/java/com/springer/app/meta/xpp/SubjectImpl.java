@@ -19,7 +19,7 @@ import org.w3._2001.xmlschema.Adapter1;
 })
 @XmlRootElement(name = "Subject")
 public class SubjectImpl
-    implements Serializable, Subject
+    extends BaseSchemaEntity implements Subject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

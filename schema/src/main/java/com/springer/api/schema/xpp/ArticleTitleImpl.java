@@ -22,7 +22,7 @@ import com.springer.api.schema.ArticleTitle;
     "content"
 })
 @XmlRootElement(name = "ArticleTitle")
-public class ArticleTitleImpl implements Serializable, ArticleTitle
+public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

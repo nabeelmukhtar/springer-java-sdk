@@ -23,7 +23,7 @@ import com.springer.api.schema.Para;
 })
 @XmlRootElement(name = "FormalPara")
 public class FormalParaImpl
-    implements Serializable, FormalPara
+    extends BaseSchemaEntity implements FormalPara
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -16,7 +16,7 @@ import com.springer.api.schema.ImageObjectElement;
 @XmlType(name = "")
 @XmlRootElement(name = "ImageObjectElement")
 public class ImageObjectElementImpl
-    implements Serializable, ImageObjectElement
+    extends BaseSchemaEntity implements ImageObjectElement
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

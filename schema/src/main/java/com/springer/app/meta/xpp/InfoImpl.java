@@ -39,7 +39,7 @@ import com.springer.app.meta.Title;
 })
 @XmlRootElement(name = "Info")
 public class InfoImpl
-    implements Serializable, Info
+    extends BaseSchemaEntity implements Info
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -26,7 +26,7 @@ import com.springer.app.meta.impl.InfoImpl;
 })
 @XmlRootElement(name = "Publisher")
 public class PublisherImpl
-    implements Serializable, Publisher
+    extends BaseSchemaEntity implements Publisher
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

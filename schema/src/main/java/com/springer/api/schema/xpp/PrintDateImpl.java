@@ -18,7 +18,7 @@ import com.springer.api.schema.PrintDate;
 })
 @XmlRootElement(name = "PrintDate")
 public class PrintDateImpl
-    implements Serializable, PrintDate
+    extends BaseSchemaEntity implements PrintDate
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

@@ -18,7 +18,7 @@ import com.springer.api.schema.JournalOnlineFirst;
 })
 @XmlRootElement(name = "JournalOnlineFirst")
 public class JournalOnlineFirstImpl
-    implements Serializable, JournalOnlineFirst
+    extends BaseSchemaEntity implements JournalOnlineFirst
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
