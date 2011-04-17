@@ -5,15 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
@@ -23,32 +14,16 @@ import com.springer.api.schema.AbstractSection;
 import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "heading",
-    "para",
-    "abstractSection"
-})
-@XmlRootElement(name = "Abstract")
 public class AbstractImpl
     extends BaseSchemaEntity implements Abstract
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Heading", required = true, type = HeadingImpl.class)
     protected HeadingImpl heading;
-    @XmlElement(name = "Para", type = ParaImpl.class)
     protected ParaImpl para;
-    @XmlElement(name = "AbstractSection", type = AbstractSectionImpl.class)
     protected List<AbstractSection> abstractSection;
-    @XmlAttribute(name = "ID", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
-    @XmlAttribute(name = "Language", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
-    @XmlAttribute(name = "OutputMedium")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
 
     public Heading getHeading() {
@@ -105,8 +80,24 @@ public class AbstractImpl
         while (parser.nextTag() == XmlPullParser.START_TAG) {
         	String name = parser.getName();
         	
-        	if (name.equals("code")) {
-        		setCode(XppUtils.getElementValueFromNode(parser));
+        	if (name.equals("Heading")) {
+        		HeadingImpl node = new HeadingImpl();
+        		node.init(parser);
+        		setHeading(node);
+            } else if (name.equals("Para")) {
+            	ParaImpl node = new ParaImpl();
+        		node.init(parser);
+        		setPara(node);
+            } else if (name.equals("AbstractSection")) {
+            	AbstractSectionImpl node = new AbstractSectionImpl();
+        		node.init(parser);
+        		getAbstractSection().add(node);
+            } else if (name.equals("ID")) {
+        		setID(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Language")) {
+        		setLanguage(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("OutputMedium")) {
+        		setOutputMedium(XppUtils.getElementValueFromNode(parser));
             } else {
                 // Consume something we don't understand.
             	LOG.warning("Found tag that we don't recognize: " + name);
@@ -117,8 +108,7 @@ public class AbstractImpl
 
 	@Override
 	public void toXml(XmlSerializer serializer) throws IOException {
-		XmlSerializer element = serializer.startTag(null, "action");
-		XppUtils.setElementValueToNode(element, "code", getCode());
-		element.endTag(null, "action");;
+		XmlSerializer element = serializer.startTag(null, "Abstract");
+		element.endTag(null, "Abstract");;
 	}
 }

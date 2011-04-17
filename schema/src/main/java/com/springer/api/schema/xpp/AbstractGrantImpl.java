@@ -3,30 +3,17 @@ package com.springer.api.schema.xpp;
 
 import java.io.IOException;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.AbstractGrant;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "AbstractGrant")
 public class AbstractGrantImpl
     extends BaseSchemaEntity implements AbstractGrant
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlAttribute(name = "Grant", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String grant;
 
     public String getGrant() {
@@ -44,8 +31,8 @@ public class AbstractGrantImpl
         while (parser.nextTag() == XmlPullParser.START_TAG) {
         	String name = parser.getName();
         	
-        	if (name.equals("code")) {
-        		setCode(XppUtils.getElementValueFromNode(parser));
+        	if (name.equals("Grant")) {
+        		setGrant(XppUtils.getElementValueFromNode(parser));
             } else {
                 // Consume something we don't understand.
             	LOG.warning("Found tag that we don't recognize: " + name);
@@ -56,9 +43,9 @@ public class AbstractGrantImpl
 
 	@Override
 	public void toXml(XmlSerializer serializer) throws IOException {
-		XmlSerializer element = serializer.startTag(null, "action");
-		XppUtils.setElementValueToNode(element, "code", getCode());
-		element.endTag(null, "action");;
+		XmlSerializer element = serializer.startTag(null, "AbstractGrant");
+		XppUtils.setElementValueToNode(element, "Grant", getGrant());
+		element.endTag(null, "AbstractGrant");
 	}
 
 }
