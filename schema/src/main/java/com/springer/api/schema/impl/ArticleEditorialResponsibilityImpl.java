@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.ArticleEditorialResponsibility;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "ArticleEditorialResponsibility")

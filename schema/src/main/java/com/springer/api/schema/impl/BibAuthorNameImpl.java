@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.BibAuthorName;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "initials",

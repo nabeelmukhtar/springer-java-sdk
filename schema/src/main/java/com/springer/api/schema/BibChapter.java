@@ -20,10 +20,8 @@ import java.util.List;
  *         &lt;element ref="{}BookTitle"/>
  *         &lt;element ref="{}ConfEventLocation" minOccurs="0"/>
  *         &lt;element ref="{}ConfEventDate" minOccurs="0"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}PublisherName"/>
- *           &lt;element ref="{}PublisherLocation"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}PublisherName" minOccurs="0"/>
+ *         &lt;element ref="{}PublisherLocation" minOccurs="0"/>
  *         &lt;element ref="{}BibComments" minOccurs="0"/>
  *         &lt;element ref="{}NumberInSeries" minOccurs="0"/>
  *         &lt;element ref="{}FirstPage" minOccurs="0"/>

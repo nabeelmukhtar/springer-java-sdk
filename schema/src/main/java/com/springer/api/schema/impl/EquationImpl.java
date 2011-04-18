@@ -18,7 +18,6 @@ import com.springer.api.schema.Equation;
 import com.springer.api.schema.EquationSource;
 import com.springer.api.schema.MediaObject;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "equationNumber",
@@ -26,7 +25,8 @@ import com.springer.api.schema.MediaObject;
     "equationSource"
 })
 @XmlRootElement(name = "Equation")
-public class EquationImpl implements Serializable, Equation
+public class EquationImpl
+    implements Serializable, Equation
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

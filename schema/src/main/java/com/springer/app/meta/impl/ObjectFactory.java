@@ -57,19 +57,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Subject }
+     * Create an instance of {@link SubjectGroup }
      * 
      */
-    public SubjectImpl createSubject() {
-        return new SubjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link Institution }
-     * 
-     */
-    public InstitutionImpl createInstitution() {
-        return new InstitutionImpl();
+    public SubjectGroupImpl createSubjectGroup() {
+        return new SubjectGroupImpl();
     }
 
     /**
@@ -81,19 +73,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubjectGroup }
-     * 
-     */
-    public SubjectGroupImpl createSubjectGroup() {
-        return new SubjectGroupImpl();
-    }
-
-    /**
      * Create an instance of {@link Institutions }
      * 
      */
     public InstitutionsImpl createInstitutions() {
         return new InstitutionsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Info }
+     * 
+     */
+    public InfoImpl createInfo() {
+        return new InfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link Institution }
+     * 
+     */
+    public InstitutionImpl createInstitution() {
+        return new InstitutionImpl();
     }
 
     /**
@@ -105,11 +105,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Info }
+     * Create an instance of {@link Subject }
      * 
      */
-    public InfoImpl createInfo() {
-        return new InfoImpl();
+    public SubjectImpl createSubject() {
+        return new SubjectImpl();
     }
 
     /**

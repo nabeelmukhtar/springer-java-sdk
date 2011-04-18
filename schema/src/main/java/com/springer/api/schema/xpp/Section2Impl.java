@@ -1,72 +1,96 @@
+
 package com.springer.api.schema.xpp;
-import java.io.IOException;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlSerializer;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import com.springer.api.schema.Figure;
 import com.springer.api.schema.Heading;
+import com.springer.api.schema.Para;
 import com.springer.api.schema.Section2;
 import com.springer.api.schema.Section3;
-public class Section2Impl extends BaseSchemaEntity implements Section2 {
+import com.springer.api.schema.Table;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "heading",
+    "figure",
+    "para",
+    "table",
+    "section3"
+})
+@XmlRootElement(name = "Section2")
+public class Section2Impl
+    implements Serializable, Section2
+{
+
     private final static long serialVersionUID = 2461660169443089969L;
+    @XmlElement(name = "Heading", required = true, type = HeadingImpl.class)
     protected HeadingImpl heading;
-    protected List<Object> figureAndParaAndTable;
+    @XmlElement(name = "Figure", required = true, type = FigureImpl.class)
+    protected List<Figure> figure;
+    @XmlElement(name = "Para", required = true, type = ParaImpl.class)
+    protected List<Para> para;
+    @XmlElement(name = "Table", required = true, type = TableImpl.class)
+    protected List<Table> table;
+    @XmlElement(name = "Section3", type = Section3Impl.class)
     protected List<Section3> section3;
+    @XmlAttribute(name = "ID", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
+
     public Heading getHeading() {
         return heading;
     }
+
     public void setHeading(Heading value) {
-        heading = ((HeadingImpl) value);
+        this.heading = ((HeadingImpl) value);
     }
-    public List<Object> getFigureAndParaAndTable() {
-        if (figureAndParaAndTable == null) {
-            figureAndParaAndTable = new ArrayList<Object>();
+
+    public List<Figure> getFigure() {
+        if (figure == null) {
+            figure = new ArrayList<Figure>();
         }
-        return this.figureAndParaAndTable;
+        return this.figure;
     }
-    public void setFigureAndParaAndTable(List<Object> value) {
-        this.figureAndParaAndTable = value;
+
+    public List<Para> getPara() {
+        if (para == null) {
+            para = new ArrayList<Para>();
+        }
+        return this.para;
     }
+
+    public List<Table> getTable() {
+        if (table == null) {
+            table = new ArrayList<Table>();
+        }
+        return this.table;
+    }
+
     public List<Section3> getSection3() {
         if (section3 == null) {
             section3 = new ArrayList<Section3>();
         }
         return this.section3;
     }
-    public void setSection3(List<Section3> value) {
-        this.section3 = value;
-    }
-    public String getId() {
+
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
-        id = ((String) value);
+
+    public void setID(String value) {
+        this.id = value;
     }
-    @Override
-    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("Heading")) {
-                HeadingImpl node = new HeadingImpl();
-                node.init(parser);
-                setHeading(node);
-            } else if (name.equals("Section3")) {
-                Section3Impl node = new Section3Impl();
-                node.init(parser);
-                getSection3().add(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
-    }
-    @Override
-    public void toXml(XmlSerializer serializer) throws IOException {
-    }
+
 }

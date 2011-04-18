@@ -12,13 +12,13 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Institutions;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "institution"
 })
 @XmlRootElement(name = "Institutions")
-public class InstitutionsImpl implements Serializable, Institutions
+public class InstitutionsImpl
+    implements Serializable, Institutions
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

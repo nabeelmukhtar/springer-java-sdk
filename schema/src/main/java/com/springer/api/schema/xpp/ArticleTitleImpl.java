@@ -1,41 +1,51 @@
+
 package com.springer.api.schema.xpp;
-import java.io.IOException;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlSerializer;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.ArticleTitle;
-public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
+import com.springer.api.schema.Emphasis;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "emphasis"
+})
+@XmlRootElement(name = "ArticleTitle")
+public class ArticleTitleImpl
+    implements Serializable, ArticleTitle
+{
+
     private final static long serialVersionUID = 2461660169443089969L;
-    protected List<Object> content;
+    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
+    protected List<Emphasis> emphasis;
+    @XmlAttribute(name = "Language")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
-    public List<Object> getContent() {
-        if (content == null) {
-            content = new ArrayList<Object>();
+
+    public List<Emphasis> getEmphasis() {
+        if (emphasis == null) {
+            emphasis = new ArrayList<Emphasis>();
         }
-        return this.content;
+        return this.emphasis;
     }
-    public void setContent(List<Object> value) {
-        this.content = value;
-    }
+
     public String getLanguage() {
         return language;
     }
+
     public void setLanguage(String value) {
-        language = ((String) value);
+        this.language = value;
     }
-    @Override
-    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-        }
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-    }
-    @Override
-    public void toXml(XmlSerializer serializer) throws IOException {
-    }
+
 }

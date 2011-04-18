@@ -25,7 +25,8 @@ import com.springer.api.schema.Tgroup;
     "tfooter"
 })
 @XmlRootElement(name = "Table")
-public class TableImpl implements Serializable, Table
+public class TableImpl
+    implements Serializable, Table
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

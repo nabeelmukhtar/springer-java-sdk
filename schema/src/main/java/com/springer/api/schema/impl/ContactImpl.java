@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Contact;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "phone",
@@ -18,7 +17,8 @@ import com.springer.api.schema.Contact;
     "email"
 })
 @XmlRootElement(name = "Contact")
-public class ContactImpl implements Serializable, Contact
+public class ContactImpl
+    implements Serializable, Contact
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

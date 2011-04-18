@@ -13,10 +13,8 @@ package com.springer.api.schema;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}Phone"/>
- *           &lt;element ref="{}Fax"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Phone" minOccurs="0"/>
+ *         &lt;element ref="{}Fax" minOccurs="0"/>
  *         &lt;element ref="{}Email"/>
  *       &lt;/sequence>
  *     &lt;/restriction>

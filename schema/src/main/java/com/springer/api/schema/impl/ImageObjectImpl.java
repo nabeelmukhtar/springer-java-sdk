@@ -15,7 +15,8 @@ import com.springer.api.schema.ImageObjectElement;
 @XmlType(name = "ImageObject", propOrder = {
     "imageObjectElement"
 })
-public class ImageObjectImpl implements Serializable, ImageObject
+public class ImageObjectImpl
+    implements Serializable, ImageObject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

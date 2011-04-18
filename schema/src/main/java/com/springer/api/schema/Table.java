@@ -14,10 +14,8 @@ package com.springer.api.schema;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Table" minOccurs="0"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}Caption"/>
- *           &lt;element ref="{}tgroup"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Caption" minOccurs="0"/>
+ *         &lt;element ref="{}tgroup" minOccurs="0"/>
  *         &lt;element ref="{}tfooter" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="Float" type="{http://www.w3.org/2001/XMLSchema}NCName" />

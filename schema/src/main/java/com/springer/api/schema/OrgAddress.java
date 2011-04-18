@@ -2,7 +2,6 @@
 package com.springer.api.schema;
 
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 
 
 /**
@@ -16,10 +15,8 @@ import javax.xml.bind.JAXBElement;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Street" minOccurs="0"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}City"/>
- *           &lt;element ref="{}Postcode"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}City" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Postcode" maxOccurs="unbounded"/>
  *         &lt;element ref="{}State" minOccurs="0"/>
  *         &lt;element ref="{}Country" minOccurs="0"/>
  *       &lt;/sequence>
@@ -54,29 +51,52 @@ public interface OrgAddress {
     void setStreet(String value);
 
     /**
-     * Gets the value of the cityAndPostcode property.
+     * Gets the value of the city property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cityAndPostcode property.
+     * This is why there is not a <CODE>set</CODE> method for the city property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCityAndPostcode().add(newItem);
+     *    getCity().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link String }
      * 
      * 
      */
-    List<JAXBElement<String>> getCityAndPostcode();
+    List<String> getCity();
+
+    /**
+     * Gets the value of the postcode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the postcode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPostcode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getPostcode();
 
     /**
      * Gets the value of the state property.

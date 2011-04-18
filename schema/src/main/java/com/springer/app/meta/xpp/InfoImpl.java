@@ -4,12 +4,9 @@ package com.springer.app.meta.xpp;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -31,7 +28,8 @@ import com.springer.app.meta.Title;
     "doi",
     "title",
     "isxn",
-    "journalAndPubName",
+    "journal",
+    "pubName",
     "articleFirstPage",
     "publication",
     "publicationType",
@@ -62,11 +60,10 @@ public class InfoImpl
     @XmlElement(name = "ISXN", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String isxn;
-    @XmlElementRefs({
-        @XmlElementRef(name = "Journal", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class),
-        @XmlElementRef(name = "PubName", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<String>> journalAndPubName;
+    @XmlElement(name = "Journal", required = true)
+    protected List<String> journal;
+    @XmlElement(name = "PubName", required = true)
+    protected List<String> pubName;
     @XmlElement(name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleFirstPage;
@@ -142,11 +139,18 @@ public class InfoImpl
         this.isxn = value;
     }
 
-    public List<JAXBElement<String>> getJournalAndPubName() {
-        if (journalAndPubName == null) {
-            journalAndPubName = new ArrayList<JAXBElement<String>>();
+    public List<String> getJournal() {
+        if (journal == null) {
+            journal = new ArrayList<String>();
         }
-        return this.journalAndPubName;
+        return this.journal;
+    }
+
+    public List<String> getPubName() {
+        if (pubName == null) {
+            pubName = new ArrayList<String>();
+        }
+        return this.pubName;
     }
 
     public String getArticleFirstPage() {

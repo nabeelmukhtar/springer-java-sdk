@@ -15,11 +15,9 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}Figure"/>
- *           &lt;element ref="{}Para"/>
- *           &lt;element ref="{}Table"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Figure" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Para" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Table" maxOccurs="unbounded"/>
  *         &lt;element ref="{}Section3" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
@@ -54,30 +52,76 @@ public interface Section2 {
     void setHeading(Heading value);
 
     /**
-     * Gets the value of the figureAndParaAndTable property.
+     * Gets the value of the figure property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the figureAndParaAndTable property.
+     * This is why there is not a <CODE>set</CODE> method for the figure property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFigureAndParaAndTable().add(newItem);
+     *    getFigure().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Figure }
+     * 
+     * 
+     */
+    List<Figure> getFigure();
+
+    /**
+     * Gets the value of the para property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the para property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPara().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
      * {@link Para }
+     * 
+     * 
+     */
+    List<Para> getPara();
+
+    /**
+     * Gets the value of the table property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the table property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTable().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
      * {@link Table }
      * 
      * 
      */
-    List<Object> getFigureAndParaAndTable();
+    List<Table> getTable();
 
     /**
      * Gets the value of the section3 property.

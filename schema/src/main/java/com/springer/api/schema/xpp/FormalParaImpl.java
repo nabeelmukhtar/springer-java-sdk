@@ -1,65 +1,73 @@
-package com.springer.api.schema.xpp;
-import java.io.IOException;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlSerializer;
+package com.springer.api.schema.xpp;
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.FormalPara;
 import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
-public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "heading",
+    "para"
+})
+@XmlRootElement(name = "FormalPara")
+public class FormalParaImpl
+    implements Serializable, FormalPara
+{
+
     private final static long serialVersionUID = 2461660169443089969L;
+    @XmlElement(name = "Heading", required = true, type = HeadingImpl.class)
     protected HeadingImpl heading;
+    @XmlElement(name = "Para", required = true, type = ParaImpl.class)
     protected ParaImpl para;
+    @XmlAttribute(name = "OutputMedium")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
+    @XmlAttribute(name = "RenderingStyle", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String renderingStyle;
+
     public Heading getHeading() {
         return heading;
     }
+
     public void setHeading(Heading value) {
-        heading = ((HeadingImpl) value);
+        this.heading = ((HeadingImpl) value);
     }
+
     public Para getPara() {
         return para;
     }
+
     public void setPara(Para value) {
-        para = ((ParaImpl) value);
+        this.para = ((ParaImpl) value);
     }
+
     public String getOutputMedium() {
         return outputMedium;
     }
+
     public void setOutputMedium(String value) {
-        outputMedium = ((String) value);
+        this.outputMedium = value;
     }
+
     public String getRenderingStyle() {
         return renderingStyle;
     }
+
     public void setRenderingStyle(String value) {
-        renderingStyle = ((String) value);
+        this.renderingStyle = value;
     }
-    @Override
-    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("Heading")) {
-                HeadingImpl node = new HeadingImpl();
-                node.init(parser);
-                setHeading(node);
-            } else if (name.equals("Para")) {
-                ParaImpl node = new ParaImpl();
-                node.init(parser);
-                setPara(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
-        setRenderingStyle(XppUtils.getAttributeValueFromNode(parser, "RenderingStyle"));
-    }
-    @Override
-    public void toXml(XmlSerializer serializer) throws IOException {
-    }
+
 }

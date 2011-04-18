@@ -16,8 +16,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.w3._1999.xhtml.Body;
 import org.w3._1999.xhtml.P;
 
-
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "h1",

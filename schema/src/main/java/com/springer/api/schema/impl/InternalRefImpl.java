@@ -13,13 +13,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.InternalRef;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "value"
 })
 @XmlRootElement(name = "InternalRef")
-public class InternalRefImpl implements Serializable, InternalRef
+public class InternalRefImpl
+    implements Serializable, InternalRef
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

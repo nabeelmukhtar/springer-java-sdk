@@ -13,14 +13,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.AuthorName;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "givenName",
     "familyName"
 })
 @XmlRootElement(name = "AuthorName")
-public class AuthorNameImpl implements Serializable, AuthorName
+public class AuthorNameImpl
+    implements Serializable, AuthorName
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

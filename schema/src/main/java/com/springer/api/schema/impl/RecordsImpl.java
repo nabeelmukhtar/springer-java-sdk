@@ -18,7 +18,6 @@ import com.springer.api.schema.Record;
 import com.springer.api.schema.Records;
 import com.springer.api.schema.Result;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "result",

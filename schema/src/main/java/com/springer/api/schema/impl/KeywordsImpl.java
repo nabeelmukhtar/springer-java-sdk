@@ -12,13 +12,13 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Keywords;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "keyword"
 })
 @XmlRootElement(name = "Keywords")
-public class KeywordsImpl implements Serializable, Keywords
+public class KeywordsImpl
+    implements Serializable, Keywords
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

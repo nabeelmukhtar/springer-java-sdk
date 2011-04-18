@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Accepted;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "year",

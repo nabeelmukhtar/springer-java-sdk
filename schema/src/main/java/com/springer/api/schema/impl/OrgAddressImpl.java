@@ -4,12 +4,9 @@ package com.springer.api.schema.impl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -17,11 +14,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.OrgAddress;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "street",
-    "cityAndPostcode",
+    "city",
+    "postcode",
     "state",
     "country"
 })
@@ -33,11 +30,10 @@ public class OrgAddressImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "Street")
     protected String street;
-    @XmlElementRefs({
-        @XmlElementRef(name = "Postcode", type = JAXBElement.class),
-        @XmlElementRef(name = "City", type = JAXBElement.class)
-    })
-    protected List<JAXBElement<String>> cityAndPostcode;
+    @XmlElement(name = "City", required = true)
+    protected List<String> city;
+    @XmlElement(name = "Postcode", required = true)
+    protected List<String> postcode;
     @XmlElement(name = "State")
     protected String state;
     @XmlElement(name = "Country")
@@ -52,11 +48,18 @@ public class OrgAddressImpl
         this.street = value;
     }
 
-    public List<JAXBElement<String>> getCityAndPostcode() {
-        if (cityAndPostcode == null) {
-            cityAndPostcode = new ArrayList<JAXBElement<String>>();
+    public List<String> getCity() {
+        if (city == null) {
+            city = new ArrayList<String>();
         }
-        return this.cityAndPostcode;
+        return this.city;
+    }
+
+    public List<String> getPostcode() {
+        if (postcode == null) {
+            postcode = new ArrayList<String>();
+        }
+        return this.postcode;
     }
 
     public String getState() {

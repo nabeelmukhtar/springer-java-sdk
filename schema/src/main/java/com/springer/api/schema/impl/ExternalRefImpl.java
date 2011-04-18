@@ -18,7 +18,8 @@ import com.springer.api.schema.RefTarget;
     "refTarget"
 })
 @XmlRootElement(name = "ExternalRef")
-public class ExternalRefImpl implements Serializable, ExternalRef
+public class ExternalRefImpl
+    implements Serializable, ExternalRef
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

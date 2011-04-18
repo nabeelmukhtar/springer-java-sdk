@@ -7,26 +7,20 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.w3._2001.xmlschema.Adapter1;
 
 import com.springer.api.schema.Subject;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "content"
-})
+@XmlType(name = "")
 @XmlRootElement(name = "Subject")
 public class SubjectImpl
     implements Serializable, Subject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlValue
-    protected String content;
     @XmlAttribute(name = "Code")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String code;
@@ -36,14 +30,6 @@ public class SubjectImpl
     @XmlAttribute(name = "Type", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String value) {
-        this.content = value;
-    }
 
     public String getCode() {
         return code;

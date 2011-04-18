@@ -7,17 +7,18 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
-import javax.xml.bind.annotation.XmlMixed;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.BibUnstructured;
+import com.springer.api.schema.Emphasis;
+import com.springer.api.schema.ExternalRef;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "content"
+    "emphasis",
+    "externalRef"
 })
 @XmlRootElement(name = "BibUnstructured")
 public class BibUnstructuredImpl
@@ -25,18 +26,23 @@ public class BibUnstructuredImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElementRefs({
-        @XmlElementRef(name = "ExternalRef", type = ExternalRefImpl.class),
-        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
-    })
-    @XmlMixed
-    protected List<Object> content;
+    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
+    protected List<Emphasis> emphasis;
+    @XmlElement(name = "ExternalRef", type = ExternalRefImpl.class)
+    protected List<ExternalRef> externalRef;
 
-    public List<Object> getContent() {
-        if (content == null) {
-            content = new ArrayList<Object>();
+    public List<Emphasis> getEmphasis() {
+        if (emphasis == null) {
+            emphasis = new ArrayList<Emphasis>();
         }
-        return this.content;
+        return this.emphasis;
+    }
+
+    public List<ExternalRef> getExternalRef() {
+        if (externalRef == null) {
+            externalRef = new ArrayList<ExternalRef>();
+        }
+        return this.externalRef;
     }
 
 }

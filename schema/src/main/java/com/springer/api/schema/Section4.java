@@ -15,10 +15,8 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}Figure"/>
- *           &lt;element ref="{}Para"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Figure" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Para" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
@@ -52,29 +50,52 @@ public interface Section4 {
     void setHeading(Heading value);
 
     /**
-     * Gets the value of the figureAndPara property.
+     * Gets the value of the figure property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the figureAndPara property.
+     * This is why there is not a <CODE>set</CODE> method for the figure property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFigureAndPara().add(newItem);
+     *    getFigure().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Figure }
+     * 
+     * 
+     */
+    List<Figure> getFigure();
+
+    /**
+     * Gets the value of the para property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the para property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPara().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Para }
-     * {@link Figure }
      * 
      * 
      */
-    List<Object> getFigureAndPara();
+    List<Para> getPara();
 
     /**
      * Gets the value of the id property.

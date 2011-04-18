@@ -21,7 +21,6 @@ import com.springer.api.schema.Tbody;
 import com.springer.api.schema.Tgroup;
 import com.springer.api.schema.Thead;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "colspec",

@@ -20,18 +20,14 @@ import org.prismstandard.namespaces.basic._2.Volume;
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}title"/>
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}creator" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationName"/>
- *         &lt;sequence>
- *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}isbn"/>
- *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}issn"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}isbn"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}issn"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}doi"/>
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}publisher"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationDate"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}volume"/>
- *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}number"/>
- *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}startingPage"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}volume" minOccurs="0"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}number" minOccurs="0"/>
+ *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}startingPage" minOccurs="0"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}url"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}copyright"/>
  *       &lt;/sequence>

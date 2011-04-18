@@ -16,7 +16,6 @@ import com.springer.api.schema.Images;
 import com.springer.api.schema.Publisher;
 import com.springer.api.schema.Result;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "publisher",

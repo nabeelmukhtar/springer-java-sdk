@@ -8,19 +8,22 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
-import javax.xml.bind.annotation.XmlMixed;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.Author;
+import com.springer.api.schema.AuthorName;
+import com.springer.api.schema.Biography;
+import com.springer.api.schema.Contact;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "content"
+    "authorName",
+    "biography",
+    "contact"
 })
 @XmlRootElement(name = "Author")
 public class AuthorImpl
@@ -28,24 +31,37 @@ public class AuthorImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElementRefs({
-        @XmlElementRef(name = "Contact", type = ContactImpl.class),
-        @XmlElementRef(name = "AuthorName", type = AuthorNameImpl.class),
-        @XmlElementRef(name = "Biography", type = BiographyImpl.class)
-    })
-    @XmlMixed
-    protected List<Object> content;
+    @XmlElement(name = "AuthorName", type = AuthorNameImpl.class)
+    protected List<AuthorName> authorName;
+    @XmlElement(name = "Biography", type = BiographyImpl.class)
+    protected List<Biography> biography;
+    @XmlElement(name = "Contact", type = ContactImpl.class)
+    protected List<Contact> contact;
     @XmlAttribute(name = "AffiliationIDS")
     protected String affiliationIDS;
     @XmlAttribute(name = "CorrespondingAffiliationID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String correspondingAffiliationID;
 
-    public List<Object> getContent() {
-        if (content == null) {
-            content = new ArrayList<Object>();
+    public List<AuthorName> getAuthorName() {
+        if (authorName == null) {
+            authorName = new ArrayList<AuthorName>();
         }
-        return this.content;
+        return this.authorName;
+    }
+
+    public List<Biography> getBiography() {
+        if (biography == null) {
+            biography = new ArrayList<Biography>();
+        }
+        return this.biography;
+    }
+
+    public List<Contact> getContact() {
+        if (contact == null) {
+            contact = new ArrayList<Contact>();
+        }
+        return this.contact;
     }
 
     public String getAffiliationIDS() {

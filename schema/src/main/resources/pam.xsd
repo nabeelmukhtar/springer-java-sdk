@@ -21,18 +21,14 @@
         <xs:element ref="dc:title"/>
         <xs:element maxOccurs="unbounded" ref="dc:creator"/>
         <xs:element ref="prism:publicationName"/>
-        <xs:sequence>
-          <xs:element ref="prism:isbn"/>
-          <xs:element ref="prism:issn"/>
-        </xs:sequence>
+        <xs:element ref="prism:isbn"/>
+        <xs:element ref="prism:issn"/>
         <xs:element ref="prism:doi"/>
         <xs:element ref="dc:publisher"/>
         <xs:element ref="prism:publicationDate"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="prism:volume"/>
-          <xs:element ref="prism:number"/>
-          <xs:element ref="prism:startingPage"/>
-        </xs:sequence>
+        <xs:element minOccurs="0" ref="prism:volume"/>
+        <xs:element minOccurs="0" ref="prism:number"/>
+        <xs:element minOccurs="0" ref="prism:startingPage"/>
         <xs:element ref="prism:url"/>
         <xs:element ref="prism:copyright"/>
       </xs:sequence>

@@ -13,10 +13,10 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *         &lt;element ref="{}CitationRef"/>
- *         &lt;element ref="{}Emphasis"/>
- *         &lt;element ref="{}Superscript"/>
+ *       &lt;sequence>
+ *         &lt;element ref="{}CitationRef" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Superscript" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,30 +29,75 @@ public interface SimplePara {
 
 
     /**
-     * Gets the value of the content property.
+     * Gets the value of the citationRef property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
+     * This is why there is not a <CODE>set</CODE> method for the citationRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getContent().add(newItem);
+     *    getCitationRef().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
      * {@link CitationRef }
+     * 
+     * 
+     */
+    List<CitationRef> getCitationRef();
+
+    /**
+     * Gets the value of the emphasis property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the emphasis property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getEmphasis().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
      * {@link Emphasis }
+     * 
+     * 
+     */
+    List<Emphasis> getEmphasis();
+
+    /**
+     * Gets the value of the superscript property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the superscript property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSuperscript().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
      * {@link Superscript }
      * 
      * 
      */
-    List<Object> getContent();
+    List<Superscript> getSuperscript();
 
 }

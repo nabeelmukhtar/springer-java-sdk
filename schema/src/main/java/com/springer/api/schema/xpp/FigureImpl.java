@@ -1,73 +1,84 @@
-package com.springer.api.schema.xpp;
-import java.io.IOException;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlSerializer;
+package com.springer.api.schema.xpp;
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.Caption;
 import com.springer.api.schema.Figure;
 import com.springer.api.schema.MediaObject;
-public class FigureImpl extends BaseSchemaEntity implements Figure {
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "caption",
+    "mediaObject"
+})
+@XmlRootElement(name = "Figure")
+public class FigureImpl
+    implements Serializable, Figure
+{
+
     private final static long serialVersionUID = 2461660169443089969L;
+    @XmlElement(name = "Caption", type = CaptionImpl.class)
     protected CaptionImpl caption;
+    @XmlElement(name = "MediaObject", required = true, type = MediaObjectImpl.class)
     protected MediaObjectImpl mediaObject;
+    @XmlAttribute(name = "Category", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String category;
+    @XmlAttribute(name = "Float", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String _float;
+    @XmlAttribute(name = "ID", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
+
     public Caption getCaption() {
         return caption;
     }
+
     public void setCaption(Caption value) {
-        caption = ((CaptionImpl) value);
+        this.caption = ((CaptionImpl) value);
     }
+
     public MediaObject getMediaObject() {
         return mediaObject;
     }
+
     public void setMediaObject(MediaObject value) {
-        mediaObject = ((MediaObjectImpl) value);
+        this.mediaObject = ((MediaObjectImpl) value);
     }
+
     public String getCategory() {
         return category;
     }
+
     public void setCategory(String value) {
-        category = ((String) value);
+        this.category = value;
     }
-    public String get_float() {
+
+    public String getFloat() {
         return _float;
     }
-    public void set_float(String value) {
-        _float = ((String) value);
+
+    public void setFloat(String value) {
+        this._float = value;
     }
-    public String getId() {
+
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
-        id = ((String) value);
+
+    public void setID(String value) {
+        this.id = value;
     }
-    @Override
-    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("Caption")) {
-                CaptionImpl node = new CaptionImpl();
-                node.init(parser);
-                setCaption(node);
-            } else if (name.equals("MediaObject")) {
-                MediaObjectImpl node = new MediaObjectImpl();
-                node.init(parser);
-                setMediaObject(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
-        setCategory(XppUtils.getAttributeValueFromNode(parser, "Category"));
-        set_float(XppUtils.getAttributeValueFromNode(parser, "Float"));
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
-    }
-    @Override
-    public void toXml(XmlSerializer serializer) throws IOException {
-    }
+
 }

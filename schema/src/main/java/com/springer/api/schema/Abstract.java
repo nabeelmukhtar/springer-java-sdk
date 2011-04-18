@@ -15,10 +15,8 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;sequence>
- *           &lt;element ref="{}Para"/>
- *           &lt;element ref="{}AbstractSection" maxOccurs="unbounded"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Para"/>
+ *         &lt;element ref="{}AbstractSection" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *       &lt;attribute name="Language" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />

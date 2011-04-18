@@ -1,67 +1,61 @@
+
 package com.springer.api.schema.xpp;
-import java.io.IOException;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlSerializer;
-import com.springer.api.schema.*;
-public class RecordsImpl extends BaseSchemaEntity implements Records {
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+import org.prismstandard.namespaces.pam._2.Message;
+import org.prismstandard.namespaces.pam._2.impl.MessageImpl;
+
+import com.springer.api.schema.Record;
+import com.springer.api.schema.Records;
+import com.springer.api.schema.Result;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "result",
+    "message",
+    "record"
+})
+@XmlRootElement(name = "records")
+public class RecordsImpl
+    implements Serializable, Records
+{
+
     private final static long serialVersionUID = 2461660169443089969L;
+    @XmlElement(required = true, type = ResultImpl.class)
     protected List<Result> result;
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/pam/2.0/", required = true, type = MessageImpl.class)
     protected List<Message> message;
+    @XmlElement(required = true, type = RecordImpl.class)
     protected List<Record> record;
+
     public List<Result> getResult() {
         if (result == null) {
             result = new ArrayList<Result>();
         }
         return this.result;
     }
-    public void setResult(List<Result> value) {
-        this.result = value;
-    }
+
     public List<Message> getMessage() {
         if (message == null) {
             message = new ArrayList<Message>();
         }
         return this.message;
     }
-    public void setMessage(List<Message> value) {
-        this.message = value;
-    }
+
     public List<Record> getRecord() {
         if (record == null) {
             record = new ArrayList<Record>();
         }
         return this.record;
     }
-    public void setRecord(List<Record> value) {
-        this.record = value;
-    }
-    @Override
-    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("##default")) {
-                ResultImpl node = new ResultImpl();
-                node.init(parser);
-                getResult().add(node);
-            } else if (name.equals("##default")) {
-                MessageImpl node = new MessageImpl();
-                node.init(parser);
-                getMessage().add(node);
-            } else if (name.equals("##default")) {
-                RecordImpl node = new RecordImpl();
-                node.init(parser);
-                getRecord().add(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
-    }
-    @Override
-    public void toXml(XmlSerializer serializer) throws IOException {
-    }
+
 }

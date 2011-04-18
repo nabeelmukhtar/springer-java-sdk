@@ -23,7 +23,6 @@ import com.springer.api.schema.ArticleInfo;
 import com.springer.api.schema.ArticleSubTitle;
 import com.springer.api.schema.ArticleTitle;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "articleID",

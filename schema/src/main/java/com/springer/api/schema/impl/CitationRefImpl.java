@@ -14,13 +14,13 @@ import org.w3._2001.xmlschema.Adapter1;
 
 import com.springer.api.schema.CitationRef;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "value"
 })
 @XmlRootElement(name = "CitationRef")
-public class CitationRefImpl implements Serializable, CitationRef
+public class CitationRefImpl
+    implements Serializable, CitationRef
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

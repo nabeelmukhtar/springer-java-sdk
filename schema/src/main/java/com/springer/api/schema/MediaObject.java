@@ -22,7 +22,8 @@ package com.springer.api.schema;
  * 
  * 
  */
-public interface MediaObject extends ImageObject
+public interface MediaObject
+    extends ImageObject
 {
 
 

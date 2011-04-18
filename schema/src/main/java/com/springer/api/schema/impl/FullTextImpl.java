@@ -21,7 +21,8 @@ import com.springer.api.schema.FullText;
     "p"
 })
 @XmlRootElement(name = "FullText")
-public class FullTextImpl implements Serializable, FullText
+public class FullTextImpl
+    implements Serializable, FullText
 {
 
     private final static long serialVersionUID = 2461660169443089969L;

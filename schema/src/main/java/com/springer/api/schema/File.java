@@ -14,10 +14,8 @@ import java.util.List;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}Color"/>
- *           &lt;element ref="{}Format"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}Color" minOccurs="0"/>
+ *         &lt;element ref="{}Format" minOccurs="0"/>
  *         &lt;element ref="{}Path" maxOccurs="unbounded"/>
  *         &lt;element ref="{}Type" minOccurs="0"/>
  *       &lt;/sequence>

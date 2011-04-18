@@ -15,10 +15,8 @@ package com.springer.api.schema;
  *       &lt;sequence>
  *         &lt;element ref="{}OnlineDate" minOccurs="0"/>
  *         &lt;element ref="{}PrintDate"/>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}CoverDate"/>
- *           &lt;element ref="{}PricelistYear"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}CoverDate" minOccurs="0"/>
+ *         &lt;element ref="{}PricelistYear" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>

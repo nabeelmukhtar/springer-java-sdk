@@ -8,36 +8,36 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlMixed;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.ArticleTitle;
+import com.springer.api.schema.Emphasis;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "content"
+    "emphasis"
 })
 @XmlRootElement(name = "ArticleTitle")
-public class ArticleTitleImpl implements Serializable, ArticleTitle
+public class ArticleTitleImpl
+    implements Serializable, ArticleTitle
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
-    @XmlMixed
-    protected List<Object> content;
+    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
+    protected List<Emphasis> emphasis;
     @XmlAttribute(name = "Language")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String language;
 
-    public List<Object> getContent() {
-        if (content == null) {
-            content = new ArrayList<Object>();
+    public List<Emphasis> getEmphasis() {
+        if (emphasis == null) {
+            emphasis = new ArrayList<Emphasis>();
         }
-        return this.content;
+        return this.emphasis;
     }
 
     public String getLanguage() {

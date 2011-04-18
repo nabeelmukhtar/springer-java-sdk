@@ -2,7 +2,6 @@
 package com.springer.app.meta;
 
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
@@ -24,10 +23,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element ref="{http://www.springer.com/app/meta}DOI"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Title"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}ISXN"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{http://www.springer.com/app/meta}Journal"/>
- *           &lt;element ref="{http://www.springer.com/app/meta}PubName"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{http://www.springer.com/app/meta}Journal" maxOccurs="unbounded"/>
+ *         &lt;element ref="{http://www.springer.com/app/meta}PubName" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}ArticleFirstPage" minOccurs="0"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Publication"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}PublicationType"/>
@@ -204,29 +201,52 @@ public interface Info {
     void setISXN(String value);
 
     /**
-     * Gets the value of the journalAndPubName property.
+     * Gets the value of the journal property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the journalAndPubName property.
+     * This is why there is not a <CODE>set</CODE> method for the journal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getJournalAndPubName().add(newItem);
+     *    getJournal().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link String }
      * 
      * 
      */
-    List<JAXBElement<String>> getJournalAndPubName();
+    List<String> getJournal();
+
+    /**
+     * Gets the value of the pubName property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pubName property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPubName().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getPubName();
 
     /**
      * Gets the value of the articleFirstPage property.

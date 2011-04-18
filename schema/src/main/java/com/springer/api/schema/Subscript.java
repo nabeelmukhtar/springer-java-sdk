@@ -27,28 +27,27 @@ public interface Subscript {
 
 
     /**
-     * Gets the value of the content property.
+     * Gets the value of the emphasis property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
+     * This is why there is not a <CODE>set</CODE> method for the emphasis property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getContent().add(newItem);
+     *    getEmphasis().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
      * {@link Emphasis }
      * 
      * 
      */
-    List<Object> getContent();
+    List<Emphasis> getEmphasis();
 
 }

@@ -12,7 +12,6 @@ import org.w3._2001.xmlschema.Adapter1;
 
 import com.springer.api.schema.ArticleCopyright;
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "copyrightHolderName",

@@ -17,37 +17,29 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Caption"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}File"/>
- *           &lt;element ref="{}FullText"/>
- *           &lt;element ref="{}Location"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}File" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}FullText" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Location" maxOccurs="unbounded"/>
  *         &lt;element ref="{}Table" minOccurs="0"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}ArticleTitle"/>
- *           &lt;element ref="{}Authors"/>
- *           &lt;element ref="{}DOI"/>
- *           &lt;element ref="{}Institutions"/>
- *           &lt;element ref="{}IssueId"/>
- *           &lt;element ref="{}JournalId"/>
- *           &lt;element ref="{}PubDate"/>
- *           &lt;element ref="{}SourceTitle"/>
- *           &lt;element ref="{}SourceType"/>
- *           &lt;element ref="{}VolumeId"/>
- *         &lt;/sequence>
- *         &lt;sequence minOccurs="0">
- *           &lt;element ref="{}ChapterId"/>
- *           &lt;element ref="{}BookTitleId"/>
- *           &lt;element ref="{}BookDOI"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}ArticleTitle" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Authors" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}DOI" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Institutions" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}IssueId" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}JournalId" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}PubDate" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}SourceTitle" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}SourceType" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}VolumeId" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}ChapterId" minOccurs="0"/>
+ *         &lt;element ref="{}BookTitleId" minOccurs="0"/>
+ *         &lt;element ref="{}BookDOI" minOccurs="0"/>
  *         &lt;element ref="{}ISXN"/>
  *         &lt;element ref="{}SubjectCollection"/>
  *         &lt;element ref="{}Subjects"/>
- *         &lt;sequence maxOccurs="unbounded">
- *           &lt;element ref="{}CopyrightHolder"/>
- *           &lt;element ref="{}Keywords"/>
- *           &lt;element ref="{}OpenAccess"/>
- *         &lt;/sequence>
+ *         &lt;element ref="{}CopyrightHolder" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Keywords" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}OpenAccess" maxOccurs="unbounded"/>
  *         &lt;element ref="{}ImageType"/>
  *         &lt;element ref="{}ArticleURI" minOccurs="0"/>
  *         &lt;element ref="{}Provider"/>
@@ -87,30 +79,76 @@ public interface Image {
     void setCaption(Caption value);
 
     /**
-     * Gets the value of the fileAndFullTextAndLocation property.
+     * Gets the value of the file property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fileAndFullTextAndLocation property.
+     * This is why there is not a <CODE>set</CODE> method for the file property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFileAndFullTextAndLocation().add(newItem);
+     *    getFile().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link File }
+     * 
+     * 
+     */
+    List<File> getFile();
+
+    /**
+     * Gets the value of the fullText property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fullText property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFullText().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FullText }
+     * 
+     * 
+     */
+    List<FullText> getFullText();
+
+    /**
+     * Gets the value of the location property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the location property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLocation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * {@link File }
-     * {@link FullText }
      * 
      * 
      */
-    List<Object> getFileAndFullTextAndLocation();
+    List<String> getLocation();
 
     /**
      * Gets the value of the table property.
@@ -133,37 +171,244 @@ public interface Image {
     void setTable(Table value);
 
     /**
-     * Gets the value of the articleTitleAndAuthorsAndDOI property.
+     * Gets the value of the articleTitle property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the articleTitleAndAuthorsAndDOI property.
+     * This is why there is not a <CODE>set</CODE> method for the articleTitle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getArticleTitleAndAuthorsAndDOI().add(newItem);
+     *    getArticleTitle().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ArticleTitle }
+     * 
+     * 
+     */
+    List<ArticleTitle> getArticleTitle();
+
+    /**
+     * Gets the value of the authors property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the authors property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAuthors().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Authors }
+     * 
+     * 
+     */
+    List<Authors> getAuthors();
+
+    /**
+     * Gets the value of the doi property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the doi property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDOI().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getDOI();
+
+    /**
+     * Gets the value of the institutions property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the institutions property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getInstitutions().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Institutions }
+     * 
+     * 
+     */
+    List<Institutions> getInstitutions();
+
+    /**
+     * Gets the value of the issueId property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the issueId property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getIssueId().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getIssueId();
+
+    /**
+     * Gets the value of the journalId property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the journalId property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getJournalId().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link Institutions }
-     * {@link JAXBElement }{@code <}{@link Long }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link ArticleTitle }
-     * {@link Authors }
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * 
+     */
+    List<JAXBElement<String>> getJournalId();
+
+    /**
+     * Gets the value of the pubDate property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pubDate property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPubDate().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
      */
-    List<Object> getArticleTitleAndAuthorsAndDOI();
+    List<JAXBElement<String>> getPubDate();
+
+    /**
+     * Gets the value of the sourceTitle property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sourceTitle property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSourceTitle().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getSourceTitle();
+
+    /**
+     * Gets the value of the sourceType property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sourceType property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSourceType().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * 
+     * 
+     */
+    List<JAXBElement<String>> getSourceType();
+
+    /**
+     * Gets the value of the volumeId property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the volumeId property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getVolumeId().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link Long }{@code >}
+     * 
+     * 
+     */
+    List<JAXBElement<Long>> getVolumeId();
 
     /**
      * Gets the value of the chapterId property.
@@ -286,30 +531,76 @@ public interface Image {
     void setSubjects(Subjects value);
 
     /**
-     * Gets the value of the copyrightHolderAndKeywordsAndOpenAccess property.
+     * Gets the value of the copyrightHolder property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the copyrightHolderAndKeywordsAndOpenAccess property.
+     * This is why there is not a <CODE>set</CODE> method for the copyrightHolder property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCopyrightHolderAndKeywordsAndOpenAccess().add(newItem);
+     *    getCopyrightHolder().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getCopyrightHolder();
+
+    /**
+     * Gets the value of the keywords property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the keywords property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getKeywords().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Keywords }
+     * 
+     * 
+     */
+    List<Keywords> getKeywords();
+
+    /**
+     * Gets the value of the openAccess property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the openAccess property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOpenAccess().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Boolean }
-     * {@link Keywords }
-     * {@link String }
      * 
      * 
      */
-    List<Object> getCopyrightHolderAndKeywordsAndOpenAccess();
+    List<Boolean> getOpenAccess();
 
     /**
      * Gets the value of the imageType property.
