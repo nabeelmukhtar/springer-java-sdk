@@ -15,11 +15,11 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}Figure"/>
  *           &lt;element ref="{}Para"/>
  *           &lt;element ref="{}Table"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{}Section3" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
@@ -54,30 +54,30 @@ public interface Section2 {
     void setHeading(Heading value);
 
     /**
-     * Gets the value of the figureOrParaOrTable property.
+     * Gets the value of the figureAndParaAndTable property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the figureOrParaOrTable property.
+     * This is why there is not a <CODE>set</CODE> method for the figureAndParaAndTable property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFigureOrParaOrTable().add(newItem);
+     *    getFigureAndParaAndTable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link Figure }
      * {@link Para }
      * {@link Table }
-     * {@link Figure }
      * 
      * 
      */
-    List<Object> getFigureOrParaOrTable();
+    List<Object> getFigureAndParaAndTable();
 
     /**
      * Gets the value of the section3 property.

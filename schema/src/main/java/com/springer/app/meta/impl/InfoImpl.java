@@ -31,7 +31,7 @@ import com.springer.app.meta.Title;
     "doi",
     "title",
     "isxn",
-    "journalOrPubName",
+    "journalAndPubName",
     "articleFirstPage",
     "publication",
     "publicationType",
@@ -63,10 +63,10 @@ public class InfoImpl
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String isxn;
     @XmlElementRefs({
-        @XmlElementRef(name = "PubName", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class),
-        @XmlElementRef(name = "Journal", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class)
+        @XmlElementRef(name = "Journal", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class),
+        @XmlElementRef(name = "PubName", namespace = "http://www.springer.com/app/meta", type = JAXBElement.class)
     })
-    protected List<JAXBElement<String>> journalOrPubName;
+    protected List<JAXBElement<String>> journalAndPubName;
     @XmlElement(name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String articleFirstPage;
@@ -142,11 +142,11 @@ public class InfoImpl
         this.isxn = value;
     }
 
-    public List<JAXBElement<String>> getJournalOrPubName() {
-        if (journalOrPubName == null) {
-            journalOrPubName = new ArrayList<JAXBElement<String>>();
+    public List<JAXBElement<String>> getJournalAndPubName() {
+        if (journalAndPubName == null) {
+            journalAndPubName = new ArrayList<JAXBElement<String>>();
         }
-        return this.journalOrPubName;
+        return this.journalAndPubName;
     }
 
     public String getArticleFirstPage() {

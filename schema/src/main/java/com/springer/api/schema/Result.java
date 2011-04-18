@@ -12,17 +12,13 @@ package com.springer.api.schema;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;sequence>
- *           &lt;element ref="{}Publisher"/>
- *           &lt;element ref="{}Images"/>
- *         &lt;/sequence>
- *         &lt;sequence>
- *           &lt;element ref="{}total"/>
- *           &lt;element ref="{}start"/>
- *           &lt;element ref="{}pageLength"/>
- *         &lt;/sequence>
- *       &lt;/choice>
+ *       &lt;sequence>
+ *         &lt;element ref="{}Publisher"/>
+ *         &lt;element ref="{}Images"/>
+ *         &lt;element ref="{}total"/>
+ *         &lt;element ref="{}start"/>
+ *         &lt;element ref="{}pageLength"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>

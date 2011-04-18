@@ -48,10 +48,10 @@ public class ArticleImpl
     protected List<String> creator;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String publicationName;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String isbn;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String issn;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)

@@ -14,11 +14,11 @@ import org.prismstandard.namespaces.pam._2.Message;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
+ *       &lt;sequence>
  *         &lt;element ref="{}result" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/pam/2.0/}message" maxOccurs="unbounded"/>
  *         &lt;element ref="{}record" maxOccurs="unbounded"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>

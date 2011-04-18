@@ -18,6 +18,7 @@ import com.springer.api.schema.Record;
 import com.springer.api.schema.Records;
 import com.springer.api.schema.Result;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "result",
@@ -30,11 +31,11 @@ public class RecordsImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(type = ResultImpl.class)
+    @XmlElement(required = true, type = ResultImpl.class)
     protected List<Result> result;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/pam/2.0/", type = MessageImpl.class)
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/pam/2.0/", required = true, type = MessageImpl.class)
     protected List<Message> message;
-    @XmlElement(type = RecordImpl.class)
+    @XmlElement(required = true, type = RecordImpl.class)
     protected List<Record> record;
 
     public List<Result> getResult() {

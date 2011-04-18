@@ -18,6 +18,7 @@ import com.springer.api.schema.Equation;
 import com.springer.api.schema.EquationSource;
 import com.springer.api.schema.MediaObject;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "equationNumber",

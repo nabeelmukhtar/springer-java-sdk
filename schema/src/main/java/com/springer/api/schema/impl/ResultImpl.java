@@ -16,6 +16,7 @@ import com.springer.api.schema.Images;
 import com.springer.api.schema.Publisher;
 import com.springer.api.schema.Result;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "publisher",
@@ -30,17 +31,17 @@ public class ResultImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Publisher", type = PublisherImpl.class)
+    @XmlElement(name = "Publisher", required = true, type = PublisherImpl.class)
     protected PublisherImpl publisher;
-    @XmlElement(name = "Images", type = ImagesImpl.class)
+    @XmlElement(name = "Images", required = true, type = ImagesImpl.class)
     protected ImagesImpl images;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long total;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long start;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long pageLength;
 

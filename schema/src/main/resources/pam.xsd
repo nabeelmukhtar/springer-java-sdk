@@ -21,10 +21,10 @@
         <xs:element ref="dc:title"/>
         <xs:element maxOccurs="unbounded" ref="dc:creator"/>
         <xs:element ref="prism:publicationName"/>
-        <xs:choice>
+        <xs:sequence>
           <xs:element ref="prism:isbn"/>
           <xs:element ref="prism:issn"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element ref="prism:doi"/>
         <xs:element ref="dc:publisher"/>
         <xs:element ref="prism:publicationDate"/>

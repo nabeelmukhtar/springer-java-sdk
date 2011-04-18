@@ -17,6 +17,7 @@ import org.w3._2001.xmlschema.Adapter1;
 import com.springer.api.schema.Entry;
 import com.springer.api.schema.SimplePara;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "simplePara"

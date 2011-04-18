@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Institutions;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "institution"

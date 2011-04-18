@@ -15,10 +15,10 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}Figure"/>
  *           &lt;element ref="{}Para"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
@@ -52,18 +52,18 @@ public interface Section4 {
     void setHeading(Heading value);
 
     /**
-     * Gets the value of the figureOrPara property.
+     * Gets the value of the figureAndPara property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the figureOrPara property.
+     * This is why there is not a <CODE>set</CODE> method for the figureAndPara property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFigureOrPara().add(newItem);
+     *    getFigureAndPara().add(newItem);
      * </pre>
      * 
      * 
@@ -74,7 +74,7 @@ public interface Section4 {
      * 
      * 
      */
-    List<Object> getFigureOrPara();
+    List<Object> getFigureAndPara();
 
     /**
      * Gets the value of the id property.

@@ -27,19 +27,20 @@ import com.springer.api.schema.Image;
 import com.springer.api.schema.Subjects;
 import com.springer.api.schema.Table;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "caption",
-    "fileOrFullTextOrLocation",
+    "fileAndFullTextAndLocation",
     "table",
-    "articleTitleOrAuthorsOrDOI",
+    "articleTitleAndAuthorsAndDOI",
     "chapterId",
     "bookTitleId",
     "bookDOI",
     "isxn",
     "subjectCollection",
     "subjects",
-    "copyrightHolderOrKeywordsOrOpenAccess",
+    "copyrightHolderAndKeywordsAndOpenAccess",
     "imageType",
     "articleURI",
     "provider",
@@ -54,26 +55,26 @@ public class ImageImpl
     @XmlElement(name = "Caption", required = true, type = CaptionImpl.class)
     protected CaptionImpl caption;
     @XmlElements({
-        @XmlElement(name = "File", type = FileImpl.class),
-        @XmlElement(name = "FullText", type = FullTextImpl.class),
-        @XmlElement(name = "Location", type = String.class)
+        @XmlElement(name = "Location", required = true, type = String.class),
+        @XmlElement(name = "File", required = true, type = FileImpl.class),
+        @XmlElement(name = "FullText", required = true, type = FullTextImpl.class)
     })
-    protected List<Object> fileOrFullTextOrLocation;
+    protected List<Object> fileAndFullTextAndLocation;
     @XmlElement(name = "Table", type = TableImpl.class)
     protected TableImpl table;
     @XmlElementRefs({
-        @XmlElementRef(name = "JournalId", type = JAXBElement.class),
-        @XmlElementRef(name = "DOI", type = JAXBElement.class),
-        @XmlElementRef(name = "VolumeId", type = JAXBElement.class),
         @XmlElementRef(name = "PubDate", type = JAXBElement.class),
+        @XmlElementRef(name = "Institutions", type = InstitutionsImpl.class),
+        @XmlElementRef(name = "VolumeId", type = JAXBElement.class),
+        @XmlElementRef(name = "IssueId", type = JAXBElement.class),
+        @XmlElementRef(name = "SourceTitle", type = JAXBElement.class),
         @XmlElementRef(name = "Authors", type = AuthorsImpl.class),
         @XmlElementRef(name = "ArticleTitle", type = ArticleTitleImpl.class),
-        @XmlElementRef(name = "Institutions", type = InstitutionsImpl.class),
-        @XmlElementRef(name = "SourceTitle", type = JAXBElement.class),
         @XmlElementRef(name = "SourceType", type = JAXBElement.class),
-        @XmlElementRef(name = "IssueId", type = JAXBElement.class)
+        @XmlElementRef(name = "DOI", type = JAXBElement.class),
+        @XmlElementRef(name = "JournalId", type = JAXBElement.class)
     })
-    protected List<Object> articleTitleOrAuthorsOrDOI;
+    protected List<Object> articleTitleAndAuthorsAndDOI;
     @XmlElement(name = "ChapterId", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long chapterId;
@@ -89,11 +90,11 @@ public class ImageImpl
     @XmlElement(name = "Subjects", required = true, type = SubjectsImpl.class)
     protected SubjectsImpl subjects;
     @XmlElements({
-        @XmlElement(name = "CopyrightHolder", type = String.class),
-        @XmlElement(name = "Keywords", type = KeywordsImpl.class),
-        @XmlElement(name = "OpenAccess", type = Boolean.class)
+        @XmlElement(name = "OpenAccess", required = true, type = Boolean.class),
+        @XmlElement(name = "Keywords", required = true, type = KeywordsImpl.class),
+        @XmlElement(name = "CopyrightHolder", required = true, type = String.class)
     })
-    protected List<Object> copyrightHolderOrKeywordsOrOpenAccess;
+    protected List<Object> copyrightHolderAndKeywordsAndOpenAccess;
     @XmlElement(name = "ImageType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String imageType;
@@ -121,11 +122,11 @@ public class ImageImpl
         this.caption = ((CaptionImpl) value);
     }
 
-    public List<Object> getFileOrFullTextOrLocation() {
-        if (fileOrFullTextOrLocation == null) {
-            fileOrFullTextOrLocation = new ArrayList<Object>();
+    public List<Object> getFileAndFullTextAndLocation() {
+        if (fileAndFullTextAndLocation == null) {
+            fileAndFullTextAndLocation = new ArrayList<Object>();
         }
-        return this.fileOrFullTextOrLocation;
+        return this.fileAndFullTextAndLocation;
     }
 
     public Table getTable() {
@@ -136,11 +137,11 @@ public class ImageImpl
         this.table = ((TableImpl) value);
     }
 
-    public List<Object> getArticleTitleOrAuthorsOrDOI() {
-        if (articleTitleOrAuthorsOrDOI == null) {
-            articleTitleOrAuthorsOrDOI = new ArrayList<Object>();
+    public List<Object> getArticleTitleAndAuthorsAndDOI() {
+        if (articleTitleAndAuthorsAndDOI == null) {
+            articleTitleAndAuthorsAndDOI = new ArrayList<Object>();
         }
-        return this.articleTitleOrAuthorsOrDOI;
+        return this.articleTitleAndAuthorsAndDOI;
     }
 
     public Long getChapterId() {
@@ -191,11 +192,11 @@ public class ImageImpl
         this.subjects = ((SubjectsImpl) value);
     }
 
-    public List<Object> getCopyrightHolderOrKeywordsOrOpenAccess() {
-        if (copyrightHolderOrKeywordsOrOpenAccess == null) {
-            copyrightHolderOrKeywordsOrOpenAccess = new ArrayList<Object>();
+    public List<Object> getCopyrightHolderAndKeywordsAndOpenAccess() {
+        if (copyrightHolderAndKeywordsAndOpenAccess == null) {
+            copyrightHolderAndKeywordsAndOpenAccess = new ArrayList<Object>();
         }
-        return this.copyrightHolderOrKeywordsOrOpenAccess;
+        return this.copyrightHolderAndKeywordsAndOpenAccess;
     }
 
     public String getImageType() {

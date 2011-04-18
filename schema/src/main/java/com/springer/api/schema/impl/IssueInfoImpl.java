@@ -18,6 +18,7 @@ import com.springer.api.schema.IssueCopyright;
 import com.springer.api.schema.IssueHistory;
 import com.springer.api.schema.IssueInfo;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "issueIDStart",

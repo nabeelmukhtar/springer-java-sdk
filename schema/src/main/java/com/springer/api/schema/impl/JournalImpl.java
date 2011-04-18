@@ -31,9 +31,9 @@ public class JournalImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "JournalInfo", required = true, type = JournalInfoImpl.class)
     protected JournalInfoImpl journalInfo;
-    @XmlElement(name = "JournalOnlineFirst", type = JournalOnlineFirstImpl.class)
+    @XmlElement(name = "JournalOnlineFirst", required = true, type = JournalOnlineFirstImpl.class)
     protected JournalOnlineFirstImpl journalOnlineFirst;
-    @XmlElement(name = "Volume", type = VolumeImpl.class)
+    @XmlElement(name = "Volume", required = true, type = VolumeImpl.class)
     protected VolumeImpl volume;
     @XmlAttribute(name = "OutputMedium")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

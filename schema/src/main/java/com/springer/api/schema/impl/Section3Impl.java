@@ -37,7 +37,7 @@ public class Section3Impl
     protected HeadingImpl heading;
     @XmlElement(name = "Para", type = ParaImpl.class)
     protected ParaImpl para;
-    @XmlElement(name = "Figure", type = FigureImpl.class)
+    @XmlElement(name = "Figure", required = true, type = FigureImpl.class)
     protected FigureImpl figure;
     @XmlElement(name = "Section4", type = Section4Impl.class)
     protected List<Section4> section4;

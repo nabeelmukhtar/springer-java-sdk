@@ -14,6 +14,7 @@ import org.w3._2001.xmlschema.Adapter1;
 
 import com.springer.api.schema.VolumeInfo;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "volumeIDStart",

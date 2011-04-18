@@ -17,6 +17,7 @@ import com.springer.api.schema.IssueHistory;
 import com.springer.api.schema.OnlineDate;
 import com.springer.api.schema.PrintDate;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "onlineDate",

@@ -44,8 +44,8 @@ public interface Subscript {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Emphasis }
      * {@link String }
+     * {@link Emphasis }
      * 
      * 
      */

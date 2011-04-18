@@ -13,7 +13,7 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
  *         &lt;element ref="{}CitationRef"/>
  *         &lt;element ref="{}Emphasis"/>
  *         &lt;element ref="{}ExternalRef"/>
@@ -27,7 +27,7 @@ import java.util.List;
  *         &lt;element ref="{}InlineEquation"/>
  *         &lt;element ref="{}InternalRef"/>
  *         &lt;element ref="{}Subscript"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -56,20 +56,20 @@ public interface Para {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link InternalRef }
-     * {@link Superscript }
+     * {@link Footnote }
+     * {@link DefinitionList }
+     * {@link Emphasis }
      * {@link MediaObject }
      * {@link Table }
+     * {@link Superscript }
      * {@link Equation }
-     * {@link ExternalRef }
-     * {@link Emphasis }
+     * {@link Subscript }
      * {@link String }
-     * {@link InlineEquation }
-     * {@link DefinitionList }
-     * {@link Footnote }
+     * {@link ExternalRef }
      * {@link CitationRef }
      * {@link Figure }
-     * {@link Subscript }
+     * {@link InlineEquation }
+     * {@link InternalRef }
      * 
      * 
      */

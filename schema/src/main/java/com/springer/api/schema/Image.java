@@ -17,13 +17,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Caption"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}File"/>
  *           &lt;element ref="{}FullText"/>
  *           &lt;element ref="{}Location"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{}Table" minOccurs="0"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}ArticleTitle"/>
  *           &lt;element ref="{}Authors"/>
  *           &lt;element ref="{}DOI"/>
@@ -34,7 +34,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *           &lt;element ref="{}SourceTitle"/>
  *           &lt;element ref="{}SourceType"/>
  *           &lt;element ref="{}VolumeId"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;sequence minOccurs="0">
  *           &lt;element ref="{}ChapterId"/>
  *           &lt;element ref="{}BookTitleId"/>
@@ -43,11 +43,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element ref="{}ISXN"/>
  *         &lt;element ref="{}SubjectCollection"/>
  *         &lt;element ref="{}Subjects"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}CopyrightHolder"/>
  *           &lt;element ref="{}Keywords"/>
  *           &lt;element ref="{}OpenAccess"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{}ImageType"/>
  *         &lt;element ref="{}ArticleURI" minOccurs="0"/>
  *         &lt;element ref="{}Provider"/>
@@ -87,30 +87,30 @@ public interface Image {
     void setCaption(Caption value);
 
     /**
-     * Gets the value of the fileOrFullTextOrLocation property.
+     * Gets the value of the fileAndFullTextAndLocation property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fileOrFullTextOrLocation property.
+     * This is why there is not a <CODE>set</CODE> method for the fileAndFullTextAndLocation property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFileOrFullTextOrLocation().add(newItem);
+     *    getFileAndFullTextAndLocation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link String }
      * {@link File }
      * {@link FullText }
-     * {@link String }
      * 
      * 
      */
-    List<Object> getFileOrFullTextOrLocation();
+    List<Object> getFileAndFullTextAndLocation();
 
     /**
      * Gets the value of the table property.
@@ -133,37 +133,37 @@ public interface Image {
     void setTable(Table value);
 
     /**
-     * Gets the value of the articleTitleOrAuthorsOrDOI property.
+     * Gets the value of the articleTitleAndAuthorsAndDOI property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the articleTitleOrAuthorsOrDOI property.
+     * This is why there is not a <CODE>set</CODE> method for the articleTitleAndAuthorsAndDOI property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getArticleTitleOrAuthorsOrDOI().add(newItem);
+     *    getArticleTitleAndAuthorsAndDOI().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link Institutions }
      * {@link JAXBElement }{@code <}{@link Long }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link Authors }
      * {@link ArticleTitle }
-     * {@link Institutions }
+     * {@link Authors }
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
      */
-    List<Object> getArticleTitleOrAuthorsOrDOI();
+    List<Object> getArticleTitleAndAuthorsAndDOI();
 
     /**
      * Gets the value of the chapterId property.
@@ -286,30 +286,30 @@ public interface Image {
     void setSubjects(Subjects value);
 
     /**
-     * Gets the value of the copyrightHolderOrKeywordsOrOpenAccess property.
+     * Gets the value of the copyrightHolderAndKeywordsAndOpenAccess property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the copyrightHolderOrKeywordsOrOpenAccess property.
+     * This is why there is not a <CODE>set</CODE> method for the copyrightHolderAndKeywordsAndOpenAccess property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCopyrightHolderOrKeywordsOrOpenAccess().add(newItem);
+     *    getCopyrightHolderAndKeywordsAndOpenAccess().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * {@link Keywords }
      * {@link Boolean }
+     * {@link Keywords }
+     * {@link String }
      * 
      * 
      */
-    List<Object> getCopyrightHolderOrKeywordsOrOpenAccess();
+    List<Object> getCopyrightHolderAndKeywordsAndOpenAccess();
 
     /**
      * Gets the value of the imageType property.

@@ -16,10 +16,10 @@ import java.util.List;
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
  *         &lt;element ref="{}Para" minOccurs="0"/>
- *         &lt;choice>
+ *         &lt;sequence>
  *           &lt;element ref="{}Figure"/>
  *           &lt;element ref="{}Section4" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>

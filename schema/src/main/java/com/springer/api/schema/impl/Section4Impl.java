@@ -21,7 +21,7 @@ import com.springer.api.schema.Section4;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "heading",
-    "figureOrPara"
+    "figureAndPara"
 })
 @XmlRootElement(name = "Section4")
 public class Section4Impl
@@ -32,10 +32,10 @@ public class Section4Impl
     @XmlElement(name = "Heading", required = true, type = HeadingImpl.class)
     protected HeadingImpl heading;
     @XmlElements({
-        @XmlElement(name = "Para", type = ParaImpl.class),
-        @XmlElement(name = "Figure", type = FigureImpl.class)
+        @XmlElement(name = "Para", required = true, type = ParaImpl.class),
+        @XmlElement(name = "Figure", required = true, type = FigureImpl.class)
     })
-    protected List<Object> figureOrPara;
+    protected List<Object> figureAndPara;
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
@@ -48,11 +48,11 @@ public class Section4Impl
         this.heading = ((HeadingImpl) value);
     }
 
-    public List<Object> getFigureOrPara() {
-        if (figureOrPara == null) {
-            figureOrPara = new ArrayList<Object>();
+    public List<Object> getFigureAndPara() {
+        if (figureAndPara == null) {
+            figureAndPara = new ArrayList<Object>();
         }
-        return this.figureOrPara;
+        return this.figureAndPara;
     }
 
     public String getID() {

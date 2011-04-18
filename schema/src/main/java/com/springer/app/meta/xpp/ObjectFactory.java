@@ -57,38 +57,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Title }
-     * 
-     */
-    public TitleImpl createTitle() {
-        return new TitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link SubjectGroup }
-     * 
-     */
-    public SubjectGroupImpl createSubjectGroup() {
-        return new SubjectGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Info }
-     * 
-     */
-    public InfoImpl createInfo() {
-        return new InfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link Authors }
-     * 
-     */
-    public AuthorsImpl createAuthors() {
-        return new AuthorsImpl();
-    }
-
-    /**
      * Create an instance of {@link Subject }
      * 
      */
@@ -105,11 +73,43 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Authors }
+     * 
+     */
+    public AuthorsImpl createAuthors() {
+        return new AuthorsImpl();
+    }
+
+    /**
+     * Create an instance of {@link SubjectGroup }
+     * 
+     */
+    public SubjectGroupImpl createSubjectGroup() {
+        return new SubjectGroupImpl();
+    }
+
+    /**
      * Create an instance of {@link Institutions }
      * 
      */
     public InstitutionsImpl createInstitutions() {
         return new InstitutionsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Title }
+     * 
+     */
+    public TitleImpl createTitle() {
+        return new TitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Info }
+     * 
+     */
+    public InfoImpl createInfo() {
+        return new InfoImpl();
     }
 
     /**

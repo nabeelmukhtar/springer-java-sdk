@@ -17,10 +17,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.springer.api.schema.OrgAddress;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "street",
-    "cityOrPostcode",
+    "cityAndPostcode",
     "state",
     "country"
 })
@@ -33,10 +34,10 @@ public class OrgAddressImpl
     @XmlElement(name = "Street")
     protected String street;
     @XmlElementRefs({
-        @XmlElementRef(name = "City", type = JAXBElement.class),
-        @XmlElementRef(name = "Postcode", type = JAXBElement.class)
+        @XmlElementRef(name = "Postcode", type = JAXBElement.class),
+        @XmlElementRef(name = "City", type = JAXBElement.class)
     })
-    protected List<JAXBElement<String>> cityOrPostcode;
+    protected List<JAXBElement<String>> cityAndPostcode;
     @XmlElement(name = "State")
     protected String state;
     @XmlElement(name = "Country")
@@ -51,11 +52,11 @@ public class OrgAddressImpl
         this.street = value;
     }
 
-    public List<JAXBElement<String>> getCityOrPostcode() {
-        if (cityOrPostcode == null) {
-            cityOrPostcode = new ArrayList<JAXBElement<String>>();
+    public List<JAXBElement<String>> getCityAndPostcode() {
+        if (cityAndPostcode == null) {
+            cityAndPostcode = new ArrayList<JAXBElement<String>>();
         }
-        return this.cityOrPostcode;
+        return this.cityAndPostcode;
     }
 
     public String getState() {

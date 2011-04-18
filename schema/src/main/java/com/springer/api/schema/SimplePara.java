@@ -13,11 +13,11 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
  *         &lt;element ref="{}CitationRef"/>
  *         &lt;element ref="{}Emphasis"/>
  *         &lt;element ref="{}Superscript"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -46,9 +46,9 @@ public interface SimplePara {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link String }
      * {@link CitationRef }
      * {@link Emphasis }
-     * {@link String }
      * {@link Superscript }
      * 
      * 

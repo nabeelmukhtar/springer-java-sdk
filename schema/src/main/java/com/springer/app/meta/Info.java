@@ -24,10 +24,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element ref="{http://www.springer.com/app/meta}DOI"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Title"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}ISXN"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{http://www.springer.com/app/meta}Journal"/>
  *           &lt;element ref="{http://www.springer.com/app/meta}PubName"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{http://www.springer.com/app/meta}ArticleFirstPage" minOccurs="0"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Publication"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}PublicationType"/>
@@ -204,18 +204,18 @@ public interface Info {
     void setISXN(String value);
 
     /**
-     * Gets the value of the journalOrPubName property.
+     * Gets the value of the journalAndPubName property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the journalOrPubName property.
+     * This is why there is not a <CODE>set</CODE> method for the journalAndPubName property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getJournalOrPubName().add(newItem);
+     *    getJournalAndPubName().add(newItem);
      * </pre>
      * 
      * 
@@ -226,7 +226,7 @@ public interface Info {
      * 
      * 
      */
-    List<JAXBElement<String>> getJournalOrPubName();
+    List<JAXBElement<String>> getJournalAndPubName();
 
     /**
      * Gets the value of the articleFirstPage property.

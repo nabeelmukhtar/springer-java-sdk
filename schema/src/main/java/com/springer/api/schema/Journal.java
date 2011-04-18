@@ -14,10 +14,8 @@ package com.springer.api.schema;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}JournalInfo"/>
- *         &lt;choice>
- *           &lt;element ref="{}JournalOnlineFirst"/>
- *           &lt;element ref="{}Volume"/>
- *         &lt;/choice>
+ *         &lt;element ref="{}JournalOnlineFirst"/>
+ *         &lt;element ref="{}Volume"/>
  *       &lt;/sequence>
  *       &lt;attribute name="OutputMedium" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>

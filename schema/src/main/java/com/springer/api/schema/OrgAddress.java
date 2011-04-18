@@ -16,10 +16,10 @@ import javax.xml.bind.JAXBElement;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Street" minOccurs="0"/>
- *         &lt;choice maxOccurs="unbounded">
+ *         &lt;sequence maxOccurs="unbounded">
  *           &lt;element ref="{}City"/>
  *           &lt;element ref="{}Postcode"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{}State" minOccurs="0"/>
  *         &lt;element ref="{}Country" minOccurs="0"/>
  *       &lt;/sequence>
@@ -54,18 +54,18 @@ public interface OrgAddress {
     void setStreet(String value);
 
     /**
-     * Gets the value of the cityOrPostcode property.
+     * Gets the value of the cityAndPostcode property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cityOrPostcode property.
+     * This is why there is not a <CODE>set</CODE> method for the cityAndPostcode property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCityOrPostcode().add(newItem);
+     *    getCityAndPostcode().add(newItem);
      * </pre>
      * 
      * 
@@ -76,7 +76,7 @@ public interface OrgAddress {
      * 
      * 
      */
-    List<JAXBElement<String>> getCityOrPostcode();
+    List<JAXBElement<String>> getCityAndPostcode();
 
     /**
      * Gets the value of the state property.

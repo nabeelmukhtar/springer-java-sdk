@@ -20,10 +20,10 @@ import org.prismstandard.namespaces.basic._2.Volume;
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}title"/>
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}creator" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationName"/>
- *         &lt;choice>
+ *         &lt;sequence>
  *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}isbn"/>
  *           &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}issn"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}doi"/>
  *         &lt;element ref="{http://purl.org/dc/elements/1.1/}publisher"/>
  *         &lt;element ref="{http://prismstandard.org/namespaces/basic/2.0/}publicationDate"/>

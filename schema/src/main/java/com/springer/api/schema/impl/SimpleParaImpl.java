@@ -26,9 +26,9 @@ public class SimpleParaImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElementRefs({
-        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class),
         @XmlElementRef(name = "CitationRef", type = CitationRefImpl.class),
-        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
+        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class),
+        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class)
     })
     @XmlMixed
     protected List<Object> content;

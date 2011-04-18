@@ -21,11 +21,11 @@
   <xs:element name="apiKey" type="xs:NCName"/>
   <xs:element name="records">
     <xs:complexType>
-      <xs:choice>
+      <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="result"/>
         <xs:element maxOccurs="unbounded" ref="pam:message"/>
         <xs:element maxOccurs="unbounded" ref="record"/>
-      </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="h1" type="xs:NCName"/>
@@ -58,17 +58,13 @@
   </xs:element>
   <xs:element name="result">
     <xs:complexType>
-      <xs:choice>
-        <xs:sequence>
-          <xs:element ref="Publisher"/>
-          <xs:element ref="Images"/>
-        </xs:sequence>
-        <xs:sequence>
-          <xs:element ref="total"/>
-          <xs:element ref="start"/>
-          <xs:element ref="pageLength"/>
-        </xs:sequence>
-      </xs:choice>
+       <xs:sequence>
+         <xs:element ref="Publisher"/>
+         <xs:element ref="Images"/>
+         <xs:element ref="total"/>
+         <xs:element ref="start"/>
+         <xs:element ref="pageLength"/>
+       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Publisher">
@@ -95,10 +91,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="JournalInfo"/>
-        <xs:choice>
-          <xs:element ref="JournalOnlineFirst"/>
-          <xs:element ref="Volume"/>
-        </xs:choice>
+        <xs:element ref="JournalOnlineFirst"/>
+        <xs:element ref="Volume"/>
       </xs:sequence>
       <xs:attribute name="OutputMedium" type="xs:NCName"/>
     </xs:complexType>
@@ -238,24 +232,24 @@
   <xs:element name="start" type="xs:integer"/>
   <xs:element name="pageLength" type="xs:integer"/>
   <xs:element name="p">
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="xhtml:p"/>
         <xs:element ref="xhtml:sub"/>
-      </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Image">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="Caption"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="File"/>
           <xs:element ref="FullText"/>
           <xs:element ref="Location"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element minOccurs="0" ref="Table"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="ArticleTitle"/>
           <xs:element ref="Authors"/>
           <xs:element ref="DOI"/>
@@ -266,7 +260,7 @@
           <xs:element ref="SourceTitle"/>
           <xs:element ref="SourceType"/>
           <xs:element ref="VolumeId"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:sequence minOccurs="0">
           <xs:element ref="ChapterId"/>
           <xs:element ref="BookTitleId"/>
@@ -275,11 +269,11 @@
         <xs:element ref="ISXN"/>
         <xs:element ref="SubjectCollection"/>
         <xs:element ref="Subjects"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="CopyrightHolder"/>
           <xs:element ref="Keywords"/>
           <xs:element ref="OpenAccess"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element ref="ImageType"/>
         <xs:element minOccurs="0" ref="ArticleURI"/>
         <xs:element ref="Provider"/>
@@ -602,10 +596,10 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="Street"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="City"/>
           <xs:element ref="Postcode"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element minOccurs="0" ref="State"/>
         <xs:element minOccurs="0" ref="Country"/>
       </xs:sequence>
@@ -620,10 +614,10 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="Heading"/>
-        <xs:choice>
+        <xs:sequence>
           <xs:element ref="Para"/>
           <xs:element maxOccurs="unbounded" ref="AbstractSection"/>
-        </xs:choice>
+        </xs:sequence>
       </xs:sequence>
       <xs:attribute name="ID" use="required" type="xs:NCName"/>
       <xs:attribute name="Language" use="required" type="xs:NCName"/>
@@ -669,11 +663,11 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="Heading"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="Figure"/>
           <xs:element ref="Para"/>
           <xs:element ref="Table"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section3"/>
       </xs:sequence>
       <xs:attribute name="ID" use="required" type="xs:NCName"/>
@@ -684,10 +678,10 @@
       <xs:sequence>
         <xs:element ref="Heading"/>
         <xs:element minOccurs="0" ref="Para"/>
-        <xs:choice>
+        <xs:sequence>
           <xs:element ref="Figure"/>
           <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section4"/>
-        </xs:choice>
+        </xs:sequence>
       </xs:sequence>
       <xs:attribute name="ID" use="required" type="xs:NCName"/>
     </xs:complexType>
@@ -696,10 +690,10 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="Heading"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="Figure"/>
           <xs:element ref="Para"/>
-        </xs:choice>
+        </xs:sequence>
       </xs:sequence>
       <xs:attribute name="ID" use="required" type="xs:NCName"/>
     </xs:complexType>
@@ -740,11 +734,11 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="CitationNumber"/>
-        <xs:choice minOccurs="0">
+        <xs:sequence minOccurs="0">
           <xs:element ref="BibArticle"/>
           <xs:element ref="BibBook"/>
           <xs:element ref="BibChapter"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element minOccurs="0" ref="BibUnstructured"/>
       </xs:sequence>
       <xs:attribute name="ID" use="required" type="xs:NCName"/>
@@ -812,18 +806,18 @@
   <xs:element name="BibComments" type="xs:string"/>
   <xs:element name="BibUnstructured">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="Emphasis"/>
         <xs:element ref="ExternalRef"/>
-      </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Emphasis">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="Emphasis"/>
         <xs:element ref="Superscript"/>
-      </xs:choice>
+      </xs:sequence>
       <xs:attribute name="Type" use="required" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
@@ -899,11 +893,11 @@
   </xs:element>
   <xs:element name="Author">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="AuthorName"/>
         <xs:element ref="Biography"/>
         <xs:element ref="Contact"/>
-      </xs:choice>
+      </xs:sequence>
       <xs:attribute name="AffiliationIDS"/>
       <xs:attribute name="CorrespondingAffiliationID" type="xs:NCName"/>
     </xs:complexType>
@@ -957,7 +951,7 @@
   </xs:element>
   <xs:element name="Para">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="CitationRef"/>
         <xs:element ref="Emphasis"/>
         <xs:element ref="ExternalRef"/>
@@ -971,7 +965,7 @@
         <xs:element ref="InlineEquation"/>
         <xs:element ref="InternalRef"/>
         <xs:element ref="Subscript"/>
-      </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DefinitionList">
@@ -1061,11 +1055,11 @@
   </xs:element>
   <xs:element name="SimplePara">
     <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="CitationRef"/>
         <xs:element ref="Emphasis"/>
         <xs:element ref="Superscript"/>
-      </xs:choice>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="FormalPara">

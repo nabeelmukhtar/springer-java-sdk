@@ -6,6 +6,7 @@ import java.util.List;
 import com.springer.api.schema.Emphasis;
 
 
+
 /**
  * <p>Java class for anonymous complex type.
  * 
@@ -46,8 +47,8 @@ public interface Title {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Emphasis }
      * {@link String }
+     * {@link Emphasis }
      * 
      * 
      */

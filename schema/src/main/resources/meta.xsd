@@ -17,10 +17,10 @@
         <xs:element ref="meta:DOI"/>
         <xs:element ref="meta:Title"/>
         <xs:element ref="meta:ISXN"/>
-        <xs:choice maxOccurs="unbounded">
+        <xs:sequence maxOccurs="unbounded">
           <xs:element ref="meta:Journal"/>
           <xs:element ref="meta:PubName"/>
-        </xs:choice>
+        </xs:sequence>
         <xs:element minOccurs="0" ref="meta:ArticleFirstPage"/>
         <xs:element ref="meta:Publication"/>
         <xs:element ref="meta:PublicationType"/>

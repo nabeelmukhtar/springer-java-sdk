@@ -1,7 +1,6 @@
 
 package org.w3._1999.xhtml;
 
-import java.io.Serializable;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 
@@ -15,10 +14,10 @@ import javax.xml.bind.JAXBElement;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
  *         &lt;element ref="{http://www.w3.org/1999/xhtml}p"/>
  *         &lt;element ref="{http://www.w3.org/1999/xhtml}sub"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -30,29 +29,28 @@ public interface P {
 
 
     /**
-     * Gets the value of the content property.
+     * Gets the value of the pAndSub property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
+     * This is why there is not a <CODE>set</CODE> method for the pAndSub property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getContent().add(newItem);
+     *    getPAndSub().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link String }
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
      */
-    List<Serializable> getContent();
+    List<JAXBElement<String>> getPAndSub();
 
 }

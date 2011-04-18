@@ -13,11 +13,11 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
  *         &lt;element ref="{}AuthorName"/>
  *         &lt;element ref="{}Biography"/>
  *         &lt;element ref="{}Contact"/>
- *       &lt;/choice>
+ *       &lt;/sequence>
  *       &lt;attribute name="AffiliationIDS" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
  *       &lt;attribute name="CorrespondingAffiliationID" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
@@ -48,10 +48,10 @@ public interface Author {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AuthorName }
      * {@link String }
-     * {@link Biography }
      * {@link Contact }
+     * {@link AuthorName }
+     * {@link Biography }
      * 
      * 
      */

@@ -15,11 +15,11 @@ import java.math.BigDecimal;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}CitationNumber"/>
- *         &lt;choice minOccurs="0">
+ *         &lt;sequence minOccurs="0">
  *           &lt;element ref="{}BibArticle"/>
  *           &lt;element ref="{}BibBook"/>
  *           &lt;element ref="{}BibChapter"/>
- *         &lt;/choice>
+ *         &lt;/sequence>
  *         &lt;element ref="{}BibUnstructured" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />

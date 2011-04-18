@@ -33,9 +33,9 @@ public class AbstractImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "Heading", required = true, type = HeadingImpl.class)
     protected HeadingImpl heading;
-    @XmlElement(name = "Para", type = ParaImpl.class)
+    @XmlElement(name = "Para", required = true, type = ParaImpl.class)
     protected ParaImpl para;
-    @XmlElement(name = "AbstractSection", type = AbstractSectionImpl.class)
+    @XmlElement(name = "AbstractSection", required = true, type = AbstractSectionImpl.class)
     protected List<AbstractSection> abstractSection;
     @XmlAttribute(name = "ID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

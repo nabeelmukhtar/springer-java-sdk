@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.PublisherInfo;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "publisherName",

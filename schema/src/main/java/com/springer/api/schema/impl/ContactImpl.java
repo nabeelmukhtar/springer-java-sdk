@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Contact;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "phone",

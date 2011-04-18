@@ -25,19 +25,19 @@ public class ParaImpl implements Serializable, Para
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElementRefs({
-        @XmlElementRef(name = "InternalRef", type = InternalRefImpl.class),
-        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class),
+        @XmlElementRef(name = "Footnote", type = FootnoteImpl.class),
+        @XmlElementRef(name = "DefinitionList", type = DefinitionListImpl.class),
+        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class),
         @XmlElementRef(name = "MediaObject", type = MediaObjectImpl.class),
         @XmlElementRef(name = "Table", type = TableImpl.class),
+        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class),
         @XmlElementRef(name = "Equation", type = EquationImpl.class),
+        @XmlElementRef(name = "Subscript", type = SubscriptImpl.class),
         @XmlElementRef(name = "ExternalRef", type = ExternalRefImpl.class),
-        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class),
-        @XmlElementRef(name = "InlineEquation", type = InlineEquationImpl.class),
-        @XmlElementRef(name = "DefinitionList", type = DefinitionListImpl.class),
-        @XmlElementRef(name = "Footnote", type = FootnoteImpl.class),
         @XmlElementRef(name = "CitationRef", type = CitationRefImpl.class),
         @XmlElementRef(name = "Figure", type = FigureImpl.class),
-        @XmlElementRef(name = "Subscript", type = SubscriptImpl.class)
+        @XmlElementRef(name = "InlineEquation", type = InlineEquationImpl.class),
+        @XmlElementRef(name = "InternalRef", type = InternalRefImpl.class)
     })
     @XmlMixed
     protected List<Object> content;
