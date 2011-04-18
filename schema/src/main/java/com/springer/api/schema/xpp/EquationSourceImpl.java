@@ -1,35 +1,29 @@
-
 package com.springer.api.schema.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.EquationSource;
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "EquationSource")
-public class EquationSourceImpl
-    implements Serializable, EquationSource
-{
-
+public class EquationSourceImpl extends BaseSchemaEntity implements EquationSource {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlAttribute(name = "Format", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String format;
-
     public String getFormat() {
         return format;
     }
-
     public void setFormat(String value) {
-        this.format = value;
+        format = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+        }
+        setFormat(XppUtils.getAttributeValueFromNode(parser, "Format"));
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }

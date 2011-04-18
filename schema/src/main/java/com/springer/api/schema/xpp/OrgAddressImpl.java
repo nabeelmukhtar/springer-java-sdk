@@ -1,81 +1,78 @@
-
 package com.springer.api.schema.xpp;
-
-import java.io.Serializable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.OrgAddress;
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "street",
-    "city",
-    "postcode",
-    "state",
-    "country"
-})
-@XmlRootElement(name = "OrgAddress")
-public class OrgAddressImpl
-    implements Serializable, OrgAddress
-{
-
+public class OrgAddressImpl extends BaseSchemaEntity implements OrgAddress {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Street")
     protected String street;
-    @XmlElement(name = "City", required = true)
     protected List<String> city;
-    @XmlElement(name = "Postcode", required = true)
     protected List<String> postcode;
-    @XmlElement(name = "State")
     protected String state;
-    @XmlElement(name = "Country")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String country;
-
     public String getStreet() {
         return street;
     }
-
     public void setStreet(String value) {
-        this.street = value;
+        street = ((String) value);
     }
-
     public List<String> getCity() {
         if (city == null) {
             city = new ArrayList<String>();
         }
         return this.city;
     }
-
+    public void setCity(List<String> value) {
+        this.city = value;
+    }
     public List<String> getPostcode() {
         if (postcode == null) {
             postcode = new ArrayList<String>();
         }
         return this.postcode;
     }
-
+    public void setPostcode(List<String> value) {
+        this.postcode = value;
+    }
     public String getState() {
         return state;
     }
-
     public void setState(String value) {
-        this.state = value;
+        state = ((String) value);
     }
-
     public String getCountry() {
         return country;
     }
-
     public void setCountry(String value) {
-        this.country = value;
+        country = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("Street")) {
+                setStreet(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("City")) {
+                getCity().add(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Postcode")) {
+                getPostcode().add(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("State")) {
+                setState(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Country")) {
+                setCountry(XppUtils.getElementValueFromNode(parser));
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }

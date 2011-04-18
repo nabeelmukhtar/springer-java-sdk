@@ -1,47 +1,37 @@
-
 package com.springer.api.schema.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.w3._2001.xmlschema.Adapter1;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.JournalSubject;
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "JournalSubject")
-public class JournalSubjectImpl
-    implements Serializable, JournalSubject
-{
-
+public class JournalSubjectImpl extends BaseSchemaEntity implements JournalSubject {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlAttribute(name = "Priority")
-    @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long priority;
-    @XmlAttribute(name = "Type", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
-
     public Long getPriority() {
         return priority;
     }
-
     public void setPriority(Long value) {
-        this.priority = value;
+        priority = ((Long) value);
     }
-
     public String getType() {
         return type;
     }
-
     public void setType(String value) {
-        this.type = value;
+        type = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+        }
+        setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }
