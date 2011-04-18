@@ -1,48 +1,53 @@
-
 package org.w3._1999.xhtml.xpp;
-
-import java.io.Serializable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
 import org.w3._1999.xhtml.Body;
 import org.w3._1999.xhtml.P;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "h1",
-    "ps"
-})
-@XmlRootElement(name = "body")
-public class BodyImpl
-    implements Serializable, Body
-{
-
+import com.springer.api.schema.xpp.BaseSchemaEntity;
+import com.springer.api.schema.xpp.XppUtils;
+public class BodyImpl extends BaseSchemaEntity implements Body {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(required = true)
     protected String h1;
-    @XmlElement(name = "p", type = PImpl.class)
     protected List<P> ps;
-
     public String getH1() {
         return h1;
     }
-
     public void setH1(String value) {
-        this.h1 = value;
+        h1 = ((String) value);
     }
-
     public List<P> getPS() {
         if (ps == null) {
             ps = new ArrayList<P>();
         }
         return this.ps;
     }
-
+    public void setPS(List<P> value) {
+        this.ps = value;
+    }
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("##default")) {
+                setH1(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("p")) {
+                PImpl node = new PImpl();
+                node.init(parser);
+                getPS().add(node);
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }

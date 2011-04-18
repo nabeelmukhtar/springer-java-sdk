@@ -1,35 +1,38 @@
-
 package org.w3._1999.xhtml.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import org.prismstandard.namespaces.pam._2.Article;
-import org.prismstandard.namespaces.pam._2.impl.ArticleImpl;
 import org.w3._1999.xhtml.Head;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "article"
-})
-@XmlRootElement(name = "head")
-public class HeadImpl
-    implements Serializable, Head
-{
-
+import org.prismstandard.namespaces.pam._2.Article;
+import org.prismstandard.namespaces.pam._2.xpp.ArticleImpl;
+import com.springer.api.schema.xpp.BaseSchemaEntity;
+import com.springer.api.schema.xpp.XppUtils;
+public class HeadImpl extends BaseSchemaEntity implements Head {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/pam/2.0/", required = true, type = ArticleImpl.class)
     protected ArticleImpl article;
-
     public Article getArticle() {
         return article;
     }
-
     public void setArticle(Article value) {
-        this.article = ((ArticleImpl) value);
+        article = ((ArticleImpl) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("##default")) {
+                setArticle(XppUtils.getElementValueFromNode(parser));
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }
