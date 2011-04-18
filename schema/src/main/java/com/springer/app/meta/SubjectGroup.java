@@ -27,18 +27,18 @@ public interface SubjectGroup {
 
 
     /**
-     * Gets the value of the subject property.
+     * Gets the value of the subjects property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subject property.
+     * This is why there is not a <CODE>set</CODE> method for the subjects property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubject().add(newItem);
+     *    getSubjects().add(newItem);
      * </pre>
      * 
      * 
@@ -48,6 +48,6 @@ public interface SubjectGroup {
      * 
      * 
      */
-    List<Subject> getSubject();
+    List<Subject> getSubjects();
 
 }

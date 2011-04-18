@@ -45,19 +45,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Volume }
-     * 
-     */
-    public VolumeImpl createVolume() {
-        return new VolumeImpl();
-    }
-
-    /**
      * Create an instance of {@link Number }
      * 
      */
     public NumberImpl createNumber() {
         return new NumberImpl();
+    }
+
+    /**
+     * Create an instance of {@link Volume }
+     * 
+     */
+    public VolumeImpl createVolume() {
+        return new VolumeImpl();
     }
 
     /**

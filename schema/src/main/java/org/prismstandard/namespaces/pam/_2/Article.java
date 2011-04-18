@@ -82,18 +82,18 @@ public interface Article {
     void setTitle(String value);
 
     /**
-     * Gets the value of the creator property.
+     * Gets the value of the creators property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the creator property.
+     * This is why there is not a <CODE>set</CODE> method for the creators property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCreator().add(newItem);
+     *    getCreators().add(newItem);
      * </pre>
      * 
      * 
@@ -103,7 +103,7 @@ public interface Article {
      * 
      * 
      */
-    List<String> getCreator();
+    List<String> getCreators();
 
     /**
      * Gets the value of the publicationName property.

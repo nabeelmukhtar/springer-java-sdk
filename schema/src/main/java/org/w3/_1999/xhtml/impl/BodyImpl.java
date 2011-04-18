@@ -10,8 +10,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.w3._1999.xhtml.Body;
 import org.w3._1999.xhtml.P;
@@ -19,7 +17,7 @@ import org.w3._1999.xhtml.P;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "h1",
-    "p"
+    "ps"
 })
 @XmlRootElement(name = "body")
 public class BodyImpl
@@ -28,10 +26,9 @@ public class BodyImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String h1;
-    @XmlElement(type = PImpl.class)
-    protected List<P> p;
+    @XmlElement(name = "p", type = PImpl.class)
+    protected List<P> ps;
 
     public String getH1() {
         return h1;
@@ -41,11 +38,11 @@ public class BodyImpl
         this.h1 = value;
     }
 
-    public List<P> getP() {
-        if (p == null) {
-            p = new ArrayList<P>();
+    public List<P> getPS() {
+        if (ps == null) {
+            ps = new ArrayList<P>();
         }
-        return this.p;
+        return this.ps;
     }
 
 }

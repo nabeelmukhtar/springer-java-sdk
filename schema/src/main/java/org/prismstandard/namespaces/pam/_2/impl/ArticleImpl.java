@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -21,7 +22,7 @@ import org.prismstandard.namespaces.pam._2.Article;
 @XmlType(name = "", propOrder = {
     "identifier",
     "title",
-    "creator",
+    "creators",
     "publicationName",
     "isbn",
     "issn",
@@ -41,18 +42,21 @@ public class ArticleImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
+    @XmlSchemaType(name = "anyURI")
     protected String identifier;
     @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
     protected String title;
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    protected List<String> creator;
+    @XmlElement(name = "creator", namespace = "http://purl.org/dc/elements/1.1/", required = true)
+    protected List<String> creators;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String publicationName;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String isbn;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String issn;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String doi;
@@ -60,6 +64,7 @@ public class ArticleImpl
     protected String publisher;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String publicationDate;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = VolumeImpl.class)
     protected VolumeImpl volume;
@@ -67,8 +72,10 @@ public class ArticleImpl
     protected NumberImpl number;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String startingPage;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
+    @XmlSchemaType(name = "anyURI")
     protected String url;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String copyright;
@@ -89,11 +96,11 @@ public class ArticleImpl
         this.title = value;
     }
 
-    public List<String> getCreator() {
-        if (creator == null) {
-            creator = new ArrayList<String>();
+    public List<String> getCreators() {
+        if (creators == null) {
+            creators = new ArrayList<String>();
         }
-        return this.creator;
+        return this.creators;
     }
 
     public String getPublicationName() {

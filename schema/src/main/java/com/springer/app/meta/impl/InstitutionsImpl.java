@@ -14,7 +14,7 @@ import com.springer.app.meta.Institutions;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "institution"
+    "institutions"
 })
 @XmlRootElement(name = "Institutions")
 public class InstitutionsImpl
@@ -23,13 +23,13 @@ public class InstitutionsImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "Institution", type = InstitutionImpl.class)
-    protected List<Institution> institution;
+    protected List<Institution> institutions;
 
-    public List<Institution> getInstitution() {
-        if (institution == null) {
-            institution = new ArrayList<Institution>();
+    public List<Institution> getInstitutions() {
+        if (institutions == null) {
+            institutions = new ArrayList<Institution>();
         }
-        return this.institution;
+        return this.institutions;
     }
 
 }

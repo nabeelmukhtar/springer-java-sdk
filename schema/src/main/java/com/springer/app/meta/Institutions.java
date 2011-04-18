@@ -27,18 +27,18 @@ public interface Institutions {
 
 
     /**
-     * Gets the value of the institution property.
+     * Gets the value of the institutions property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the institution property.
+     * This is why there is not a <CODE>set</CODE> method for the institutions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getInstitution().add(newItem);
+     *    getInstitutions().add(newItem);
      * </pre>
      * 
      * 
@@ -48,6 +48,6 @@ public interface Institutions {
      * 
      * 
      */
-    List<Institution> getInstitution();
+    List<Institution> getInstitutions();
 
 }

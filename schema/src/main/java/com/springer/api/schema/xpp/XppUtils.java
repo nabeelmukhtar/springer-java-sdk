@@ -17,6 +17,7 @@
 package com.springer.api.schema.xpp;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -100,6 +101,15 @@ public class XppUtils {
     	}
     }
     
+    public static Date getElementValueAsDateFromNode(XmlPullParser node) throws IOException, XmlPullParserException {
+    	String value = node.nextText();
+    	if (isNullOrEmpty(value)) {
+    		return null;
+    	} else {
+    		// TODO-NM: Implement this method.
+            return null;
+    	}
+    }
 
     /**
      * Gets the attribute value from node.

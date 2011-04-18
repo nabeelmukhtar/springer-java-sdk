@@ -1,8 +1,8 @@
 
 package com.springer.app.meta;
 
+import java.util.Date;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -45,20 +45,20 @@ public interface Info {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    XMLGregorianCalendar getDateLoaded();
+    Date getDateLoaded();
 
     /**
      * Sets the value of the dateLoaded property.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    void setDateLoaded(XMLGregorianCalendar value);
+    void setDateLoaded(Date value);
 
     /**
      * Gets the value of the authors property.
@@ -201,18 +201,18 @@ public interface Info {
     void setISXN(String value);
 
     /**
-     * Gets the value of the journal property.
+     * Gets the value of the journals property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the journal property.
+     * This is why there is not a <CODE>set</CODE> method for the journals property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getJournal().add(newItem);
+     *    getJournals().add(newItem);
      * </pre>
      * 
      * 
@@ -222,21 +222,21 @@ public interface Info {
      * 
      * 
      */
-    List<String> getJournal();
+    List<String> getJournals();
 
     /**
-     * Gets the value of the pubName property.
+     * Gets the value of the pubNames property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pubName property.
+     * This is why there is not a <CODE>set</CODE> method for the pubNames property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPubName().add(newItem);
+     *    getPubNames().add(newItem);
      * </pre>
      * 
      * 
@@ -246,7 +246,7 @@ public interface Info {
      * 
      * 
      */
-    List<String> getPubName();
+    List<String> getPubNames();
 
     /**
      * Gets the value of the articleFirstPage property.

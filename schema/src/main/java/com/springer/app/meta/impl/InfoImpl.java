@@ -3,20 +3,22 @@ package com.springer.app.meta.impl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.springer.app.meta.Authors;
 import com.springer.app.meta.Info;
 import com.springer.app.meta.Institutions;
 import com.springer.app.meta.SubjectGroup;
 import com.springer.app.meta.Title;
+import org.w3._2001.xmlschema.Adapter1;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -28,8 +30,8 @@ import com.springer.app.meta.Title;
     "doi",
     "title",
     "isxn",
-    "journal",
-    "pubName",
+    "journals",
+    "pubNames",
     "articleFirstPage",
     "publication",
     "publicationType",
@@ -41,17 +43,21 @@ public class InfoImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "DateLoaded")
-    protected XMLGregorianCalendar dateLoaded;
+    @XmlElement(name = "DateLoaded", type = String.class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlSchemaType(name = "dateTime")
+    protected Date dateLoaded;
     @XmlElement(name = "Authors", required = true, type = AuthorsImpl.class)
     protected AuthorsImpl authors;
     @XmlElement(name = "Institutions", required = true, type = InstitutionsImpl.class)
     protected InstitutionsImpl institutions;
     @XmlElement(name = "Date", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String date;
     @XmlElement(name = "Type", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NCName")
     protected String type;
     @XmlElement(name = "DOI", required = true)
     protected String doi;
@@ -59,27 +65,30 @@ public class InfoImpl
     protected TitleImpl title;
     @XmlElement(name = "ISXN", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String isxn;
     @XmlElement(name = "Journal", required = true)
-    protected List<String> journal;
+    protected List<String> journals;
     @XmlElement(name = "PubName", required = true)
-    protected List<String> pubName;
+    protected List<String> pubNames;
     @XmlElement(name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NMTOKEN")
     protected String articleFirstPage;
     @XmlElement(name = "Publication", required = true)
     protected String publication;
     @XmlElement(name = "PublicationType", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NCName")
     protected String publicationType;
     @XmlElement(name = "SubjectGroup", required = true, type = SubjectGroupImpl.class)
     protected SubjectGroupImpl subjectGroup;
 
-    public XMLGregorianCalendar getDateLoaded() {
+    public Date getDateLoaded() {
         return dateLoaded;
     }
 
-    public void setDateLoaded(XMLGregorianCalendar value) {
+    public void setDateLoaded(Date value) {
         this.dateLoaded = value;
     }
 
@@ -139,18 +148,18 @@ public class InfoImpl
         this.isxn = value;
     }
 
-    public List<String> getJournal() {
-        if (journal == null) {
-            journal = new ArrayList<String>();
+    public List<String> getJournals() {
+        if (journals == null) {
+            journals = new ArrayList<String>();
         }
-        return this.journal;
+        return this.journals;
     }
 
-    public List<String> getPubName() {
-        if (pubName == null) {
-            pubName = new ArrayList<String>();
+    public List<String> getPubNames() {
+        if (pubNames == null) {
+            pubNames = new ArrayList<String>();
         }
-        return this.pubName;
+        return this.pubNames;
     }
 
     public String getArticleFirstPage() {

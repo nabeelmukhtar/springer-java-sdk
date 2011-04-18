@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlElement.DEFAULT;
  *
  */
 public class XppCodeGenerator {
-	private static final String SOURCE_DIR = "E:\\workspace\\opensource\\springer-java-sdk\\schema\\src\\main\\java\\com\\springer\\app\\meta\\xpp";
-	private static final String PACKAGE_NAME = "com.springer.app.meta.xpp";
+	private static final String SOURCE_DIR = "E:\\workspace\\opensource\\springer-java-sdk\\schema\\src\\main\\java\\com\\springer\\api\\schema\\xpp";
+	private static final String PACKAGE_NAME = "com.springer.api.schema.xpp";
 	private static final List<String> EXCLUDED_FILES = Arrays.asList("XppUtils.java", "ObjectFactory.java", "BaseSchemaEntity.java");
 
 	/**
@@ -207,7 +207,11 @@ public class XppCodeGenerator {
 	}
 
 	private static String camel(String name) {
-		return Character.toUpperCase(name.charAt(0)) + name.substring(1);
+		if (name.charAt(0) == '_') {
+			return Character.toUpperCase(name.charAt(1)) + name.substring(2);
+		} else {
+			return Character.toUpperCase(name.charAt(0)) + name.substring(1);
+		}
 	}
 	
 	private static String inter(String name) {

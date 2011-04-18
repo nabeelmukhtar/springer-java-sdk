@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import com.springer.app.meta.Institution;
 
@@ -29,6 +30,7 @@ public class InstitutionImpl
     @XmlElement(name = "Country", required = true)
     protected String country;
     @XmlAttribute
+    @XmlSchemaType(name = "anySimpleType")
     protected String geo;
 
     public String getOrgName() {

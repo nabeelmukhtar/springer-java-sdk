@@ -17,8 +17,8 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="query" type="xs:NCName"/>
-  <xs:element name="apiKey" type="xs:NCName"/>
+  <xs:element name="query" type="xs:string"/>
+  <xs:element name="apiKey" type="xs:string"/>
   <xs:element name="records">
     <xs:complexType>
       <xs:sequence>
@@ -28,7 +28,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="h1" type="xs:NCName"/>
+  <xs:element name="h1" type="xs:string"/>
   <xs:element name="record">
     <xs:complexType>
       <xs:sequence>
@@ -48,7 +48,7 @@
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="facet-value"/>
       </xs:sequence>
-      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="facet-value">
@@ -94,7 +94,7 @@
         <xs:element ref="JournalOnlineFirst"/>
         <xs:element ref="Volume"/>
       </xs:sequence>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="JournalInfo">
@@ -109,8 +109,8 @@
         <xs:element ref="JournalAbbreviatedTitle"/>
         <xs:element ref="JournalSubjectGroup"/>
       </xs:sequence>
-      <xs:attribute name="JournalProductType" use="required" type="xs:NCName"/>
-      <xs:attribute name="NumberingStyle" use="required" type="xs:NCName"/>
+      <xs:attribute name="JournalProductType" use="required" type="xs:string"/>
+      <xs:attribute name="NumberingStyle" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="JournalPrintISSN" type="xs:NMTOKEN"/>
@@ -128,7 +128,7 @@
   <xs:element name="JournalSubject">
     <xs:complexType>
       <xs:attribute name="Priority" type="xs:integer"/>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="JournalOnlineFirst">
@@ -144,7 +144,7 @@
         <xs:element ref="VolumeInfo"/>
         <xs:element ref="Issue"/>
       </xs:sequence>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="VolumeInfo">
@@ -155,7 +155,7 @@
         <xs:element ref="VolumeIssueCount"/>
       </xs:sequence>
       <xs:attribute name="TocLevels" use="required" type="xs:integer"/>
-      <xs:attribute name="VolumeType" use="required" type="xs:NCName"/>
+      <xs:attribute name="VolumeType" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="VolumeIssueCount" type="xs:string"/>
@@ -165,8 +165,8 @@
         <xs:element ref="IssueInfo"/>
         <xs:element ref="Article"/>
       </xs:sequence>
-      <xs:attribute name="IssueType" use="required" type="xs:NCName"/>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
+      <xs:attribute name="IssueType" use="required" type="xs:string"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="IssueInfo">
@@ -178,7 +178,7 @@
         <xs:element ref="IssueHistory"/>
         <xs:element ref="IssueCopyright"/>
       </xs:sequence>
-      <xs:attribute name="IssueType" type="xs:NCName"/>
+      <xs:attribute name="IssueType" type="xs:string"/>
       <xs:attribute name="TocLevels" use="required" type="xs:integer"/>
     </xs:complexType>
   </xs:element>
@@ -270,7 +270,7 @@
         <xs:element minOccurs="0" ref="DateLoaded"/>
       </xs:sequence>
       <xs:attribute name="Id" use="required" type="xs:NMTOKEN"/>
-      <xs:attribute name="language" type="xs:NCName"/>
+      <xs:attribute name="language" type="xs:string"/>
       <xs:attribute ref="xml:lang"/>
     </xs:complexType>
   </xs:element>
@@ -285,17 +285,17 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="Color" type="xs:boolean"/>
-  <xs:element name="Format" type="xs:NCName"/>
+  <xs:element name="Format" type="xs:string"/>
   <xs:element name="Path">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:anyURI">
-          <xs:attribute name="Type" type="xs:NCName"/>
+          <xs:attribute name="Type" type="xs:string"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Type" type="xs:NCName"/>
+  <xs:element name="Type" type="xs:string"/>
   <xs:element name="FullText">
     <xs:complexType>
       <xs:sequence>
@@ -324,7 +324,7 @@
   <xs:element name="JournalId" type="xs:NMTOKEN"/>
   <xs:element name="PubDate" type="xs:NMTOKEN"/>
   <xs:element name="SourceTitle" type="xs:string"/>
-  <xs:element name="SourceType" type="xs:NCName"/>
+  <xs:element name="SourceType" type="xs:string"/>
   <xs:element name="VolumeId" type="xs:integer"/>
   <xs:element name="ChapterId" type="xs:integer"/>
   <xs:element name="BookTitleId" type="xs:integer"/>
@@ -350,9 +350,9 @@
   </xs:element>
   <xs:element name="Subject">
     <xs:complexType>
-      <xs:attribute name="Code" type="xs:NCName"/>
+      <xs:attribute name="Code" type="xs:string"/>
       <xs:attribute name="Priority" type="xs:integer"/>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="CopyrightHolder" type="xs:string"/>
@@ -364,7 +364,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="OpenAccess" type="xs:boolean"/>
-  <xs:element name="ImageType" type="xs:NCName"/>
+  <xs:element name="ImageType" type="xs:string"/>
   <xs:element name="ArticleURI" type="xs:string"/>
   <xs:element name="Provider" type="xs:string"/>
   <xs:element name="DateLoaded" type="xs:dateTime"/>
@@ -399,8 +399,8 @@
         <xs:element maxOccurs="unbounded" ref="BodyRef"/>
         <xs:element ref="ArticleBackmatter"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ArticleInfo">
@@ -420,11 +420,11 @@
         <xs:element ref="ArticleGrants"/>
         <xs:element minOccurs="0" ref="ArticleContext"/>
       </xs:sequence>
-      <xs:attribute name="ArticleCitation" type="xs:NCName"/>
-      <xs:attribute name="ArticleType" use="required" type="xs:NCName"/>
-      <xs:attribute name="ContainsESM" use="required" type="xs:NCName"/>
-      <xs:attribute name="Language" use="required" type="xs:NCName"/>
-      <xs:attribute name="NumberingStyle" use="required" type="xs:NCName"/>
+      <xs:attribute name="ArticleCitation" type="xs:string"/>
+      <xs:attribute name="ArticleType" use="required" type="xs:string"/>
+      <xs:attribute name="ContainsESM" use="required" type="xs:string"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
+      <xs:attribute name="NumberingStyle" use="required" type="xs:string"/>
       <xs:attribute name="TocLevels" use="required" type="xs:integer"/>
     </xs:complexType>
   </xs:element>
@@ -433,7 +433,7 @@
   <xs:element name="ArticleSequenceNumber" type="xs:string"/>
   <xs:element name="ArticleSubTitle">
     <xs:complexType>
-      <xs:attribute name="Language" use="required" type="xs:NCName"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ArticleCategory" type="xs:string"/>
@@ -507,37 +507,37 @@
         <xs:element ref="BibliographyGrant"/>
         <xs:element ref="ESMGrant"/>
       </xs:sequence>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="MetadataGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="AbstractGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="BodyPDFGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="BodyHTMLGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="BibliographyGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ESMGrant">
     <xs:complexType>
-      <xs:attribute name="Grant" use="required" type="xs:NCName"/>
+      <xs:attribute name="Grant" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ArticleContext">
@@ -575,7 +575,7 @@
         <xs:element ref="OrgName"/>
         <xs:element ref="OrgAddress"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="OrgDivision" type="xs:string"/>
@@ -595,7 +595,7 @@
   <xs:element name="City" type="xs:string"/>
   <xs:element name="Postcode" type="xs:string"/>
   <xs:element name="State" type="xs:string"/>
-  <xs:element name="Country" type="xs:NCName"/>
+  <xs:element name="Country" type="xs:string"/>
   <xs:element name="Abstract">
     <xs:complexType>
       <xs:sequence>
@@ -603,9 +603,9 @@
         <xs:element ref="Para"/>
         <xs:element maxOccurs="unbounded" ref="AbstractSection"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
-      <xs:attribute name="Language" use="required" type="xs:NCName"/>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="AbstractSection">
@@ -622,7 +622,7 @@
         <xs:element minOccurs="0" ref="Heading"/>
         <xs:element maxOccurs="unbounded" ref="Keyword"/>
       </xs:sequence>
-      <xs:attribute name="Language" use="required" type="xs:NCName"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Body">
@@ -639,8 +639,8 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Para"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section2"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
-      <xs:attribute name="Type" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+      <xs:attribute name="Type" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Section2">
@@ -652,7 +652,7 @@
         <xs:element maxOccurs="unbounded" ref="Table"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section3"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Section3">
@@ -663,7 +663,7 @@
         <xs:element ref="Figure"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section4"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Section4">
@@ -673,13 +673,13 @@
         <xs:element maxOccurs="unbounded" ref="Figure"/>
         <xs:element maxOccurs="unbounded" ref="Para"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="BodyRef">
     <xs:complexType>
       <xs:attribute name="FileRef" use="required" type="xs:anyURI"/>
-      <xs:attribute name="TargetType" use="required" type="xs:NCName"/>
+      <xs:attribute name="TargetType" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ArticleBackmatter">
@@ -705,7 +705,7 @@
         <xs:element ref="Heading"/>
         <xs:element maxOccurs="unbounded" ref="Citation"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Citation">
@@ -717,7 +717,7 @@
         <xs:element minOccurs="0" ref="BibChapter"/>
         <xs:element minOccurs="0" ref="BibUnstructured"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="CitationNumber" type="xs:decimal"/>
@@ -772,7 +772,7 @@
   </xs:element>
   <xs:element name="ChapterTitle">
     <xs:complexType>
-      <xs:attribute name="Language" use="required" type="xs:NCName"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConfEventLocation" type="xs:string"/>
@@ -792,7 +792,7 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Superscript"/>
       </xs:sequence>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Caption">
@@ -802,7 +802,7 @@
         <xs:element minOccurs="0" ref="CaptionNumber"/>
         <xs:element minOccurs="0" ref="CaptionContent"/>
       </xs:sequence>
-      <xs:attribute name="Language" type="xs:NCName"/>
+      <xs:attribute name="Language" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="CaptionNumber" type="xs:string"/>
@@ -821,8 +821,8 @@
         <xs:element minOccurs="0" ref="tgroup"/>
         <xs:element minOccurs="0" ref="tfooter"/>
       </xs:sequence>
-      <xs:attribute name="Float" type="xs:NCName"/>
-      <xs:attribute name="ID" type="xs:NCName"/>
+      <xs:attribute name="Float" type="xs:string"/>
+      <xs:attribute name="ID" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="tgroup">
@@ -832,13 +832,13 @@
         <xs:element ref="thead"/>
         <xs:element ref="tbody"/>
       </xs:sequence>
-      <xs:attribute name="align" type="xs:NCName"/>
+      <xs:attribute name="align" type="xs:string"/>
       <xs:attribute name="cols" use="required" type="xs:integer"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="colspec">
     <xs:complexType>
-      <xs:attribute name="colname" use="required" type="xs:NCName"/>
+      <xs:attribute name="colname" use="required" type="xs:string"/>
       <xs:attribute name="colnum" use="required" type="xs:integer"/>
     </xs:complexType>
   </xs:element>
@@ -871,7 +871,7 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Contact"/>
       </xs:sequence>
       <xs:attribute name="AffiliationIDS"/>
-      <xs:attribute name="CorrespondingAffiliationID" type="xs:NCName"/>
+      <xs:attribute name="CorrespondingAffiliationID" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="AuthorName">
@@ -880,10 +880,10 @@
         <xs:element ref="GivenName"/>
         <xs:element ref="FamilyName"/>
       </xs:sequence>
-      <xs:attribute name="DisplayOrder" use="required" type="xs:NCName"/>
+      <xs:attribute name="DisplayOrder" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GivenName" type="xs:NCName"/>
+  <xs:element name="GivenName" type="xs:string"/>
   <xs:element name="Biography">
     <xs:complexType>
       <xs:sequence>
@@ -908,7 +908,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
       </xs:sequence>
-      <xs:attribute name="Language" type="xs:NCName"/>
+      <xs:attribute name="Language" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Keyword" type="xs:string"/>
@@ -974,7 +974,7 @@
         <xs:element ref="MediaObject"/>
         <xs:element ref="EquationSource"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="EquationNumber" type="xs:integer"/>
@@ -983,7 +983,7 @@
       <xs:sequence>
         <xs:element ref="Para"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="InlineEquation">
@@ -992,7 +992,7 @@
         <xs:element ref="InlineMediaObject"/>
         <xs:element ref="EquationSource"/>
       </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="InlineMediaObject" type="ImageObject"/>
@@ -1000,7 +1000,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:NMTOKEN">
-          <xs:attribute name="RefID" use="required" type="xs:NCName"/>
+          <xs:attribute name="RefID" use="required" type="xs:string"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -1018,9 +1018,9 @@
         <xs:element minOccurs="0" ref="Caption"/>
         <xs:element ref="MediaObject"/>
       </xs:sequence>
-      <xs:attribute name="Category" use="required" type="xs:NCName"/>
-      <xs:attribute name="Float" use="required" type="xs:NCName"/>
-      <xs:attribute name="ID" use="required" type="xs:NCName"/>
+      <xs:attribute name="Category" use="required" type="xs:string"/>
+      <xs:attribute name="Float" use="required" type="xs:string"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="SimplePara">
@@ -1038,8 +1038,8 @@
         <xs:element ref="Heading"/>
         <xs:element ref="Para"/>
       </xs:sequence>
-      <xs:attribute name="OutputMedium" type="xs:NCName"/>
-      <xs:attribute name="RenderingStyle" use="required" type="xs:NCName"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
+      <xs:attribute name="RenderingStyle" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="BibAuthorName">
@@ -1062,7 +1062,7 @@
       <xs:sequence>
         <xs:element ref="Handle"/>
       </xs:sequence>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Handle" type="xs:string"/>
@@ -1078,7 +1078,7 @@
   <xs:element name="RefTarget">
     <xs:complexType>
       <xs:attribute name="Address" use="required" type="xs:anyURI"/>
-      <xs:attribute name="TargetType" use="required" type="xs:NCName"/>
+      <xs:attribute name="TargetType" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Superscript">
@@ -1100,11 +1100,11 @@
       <xs:sequence>
         <xs:element minOccurs="0" ref="SimplePara"/>
       </xs:sequence>
-      <xs:attribute name="align" type="xs:NCName"/>
-      <xs:attribute name="colname" type="xs:NCName"/>
+      <xs:attribute name="align" type="xs:string"/>
+      <xs:attribute name="colname" type="xs:string"/>
       <xs:attribute name="morerows" type="xs:integer"/>
-      <xs:attribute name="nameend" type="xs:NCName"/>
-      <xs:attribute name="namest" type="xs:NCName"/>
+      <xs:attribute name="nameend" type="xs:string"/>
+      <xs:attribute name="namest" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="FamilyName" type="xs:string"/>
@@ -1128,7 +1128,7 @@
   </xs:element>
   <xs:element name="EquationSource">
     <xs:complexType>
-      <xs:attribute name="Format" use="required" type="xs:NCName"/>
+      <xs:attribute name="Format" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="ImageObject">
@@ -1138,18 +1138,18 @@
   </xs:complexType>
   <xs:element name="ImageObjectElement">
     <xs:complexType>
-      <xs:attribute name="Color" use="required" type="xs:NCName"/>
+      <xs:attribute name="Color" use="required" type="xs:string"/>
       <xs:attribute name="FileRef" use="required"/>
-      <xs:attribute name="Format" use="required" type="xs:NCName"/>
-      <xs:attribute name="Rendition" use="required" type="xs:NCName"/>
-      <xs:attribute name="Type" use="required" type="xs:NCName"/>
+      <xs:attribute name="Format" use="required" type="xs:string"/>
+      <xs:attribute name="Rendition" use="required" type="xs:string"/>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="CitationRef">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:integer">
-          <xs:attribute name="CitationID" use="required" type="xs:NCName"/>
+          <xs:attribute name="CitationID" use="required" type="xs:string"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>

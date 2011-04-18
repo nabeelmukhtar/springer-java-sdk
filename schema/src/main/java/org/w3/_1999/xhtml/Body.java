@@ -3,7 +3,6 @@ package org.w3._1999.xhtml;
 
 import java.util.List;
 
-
 /**
  * <p>Java class for anonymous complex type.
  * 
@@ -48,18 +47,18 @@ public interface Body {
     void setH1(String value);
 
     /**
-     * Gets the value of the p property.
+     * Gets the value of the ps property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the p property.
+     * This is why there is not a <CODE>set</CODE> method for the ps property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getP().add(newItem);
+     *    getPS().add(newItem);
      * </pre>
      * 
      * 
@@ -69,6 +68,6 @@ public interface Body {
      * 
      * 
      */
-    List<P> getP();
+    List<P> getPS();
 
 }

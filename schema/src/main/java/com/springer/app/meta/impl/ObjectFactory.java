@@ -1,12 +1,12 @@
 
 package com.springer.app.meta.impl;
 
+import java.util.Date;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import com.springer.app.meta.Authors;
 import com.springer.app.meta.Info;
@@ -15,6 +15,7 @@ import com.springer.app.meta.Institutions;
 import com.springer.app.meta.Subject;
 import com.springer.app.meta.SubjectGroup;
 import com.springer.app.meta.Title;
+import org.w3._2001.xmlschema.Adapter1;
 
 
 /**
@@ -57,19 +58,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubjectGroup }
+     * Create an instance of {@link Institution }
      * 
      */
-    public SubjectGroupImpl createSubjectGroup() {
-        return new SubjectGroupImpl();
+    public InstitutionImpl createInstitution() {
+        return new InstitutionImpl();
     }
 
     /**
-     * Create an instance of {@link Authors }
+     * Create an instance of {@link Title }
      * 
      */
-    public AuthorsImpl createAuthors() {
-        return new AuthorsImpl();
+    public TitleImpl createTitle() {
+        return new TitleImpl();
     }
 
     /**
@@ -89,19 +90,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Institution }
+     * Create an instance of {@link SubjectGroup }
      * 
      */
-    public InstitutionImpl createInstitution() {
-        return new InstitutionImpl();
+    public SubjectGroupImpl createSubjectGroup() {
+        return new SubjectGroupImpl();
     }
 
     /**
-     * Create an instance of {@link Title }
+     * Create an instance of {@link Authors }
      * 
      */
-    public TitleImpl createTitle() {
-        return new TitleImpl();
+    public AuthorsImpl createAuthors() {
+        return new AuthorsImpl();
     }
 
     /**
@@ -216,12 +217,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Date }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "DateLoaded")
-    public JAXBElement<XMLGregorianCalendar> createDateLoaded(XMLGregorianCalendar value) {
-        return new JAXBElement<XMLGregorianCalendar>(_DateLoaded_QNAME, XMLGregorianCalendar.class, null, value);
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    public JAXBElement<Date> createDateLoaded(Date value) {
+        return new JAXBElement<Date>(_DateLoaded_QNAME, Date.class, null, value);
     }
 
     /**

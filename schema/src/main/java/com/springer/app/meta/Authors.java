@@ -27,18 +27,18 @@ public interface Authors {
 
 
     /**
-     * Gets the value of the author property.
+     * Gets the value of the authors property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the author property.
+     * This is why there is not a <CODE>set</CODE> method for the authors property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAuthor().add(newItem);
+     *    getAuthors().add(newItem);
      * </pre>
      * 
      * 
@@ -48,6 +48,6 @@ public interface Authors {
      * 
      * 
      */
-    List<String> getAuthor();
+    List<String> getAuthors();
 
 }

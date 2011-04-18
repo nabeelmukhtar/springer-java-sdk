@@ -13,7 +13,7 @@ import com.springer.app.meta.Authors;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "author"
+    "authors"
 })
 @XmlRootElement(name = "Authors")
 public class AuthorsImpl
@@ -22,13 +22,13 @@ public class AuthorsImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "Author", required = true)
-    protected List<String> author;
+    protected List<String> authors;
 
-    public List<String> getAuthor() {
-        if (author == null) {
-            author = new ArrayList<String>();
+    public List<String> getAuthors() {
+        if (authors == null) {
+            authors = new ArrayList<String>();
         }
-        return this.author;
+        return this.authors;
     }
 
 }
