@@ -18,33 +18,30 @@ public class ISXNImpl extends BaseSchemaEntity implements ISXN {
     public void setValue(String value) {
         value = ((String) value);
     }
-    public String getEisbn() {
+    public String getEISBN() {
         return eisbn;
     }
-    public void setEisbn(String value) {
+    public void setEISBN(String value) {
         eisbn = ((String) value);
     }
-    public String getIsbn() {
+    public String getISBN() {
         return isbn;
     }
-    public void setIsbn(String value) {
+    public void setISBN(String value) {
         isbn = ((String) value);
     }
-    public String getIssn() {
+    public String getISSN() {
         return issn;
     }
-    public void setIssn(String value) {
+    public void setISSN(String value) {
         issn = ((String) value);
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-        }
-        setEisbn(XppUtils.getAttributeValueFromNode(parser, "EISBN"));
-        setIsbn(XppUtils.getAttributeValueFromNode(parser, "ISBN"));
-        setIssn(XppUtils.getAttributeValueFromNode(parser, "ISSN"));
+        setEISBN(XppUtils.getAttributeValueFromNode(parser, "EISBN"));
+        setISBN(XppUtils.getAttributeValueFromNode(parser, "ISBN"));
+        setISSN(XppUtils.getAttributeValueFromNode(parser, "ISSN"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

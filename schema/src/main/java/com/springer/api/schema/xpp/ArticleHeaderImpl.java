@@ -20,10 +20,10 @@ public class ArticleHeaderImpl extends BaseSchemaEntity implements ArticleHeader
     public void setAuthorGroup(AuthorGroup value) {
         authorGroup = ((AuthorGroupImpl) value);
     }
-    public Abstract get_abstract() {
+    public Abstract getAbstract() {
         return _abstract;
     }
-    public void set_abstract(Abstract value) {
+    public void setAbstract(Abstract value) {
         _abstract = ((AbstractImpl) value);
     }
     public KeywordGroup getKeywordGroup() {
@@ -44,7 +44,7 @@ public class ArticleHeaderImpl extends BaseSchemaEntity implements ArticleHeader
             } else if (name.equals("Abstract")) {
                 AbstractImpl node = new AbstractImpl();
                 node.init(parser);
-                set_abstract(node);
+                setAbstract(node);
             } else if (name.equals("KeywordGroup")) {
                 KeywordGroupImpl node = new KeywordGroupImpl();
                 node.init(parser);

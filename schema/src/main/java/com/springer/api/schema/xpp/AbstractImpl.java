@@ -40,10 +40,10 @@ public class AbstractImpl extends BaseSchemaEntity implements Abstract {
     public void setAbstractSection(List<AbstractSection> value) {
         this.abstractSection = value;
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     public String getLanguage() {
@@ -80,7 +80,7 @@ public class AbstractImpl extends BaseSchemaEntity implements Abstract {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
         setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }

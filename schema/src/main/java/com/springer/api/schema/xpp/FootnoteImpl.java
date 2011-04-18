@@ -17,10 +17,10 @@ public class FootnoteImpl extends BaseSchemaEntity implements Footnote {
     public void setPara(Para value) {
         para = ((ParaImpl) value);
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     @Override
@@ -37,7 +37,7 @@ public class FootnoteImpl extends BaseSchemaEntity implements Footnote {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -42,10 +42,10 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
     public void setSection2(List<Section2> value) {
         this.section2 = value;
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     public String getType() {
@@ -76,7 +76,7 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
     }
     @Override

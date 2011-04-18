@@ -63,10 +63,10 @@ public class Section2Impl extends BaseSchemaEntity implements Section2 {
     public void setSection3(List<Section3> value) {
         this.section3 = value;
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     @Override
@@ -99,7 +99,7 @@ public class Section2Impl extends BaseSchemaEntity implements Section2 {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -1,11 +1,15 @@
 package com.springer.api.schema.xpp;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
-import com.springer.api.schema.*;
+
+import com.springer.api.schema.Journal;
+import com.springer.api.schema.Publisher;
+import com.springer.api.schema.PublisherInfo;
+import com.springer.app.meta.Info;
+import com.springer.app.meta.xpp.InfoImpl;
 public class PublisherImpl extends BaseSchemaEntity implements Publisher {
     private final static long serialVersionUID = 2461660169443089969L;
     protected PublisherInfoImpl publisherInfo;
@@ -50,7 +54,9 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
                 node.init(parser);
                 setJournal(node);
             } else if (name.equals("Info")) {
-                setInfo(XppUtils.getElementValueFromNode(parser));
+            	InfoImpl node = new InfoImpl();
+            	node.init(parser);
+                setInfo(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

@@ -15,7 +15,7 @@ public class FileImpl extends BaseSchemaEntity implements File {
     protected String format;
     protected List<Path> path;
     protected String type;
-    public Boolean getColor() {
+    public Boolean isColor() {
         return color;
     }
     public void setColor(Boolean value) {
@@ -48,7 +48,7 @@ public class FileImpl extends BaseSchemaEntity implements File {
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Color")) {
-                setColor(XppUtils.getElementValueFromNode(parser));
+                setColor(Boolean.valueOf(XppUtils.getElementValueFromNode(parser)));
             } else if (name.equals("Format")) {
                 setFormat(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Path")) {

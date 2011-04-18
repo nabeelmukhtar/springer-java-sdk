@@ -7,7 +7,7 @@ import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.MediaObject;
 import com.springer.api.schema.TextObject;
-public class MediaObjectImpl extends BaseSchemaEntity implements MediaObject {
+public class MediaObjectImpl extends ImageObjectImpl implements MediaObject {
     private final static long serialVersionUID = 2461660169443089969L;
     protected TextObjectImpl textObject;
     public TextObject getTextObject() {
@@ -25,6 +25,10 @@ public class MediaObjectImpl extends BaseSchemaEntity implements MediaObject {
                 TextObjectImpl node = new TextObjectImpl();
                 node.init(parser);
                 setTextObject(node);
+            } else if (name.equals("ImageObjectElement")) {
+                ImageObjectElementImpl node = new ImageObjectElementImpl();
+                node.init(parser);
+                setImageObjectElement(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

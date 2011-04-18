@@ -2,10 +2,16 @@ package com.springer.api.schema.xpp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.prismstandard.namespaces.pam._2.Message;
+import org.prismstandard.namespaces.pam._2.impl.MessageImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
-import com.springer.api.schema.*;
+
+import com.springer.api.schema.Record;
+import com.springer.api.schema.Records;
+import com.springer.api.schema.Result;
 public class RecordsImpl extends BaseSchemaEntity implements Records {
     private final static long serialVersionUID = 2461660169443089969L;
     protected List<Result> result;

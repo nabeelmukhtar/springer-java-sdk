@@ -31,10 +31,10 @@ public class AffiliationImpl extends BaseSchemaEntity implements Affiliation {
     public void setOrgAddress(OrgAddress value) {
         orgAddress = ((OrgAddressImpl) value);
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     @Override
@@ -55,7 +55,7 @@ public class AffiliationImpl extends BaseSchemaEntity implements Affiliation {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

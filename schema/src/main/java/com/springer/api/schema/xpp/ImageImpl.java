@@ -351,9 +351,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
                 node.init(parser);
                 getKeywords().add(node);
             } else if (name.equals("OpenAccess")) {
-                Boolean node = new Boolean();
-                node.init(parser);
-                getOpenAccess().add(node);
+                getOpenAccess().add(Boolean.valueOf(XppUtils.getElementValueFromNode(parser)));
             } else if (name.equals("ImageType")) {
                 setImageType(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("ArticleURI")) {

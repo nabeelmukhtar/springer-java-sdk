@@ -49,10 +49,10 @@ public class CitationImpl extends BaseSchemaEntity implements Citation {
     public void setBibUnstructured(BibUnstructured value) {
         bibUnstructured = ((BibUnstructuredImpl) value);
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     @Override
@@ -61,7 +61,7 @@ public class CitationImpl extends BaseSchemaEntity implements Citation {
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("CitationNumber")) {
-                setCitationNumber(XppUtils.getElementValueFromNode(parser));
+                setCitationNumber(BigDecimal.valueOf(XppUtils.getElementValueAsLongFromNode(parser)));
             } else if (name.equals("BibArticle")) {
                 BibArticleImpl node = new BibArticleImpl();
                 node.init(parser);
@@ -83,7 +83,7 @@ public class CitationImpl extends BaseSchemaEntity implements Citation {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

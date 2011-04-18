@@ -41,16 +41,16 @@ public class TableImpl extends BaseSchemaEntity implements Table {
     public void setTfooter(Tfooter value) {
         tfooter = ((TfooterImpl) value);
     }
-    public String get_float() {
+    public String getFloat() {
         return _float;
     }
-    public void set_float(String value) {
+    public void setFloat(String value) {
         _float = ((String) value);
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     @Override
@@ -79,8 +79,8 @@ public class TableImpl extends BaseSchemaEntity implements Table {
                 XppUtils.skipSubTree(parser);
             }
         }
-        set_float(XppUtils.getAttributeValueFromNode(parser, "Float"));
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setFloat(XppUtils.getAttributeValueFromNode(parser, "Float"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

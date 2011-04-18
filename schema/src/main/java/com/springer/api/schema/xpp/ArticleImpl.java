@@ -55,10 +55,10 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     public void setArticleBackmatter(ArticleBackmatter value) {
         articleBackmatter = ((ArticleBackmatterImpl) value);
     }
-    public String getId() {
+    public String getID() {
         return id;
     }
-    public void setId(String value) {
+    public void setID(String value) {
         id = ((String) value);
     }
     public String getOutputMedium() {
@@ -97,7 +97,7 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override

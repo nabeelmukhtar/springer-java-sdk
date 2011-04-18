@@ -51,10 +51,10 @@ public class ArticleGrantsImpl extends BaseSchemaEntity implements ArticleGrants
     public void setBibliographyGrant(BibliographyGrant value) {
         bibliographyGrant = ((BibliographyGrantImpl) value);
     }
-    public ESMGrant getEsmGrant() {
+    public ESMGrant getESMGrant() {
         return esmGrant;
     }
-    public void setEsmGrant(ESMGrant value) {
+    public void setESMGrant(ESMGrant value) {
         esmGrant = ((ESMGrantImpl) value);
     }
     public String getType() {
@@ -91,7 +91,7 @@ public class ArticleGrantsImpl extends BaseSchemaEntity implements ArticleGrants
             } else if (name.equals("ESMGrant")) {
                 ESMGrantImpl node = new ESMGrantImpl();
                 node.init(parser);
-                setEsmGrant(node);
+                setESMGrant(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);
