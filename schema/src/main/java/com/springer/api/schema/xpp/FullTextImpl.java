@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.w3._1999.xhtml.P;
-import org.w3._1999.xhtml.impl.PImpl;
+import org.w3._1999.xhtml.xpp.PImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;

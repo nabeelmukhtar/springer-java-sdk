@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.prismstandard.namespaces.pam._2.Message;
-import org.prismstandard.namespaces.pam._2.impl.MessageImpl;
+import org.prismstandard.namespaces.pam._2.xpp.MessageImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;

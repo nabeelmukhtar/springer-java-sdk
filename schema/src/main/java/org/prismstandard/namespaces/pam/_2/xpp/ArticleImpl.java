@@ -1,194 +1,161 @@
-
 package org.prismstandard.namespaces.pam._2.xpp;
-
-import java.io.Serializable;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.prismstandard.namespaces.basic._2.Number;
+
 import org.prismstandard.namespaces.basic._2.Volume;
-import org.prismstandard.namespaces.basic._2.impl.NumberImpl;
-import org.prismstandard.namespaces.basic._2.impl.VolumeImpl;
+import org.prismstandard.namespaces.basic._2.xpp.NumberImpl;
+import org.prismstandard.namespaces.basic._2.xpp.VolumeImpl;
 import org.prismstandard.namespaces.pam._2.Article;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "identifier",
-    "title",
-    "creators",
-    "publicationName",
-    "isbn",
-    "issn",
-    "doi",
-    "publisher",
-    "publicationDate",
-    "volume",
-    "number",
-    "startingPage",
-    "url",
-    "copyright"
-})
-@XmlRootElement(name = "article")
-public class ArticleImpl
-    implements Serializable, Article
-{
-
+import com.springer.api.schema.xpp.BaseSchemaEntity;
+import com.springer.api.schema.xpp.XppUtils;
+public class ArticleImpl extends BaseSchemaEntity implements Article {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
-    @XmlSchemaType(name = "anyURI")
     protected String identifier;
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
     protected String title;
-    @XmlElement(name = "creator", namespace = "http://purl.org/dc/elements/1.1/", required = true)
     protected List<String> creators;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String publicationName;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
     protected String isbn;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
     protected String issn;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String doi;
-    @XmlElement(namespace = "http://purl.org/dc/elements/1.1/", required = true)
     protected String publisher;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
     protected String publicationDate;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = VolumeImpl.class)
     protected VolumeImpl volume;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = NumberImpl.class)
     protected NumberImpl number;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
     protected String startingPage;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
-    @XmlSchemaType(name = "anyURI")
     protected String url;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", required = true)
     protected String copyright;
-
     public String getIdentifier() {
         return identifier;
     }
-
     public void setIdentifier(String value) {
-        this.identifier = value;
+        identifier = ((String) value);
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String value) {
-        this.title = value;
+        title = ((String) value);
     }
-
     public List<String> getCreators() {
         if (creators == null) {
             creators = new ArrayList<String>();
         }
         return this.creators;
     }
-
+    public void setCreators(List<String> value) {
+        this.creators = value;
+    }
     public String getPublicationName() {
         return publicationName;
     }
-
     public void setPublicationName(String value) {
-        this.publicationName = value;
+        publicationName = ((String) value);
     }
-
     public String getIsbn() {
         return isbn;
     }
-
     public void setIsbn(String value) {
-        this.isbn = value;
+        isbn = ((String) value);
     }
-
     public String getIssn() {
         return issn;
     }
-
     public void setIssn(String value) {
-        this.issn = value;
+        issn = ((String) value);
     }
-
     public String getDoi() {
         return doi;
     }
-
     public void setDoi(String value) {
-        this.doi = value;
+        doi = ((String) value);
     }
-
     public String getPublisher() {
         return publisher;
     }
-
     public void setPublisher(String value) {
-        this.publisher = value;
+        publisher = ((String) value);
     }
-
     public String getPublicationDate() {
         return publicationDate;
     }
-
     public void setPublicationDate(String value) {
-        this.publicationDate = value;
+        publicationDate = ((String) value);
     }
-
     public Volume getVolume() {
         return volume;
     }
-
     public void setVolume(Volume value) {
-        this.volume = ((VolumeImpl) value);
+        volume = ((VolumeImpl) value);
     }
-
-    public Number getNumber() {
+    public org.prismstandard.namespaces.basic._2.Number getNumber() {
         return number;
     }
-
-    public void setNumber(Number value) {
-        this.number = ((NumberImpl) value);
+    public void setNumber(org.prismstandard.namespaces.basic._2.Number value) {
+        number = ((NumberImpl) value);
     }
-
     public String getStartingPage() {
         return startingPage;
     }
-
     public void setStartingPage(String value) {
-        this.startingPage = value;
+        startingPage = ((String) value);
     }
-
     public String getUrl() {
         return url;
     }
-
     public void setUrl(String value) {
-        this.url = value;
+        url = ((String) value);
     }
-
     public String getCopyright() {
         return copyright;
     }
-
     public void setCopyright(String value) {
-        this.copyright = value;
+        copyright = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("##default")) {
+                setIdentifier(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setTitle(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("creator")) {
+                getCreators().add(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setPublicationName(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setIsbn(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setIssn(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setDoi(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setPublisher(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setPublicationDate(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setVolume(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setNumber(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setStartingPage(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setUrl(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("##default")) {
+                setCopyright(XppUtils.getElementValueFromNode(parser));
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }
