@@ -1,72 +1,52 @@
-
 package com.springer.api.schema.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.w3._2001.xmlschema.Adapter1;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Subject;
-
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "content"
-})
-@XmlRootElement(name = "Subject")
-public class SubjectImpl
-    implements Serializable, Subject
-{
-
+public class SubjectImpl extends BaseSchemaEntity implements Subject {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlValue
     protected String content;
-    @XmlAttribute(name = "Code")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String code;
-    @XmlAttribute(name = "Priority")
-    @XmlJavaTypeAdapter(Adapter1 .class)
     protected Long priority;
-    @XmlAttribute(name = "Type", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String type;
-
     public String getContent() {
         return content;
     }
-
     public void setContent(String value) {
-        this.content = value;
+        content = ((String) value);
     }
-
     public String getCode() {
         return code;
     }
-
     public void setCode(String value) {
-        this.code = value;
+        code = ((String) value);
     }
-
     public Long getPriority() {
         return priority;
     }
-
     public void setPriority(Long value) {
-        this.priority = value;
+        priority = ((Long) value);
     }
-
     public String getType() {
         return type;
     }
-
     public void setType(String value) {
-        this.type = value;
+        type = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+        }
+        setCode(XppUtils.getAttributeValueFromNode(parser, "Code"));
+        setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }

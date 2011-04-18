@@ -1,73 +1,65 @@
-
 package com.springer.api.schema.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Article;
 import com.springer.api.schema.Issue;
 import com.springer.api.schema.IssueInfo;
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "issueInfo",
-    "article"
-})
-@XmlRootElement(name = "Issue")
-public class IssueImpl
-    implements Serializable, Issue
-{
-
+public class IssueImpl extends BaseSchemaEntity implements Issue {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "IssueInfo", required = true, type = IssueInfoImpl.class)
     protected IssueInfoImpl issueInfo;
-    @XmlElement(name = "Article", required = true, type = ArticleImpl.class)
     protected ArticleImpl article;
-    @XmlAttribute(name = "IssueType", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String issueType;
-    @XmlAttribute(name = "OutputMedium")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String outputMedium;
-
     public IssueInfo getIssueInfo() {
         return issueInfo;
     }
-
     public void setIssueInfo(IssueInfo value) {
-        this.issueInfo = ((IssueInfoImpl) value);
+        issueInfo = ((IssueInfoImpl) value);
     }
-
     public Article getArticle() {
         return article;
     }
-
     public void setArticle(Article value) {
-        this.article = ((ArticleImpl) value);
+        article = ((ArticleImpl) value);
     }
-
     public String getIssueType() {
         return issueType;
     }
-
     public void setIssueType(String value) {
-        this.issueType = value;
+        issueType = ((String) value);
     }
-
     public String getOutputMedium() {
         return outputMedium;
     }
-
     public void setOutputMedium(String value) {
-        this.outputMedium = value;
+        outputMedium = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("IssueInfo")) {
+                IssueInfoImpl node = new IssueInfoImpl();
+                node.init(parser);
+                setIssueInfo(node);
+            } else if (name.equals("Article")) {
+                ArticleImpl node = new ArticleImpl();
+                node.init(parser);
+                setArticle(node);
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+        setIssueType(XppUtils.getAttributeValueFromNode(parser, "IssueType"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }

@@ -1,49 +1,45 @@
-
 package com.springer.api.schema.xpp;
+import java.io.IOException;
 
-import java.io.Serializable;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Footnote;
 import com.springer.api.schema.Para;
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "para"
-})
-@XmlRootElement(name = "Footnote")
-public class FootnoteImpl implements Serializable, Footnote
-{
-
+public class FootnoteImpl extends BaseSchemaEntity implements Footnote {
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Para", required = true, type = ParaImpl.class)
     protected ParaImpl para;
-    @XmlAttribute(name = "ID", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String id;
-
     public Para getPara() {
         return para;
     }
-
     public void setPara(Para value) {
-        this.para = ((ParaImpl) value);
+        para = ((ParaImpl) value);
     }
-
-    public String getID() {
+    public String getId() {
         return id;
     }
-
-    public void setID(String value) {
-        this.id = value;
+    public void setId(String value) {
+        id = ((String) value);
     }
-
+    @Override
+    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            if (name.equals("Para")) {
+                ParaImpl node = new ParaImpl();
+                node.init(parser);
+                setPara(node);
+            } else {                // Consume something we don't understand.
+                LOG.warning("Found tag that we don't recognize: " + name);
+                XppUtils.skipSubTree(parser);
+            }
+        }
+        setId(XppUtils.getAttributeValueFromNode(parser, "ID"));
+    }
+    @Override
+    public void toXml(XmlSerializer serializer) throws IOException {
+    }
 }
