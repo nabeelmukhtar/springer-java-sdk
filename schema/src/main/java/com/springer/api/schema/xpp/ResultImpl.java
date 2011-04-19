@@ -58,11 +58,11 @@ public class ResultImpl extends BaseSchemaEntity implements Result {
                 ImagesImpl node = new ImagesImpl();
                 node.init(parser);
                 setImages(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("total")) {
                 setTotal(XppUtils.getElementValueAsLongFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("start")) {
                 setStart(XppUtils.getElementValueAsLongFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("pageLength")) {
                 setPageLength(XppUtils.getElementValueAsLongFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);

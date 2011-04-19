@@ -34,18 +34,22 @@ public class PImpl extends BaseSchemaEntity implements P {
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("p")) {
-            	getPS().add(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("sub")) {
-                getSubs().add(XppUtils.getElementValueFromNode(parser));
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
+    	int next = parser.next();
+		if (next == XmlPullParser.START_TAG) {
+            while (parser.nextTag() == XmlPullParser.START_TAG) {
+                String name = parser.getName();
+                if (name.equals("p")) {
+                	getPS().add(XppUtils.getElementValueFromNode(parser));
+                } else if (name.equals("sub")) {
+                    getSubs().add(XppUtils.getElementValueFromNode(parser));
+                } else {                // Consume something we don't understand.
+                    LOG.warning("Found tag that we don't recognize: " + name);
+                    XppUtils.skipSubTree(parser);
+                }
             }
-        }
+    	} else if (next == XmlPullParser.TEXT) {
+    		getPS().add(parser.getText());
+    	}
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

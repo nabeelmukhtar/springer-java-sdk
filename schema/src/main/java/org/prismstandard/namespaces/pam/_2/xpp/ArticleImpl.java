@@ -3,9 +3,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.prismstandard.namespaces.basic._2.Volume;
-import org.prismstandard.namespaces.basic._2.xpp.NumberImpl;
-import org.prismstandard.namespaces.basic._2.xpp.VolumeImpl;
 import org.prismstandard.namespaces.pam._2.Article;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -24,8 +21,8 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     protected String doi;
     protected String publisher;
     protected String publicationDate;
-    protected VolumeImpl volume;
-    protected NumberImpl number;
+    protected Long volume;
+    protected Long number;
     protected String startingPage;
     protected String url;
     protected String copyright;
@@ -86,17 +83,17 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     public void setPublicationDate(String value) {
         publicationDate = ((String) value);
     }
-    public Volume getVolume() {
+    public Long getVolume() {
         return volume;
     }
-    public void setVolume(Volume value) {
-        volume = ((VolumeImpl) value);
+    public void setVolume(Long value) {
+        volume = ((Long) value);
     }
-    public org.prismstandard.namespaces.basic._2.Number getNumber() {
+    public Long getNumber() {
         return number;
     }
-    public void setNumber(org.prismstandard.namespaces.basic._2.Number value) {
-        number = ((NumberImpl) value);
+    public void setNumber(Long value) {
+        number = ((Long) value);
     }
     public String getStartingPage() {
         return startingPage;
@@ -121,33 +118,33 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
+            if (name.equals("identifier")) {
                 setIdentifier(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("title")) {
                 setTitle(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("creator")) {
                 getCreators().add(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("publicationName")) {
                 setPublicationName(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("isbn")) {
                 setIsbn(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("issn")) {
                 setIssn(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("doi")) {
                 setDoi(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("publisher")) {
                 setPublisher(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("publicationDate")) {
                 setPublicationDate(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
-                setVolume(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
-                setNumber(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("volume")) {
+                setVolume(XppUtils.getElementValueAsLongFromNode(parser));
+            } else if (name.equals("number")) {
+                setNumber(XppUtils.getElementValueAsLongFromNode(parser));
+            } else if (name.equals("startingPage")) {
                 setStartingPage(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("url")) {
                 setUrl(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("copyright")) {
                 setCopyright(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);

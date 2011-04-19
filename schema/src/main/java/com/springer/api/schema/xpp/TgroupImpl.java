@@ -60,11 +60,11 @@ public class TgroupImpl extends BaseSchemaEntity implements Tgroup {
                 ColspecImpl node = new ColspecImpl();
                 node.init(parser);
                 getColspecs().add(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("thead")) {
                 TheadImpl node = new TheadImpl();
                 node.init(parser);
                 setThead(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("tbody")) {
                 TbodyImpl node = new TbodyImpl();
                 node.init(parser);
                 setTbody(node);
@@ -73,8 +73,8 @@ public class TgroupImpl extends BaseSchemaEntity implements Tgroup {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAlign(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setCols(XppUtils.getAttributeValueAsLongFromNode(parser, "##default"));
+        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
+        setCols(XppUtils.getAttributeValueAsLongFromNode(parser, "cols"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

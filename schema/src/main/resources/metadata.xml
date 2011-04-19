@@ -24,8 +24,8 @@
 					<prism:doi>10.1007/s11265-010-0563-9</prism:doi>
 					<dc:publisher>Springer</dc:publisher>
 					<prism:publicationDate>2010-12-15</prism:publicationDate>
-					<prism:volume/>
-					<prism:number/>
+					<prism:volume>20</prism:volume>
+	                <prism:number>1</prism:number>
 					<prism:startingPage>1</prism:startingPage>
 					<prism:url>http://dx.doi.org/10.1007/s11265-010-0563-9</prism:url>
 					<prism:copyright>©2010 Springer Science+Business Media, LLC</prism:copyright>
@@ -110,8 +110,8 @@
 					<prism:doi>10.1186/1471-2105-11-S1-S15</prism:doi>
 					<dc:publisher>BioMed Central</dc:publisher>
 					<prism:publicationDate>2010-01-18</prism:publicationDate>
-					<prism:volume/>
-					<prism:number/>
+					<prism:volume>201</prism:volume>
+	                <prism:number>12</prism:number>
 					<prism:startingPage>S15</prism:startingPage>
 					<prism:url>http://dx.doi.org/10.1186/1471-2105-11-S1-S15</prism:url>
 					<prism:copyright>©2010 Matthews and Williams; licensee BioMed Central Ltd.</prism:copyright>

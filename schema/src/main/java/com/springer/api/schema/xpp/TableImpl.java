@@ -66,11 +66,11 @@ public class TableImpl extends BaseSchemaEntity implements Table {
                 CaptionImpl node = new CaptionImpl();
                 node.init(parser);
                 setCaption(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("tgroup")) {
                 TgroupImpl node = new TgroupImpl();
                 node.init(parser);
                 setTgroup(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("tfooter")) {
                 TfooterImpl node = new TfooterImpl();
                 node.init(parser);
                 setTfooter(node);

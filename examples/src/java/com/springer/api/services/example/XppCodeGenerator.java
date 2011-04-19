@@ -138,7 +138,9 @@ public class XppCodeGenerator {
 				XmlElement element = field.getAnnotation(XmlElement.class);
 				String name = field.getName();
 				if (element != null) {
-					name = element.name();
+					if (!element.name().equals("##default")) {
+						name = element.name();
+					}
 					if (firstField) {
 						out.write("            if (name.equals(\"" + name + "\")) {\r\n");
 						firstField = false;
@@ -192,10 +194,11 @@ public class XppCodeGenerator {
 		out.write("        }\r\n");
 		for (Field field : attributeFields) {
 			XmlAttribute attribute =  field.getAnnotation(XmlAttribute.class);
+			String name = attribute.name().equals("##default")? field.getName() : attribute.name();
 			if (Long.class.isAssignableFrom(field.getType())) {
-				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueAsLongFromNode(parser, \"" + attribute.name() + "\"));\r\n");
+				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueAsLongFromNode(parser, \"" + name + "\"));\r\n");
 			} else {
-				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueFromNode(parser, \"" + attribute.name() + "\"));\r\n");
+				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueFromNode(parser, \"" + name + "\"));\r\n");
 			}
 		}
 		out.write("    }\r\n");

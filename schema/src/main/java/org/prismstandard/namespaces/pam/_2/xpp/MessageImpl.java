@@ -33,10 +33,14 @@ public class MessageImpl extends BaseSchemaEntity implements Message {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
-                setHead(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
-                setBody(XppUtils.getElementValueFromNode(parser));
+            if (name.equals("head")) {
+            	HeadImpl node = new HeadImpl();
+            	node.init(parser);
+                setHead(node);
+            } else if (name.equals("body")) {
+            	BodyImpl node = new BodyImpl();
+            	node.init(parser);
+                setBody(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

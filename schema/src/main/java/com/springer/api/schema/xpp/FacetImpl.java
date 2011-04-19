@@ -42,7 +42,7 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setName(XppUtils.getAttributeValueFromNode(parser, "##default"));
+        setName(XppUtils.getAttributeValueFromNode(parser, "name"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

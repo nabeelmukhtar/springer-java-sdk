@@ -18,7 +18,7 @@ public class FacetValueImpl extends BaseSchemaEntity implements FacetValue {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        setCount(XppUtils.getAttributeValueAsLongFromNode(parser, "##default"));
+        setCount(XppUtils.getAttributeValueAsLongFromNode(parser, "count"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

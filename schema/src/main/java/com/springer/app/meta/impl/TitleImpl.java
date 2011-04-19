@@ -17,7 +17,7 @@ import com.springer.app.meta.Title;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "content"
+    "emphasises"
 })
 @XmlRootElement(name = "Title")
 public class TitleImpl
@@ -25,14 +25,14 @@ public class TitleImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
-    protected List<Emphasis> emphasis;
+    @XmlElement(name = "Emphasis", namespace = "", type = EmphasisImpl.class)
+    protected List<Emphasis> emphasises;
 
-    public List<Emphasis> getEmphasis() {
-        if (emphasis == null) {
-            emphasis = new ArrayList<Emphasis>();
+    public List<Emphasis> getEmphasises() {
+        if (emphasises == null) {
+            emphasises = new ArrayList<Emphasis>();
         }
-        return this.emphasis;
+        return this.emphasises;
     }
 
 }

@@ -38,19 +38,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Body }
-     * 
-     */
-    public Body createBody() {
-        return new BodyImpl();
-    }
-
-    /**
      * Create an instance of {@link Head }
      * 
      */
     public Head createHead() {
         return new HeadImpl();
+    }
+
+    /**
+     * Create an instance of {@link Body }
+     * 
+     */
+    public Body createBody() {
+        return new BodyImpl();
     }
 
     /**

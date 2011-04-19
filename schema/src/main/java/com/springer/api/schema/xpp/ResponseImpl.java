@@ -51,17 +51,19 @@ public class ResponseImpl extends BaseSchemaEntity implements Response {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
+            if (name.equals("query")) {
                 setQuery(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("##default")) {
+            } else if (name.equals("apiKey")) {
+                setApiKey(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("result")) {
                 ResultImpl node = new ResultImpl();
                 node.init(parser);
                 setResult(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("records")) {
                 RecordsImpl node = new RecordsImpl();
                 node.init(parser);
                 setRecords(node);
-            } else if (name.equals("##default")) {
+            } else if (name.equals("facets")) {
                 FacetsImpl node = new FacetsImpl();
                 node.init(parser);
                 setFacets(node);

@@ -373,8 +373,8 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
             }
         }
         setId(XppUtils.getAttributeValueFromNode(parser, "Id"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setLang(XppUtils.getAttributeValueFromNode(parser, "##default"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "language"));
+        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -54,7 +54,7 @@ public class InstitutionImpl extends BaseSchemaEntity implements Institution {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setGeo(XppUtils.getAttributeValueFromNode(parser, "##default"));
+        setGeo(XppUtils.getAttributeValueFromNode(parser, "geo"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

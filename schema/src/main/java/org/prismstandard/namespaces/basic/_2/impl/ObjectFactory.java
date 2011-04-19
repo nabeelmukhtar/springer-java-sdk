@@ -7,8 +7,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
-import org.prismstandard.namespaces.basic._2.Number;
-import org.prismstandard.namespaces.basic._2.Volume;
+import org.w3._2001.xmlschema.Adapter2;
 
 
 /**
@@ -32,9 +31,11 @@ public class ObjectFactory {
     private final static QName _Url_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "url");
     private final static QName _PublicationDate_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "publicationDate");
     private final static QName _StartingPage_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "startingPage");
+    private final static QName _Number_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "number");
     private final static QName _Copyright_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "copyright");
     private final static QName _Isbn_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "isbn");
     private final static QName _Issn_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "issn");
+    private final static QName _Volume_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "volume");
     private final static QName _Doi_QNAME = new QName("http://prismstandard.org/namespaces/basic/2.0/", "doi");
 
     /**
@@ -42,22 +43,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Number }
-     * 
-     */
-    public NumberImpl createNumber() {
-        return new NumberImpl();
-    }
-
-    /**
-     * Create an instance of {@link Volume }
-     * 
-     */
-    public VolumeImpl createVolume() {
-        return new VolumeImpl();
     }
 
     /**
@@ -99,6 +84,16 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "number")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    public JAXBElement<Long> createNumber(Long value) {
+        return new JAXBElement<Long>(_Number_QNAME, Long.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -125,6 +120,16 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public JAXBElement<String> createIssn(String value) {
         return new JAXBElement<String>(_Issn_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "volume")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    public JAXBElement<Long> createVolume(Long value) {
+        return new JAXBElement<Long>(_Volume_QNAME, Long.class, null, value);
     }
 
     /**

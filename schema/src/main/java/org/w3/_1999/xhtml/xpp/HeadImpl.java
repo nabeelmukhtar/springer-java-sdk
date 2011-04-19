@@ -24,8 +24,10 @@ public class HeadImpl extends BaseSchemaEntity implements Head {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
-                setArticle(XppUtils.getElementValueFromNode(parser));
+            if (name.equals("article")) {
+            	ArticleImpl node = new ArticleImpl();
+            	node.init(parser);
+                setArticle(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

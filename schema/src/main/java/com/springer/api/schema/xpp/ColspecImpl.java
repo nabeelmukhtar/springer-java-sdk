@@ -25,8 +25,8 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        setColname(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setColnum(XppUtils.getAttributeValueAsLongFromNode(parser, "##default"));
+        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
+        setColnum(XppUtils.getAttributeValueAsLongFromNode(parser, "colnum"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

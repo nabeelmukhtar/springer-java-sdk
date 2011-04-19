@@ -21,7 +21,7 @@ public class TheadImpl extends BaseSchemaEntity implements Thead {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
+            if (name.equals("row")) {
                 RowImpl node = new RowImpl();
                 node.init(parser);
                 setRow(node);

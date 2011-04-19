@@ -62,7 +62,7 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setLang(XppUtils.getAttributeValueFromNode(parser, "##default"));
+        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

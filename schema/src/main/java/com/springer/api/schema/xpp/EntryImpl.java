@@ -65,11 +65,11 @@ public class EntryImpl extends BaseSchemaEntity implements Entry {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAlign(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setColname(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setMorerows(XppUtils.getAttributeValueAsLongFromNode(parser, "##default"));
-        setNameend(XppUtils.getAttributeValueFromNode(parser, "##default"));
-        setNamest(XppUtils.getAttributeValueFromNode(parser, "##default"));
+        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
+        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
+        setMorerows(XppUtils.getAttributeValueAsLongFromNode(parser, "morerows"));
+        setNameend(XppUtils.getAttributeValueFromNode(parser, "nameend"));
+        setNamest(XppUtils.getAttributeValueFromNode(parser, "namest"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

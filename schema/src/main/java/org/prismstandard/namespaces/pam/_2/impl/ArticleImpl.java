@@ -12,11 +12,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.prismstandard.namespaces.basic._2.Number;
-import org.prismstandard.namespaces.basic._2.Volume;
-import org.prismstandard.namespaces.basic._2.impl.NumberImpl;
-import org.prismstandard.namespaces.basic._2.impl.VolumeImpl;
 import org.prismstandard.namespaces.pam._2.Article;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -66,10 +63,14 @@ public class ArticleImpl
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
     protected String publicationDate;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = VolumeImpl.class)
-    protected VolumeImpl volume;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = NumberImpl.class)
-    protected NumberImpl number;
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "integer")
+    protected Long volume;
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "integer")
+    protected Long number;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
@@ -151,20 +152,20 @@ public class ArticleImpl
         this.publicationDate = value;
     }
 
-    public Volume getVolume() {
+    public Long getVolume() {
         return volume;
     }
 
-    public void setVolume(Volume value) {
-        this.volume = ((VolumeImpl) value);
+    public void setVolume(Long value) {
+        this.volume = value;
     }
 
-    public Number getNumber() {
+    public Long getNumber() {
         return number;
     }
 
-    public void setNumber(Number value) {
-        this.number = ((NumberImpl) value);
+    public void setNumber(Long value) {
+        this.number = value;
     }
 
     public String getStartingPage() {

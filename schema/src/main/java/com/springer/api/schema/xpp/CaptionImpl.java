@@ -2,7 +2,7 @@ package com.springer.api.schema.xpp;
 import java.io.IOException;
 
 import org.w3._1999.xhtml.P;
-import org.w3._1999.xhtml.impl.PImpl;
+import org.w3._1999.xhtml.xpp.PImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
@@ -44,8 +44,10 @@ public class CaptionImpl extends BaseSchemaEntity implements Caption {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
-                setP(XppUtils.getElementValueFromNode(parser));
+            if (name.equals("p")) {
+            	PImpl node = new PImpl();
+            	node.init(parser);
+                setP(node);
             } else if (name.equals("CaptionNumber")) {
                 setCaptionNumber(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("CaptionContent")) {

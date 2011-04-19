@@ -2,8 +2,6 @@
 package org.prismstandard.namespaces.pam._2;
 
 import java.util.List;
-import org.prismstandard.namespaces.basic._2.Number;
-import org.prismstandard.namespaces.basic._2.Volume;
 
 
 /**
@@ -230,40 +228,40 @@ public interface Article {
      * 
      * @return
      *     possible object is
-     *     {@link Volume }
+     *     {@link String }
      *     
      */
-    Volume getVolume();
+    Long getVolume();
 
     /**
      * Sets the value of the volume property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Volume }
+     *     {@link String }
      *     
      */
-    void setVolume(Volume value);
+    void setVolume(Long value);
 
     /**
      * Gets the value of the number property.
      * 
      * @return
      *     possible object is
-     *     {@link Number }
+     *     {@link String }
      *     
      */
-    Number getNumber();
+    Long getNumber();
 
     /**
      * Sets the value of the number property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Number }
+     *     {@link String }
      *     
      */
-    void setNumber(Number value);
+    void setNumber(Long value);
 
     /**
      * Gets the value of the startingPage property.

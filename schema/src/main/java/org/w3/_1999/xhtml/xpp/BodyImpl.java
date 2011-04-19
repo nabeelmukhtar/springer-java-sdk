@@ -35,7 +35,7 @@ public class BodyImpl extends BaseSchemaEntity implements Body {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("##default")) {
+            if (name.equals("h1")) {
                 setH1(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("p")) {
                 PImpl node = new PImpl();
