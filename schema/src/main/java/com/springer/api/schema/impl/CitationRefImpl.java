@@ -28,16 +28,16 @@ public class CitationRefImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    protected Long value;
+    @XmlSchemaType(name = "string")
+    protected String value;
     @XmlAttribute(name = "CitationID", required = true)
     protected String citationID;
 
-    public Long getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(Long value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

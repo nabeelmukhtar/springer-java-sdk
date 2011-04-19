@@ -1151,7 +1151,7 @@
   <xs:element name="CitationRef">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:integer">
+        <xs:extension base="xs:string">
           <xs:attribute name="CitationID" use="required" type="xs:string"/>
         </xs:extension>
       </xs:simpleContent>

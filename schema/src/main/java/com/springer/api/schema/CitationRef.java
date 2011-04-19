@@ -31,7 +31,7 @@ public interface CitationRef {
      *     {@link String }
      *     
      */
-    Long getValue();
+    String getValue();
 
     /**
      * Sets the value of the value property.
@@ -41,7 +41,7 @@ public interface CitationRef {
      *     {@link String }
      *     
      */
-    void setValue(Long value);
+    void setValue(String value);
 
     /**
      * Gets the value of the citationID property.

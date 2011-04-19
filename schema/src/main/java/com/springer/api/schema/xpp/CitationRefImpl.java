@@ -8,13 +8,13 @@ import org.xmlpull.v1.XmlSerializer;
 import com.springer.api.schema.CitationRef;
 public class CitationRefImpl extends BaseSchemaEntity implements CitationRef {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected Long value;
+    protected String value;
     protected String citationID;
-    public Long getValue() {
+    public String getValue() {
         return value;
     }
-    public void setValue(Long value) {
-        value = ((Long) value);
+    public void setValue(String value) {
+        value = ((String) value);
     }
     public String getCitationID() {
         return citationID;
@@ -26,7 +26,7 @@ public class CitationRefImpl extends BaseSchemaEntity implements CitationRef {
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setCitationID(XppUtils.getAttributeValueFromNode(parser, "CitationID"));
-        setValue(XppUtils.getElementValueAsLongFromNode(parser));
+        setValue(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {
