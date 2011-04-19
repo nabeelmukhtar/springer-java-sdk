@@ -1,4 +1,4 @@
-<?xml-stylesheet type="text/xsl" href="/resources/spdi-app.xsl"?>
+<?xml version="1.0"?>
 <response>
 
 	<query>mathematics </query>
@@ -4908,7 +4908,7 @@ Type="Italic">ILLC Publications</Emphasis>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -12276,7 +12276,7 @@ Type="Italic">Teaching and learning mathematics in the 1990s</Emphasis>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-10-12T12:36:16.122062+02:00</meta:DateLoaded>
 
@@ -14865,7 +14865,7 @@ OutputMedium="Online" PDFType="Scanned" TargetType="OnlinePDF" />
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:54.676707+01:00</meta:DateLoaded>
 
@@ -16074,7 +16074,7 @@ Type="Italic">Teor. Veroyatnost. i Primenen</Emphasis>
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:50.604224+01:00</meta:DateLoaded>
 
@@ -19988,7 +19988,7 @@ Type="Italic">Rapport</Emphasis>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -23199,7 +23199,7 @@ Language="En">A sharpening of the inequality of Berry-Esseen</ArticleTitle>
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:50.498869+01:00</meta:DateLoaded>
 
@@ -24879,7 +24879,7 @@ Type="Italic">J. Number Theory</Emphasis>
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:50.81678+01:00</meta:DateLoaded>
 
@@ -32412,7 +32412,7 @@ Type="Italic">Communities of practice: learning, meaning, and identity</Emphasis
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2009-05-27T03:00:25.988221+02:00</meta:DateLoaded>
 
@@ -33563,7 +33563,7 @@ Language="En">The genetic balance between random sampling and random population 
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:53.081467+01:00</meta:DateLoaded>
 
@@ -34981,7 +34981,7 @@ Language="En">A note on the balance between random sampling and population size<
 
 				</Series>
 
-				<meta:Info>
+				<meta:Info xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2011-02-03T02:16:51.588627+01:00</meta:DateLoaded>
 

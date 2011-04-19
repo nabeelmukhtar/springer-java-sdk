@@ -17,9 +17,12 @@
         <xs:element ref="meta:DOI"/>
         <xs:element ref="meta:Title"/>
         <xs:element ref="meta:ISXN"/>
+        <xs:element minOccurs="0" ref="meta:VolumeId"/>
+        <xs:element minOccurs="0" ref="meta:IssueId"/>
         <xs:element maxOccurs="unbounded" ref="meta:Journal"/>
         <xs:element maxOccurs="unbounded" ref="meta:PubName"/>
         <xs:element minOccurs="0" ref="meta:ArticleFirstPage"/>
+        <xs:element minOccurs="0" ref="meta:Book"/>
         <xs:element ref="meta:Publication"/>
         <xs:element ref="meta:PublicationType"/>
         <xs:element ref="meta:SubjectGroup"/>
@@ -47,7 +50,7 @@
       <xs:sequence>
         <xs:element ref="meta:OrgName"/>
         <xs:element minOccurs="0" ref="meta:GeoOrg"/>
-        <xs:element ref="meta:Country"/>
+        <xs:element minOccurs="0" ref="meta:Country"/>
       </xs:sequence>
       <xs:attribute name="geo"/>
     </xs:complexType>
@@ -66,9 +69,12 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="ISXN" type="xs:NMTOKEN"/>
+  <xs:element name="VolumeId" type="xs:integer"/>
+  <xs:element name="IssueId" type="xs:integer"/>
   <xs:element name="Journal" type="xs:string"/>
   <xs:element name="PubName" type="xs:string"/>
   <xs:element name="ArticleFirstPage" type="xs:NMTOKEN"/>
+  <xs:element name="Book" type="xs:string"/>
   <xs:element name="Publication" type="xs:string"/>
   <xs:element name="PublicationType" type="xs:NCName"/>
   <xs:element name="SubjectGroup">
@@ -80,6 +86,7 @@
   </xs:element>
   <xs:element name="Subject">
     <xs:complexType mixed="true">
+      <xs:attribute name="Code" type="xs:NCName"/>
       <xs:attribute name="Priority" type="xs:integer"/>
       <xs:attribute name="Type" use="required" type="xs:NCName"/>
     </xs:complexType>
