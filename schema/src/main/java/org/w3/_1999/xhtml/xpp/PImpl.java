@@ -9,7 +9,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.xpp.BaseSchemaEntity;
-import com.springer.api.schema.xpp.XppUtils;
 public class PImpl extends BaseSchemaEntity implements P {
     private final static long serialVersionUID = 2461660169443089969L;
     protected List<String> ps;
@@ -34,7 +33,18 @@ public class PImpl extends BaseSchemaEntity implements P {
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-    	XppUtils.skipSubTree(parser);
+        parser.require(XmlPullParser.START_TAG, null, null);
+        int level = 1;
+        while (level > 0) {
+            int eventType = parser.next();
+            if (eventType == XmlPullParser.END_TAG) {
+                --level;
+            } else if (eventType == XmlPullParser.START_TAG) {
+                ++level;
+            } else if (eventType == XmlPullParser.TEXT) {
+            	getPS().add(parser.getText());
+            }
+        }
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -2,7 +2,6 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -11,19 +10,21 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
+import com.springer.api.schema.Subject;
 import org.w3._2001.xmlschema.Adapter2;
 
-import com.springer.api.schema.Subject;
-
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
+@XmlType(name = "", propOrder = {
+    "value"
+})
 @XmlRootElement(name = "Subject")
 public class SubjectImpl
     implements Serializable, Subject
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
+    @XmlValue
+    protected String value;
     @XmlAttribute(name = "Code")
     protected String code;
     @XmlAttribute(name = "Priority")
@@ -32,10 +33,7 @@ public class SubjectImpl
     protected Long priority;
     @XmlAttribute(name = "Type", required = true)
     protected String type;
-    @XmlValue
-    @XmlSchemaType(name = "string")
-    protected String value;
-    
+
     public String getValue() {
         return value;
     }

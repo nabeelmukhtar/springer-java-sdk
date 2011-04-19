@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,10 +14,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.w3._2001.xmlschema.Adapter1;
-import org.w3._2001.xmlschema.Adapter2;
-
 import com.springer.api.schema.ArticleTitle;
 import com.springer.api.schema.Authors;
 import com.springer.api.schema.Caption;
@@ -30,6 +25,8 @@ import com.springer.api.schema.Institutions;
 import com.springer.api.schema.Keywords;
 import com.springer.api.schema.Subjects;
 import com.springer.api.schema.Table;
+import org.w3._2001.xmlschema.Adapter1;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -38,8 +35,8 @@ import com.springer.api.schema.Table;
     "fullTexts",
     "locations",
     "table",
-    "articleTitles",
     "authors",
+    "articleTitles",
     "dois",
     "institutions",
     "issueIds",
@@ -78,10 +75,10 @@ public class ImageImpl
     protected List<String> locations;
     @XmlElement(name = "Table", type = TableImpl.class)
     protected TableImpl table;
+    @XmlElement(name = "Authors", type = AuthorsImpl.class)
+    protected AuthorsImpl authors;
     @XmlElement(name = "ArticleTitle", required = true, type = ArticleTitleImpl.class)
     protected List<ArticleTitle> articleTitles;
-    @XmlElement(name = "Authors", required = true, type = AuthorsImpl.class)
-    protected AuthorsImpl authors;
     @XmlElement(name = "DOI", required = true)
     protected List<String> dois;
     @XmlElement(name = "Institutions", required = true, type = InstitutionsImpl.class)
@@ -184,15 +181,19 @@ public class ImageImpl
         this.table = ((TableImpl) value);
     }
 
+    public Authors getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Authors value) {
+        this.authors = ((AuthorsImpl) value);
+    }
+
     public List<ArticleTitle> getArticleTitles() {
         if (articleTitles == null) {
             articleTitles = new ArrayList<ArticleTitle>();
         }
         return this.articleTitles;
-    }
-
-    public Authors getAuthors() {
-        return this.authors;
     }
 
     public List<String> getDOIS() {

@@ -42,24 +42,31 @@ public class CaptionImpl extends BaseSchemaEntity implements Caption {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("p")) {
-            	PImpl node = new PImpl();
-            	node.init(parser);
-                setP(node);
-            } else if (name.equals("CaptionNumber")) {
-                setCaptionNumber(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("CaptionContent")) {
-                CaptionContentImpl node = new CaptionContentImpl();
-                node.init(parser);
-                setCaptionContent(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
         setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        int eventType = parser.next();
+        while (eventType == XmlPullParser.START_TAG || eventType == XmlPullParser.TEXT) {
+        	if (eventType == XmlPullParser.START_TAG) {
+                String name = parser.getName();
+                if (name.equals("p")) {
+                	PImpl node = new PImpl();
+                	node.init(parser);
+                    setP(node);
+                } else if (name.equals("CaptionNumber")) {
+                    setCaptionNumber(XppUtils.getElementValueFromNode(parser));
+                } else if (name.equals("CaptionContent")) {
+                    CaptionContentImpl node = new CaptionContentImpl();
+                    node.init(parser);
+                    setCaptionContent(node);
+                } else {                // Consume something we don't understand.
+                    LOG.warning("Found tag that we don't recognize: " + name);
+                    XppUtils.skipSubTree(parser);
+                }
+        	} else {
+        		PImpl node = new PImpl();
+        		node.getPS().add(parser.getText());
+        	}
+        	eventType = parser.next();
+        }
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {
