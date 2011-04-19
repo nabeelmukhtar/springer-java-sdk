@@ -4,23 +4,18 @@ package com.springer.api.schema.impl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
-import com.springer.api.schema.CitationRef;
-import com.springer.api.schema.Emphasis;
 import com.springer.api.schema.SimplePara;
-import com.springer.api.schema.Superscript;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "citationReves",
-    "emphasises",
-    "superscripts"
+    "content"
 })
 @XmlRootElement(name = "SimplePara")
 public class SimpleParaImpl
@@ -28,32 +23,19 @@ public class SimpleParaImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "CitationRef", type = CitationRefImpl.class)
-    protected List<CitationRef> citationReves;
-    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
-    protected List<Emphasis> emphasises;
-    @XmlElement(name = "Superscript", type = SuperscriptImpl.class)
-    protected List<Superscript> superscripts;
+    @XmlElementRefs({
+        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class),
+        @XmlElementRef(name = "CitationRef", type = CitationRefImpl.class),
+        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
+    })
+    @XmlMixed
+    protected List<Object> content;
 
-    public List<CitationRef> getCitationReves() {
-        if (citationReves == null) {
-            citationReves = new ArrayList<CitationRef>();
+    public List<Object> getContent() {
+        if (content == null) {
+            content = new ArrayList<Object>();
         }
-        return this.citationReves;
-    }
-
-    public List<Emphasis> getEmphasises() {
-        if (emphasises == null) {
-            emphasises = new ArrayList<Emphasis>();
-        }
-        return this.emphasises;
-    }
-
-    public List<Superscript> getSuperscripts() {
-        if (superscripts == null) {
-            superscripts = new ArrayList<Superscript>();
-        }
-        return this.superscripts;
+        return this.content;
     }
 
 }

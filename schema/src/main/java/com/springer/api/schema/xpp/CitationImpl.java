@@ -1,6 +1,5 @@
 package com.springer.api.schema.xpp;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -13,17 +12,17 @@ import com.springer.api.schema.BibUnstructured;
 import com.springer.api.schema.Citation;
 public class CitationImpl extends BaseSchemaEntity implements Citation {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected BigDecimal citationNumber;
+    protected String citationNumber;
     protected BibArticleImpl bibArticle;
     protected BibBookImpl bibBook;
     protected BibChapterImpl bibChapter;
     protected BibUnstructuredImpl bibUnstructured;
     protected String id;
-    public BigDecimal getCitationNumber() {
+    public String getCitationNumber() {
         return citationNumber;
     }
-    public void setCitationNumber(BigDecimal value) {
-        citationNumber = ((BigDecimal) value);
+    public void setCitationNumber(String value) {
+        citationNumber = ((String) value);
     }
     public BibArticle getBibArticle() {
         return bibArticle;
@@ -61,7 +60,7 @@ public class CitationImpl extends BaseSchemaEntity implements Citation {
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("CitationNumber")) {
-                setCitationNumber(BigDecimal.valueOf(XppUtils.getElementValueAsLongFromNode(parser)));
+                setCitationNumber(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("BibArticle")) {
                 BibArticleImpl node = new BibArticleImpl();
                 node.init(parser);

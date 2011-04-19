@@ -36,6 +36,7 @@ public class SubjectImpl extends BaseSchemaEntity implements Subject {
         parser.require(XmlPullParser.START_TAG, null, null);
         setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        setContent(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

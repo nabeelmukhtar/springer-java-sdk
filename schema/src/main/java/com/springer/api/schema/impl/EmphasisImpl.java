@@ -4,46 +4,44 @@ package com.springer.api.schema.impl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import com.springer.api.schema.Emphasis;
-import com.springer.api.schema.Superscript;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "emphasises",
-    "superscripts"
+    "content"
 })
 @XmlRootElement(name = "Emphasis")
 public class EmphasisImpl implements Serializable, Emphasis
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "Emphasis", type = EmphasisImpl.class)
-    protected List<Emphasis> emphasises;
-    @XmlElement(name = "Superscript", type = SuperscriptImpl.class)
-    protected List<Superscript> superscripts;
+    @XmlElementRefs({
+        @XmlElementRef(name = "Superscript", type = SuperscriptImpl.class),
+        @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
+    })
+    @XmlMixed
+    protected List<Object> content;
     @XmlAttribute(name = "Type", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NCName")
     protected String type;
 
-    public List<Emphasis> getEmphasises() {
-        if (emphasises == null) {
-            emphasises = new ArrayList<Emphasis>();
+    public List<Object> getContent() {
+        if (content == null) {
+            content = new ArrayList<Object>();
         }
-        return this.emphasises;
-    }
-
-    public List<Superscript> getSuperscripts() {
-        if (superscripts == null) {
-            superscripts = new ArrayList<Superscript>();
-        }
-        return this.superscripts;
+        return this.content;
     }
 
     public String getType() {

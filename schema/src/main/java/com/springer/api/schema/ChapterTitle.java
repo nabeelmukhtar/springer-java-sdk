@@ -24,6 +24,26 @@ public interface ChapterTitle {
 
 
     /**
+     * Gets the value of the content property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getContent();
+
+    /**
+     * Sets the value of the content property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setContent(String value);
+
+    /**
      * Gets the value of the language property.
      * 
      * @return

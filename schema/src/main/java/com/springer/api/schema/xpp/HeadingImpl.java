@@ -7,33 +7,36 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
-import com.springer.api.schema.Emphasis;
 import com.springer.api.schema.Heading;
 public class HeadingImpl extends BaseSchemaEntity implements Heading {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected List<Emphasis> emphasises;
-    public List<Emphasis> getEmphasises() {
-        if (emphasises == null) {
-            emphasises = new ArrayList<Emphasis>();
+    protected List<Object> content;
+
+    public List<Object> getContent() {
+        if (content == null) {
+            content = new ArrayList<Object>();
         }
-        return this.emphasises;
-    }
-    public void setEmphasises(List<Emphasis> value) {
-        this.emphasises = value;
+        return this.content;
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("Emphasis")) {
-                EmphasisImpl node = new EmphasisImpl();
-                node.init(parser);
-                getEmphasises().add(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
+        int eventType = parser.next();
+        while (eventType == XmlPullParser.START_TAG || eventType == XmlPullParser.TEXT) {
+        	if (eventType == XmlPullParser.START_TAG) {
+                String name = parser.getName();
+                if (name.equals("Emphasis")) {
+                    EmphasisImpl node = new EmphasisImpl();
+                    node.init(parser);
+                    getContent().add(node);
+                } else {                // Consume something we don't understand.
+                    LOG.warning("Found tag that we don't recognize: " + name);
+                    XppUtils.skipSubTree(parser);
+                }
+        	} else {
+        		getContent().add(parser.getText());
+        	}
+        	eventType = parser.next();
         }
     }
     @Override

@@ -2,17 +2,20 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
 import com.springer.api.schema.ArticleTitle;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "value"
+    "content"
 })
 @XmlRootElement(name = "ArticleTitle")
 public class ArticleTitleImpl
@@ -20,17 +23,17 @@ public class ArticleTitleImpl
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlValue
-    protected String value;
+    @XmlElementRef(name = "Emphasis", type = EmphasisImpl.class)
+    @XmlMixed
+    protected List<Object> content;
     @XmlAttribute(name = "Language")
     protected String language;
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
+    public List<Object> getContent() {
+        if (content == null) {
+            content = new ArrayList<Object>();
+        }
+        return this.content;
     }
 
     public String getLanguage() {

@@ -15,7 +15,7 @@ import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "value"
+    "content"
 })
 @XmlRootElement(name = "facet-value")
 public class FacetValueImpl
@@ -24,18 +24,18 @@ public class FacetValueImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlValue
-    protected String value;
+    protected String content;
     @XmlAttribute(required = true)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
     protected Long count;
 
-    public String getValue() {
-        return value;
+    public String getContent() {
+        return content;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setContent(String value) {
+        this.content = value;
     }
 
     public Long getCount() {

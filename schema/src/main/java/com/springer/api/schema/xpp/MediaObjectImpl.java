@@ -25,7 +25,7 @@ public class MediaObjectImpl extends ImageObjectImpl implements MediaObject {
                 TextObjectImpl node = new TextObjectImpl();
                 node.init(parser);
                 setTextObject(node);
-            } else if (name.equals("ImageObjectElement")) {
+            } else if (name.equals("ImageObject")) {
                 ImageObjectElementImpl node = new ImageObjectElementImpl();
                 node.init(parser);
                 setImageObjectElement(node);

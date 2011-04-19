@@ -27,7 +27,7 @@ public class AuthorsImpl extends BaseSchemaEntity implements Authors {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("Author")) {
+            if (name.equals("meta:Author")) {
                 getAuthors().add(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);

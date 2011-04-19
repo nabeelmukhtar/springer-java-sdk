@@ -13,11 +13,11 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}Superscript" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *         &lt;element ref="{}Emphasis"/>
+ *         &lt;element ref="{}Superscript"/>
+ *       &lt;/choice>
+ *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -29,52 +29,30 @@ public interface Emphasis {
 
 
     /**
-     * Gets the value of the emphasises property.
+     * Gets the value of the content property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the emphasises property.
+     * This is why there is not a <CODE>set</CODE> method for the content property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEmphasises().add(newItem);
+     *    getContent().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * {@link Superscript }
      * {@link Emphasis }
      * 
      * 
      */
-    List<Emphasis> getEmphasises();
-
-    /**
-     * Gets the value of the superscripts property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the superscripts property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSuperscripts().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Superscript }
-     * 
-     * 
-     */
-    List<Superscript> getSuperscripts();
+    List<Object> getContent();
 
     /**
      * Gets the value of the type property.

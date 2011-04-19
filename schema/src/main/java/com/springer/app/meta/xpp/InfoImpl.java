@@ -126,39 +126,39 @@ public class InfoImpl extends BaseSchemaEntity implements Info {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("DateLoaded")) {
+            if (name.equals("meta:DateLoaded")) {
                 setDateLoaded(XppUtils.getElementValueAsDateFromNode(parser));
-            } else if (name.equals("Authors")) {
+            } else if (name.equals("meta:Authors")) {
                 AuthorsImpl node = new AuthorsImpl();
                 node.init(parser);
                 setAuthors(node);
-            } else if (name.equals("Institutions")) {
+            } else if (name.equals("meta:Institutions")) {
                 InstitutionsImpl node = new InstitutionsImpl();
                 node.init(parser);
                 setInstitutions(node);
-            } else if (name.equals("Date")) {
+            } else if (name.equals("meta:Date")) {
                 setDate(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("Type")) {
+            } else if (name.equals("meta:Type")) {
                 setType(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("DOI")) {
+            } else if (name.equals("meta:DOI")) {
                 setDOI(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("Title")) {
+            } else if (name.equals("meta:Title")) {
                 TitleImpl node = new TitleImpl();
                 node.init(parser);
                 setTitle(node);
-            } else if (name.equals("ISXN")) {
+            } else if (name.equals("meta:ISXN")) {
                 setISXN(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("Journal")) {
+            } else if (name.equals("meta:Journal")) {
                 getJournals().add(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("PubName")) {
+            } else if (name.equals("meta:PubName")) {
                 getPubNames().add(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("ArticleFirstPage")) {
+            } else if (name.equals("meta:ArticleFirstPage")) {
                 setArticleFirstPage(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("Publication")) {
+            } else if (name.equals("meta:Publication")) {
                 setPublication(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("PublicationType")) {
+            } else if (name.equals("meta:PublicationType")) {
                 setPublicationType(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("SubjectGroup")) {
+            } else if (name.equals("meta:SubjectGroup")) {
                 SubjectGroupImpl node = new SubjectGroupImpl();
                 node.init(parser);
                 setSubjectGroup(node);

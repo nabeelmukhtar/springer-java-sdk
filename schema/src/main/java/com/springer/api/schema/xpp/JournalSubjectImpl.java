@@ -10,7 +10,7 @@ public class JournalSubjectImpl extends BaseSchemaEntity implements JournalSubje
     private final static long serialVersionUID = 2461660169443089969L;
     protected Long priority;
     protected String type;
-    protected String value;
+    protected String content;
     public Long getPriority() {
         return priority;
     }
@@ -24,12 +24,12 @@ public class JournalSubjectImpl extends BaseSchemaEntity implements JournalSubje
         type = ((String) value);
     }
     
-    public String getValue() {
-        return value;
+    public String getContent() {
+        return content;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setContent(String value) {
+        this.content = value;
     }
     
     @Override
@@ -37,7 +37,7 @@ public class JournalSubjectImpl extends BaseSchemaEntity implements JournalSubje
         parser.require(XmlPullParser.START_TAG, null, null);
         setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
-        setValue(XppUtils.getElementValueFromNode(parser));
+        setContent(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

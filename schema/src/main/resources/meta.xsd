@@ -59,10 +59,10 @@
   <xs:element name="Type" type="xs:NCName"/>
   <xs:element name="DOI" type="xs:string"/>
   <xs:element name="Title">
-    <xs:complexType>
-     <xs:sequence>
-       <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
-     </xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ISXN" type="xs:NMTOKEN"/>

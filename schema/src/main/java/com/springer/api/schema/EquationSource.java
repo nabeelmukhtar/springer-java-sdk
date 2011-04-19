@@ -12,7 +12,7 @@ package com.springer.api.schema;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Format" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="Format" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -22,6 +22,26 @@ package com.springer.api.schema;
  */
 public interface EquationSource {
 
+
+    /**
+     * Gets the value of the content property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getContent();
+
+    /**
+     * Sets the value of the content property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setContent(String value);
 
     /**
      * Gets the value of the format property.

@@ -53,7 +53,7 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
                 JournalImpl node = new JournalImpl();
                 node.init(parser);
                 setJournal(node);
-            } else if (name.equals("Info")) {
+            } else if (name.equals("meta:Info")) {
             	InfoImpl node = new InfoImpl();
             	node.init(parser);
                 setInfo(node);

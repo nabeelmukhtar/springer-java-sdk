@@ -43,11 +43,11 @@ public class InstitutionImpl extends BaseSchemaEntity implements Institution {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("OrgName")) {
+            if (name.equals("meta:OrgName")) {
                 setOrgName(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("GeoOrg")) {
+            } else if (name.equals("meta:GeoOrg")) {
                 setGeoOrg(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("Country")) {
+            } else if (name.equals("meta:Country")) {
                 setCountry(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);

@@ -26,6 +26,7 @@ public class CitationRefImpl extends BaseSchemaEntity implements CitationRef {
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setCitationID(XppUtils.getAttributeValueFromNode(parser, "CitationID"));
+        setValue(XppUtils.getElementValueAsLongFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

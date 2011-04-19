@@ -1,8 +1,8 @@
 
 package com.springer.api.schema;
 
-import org.w3._1999.xhtml.P;
-
+import java.util.List;
+import javax.xml.bind.JAXBElement;
 
 
 /**
@@ -31,64 +31,31 @@ public interface Caption {
 
 
     /**
-     * Gets the value of the p property.
+     * Gets the value of the content property.
      * 
-     * @return
-     *     possible object is
-     *     {@link P }
-     *     
-     */
-    P getP();
-
-    /**
-     * Sets the value of the p property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the content property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link P }
-     *     
-     */
-    void setP(P value);
-
-    /**
-     * Gets the value of the captionNumber property.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getContent().add(newItem);
+     * </pre>
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getCaptionNumber();
-
-    /**
-     * Sets the value of the captionNumber property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setCaptionNumber(String value);
-
-    /**
-     * Gets the value of the captionContent property.
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link CaptionContent }
+     * {@link String }
+     * {@link P }
      * 
-     * @return
-     *     possible object is
-     *     {@link CaptionContent }
-     *     
-     */
-    CaptionContent getCaptionContent();
-
-    /**
-     * Sets the value of the captionContent property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link CaptionContent }
-     *     
      */
-    void setCaptionContent(CaptionContent value);
+    List<Object> getContent();
 
     /**
      * Gets the value of the language property.

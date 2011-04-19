@@ -29,7 +29,7 @@ public class InstitutionsImpl extends BaseSchemaEntity implements Institutions {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("Institution")) {
+            if (name.equals("meta:Institution")) {
                 InstitutionImpl node = new InstitutionImpl();
                 node.init(parser);
                 getInstitutions().add(node);

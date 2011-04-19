@@ -22,25 +22,26 @@ package com.springer.api.schema;
  */
 public interface FacetValue {
 
+
     /**
-     * Gets the value of the value property.
+     * Gets the value of the content property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    String getValue();
+    String getContent();
 
     /**
-     * Sets the value of the value property.
+     * Sets the value of the content property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    void setValue(String value);
+    void setContent(String value);
 
     /**
      * Gets the value of the count property.

@@ -26,6 +26,7 @@ public class InternalRefImpl extends BaseSchemaEntity implements InternalRef {
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setRefID(XppUtils.getAttributeValueFromNode(parser, "RefID"));
+        setValue(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

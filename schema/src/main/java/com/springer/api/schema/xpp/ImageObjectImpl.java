@@ -21,7 +21,7 @@ public class ImageObjectImpl extends BaseSchemaEntity implements ImageObject {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("ImageObjectElement")) {
+            if (name.equals("ImageObject")) {
                 ImageObjectElementImpl node = new ImageObjectElementImpl();
                 node.init(parser);
                 setImageObjectElement(node);

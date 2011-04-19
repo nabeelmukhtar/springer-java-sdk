@@ -2,7 +2,6 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,7 +31,7 @@ public class CitationImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "CitationNumber", required = true)
-    protected BigDecimal citationNumber;
+    protected String citationNumber;
     @XmlElement(name = "BibArticle", type = BibArticleImpl.class)
     protected BibArticleImpl bibArticle;
     @XmlElement(name = "BibBook", type = BibBookImpl.class)
@@ -44,11 +43,11 @@ public class CitationImpl
     @XmlAttribute(name = "ID", required = true)
     protected String id;
 
-    public BigDecimal getCitationNumber() {
+    public String getCitationNumber() {
         return citationNumber;
     }
 
-    public void setCitationNumber(BigDecimal value) {
+    public void setCitationNumber(String value) {
         this.citationNumber = value;
     }
 

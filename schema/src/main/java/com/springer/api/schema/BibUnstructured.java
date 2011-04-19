@@ -13,10 +13,10 @@ import java.util.List;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}ExternalRef" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
+ *       &lt;choice maxOccurs="unbounded" minOccurs="0">
+ *         &lt;element ref="{}Emphasis"/>
+ *         &lt;element ref="{}ExternalRef"/>
+ *       &lt;/choice>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -28,51 +28,29 @@ public interface BibUnstructured {
 
 
     /**
-     * Gets the value of the emphasises property.
+     * Gets the value of the content property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the emphasises property.
+     * This is why there is not a <CODE>set</CODE> method for the content property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getEmphasises().add(newItem);
+     *    getContent().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * {@link ExternalRef }
      * {@link Emphasis }
      * 
      * 
      */
-    List<Emphasis> getEmphasises();
-
-    /**
-     * Gets the value of the externalReves property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the externalReves property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getExternalReves().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ExternalRef }
-     * 
-     * 
-     */
-    List<ExternalRef> getExternalReves();
+    List<Object> getContent();
 
 }

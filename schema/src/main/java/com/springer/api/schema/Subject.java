@@ -12,9 +12,9 @@ package com.springer.api.schema;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Code" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="Code" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *       &lt;attribute name="Priority" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -23,27 +23,28 @@ package com.springer.api.schema;
  * 
  */
 public interface Subject {
-	
+
+
     /**
-     * Gets the value of the value property.
+     * Gets the value of the content property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    String getValue();
+    String getContent();
 
     /**
-     * Sets the value of the value property.
+     * Sets the value of the content property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    void setValue(String value);
-	
+    void setContent(String value);
+
     /**
      * Gets the value of the code property.
      * 

@@ -25,6 +25,11 @@ public class BodyRefImpl extends BaseSchemaEntity implements BodyRef {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            LOG.warning("Found tag that we don't recognize: " + name);
+            XppUtils.skipSubTree(parser);
+        }
         setFileRef(XppUtils.getAttributeValueFromNode(parser, "FileRef"));
         setTargetType(XppUtils.getAttributeValueFromNode(parser, "TargetType"));
     }

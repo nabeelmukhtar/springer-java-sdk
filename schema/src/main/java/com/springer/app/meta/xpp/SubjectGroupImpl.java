@@ -28,7 +28,7 @@ public class SubjectGroupImpl extends BaseSchemaEntity implements SubjectGroup {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("Subject")) {
+            if (name.equals("meta:Subject")) {
                 SubjectImpl node = new SubjectImpl();
                 node.init(parser);
                 getSubjects().add(node);

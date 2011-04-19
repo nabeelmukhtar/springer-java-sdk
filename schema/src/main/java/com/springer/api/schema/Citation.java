@@ -39,7 +39,7 @@ public interface Citation {
      *     {@link BigDecimal }
      *     
      */
-    BigDecimal getCitationNumber();
+    String getCitationNumber();
 
     /**
      * Sets the value of the citationNumber property.
@@ -49,7 +49,7 @@ public interface Citation {
      *     {@link BigDecimal }
      *     
      */
-    void setCitationNumber(BigDecimal value);
+    void setCitationNumber(String value);
 
     /**
      * Gets the value of the bibArticle property.

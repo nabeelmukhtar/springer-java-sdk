@@ -33,19 +33,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Message }
-     * 
-     */
-    public Message createMessage() {
-        return new MessageImpl();
-    }
-
-    /**
      * Create an instance of {@link Article }
      * 
      */
     public Article createArticle() {
         return new ArticleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Message }
+     * 
+     */
+    public Message createMessage() {
+        return new MessageImpl();
     }
 
 }
