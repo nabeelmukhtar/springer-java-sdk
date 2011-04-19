@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.w3._2001.xmlschema.Adapter2;
@@ -28,6 +29,10 @@ public class FacetValueImpl
     @XmlSchemaType(name = "integer")
     protected Long count;
 
+    @XmlValue
+    @XmlSchemaType(name = "string")
+    protected String value;
+
     public Long getCount() {
         return count;
     }
@@ -36,4 +41,11 @@ public class FacetValueImpl
         this.count = value;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

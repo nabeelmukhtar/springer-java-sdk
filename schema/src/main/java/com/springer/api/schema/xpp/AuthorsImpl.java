@@ -7,18 +7,17 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
-import com.springer.api.schema.Author;
 import com.springer.api.schema.Authors;
 public class AuthorsImpl extends BaseSchemaEntity implements Authors {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected List<Author> authors;
-    public List<Author> getAuthors() {
+    protected List<String> authors;
+    public List<String> getAuthors() {
         if (authors == null) {
-            authors = new ArrayList<Author>();
+            authors = new ArrayList<String>();
         }
         return this.authors;
     }
-    public void setAuthors(List<Author> value) {
+    public void setAuthors(List<String> value) {
         this.authors = value;
     }
     @Override
@@ -27,9 +26,7 @@ public class AuthorsImpl extends BaseSchemaEntity implements Authors {
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Author")) {
-                AuthorImpl node = new AuthorImpl();
-                node.init(parser);
-                getAuthors().add(node);
+                getAuthors().add(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

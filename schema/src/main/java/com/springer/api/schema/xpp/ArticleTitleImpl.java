@@ -1,26 +1,21 @@
 package com.springer.api.schema.xpp;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.ArticleTitle;
-import com.springer.api.schema.Emphasis;
 public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected List<Emphasis> emphasises;
     protected String language;
-    public List<Emphasis> getEmphasises() {
-        if (emphasises == null) {
-            emphasises = new ArrayList<Emphasis>();
-        }
-        return this.emphasises;
+    protected String value;
+    
+    public String getValue() {
+        return value;
     }
-    public void setEmphasises(List<Emphasis> value) {
-        this.emphasises = value;
+    public void setValue(String value) {
+        value = ((String) value);
     }
     public String getLanguage() {
         return language;
@@ -31,18 +26,8 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            if (name.equals("Emphasis")) {
-                EmphasisImpl node = new EmphasisImpl();
-                node.init(parser);
-                getEmphasises().add(node);
-            } else {                // Consume something we don't understand.
-                LOG.warning("Found tag that we don't recognize: " + name);
-                XppUtils.skipSubTree(parser);
-            }
-        }
         setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setValue(XppUtils.getElementValueFromNode(parser));        
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -215,7 +215,7 @@ public interface Image {
      * 
      * 
      */
-    List<Authors> getAuthors();
+    Authors getAuthors();
 
     /**
      * Gets the value of the dois property.

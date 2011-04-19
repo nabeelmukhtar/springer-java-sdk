@@ -24,7 +24,7 @@ public class HeadImpl extends BaseSchemaEntity implements Head {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("article")) {
+            if (name.equals("pam:article")) {
             	ArticleImpl node = new ArticleImpl();
             	node.init(parser);
                 setArticle(node);

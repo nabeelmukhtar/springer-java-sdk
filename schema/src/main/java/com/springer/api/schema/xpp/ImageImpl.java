@@ -27,7 +27,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected List<String> locations;
     protected TableImpl table;
     protected List<ArticleTitle> articleTitles;
-    protected List<Authors> authors;
+    protected Authors authors;
     protected List<String> dois;
     protected List<Institutions> institutions;
     protected List<String> issueIds;
@@ -100,13 +100,10 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     public void setArticleTitles(List<ArticleTitle> value) {
         this.articleTitles = value;
     }
-    public List<Authors> getAuthors() {
-        if (authors == null) {
-            authors = new ArrayList<Authors>();
-        }
-        return this.authors;
+    public Authors getAuthors() {
+        return authors;
     }
-    public void setAuthors(List<Authors> value) {
+    public void setAuthors(Authors value) {
         this.authors = value;
     }
     public List<String> getDOIS() {
@@ -316,7 +313,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
             } else if (name.equals("Authors")) {
                 AuthorsImpl node = new AuthorsImpl();
                 node.init(parser);
-                getAuthors().add(node);
+                setAuthors(node);
             } else if (name.equals("DOI")) {
                 getDOIS().add(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Institutions")) {

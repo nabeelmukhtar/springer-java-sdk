@@ -42,6 +42,7 @@ public class ISXNImpl extends BaseSchemaEntity implements ISXN {
         setEISBN(XppUtils.getAttributeValueFromNode(parser, "EISBN"));
         setISBN(XppUtils.getAttributeValueFromNode(parser, "ISBN"));
         setISSN(XppUtils.getAttributeValueFromNode(parser, "ISSN"));
+        setValue(XppUtils.getElementValueFromNode(parser));        
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

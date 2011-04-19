@@ -11,6 +11,15 @@ public class SubjectImpl extends BaseSchemaEntity implements Subject {
     protected String code;
     protected Long priority;
     protected String type;
+    protected String value;
+    
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
     public String getCode() {
         return code;
     }
@@ -35,6 +44,7 @@ public class SubjectImpl extends BaseSchemaEntity implements Subject {
         setCode(XppUtils.getAttributeValueFromNode(parser, "Code"));
         setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        setValue(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -26,6 +26,7 @@ public class PathImpl extends BaseSchemaEntity implements Path {
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        setValue(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

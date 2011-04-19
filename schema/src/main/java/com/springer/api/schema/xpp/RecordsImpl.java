@@ -53,7 +53,7 @@ public class RecordsImpl extends BaseSchemaEntity implements Records {
                 ResultImpl node = new ResultImpl();
                 node.init(parser);
                 getResults().add(node);
-            } else if (name.equals("message")) {
+            } else if (name.equals("pam:message")) {
                 MessageImpl node = new MessageImpl();
                 node.init(parser);
                 getMessages().add(node);

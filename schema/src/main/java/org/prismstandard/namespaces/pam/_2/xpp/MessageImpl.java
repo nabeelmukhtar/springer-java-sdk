@@ -33,11 +33,11 @@ public class MessageImpl extends BaseSchemaEntity implements Message {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("head")) {
+            if (name.equals("xhtml:head")) {
             	HeadImpl node = new HeadImpl();
             	node.init(parser);
                 setHead(node);
-            } else if (name.equals("body")) {
+            } else if (name.equals("xhtml:body")) {
             	BodyImpl node = new BodyImpl();
             	node.init(parser);
                 setBody(node);

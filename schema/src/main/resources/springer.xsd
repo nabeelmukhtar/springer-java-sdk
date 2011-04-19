@@ -53,7 +53,11 @@
   </xs:element>
   <xs:element name="facet-value">
     <xs:complexType>
-      <xs:attribute name="count" use="required" type="xs:integer"/>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+      		<xs:attribute name="count" use="required" type="xs:integer"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="result">
@@ -127,8 +131,12 @@
   </xs:element>
   <xs:element name="JournalSubject">
     <xs:complexType>
-      <xs:attribute name="Priority" type="xs:integer"/>
-      <xs:attribute name="Type" use="required" type="xs:string"/>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+	      <xs:attribute name="Priority" type="xs:integer"/>
+	      <xs:attribute name="Type" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="JournalOnlineFirst">
@@ -245,8 +253,8 @@
         <xs:element maxOccurs="unbounded" ref="FullText"/>
         <xs:element maxOccurs="unbounded" ref="Location"/>
         <xs:element minOccurs="0" ref="Table"/>
+        <xs:element minOccurs="0" ref="Authors"/>
         <xs:element maxOccurs="unbounded" ref="ArticleTitle"/>
-        <xs:element maxOccurs="unbounded" ref="Authors"/>
         <xs:element maxOccurs="unbounded" ref="DOI"/>
         <xs:element maxOccurs="unbounded" ref="Institutions"/>
         <xs:element maxOccurs="unbounded" ref="IssueId"/>
@@ -307,7 +315,7 @@
   <xs:element name="Authors">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="Author"/>
+        <xs:element maxOccurs="unbounded" name="Author" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -350,9 +358,13 @@
   </xs:element>
   <xs:element name="Subject">
     <xs:complexType>
-      <xs:attribute name="Code" type="xs:string"/>
-      <xs:attribute name="Priority" type="xs:integer"/>
-      <xs:attribute name="Type" use="required" type="xs:string"/>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+	      <xs:attribute name="Code" type="xs:string"/>
+	      <xs:attribute name="Priority" type="xs:integer"/>
+	      <xs:attribute name="Type" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="CopyrightHolder" type="xs:string"/>
@@ -905,10 +917,11 @@
   <xs:element name="Email" type="xs:string"/>
   <xs:element name="ArticleTitle">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
-      </xs:sequence>
-      <xs:attribute name="Language" type="xs:string"/>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+      		<xs:attribute name="Language" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="Keyword" type="xs:string"/>

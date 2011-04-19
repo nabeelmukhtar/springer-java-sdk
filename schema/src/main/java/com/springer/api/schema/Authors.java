@@ -48,6 +48,6 @@ public interface Authors {
      * 
      * 
      */
-    List<Author> getAuthors();
+    List<String> getAuthors();
 
 }

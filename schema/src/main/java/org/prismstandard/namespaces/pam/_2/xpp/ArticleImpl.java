@@ -118,33 +118,33 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
         parser.require(XmlPullParser.START_TAG, null, null);
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
-            if (name.equals("identifier")) {
+            if (name.equals("dc:identifier")) {
                 setIdentifier(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("title")) {
+            } else if (name.equals("dc:title")) {
                 setTitle(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("creator")) {
+            } else if (name.equals("dc:creator")) {
                 getCreators().add(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("publicationName")) {
+            } else if (name.equals("prism:publicationName")) {
                 setPublicationName(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("isbn")) {
+            } else if (name.equals("prism:isbn")) {
                 setIsbn(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("issn")) {
+            } else if (name.equals("prism:issn")) {
                 setIssn(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("doi")) {
+            } else if (name.equals("prism:doi")) {
                 setDoi(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("publisher")) {
+            } else if (name.equals("dc:publisher")) {
                 setPublisher(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("publicationDate")) {
+            } else if (name.equals("prism:publicationDate")) {
                 setPublicationDate(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("volume")) {
+            } else if (name.equals("prism:volume")) {
                 setVolume(XppUtils.getElementValueAsLongFromNode(parser));
-            } else if (name.equals("number")) {
+            } else if (name.equals("prism:number")) {
                 setNumber(XppUtils.getElementValueAsLongFromNode(parser));
-            } else if (name.equals("startingPage")) {
+            } else if (name.equals("prism:startingPage")) {
                 setStartingPage(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("url")) {
+            } else if (name.equals("prism:url")) {
                 setUrl(XppUtils.getElementValueFromNode(parser));
-            } else if (name.equals("copyright")) {
+            } else if (name.equals("prism:copyright")) {
                 setCopyright(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);

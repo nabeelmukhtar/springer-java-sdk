@@ -81,7 +81,7 @@ public class ImageImpl
     @XmlElement(name = "ArticleTitle", required = true, type = ArticleTitleImpl.class)
     protected List<ArticleTitle> articleTitles;
     @XmlElement(name = "Authors", required = true, type = AuthorsImpl.class)
-    protected List<Authors> authors;
+    protected AuthorsImpl authors;
     @XmlElement(name = "DOI", required = true)
     protected List<String> dois;
     @XmlElement(name = "Institutions", required = true, type = InstitutionsImpl.class)
@@ -191,10 +191,7 @@ public class ImageImpl
         return this.articleTitles;
     }
 
-    public List<Authors> getAuthors() {
-        if (authors == null) {
-            authors = new ArrayList<Authors>();
-        }
+    public Authors getAuthors() {
         return this.authors;
     }
 
