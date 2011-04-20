@@ -19,7 +19,7 @@ package com.springer.api.schema;
  * 
  * 
  */
-public interface ArticleEditorialResponsibility {
+public interface Eds {
 
 
 }
