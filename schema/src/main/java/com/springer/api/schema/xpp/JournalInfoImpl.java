@@ -82,6 +82,8 @@ public class JournalInfoImpl extends BaseSchemaEntity implements JournalInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setJournalProductType(XppUtils.getAttributeValueFromNode(parser, "JournalProductType"));
+        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("JournalID")) {
@@ -107,8 +109,6 @@ public class JournalInfoImpl extends BaseSchemaEntity implements JournalInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setJournalProductType(XppUtils.getAttributeValueFromNode(parser, "JournalProductType"));
-        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

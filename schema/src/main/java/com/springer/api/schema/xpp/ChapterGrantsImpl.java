@@ -66,6 +66,7 @@ public class ChapterGrantsImpl extends BaseSchemaEntity implements ChapterGrants
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("MetadataGrant")) {
@@ -97,7 +98,6 @@ public class ChapterGrantsImpl extends BaseSchemaEntity implements ChapterGrants
                 XppUtils.skipSubTree(parser);
             }
         }
-        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

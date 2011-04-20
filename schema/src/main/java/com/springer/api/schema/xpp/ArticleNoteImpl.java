@@ -26,6 +26,7 @@ public class ArticleNoteImpl extends BaseSchemaEntity implements ArticleNote {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("SimplePara")) {
@@ -37,7 +38,6 @@ public class ArticleNoteImpl extends BaseSchemaEntity implements ArticleNote {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

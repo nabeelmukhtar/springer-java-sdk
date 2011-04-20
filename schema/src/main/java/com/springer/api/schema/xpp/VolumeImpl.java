@@ -34,6 +34,7 @@ public class VolumeImpl extends BaseSchemaEntity implements Volume {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("VolumeInfo")) {
@@ -49,7 +50,6 @@ public class VolumeImpl extends BaseSchemaEntity implements Volume {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

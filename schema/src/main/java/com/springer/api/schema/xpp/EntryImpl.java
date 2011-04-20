@@ -62,6 +62,12 @@ public class EntryImpl extends BaseSchemaEntity implements Entry {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
+        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
+        setMorerows(XppUtils.getAttributeValueAsLongFromNode(parser, "morerows"));
+        setNameend(XppUtils.getAttributeValueFromNode(parser, "nameend"));
+        setNamest(XppUtils.getAttributeValueFromNode(parser, "namest"));
+        setChar(XppUtils.getAttributeValueFromNode(parser, "char"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("SimplePara")) {
@@ -73,12 +79,6 @@ public class EntryImpl extends BaseSchemaEntity implements Entry {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
-        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
-        setMorerows(XppUtils.getAttributeValueAsLongFromNode(parser, "morerows"));
-        setNameend(XppUtils.getAttributeValueFromNode(parser, "nameend"));
-        setNamest(XppUtils.getAttributeValueFromNode(parser, "namest"));
-        setChar(XppUtils.getAttributeValueFromNode(parser, "char"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

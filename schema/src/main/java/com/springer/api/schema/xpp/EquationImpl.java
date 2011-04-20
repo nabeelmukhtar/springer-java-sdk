@@ -41,6 +41,7 @@ public class EquationImpl extends BaseSchemaEntity implements Equation {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("EquationNumber")) {
@@ -58,7 +59,6 @@ public class EquationImpl extends BaseSchemaEntity implements Equation {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -293,6 +293,9 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setId(XppUtils.getAttributeValueFromNode(parser, "Id"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "language"));
+        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Caption")) {
@@ -380,9 +383,6 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setId(XppUtils.getAttributeValueFromNode(parser, "Id"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "language"));
-        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

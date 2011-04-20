@@ -60,6 +60,8 @@ public class BookImpl extends BaseSchemaEntity implements Book {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("BookInfo")) {
@@ -83,8 +85,6 @@ public class BookImpl extends BaseSchemaEntity implements Book {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

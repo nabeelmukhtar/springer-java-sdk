@@ -26,14 +26,14 @@ public class EquationSourceImpl extends BaseSchemaEntity implements EquationSour
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setFormat(XppUtils.getAttributeValueFromNode(parser, "Format"));
+        setContent(XppUtils.getElementValueFromNode(parser));
 //        while (parser.nextTag() == XmlPullParser.START_TAG) {
 //            String name = parser.getName();
 //            LOG.warning("Found tag that we don't recognize: " + name);
 //            XppUtils.skipSubTree(parser);
 //        }
         
-        setFormat(XppUtils.getAttributeValueFromNode(parser, "Format"));
-        setContent(XppUtils.getElementValueFromNode(parser));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

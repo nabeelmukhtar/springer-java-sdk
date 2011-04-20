@@ -61,6 +61,7 @@ public class PartInfoImpl extends BaseSchemaEntity implements PartInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("PartID")) {
@@ -82,7 +83,6 @@ public class PartInfoImpl extends BaseSchemaEntity implements PartInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

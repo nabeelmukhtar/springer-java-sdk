@@ -42,6 +42,7 @@ public class JournalImpl extends BaseSchemaEntity implements Journal {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("JournalInfo")) {
@@ -61,7 +62,6 @@ public class JournalImpl extends BaseSchemaEntity implements Journal {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

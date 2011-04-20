@@ -46,6 +46,8 @@ public class VolumeInfoImpl extends BaseSchemaEntity implements VolumeInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
+        setVolumeType(XppUtils.getAttributeValueFromNode(parser, "VolumeType"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("VolumeIDStart")) {
@@ -59,8 +61,6 @@ public class VolumeInfoImpl extends BaseSchemaEntity implements VolumeInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
-        setVolumeType(XppUtils.getAttributeValueFromNode(parser, "VolumeType"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

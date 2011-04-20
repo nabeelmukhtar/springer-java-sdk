@@ -31,6 +31,7 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setName(XppUtils.getAttributeValueFromNode(parser, "name"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("facet-value")) {
@@ -42,7 +43,6 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setName(XppUtils.getAttributeValueFromNode(parser, "name"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

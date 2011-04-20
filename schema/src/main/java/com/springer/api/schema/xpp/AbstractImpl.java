@@ -61,6 +61,9 @@ public class AbstractImpl extends BaseSchemaEntity implements Abstract {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Heading")) {
@@ -80,9 +83,6 @@ public class AbstractImpl extends BaseSchemaEntity implements Abstract {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

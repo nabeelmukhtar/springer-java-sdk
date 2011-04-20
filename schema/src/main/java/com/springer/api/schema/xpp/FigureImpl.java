@@ -48,6 +48,9 @@ public class FigureImpl extends BaseSchemaEntity implements Figure {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setCategory(XppUtils.getAttributeValueFromNode(parser, "Category"));
+        setFloat(XppUtils.getAttributeValueFromNode(parser, "Float"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Caption")) {
@@ -63,9 +66,6 @@ public class FigureImpl extends BaseSchemaEntity implements Figure {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setCategory(XppUtils.getAttributeValueFromNode(parser, "Category"));
-        setFloat(XppUtils.getAttributeValueFromNode(parser, "Float"));
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

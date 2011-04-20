@@ -70,6 +70,8 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("ArticleInfo")) {
@@ -97,8 +99,6 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -70,6 +70,8 @@ public class IssueInfoImpl extends BaseSchemaEntity implements IssueInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setIssueType(XppUtils.getAttributeValueFromNode(parser, "IssueType"));
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("IssueIDStart")) {
@@ -95,8 +97,6 @@ public class IssueInfoImpl extends BaseSchemaEntity implements IssueInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setIssueType(XppUtils.getAttributeValueFromNode(parser, "IssueType"));
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -18,12 +18,12 @@ public class BibliographyGrantImpl extends BaseSchemaEntity implements Bibliogra
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setGrant(XppUtils.getAttributeValueFromNode(parser, "Grant"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             LOG.warning("Found tag that we don't recognize: " + name);
             XppUtils.skipSubTree(parser);
         }
-        setGrant(XppUtils.getAttributeValueFromNode(parser, "Grant"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

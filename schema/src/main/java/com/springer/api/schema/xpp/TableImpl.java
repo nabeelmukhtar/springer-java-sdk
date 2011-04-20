@@ -56,6 +56,8 @@ public class TableImpl extends BaseSchemaEntity implements Table {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setFloat(XppUtils.getAttributeValueFromNode(parser, "Float"));
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Table")) {
@@ -79,8 +81,6 @@ public class TableImpl extends BaseSchemaEntity implements Table {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setFloat(XppUtils.getAttributeValueFromNode(parser, "Float"));
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

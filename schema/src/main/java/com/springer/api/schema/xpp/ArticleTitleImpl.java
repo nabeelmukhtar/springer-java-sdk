@@ -36,6 +36,8 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         int eventType = parser.next();
         while (eventType == XmlPullParser.START_TAG || eventType == XmlPullParser.TEXT) {
         	if (eventType == XmlPullParser.START_TAG) {
@@ -61,9 +63,6 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
         	}
         	eventType = parser.next();
         }
-        
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -44,6 +44,7 @@ public class AuthorNameImpl extends BaseSchemaEntity implements AuthorName {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setDisplayOrder(XppUtils.getAttributeValueFromNode(parser, "DisplayOrder"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("GivenName")) {
@@ -57,7 +58,6 @@ public class AuthorNameImpl extends BaseSchemaEntity implements AuthorName {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setDisplayOrder(XppUtils.getAttributeValueFromNode(parser, "DisplayOrder"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

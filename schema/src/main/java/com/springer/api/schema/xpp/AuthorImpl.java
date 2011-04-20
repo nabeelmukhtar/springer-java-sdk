@@ -60,6 +60,8 @@ public class AuthorImpl extends BaseSchemaEntity implements Author {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setAffiliationIDS(XppUtils.getAttributeValueFromNode(parser, "AffiliationIDS"));
+        setCorrespondingAffiliationID(XppUtils.getAttributeValueFromNode(parser, "CorrespondingAffiliationID"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("AuthorName")) {
@@ -79,8 +81,6 @@ public class AuthorImpl extends BaseSchemaEntity implements Author {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAffiliationIDS(XppUtils.getAttributeValueFromNode(parser, "AffiliationIDS"));
-        setCorrespondingAffiliationID(XppUtils.getAttributeValueFromNode(parser, "CorrespondingAffiliationID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

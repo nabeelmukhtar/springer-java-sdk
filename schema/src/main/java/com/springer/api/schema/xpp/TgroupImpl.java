@@ -54,6 +54,8 @@ public class TgroupImpl extends BaseSchemaEntity implements Tgroup {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
+        setCols(XppUtils.getAttributeValueAsLongFromNode(parser, "cols"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("colspec")) {
@@ -73,8 +75,6 @@ public class TgroupImpl extends BaseSchemaEntity implements Tgroup {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
-        setCols(XppUtils.getAttributeValueAsLongFromNode(parser, "cols"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

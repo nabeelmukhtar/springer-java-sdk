@@ -34,6 +34,7 @@ public class PartImpl extends BaseSchemaEntity implements Part {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("PartInfo")) {
@@ -49,7 +50,6 @@ public class PartImpl extends BaseSchemaEntity implements Part {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

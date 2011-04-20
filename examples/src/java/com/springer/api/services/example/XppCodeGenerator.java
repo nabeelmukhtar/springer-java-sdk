@@ -4,8 +4,8 @@
 package com.springer.api.services.example;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.Writer;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -25,18 +25,19 @@ public class XppCodeGenerator {
 	private static final String SOURCE_DIR = "E:\\workspace\\opensource\\springer-java-sdk\\schema\\src\\main\\java\\com\\springer\\api\\schema\\xpp";
 	private static final String PACKAGE_NAME = "com.springer.api.schema.xpp";
 	private static final List<String> EXCLUDED_FILES = Arrays.asList("XppUtils.java", "ObjectFactory.java", "BaseSchemaEntity.java");
-	private static final List<String> INCLUDED_FILES = Arrays.asList("BibChapterImpl.java", "BibArticleImpl.java", "BibBookImpl.java", "BibCommentsImpl.java");
+	private static final List<String> INCLUDED_FILES = Arrays.asList("EdsImpl.java");
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-		File[] sourceFiles = new File(SOURCE_DIR).listFiles(new FilenameFilter() {
+		File[] sourceFiles = new File(SOURCE_DIR).listFiles(new FileFilter() {
 
 			@Override
-			public boolean accept(File dir, String name) {
-				return name.endsWith(".java") && !EXCLUDED_FILES.contains(name) && (INCLUDED_FILES.isEmpty() || INCLUDED_FILES.contains(name));
-		}});
+			public boolean accept(File pathname) {
+				return pathname.getName().endsWith(".java") && !EXCLUDED_FILES.contains(pathname.getName()) && (INCLUDED_FILES.isEmpty() || INCLUDED_FILES.contains(pathname.getName()));
+			}
+		});
 		
 		if (sourceFiles != null) {
 			for (File file : sourceFiles) {
@@ -130,59 +131,69 @@ public class XppCodeGenerator {
 		out.write("    @Override\r\n");
 		out.write("    public void init(XmlPullParser parser) throws IOException, XmlPullParserException {\r\n");
 		out.write("        parser.require(XmlPullParser.START_TAG, null, null);\r\n");
-		out.write("        while (parser.nextTag() == XmlPullParser.START_TAG) {\r\n");
-		out.write("            String name = parser.getName();\r\n");
-		boolean firstField = true;
-		List<Field> attributeFields = new ArrayList<Field>();
+		List<Field> elementFields = new ArrayList<Field>();
 		for (Field field : fields) {
 			if (!Modifier.isStatic(field.getModifiers())) {
-				XmlElement element = field.getAnnotation(XmlElement.class);
+				XmlAttribute attribute =  field.getAnnotation(XmlAttribute.class);
 				String name = field.getName();
-				if (element != null) {
-					if (!element.name().equals("##default")) {
-						name = element.name();
-					}
-					if (firstField) {
-						out.write("            if (name.equals(\"" + name + "\")) {\r\n");
-						firstField = false;
+				if (attribute != null) {
+					name = attribute.name().equals("##default")? field.getName() : attribute.name();
+					if (Long.class.isAssignableFrom(field.getType())) {
+						out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueAsLongFromNode(parser, \"" + name + "\"));\r\n");
 					} else {
-						out.write("            } else if (name.equals(\"" + name + "\")) {\r\n");
-					}
-					if (field.getType().getPackage().equals(Package.getPackage(PACKAGE_NAME))) {
-						out.write("                " + field.getType().getSimpleName() + " node = new " + field.getType().getSimpleName() + "();\r\n");
-						out.write("                node.init(parser);\r\n");
-						out.write("                set" + camel(field.getName()) + "(node);\r\n");
-					} else if (List.class.isAssignableFrom(field.getType())) {
-						Class<?> type = Object.class;
-						if (element != null) {
-							if (element.type() == DEFAULT.class) {
-								type = String.class;
-							} else {
-								type = element.type();
-							}
-						} else {
-							System.out.println("Could not find generic type:" + field.getName());
-						}
-						if (type.equals(String.class)) {
-							out.write("                get" + camel(field.getName()) + "().add(XppUtils.getElementValueFromNode(parser));\r\n");
-						} else {
-							out.write("                " + type.getSimpleName() + " node = new " + type.getSimpleName() + "();\r\n");
-							out.write("                node.init(parser);\r\n");
-							out.write("                get" + camel(field.getName()) + "().add(node);\r\n");
-						}
-					} else if (Long.class.isAssignableFrom(field.getType())) {
-						out.write("                set" + camel(field.getName()) + "(XppUtils.getElementValueAsLongFromNode(parser));\r\n");
-					} else {
-						out.write("                set" + camel(field.getName()) + "(XppUtils.getElementValueFromNode(parser));\r\n");
+						out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueFromNode(parser, \"" + name + "\"));\r\n");
 					}
 				} else {
-					XmlAttribute attribute =  field.getAnnotation(XmlAttribute.class);
-					if (attribute != null) {
-						attributeFields.add(field);
+					XmlElement element = field.getAnnotation(XmlElement.class);
+					if (element != null) {
+						elementFields.add(field);
 					} else {
 						System.out.println("Could not find desired annotation:" + field.getName());
 					}
 				}
+			}
+		}
+		out.write("        while (parser.nextTag() == XmlPullParser.START_TAG) {\r\n");
+		out.write("            String name = parser.getName();\r\n");
+		boolean firstField = true;
+		for (Field field : elementFields) {
+			XmlElement element = field.getAnnotation(XmlElement.class);
+			String name = field.getName();
+			if (!element.name().equals("##default")) {
+				name = element.name();
+			}
+			if (firstField) {
+				out.write("            if (name.equals(\"" + name + "\")) {\r\n");
+				firstField = false;
+			} else {
+				out.write("            } else if (name.equals(\"" + name + "\")) {\r\n");
+			}
+			if (field.getType().getPackage().equals(Package.getPackage(PACKAGE_NAME))) {
+				out.write("                " + field.getType().getSimpleName() + " node = new " + field.getType().getSimpleName() + "();\r\n");
+				out.write("                node.init(parser);\r\n");
+				out.write("                set" + camel(field.getName()) + "(node);\r\n");
+			} else if (List.class.isAssignableFrom(field.getType())) {
+				Class<?> type = Object.class;
+				if (element != null) {
+					if (element.type() == DEFAULT.class) {
+						type = String.class;
+					} else {
+						type = element.type();
+					}
+				} else {
+					System.out.println("Could not find generic type:" + field.getName());
+				}
+				if (type.equals(String.class)) {
+					out.write("                get" + camel(field.getName()) + "().add(XppUtils.getElementValueFromNode(parser));\r\n");
+				} else {
+					out.write("                " + type.getSimpleName() + " node = new " + type.getSimpleName() + "();\r\n");
+					out.write("                node.init(parser);\r\n");
+					out.write("                get" + camel(field.getName()) + "().add(node);\r\n");
+				}
+			} else if (Long.class.isAssignableFrom(field.getType())) {
+				out.write("                set" + camel(field.getName()) + "(XppUtils.getElementValueAsLongFromNode(parser));\r\n");
+			} else {
+				out.write("                set" + camel(field.getName()) + "(XppUtils.getElementValueFromNode(parser));\r\n");
 			}
 		}
 		if (!firstField) {
@@ -191,17 +202,12 @@ public class XppCodeGenerator {
 			out.write("                LOG.warning(\"Found tag that we don't recognize: \" + name);\r\n");
 			out.write("                XppUtils.skipSubTree(parser);\r\n");
 			out.write("            }\r\n");
+		} else {
+			out.write("            // Consume something we don't understand.\r\n");
+			out.write("            LOG.warning(\"Found tag that we don't recognize: \" + name);\r\n");
+			out.write("            XppUtils.skipSubTree(parser);\r\n");
 		}
 		out.write("        }\r\n");
-		for (Field field : attributeFields) {
-			XmlAttribute attribute =  field.getAnnotation(XmlAttribute.class);
-			String name = attribute.name().equals("##default")? field.getName() : attribute.name();
-			if (Long.class.isAssignableFrom(field.getType())) {
-				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueAsLongFromNode(parser, \"" + name + "\"));\r\n");
-			} else {
-				out.write("        set" + camel(field.getName()) + "(XppUtils.getAttributeValueFromNode(parser, \"" + name + "\"));\r\n");
-			}
-		}
 		out.write("    }\r\n");
 		out.write("    @Override\r\n");
 		out.write("    public void toXml(XmlSerializer serializer) throws IOException {\r\n");

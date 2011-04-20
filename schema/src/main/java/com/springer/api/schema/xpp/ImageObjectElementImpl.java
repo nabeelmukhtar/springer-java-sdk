@@ -46,16 +46,16 @@ public class ImageObjectElementImpl extends BaseSchemaEntity implements ImageObj
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        while (parser.nextTag() == XmlPullParser.START_TAG) {
-            String name = parser.getName();
-            LOG.warning("Found tag that we don't recognize: " + name);
-            XppUtils.skipSubTree(parser);
-        }
         setColor(XppUtils.getAttributeValueFromNode(parser, "Color"));
         setFileRef(XppUtils.getAttributeValueFromNode(parser, "FileRef"));
         setFormat(XppUtils.getAttributeValueFromNode(parser, "Format"));
         setRendition(XppUtils.getAttributeValueFromNode(parser, "Rendition"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        while (parser.nextTag() == XmlPullParser.START_TAG) {
+            String name = parser.getName();
+            LOG.warning("Found tag that we don't recognize: " + name);
+            XppUtils.skipSubTree(parser);
+        }
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

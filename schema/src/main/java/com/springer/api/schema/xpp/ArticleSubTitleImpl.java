@@ -30,14 +30,14 @@ public class ArticleSubTitleImpl extends BaseSchemaEntity implements ArticleSubT
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        getContent().add(XppUtils.getElementValueFromNode(parser));        
 //        while (parser.nextTag() == XmlPullParser.START_TAG) {
 //            String name = parser.getName();
 //            LOG.warning("Found tag that we don't recognize: " + name);
 //            XppUtils.skipSubTree(parser);
 //        }
         
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        getContent().add(XppUtils.getElementValueFromNode(parser));        
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

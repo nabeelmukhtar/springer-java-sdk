@@ -65,6 +65,8 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Heading")) {
@@ -88,8 +90,6 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
-        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

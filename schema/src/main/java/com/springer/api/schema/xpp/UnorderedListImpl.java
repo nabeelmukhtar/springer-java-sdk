@@ -31,6 +31,7 @@ public class UnorderedListImpl extends BaseSchemaEntity implements UnorderedList
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setMark(XppUtils.getAttributeValueFromNode(parser, "Mark"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("ItemContent")) {
@@ -42,7 +43,6 @@ public class UnorderedListImpl extends BaseSchemaEntity implements UnorderedList
                 XppUtils.skipSubTree(parser);
             }
         }
-        setMark(XppUtils.getAttributeValueFromNode(parser, "Mark"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

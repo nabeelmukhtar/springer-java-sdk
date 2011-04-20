@@ -54,6 +54,8 @@ public class SeriesInfoImpl extends SeriesIDImpl implements SeriesInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setSeriesType(XppUtils.getAttributeValueFromNode(parser, "SeriesType"));
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("SeriesID")) {
@@ -73,8 +75,6 @@ public class SeriesInfoImpl extends SeriesIDImpl implements SeriesInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setSeriesType(XppUtils.getAttributeValueFromNode(parser, "SeriesType"));
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

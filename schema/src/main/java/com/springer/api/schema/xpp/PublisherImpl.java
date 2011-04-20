@@ -52,6 +52,7 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("PublisherInfo")) {
@@ -75,7 +76,6 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setLang(XppUtils.getAttributeValueFromNode(parser, "lang"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

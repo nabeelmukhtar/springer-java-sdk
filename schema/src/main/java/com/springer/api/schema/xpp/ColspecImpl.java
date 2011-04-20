@@ -34,14 +34,14 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
+        setColnum(XppUtils.getAttributeValueAsLongFromNode(parser, "colnum"));
+        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             LOG.warning("Found tag that we don't recognize: " + name);
             XppUtils.skipSubTree(parser);
         }
-        setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
-        setColnum(XppUtils.getAttributeValueAsLongFromNode(parser, "colnum"));
-        setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

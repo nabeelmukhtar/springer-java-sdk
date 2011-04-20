@@ -25,6 +25,7 @@ public class OccurrenceImpl extends BaseSchemaEntity implements Occurrence {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Handle")) {
@@ -34,7 +35,6 @@ public class OccurrenceImpl extends BaseSchemaEntity implements Occurrence {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

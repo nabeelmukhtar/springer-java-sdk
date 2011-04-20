@@ -34,6 +34,7 @@ public class EditorImpl extends BaseSchemaEntity implements Editor {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setAffiliationIDS(XppUtils.getAttributeValueFromNode(parser, "AffiliationIDS"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("EditorName")) {
@@ -49,7 +50,6 @@ public class EditorImpl extends BaseSchemaEntity implements Editor {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setAffiliationIDS(XppUtils.getAttributeValueFromNode(parser, "AffiliationIDS"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

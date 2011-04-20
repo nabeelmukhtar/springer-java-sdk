@@ -57,6 +57,8 @@ public class ChapterImpl extends BaseSchemaEntity implements Chapter {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("ChapterInfo")) {
@@ -80,8 +82,6 @@ public class ChapterImpl extends BaseSchemaEntity implements Chapter {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -46,6 +46,8 @@ public class KeywordGroupImpl extends BaseSchemaEntity implements KeywordGroup {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Heading")) {
@@ -59,8 +61,6 @@ public class KeywordGroupImpl extends BaseSchemaEntity implements KeywordGroup {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

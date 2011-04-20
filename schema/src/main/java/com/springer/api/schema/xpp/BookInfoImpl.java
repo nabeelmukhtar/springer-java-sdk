@@ -162,6 +162,14 @@ public class BookInfoImpl extends BaseSchemaEntity implements BookInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setBookProductType(XppUtils.getAttributeValueFromNode(parser, "BookProductType"));
+        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setMediaType(XppUtils.getAttributeValueFromNode(parser, "MediaType"));
+        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
+        setNumberingDepth(XppUtils.getAttributeValueAsLongFromNode(parser, "NumberingDepth"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("BookID")) {
@@ -203,14 +211,6 @@ public class BookInfoImpl extends BaseSchemaEntity implements BookInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setBookProductType(XppUtils.getAttributeValueFromNode(parser, "BookProductType"));
-        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setMediaType(XppUtils.getAttributeValueFromNode(parser, "MediaType"));
-        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
-        setNumberingDepth(XppUtils.getAttributeValueAsLongFromNode(parser, "NumberingDepth"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

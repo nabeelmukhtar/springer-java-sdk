@@ -49,6 +49,8 @@ public class IssueImpl extends BaseSchemaEntity implements Issue {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setIssueType(XppUtils.getAttributeValueFromNode(parser, "IssueType"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("IssueInfo")) {
@@ -68,8 +70,6 @@ public class IssueImpl extends BaseSchemaEntity implements Issue {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setIssueType(XppUtils.getAttributeValueFromNode(parser, "IssueType"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

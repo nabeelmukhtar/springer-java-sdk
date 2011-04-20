@@ -135,6 +135,13 @@ public class ChapterInfoImpl extends BaseSchemaEntity implements ChapterInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setChapterType(XppUtils.getAttributeValueFromNode(parser, "ChapterType"));
+        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setNumberingDepth(XppUtils.getAttributeValueAsLongFromNode(parser, "NumberingDepth"));
+        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("ChapterID")) {
@@ -172,13 +179,6 @@ public class ChapterInfoImpl extends BaseSchemaEntity implements ChapterInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setChapterType(XppUtils.getAttributeValueFromNode(parser, "ChapterType"));
-        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setNumberingDepth(XppUtils.getAttributeValueAsLongFromNode(parser, "NumberingDepth"));
-        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

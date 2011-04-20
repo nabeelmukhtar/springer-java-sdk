@@ -150,6 +150,12 @@ public class ArticleInfoImpl extends BaseSchemaEntity implements ArticleInfo {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setArticleCitation(XppUtils.getAttributeValueFromNode(parser, "ArticleCitation"));
+        setArticleType(XppUtils.getAttributeValueFromNode(parser, "ArticleType"));
+        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
+        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
+        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("ArticleID")) {
@@ -195,12 +201,6 @@ public class ArticleInfoImpl extends BaseSchemaEntity implements ArticleInfo {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setArticleCitation(XppUtils.getAttributeValueFromNode(parser, "ArticleCitation"));
-        setArticleType(XppUtils.getAttributeValueFromNode(parser, "ArticleType"));
-        setContainsESM(XppUtils.getAttributeValueFromNode(parser, "ContainsESM"));
-        setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
-        setNumberingStyle(XppUtils.getAttributeValueFromNode(parser, "NumberingStyle"));
-        setTocLevels(XppUtils.getAttributeValueAsLongFromNode(parser, "TocLevels"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

@@ -43,6 +43,8 @@ public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
+        setRenderingStyle(XppUtils.getAttributeValueFromNode(parser, "RenderingStyle"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("Heading")) {
@@ -58,8 +60,6 @@ public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
                 XppUtils.skipSubTree(parser);
             }
         }
-        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
-        setRenderingStyle(XppUtils.getAttributeValueFromNode(parser, "RenderingStyle"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {
