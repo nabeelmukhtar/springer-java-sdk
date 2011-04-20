@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.springer.api.schema.Facet;
+import com.springer.api.schema.FacetName;
 import com.springer.api.schema.FacetValue;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -26,7 +27,7 @@ public class FacetImpl
     @XmlElement(name = "facet-value", required = true, type = FacetValueImpl.class)
     protected List<FacetValue> facetValues;
     @XmlAttribute(required = true)
-    protected String name;
+    protected FacetName name;
 
     public List<FacetValue> getFacetValues() {
         if (facetValues == null) {
@@ -35,11 +36,11 @@ public class FacetImpl
         return this.facetValues;
     }
 
-    public String getName() {
+    public FacetName getName() {
         return name;
     }
 
-    public void setName(String value) {
+    public void setName(FacetName value) {
         this.name = value;
     }
 

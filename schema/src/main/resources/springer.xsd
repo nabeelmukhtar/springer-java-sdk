@@ -48,9 +48,19 @@
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="facet-value"/>
       </xs:sequence>
-      <xs:attribute name="name" use="required" type="xs:string"/>
+      <xs:attribute name="name" use="required" type="facet-name"/>
     </xs:complexType>
   </xs:element>
+  <xs:simpleType name="facet-name">
+	<xs:restriction base="xs:string">
+	    <xs:enumeration value="subject"/>
+	    <xs:enumeration value="keyword"/>
+	    <xs:enumeration value="pub"/>
+	    <xs:enumeration value="type"/>
+	    <xs:enumeration value="country"/>
+	    <xs:enumeration value="imagetype"/>
+	</xs:restriction>
+  </xs:simpleType>
   <xs:element name="facet-value">
     <xs:complexType mixed="true">
       <xs:attribute name="count" use="required" type="xs:integer"/>

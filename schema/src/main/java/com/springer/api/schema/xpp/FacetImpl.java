@@ -24,6 +24,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Facet;
+import com.springer.api.schema.FacetName;
 import com.springer.api.schema.FacetValue;
 
 /**
@@ -38,7 +39,7 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
     protected List<FacetValue> facetValues;
     
     /** The name. */
-    protected String name;
+    protected FacetName name;
     
     /* (non-Javadoc)
      * @see com.springer.api.schema.Facet#getFacetValues()
@@ -62,15 +63,15 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
     /* (non-Javadoc)
      * @see com.springer.api.schema.Facet#getName()
      */
-    public String getName() {
+    public FacetName getName() {
         return name;
     }
     
     /* (non-Javadoc)
      * @see com.springer.api.schema.Facet#setName(java.lang.String)
      */
-    public void setName(String value) {
-        name = ((String) value);
+    public void setName(FacetName value) {
+        name = ((FacetName) value);
     }
     
     /* (non-Javadoc)
@@ -79,7 +80,7 @@ public class FacetImpl extends BaseSchemaEntity implements Facet {
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
-        setName(XppUtils.getAttributeValueFromNode(parser, "name"));
+        setName(FacetName.fromValue(XppUtils.getAttributeValueFromNode(parser, "name")));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("facet-value")) {

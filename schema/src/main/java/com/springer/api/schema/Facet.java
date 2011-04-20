@@ -16,7 +16,7 @@ import java.util.List;
  *       &lt;sequence>
  *         &lt;element ref="{}facet-value" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="name" use="required" type="{}facet-name" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -56,19 +56,19 @@ public interface Facet {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link FacetName }
      *     
      */
-    String getName();
+    FacetName getName();
 
     /**
      * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link FacetName }
      *     
      */
-    void setName(String value);
+    void setName(FacetName value);
 
 }
