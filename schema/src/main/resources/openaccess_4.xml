@@ -8563,7 +8563,7 @@ Language="En">Supplementary material for the paper</ArticleTitle>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -26129,7 +26129,7 @@ Language="En">Construction of a BAC contig map of chromosome 16q by two-dimensio
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-05-13T19:48:09.188988+02:00</meta:DateLoaded>
 
@@ -43737,7 +43737,7 @@ Language="En">Swiss-Prot Release 45.5 of 04-Jan-2005</ArticleTitle>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -49060,7 +49060,7 @@ Language="En">Fitting one matrix to another under choice of a central dilation a
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -77022,7 +77022,7 @@ Type="Italic">Bell System Technical Journal, 54</Emphasis>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-10-08T18:44:55.893196+02:00</meta:DateLoaded>
 
@@ -82681,7 +82681,7 @@ Language="En">The protein data bank</ArticleTitle>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-05-18T16:57:16.541294+02:00</meta:DateLoaded>
 
@@ -89521,7 +89521,7 @@ Address="http://www.openstreetmap.org" TargetType="URL" />
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-04-20T17:45:33.487965+02:00</meta:DateLoaded>
 
@@ -103082,7 +103082,7 @@ Language="En">Basic local alignment search tool</ArticleTitle>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
@@ -104807,7 +104807,7 @@ Type="Italic">Ethiek, Onderzoek en Bestuur</Emphasis>
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:DateLoaded>2010-08-30T17:05:53.686361+02:00</meta:DateLoaded>
 
@@ -109747,7 +109747,7 @@ Language="En">Cell fate simulation model of gustatory nuerons with microRNAs dou
 
 				</Journal>
 
-				<meta:Info>
+				<meta:Info  xmlns:meta="http://www.springer.com/app/meta">
 
 					<meta:Authors>
 
