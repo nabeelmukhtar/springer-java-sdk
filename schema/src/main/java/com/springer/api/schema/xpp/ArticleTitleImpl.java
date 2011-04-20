@@ -48,6 +48,10 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
                     SuperscriptImpl node = new SuperscriptImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("InlineEquation")) {
+                	InlineEquationImpl node = new InlineEquationImpl();
+                    node.init(parser);
+                    getContent().add(node);
                 } else {                // Consume something we don't understand.
                     LOG.warning("Found tag that we don't recognize: " + name);
                     XppUtils.skipSubTree(parser);

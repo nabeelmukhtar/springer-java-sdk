@@ -11,6 +11,15 @@ public class ChapterContextImpl extends SeriesIDImpl implements ChapterContext {
     private final static long serialVersionUID = 2461660169443089969L;
     protected String bookID;
     protected BookTitleImpl bookTitle;
+    protected Long partID;
+    
+    public Long getPartID() {
+        return partID;
+    }
+
+    public void setPartID(Long value) {
+        this.partID = value;
+    }
     public String getBookID() {
         return bookID;
     }
@@ -32,6 +41,8 @@ public class ChapterContextImpl extends SeriesIDImpl implements ChapterContext {
                 setSeriesID(XppUtils.getElementValueAsLongFromNode(parser));
             } else if (name.equals("BookID")) {
                 setBookID(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("PartID")) {
+                setPartID(XppUtils.getElementValueAsLongFromNode(parser));
             } else if (name.equals("BookTitle")) {
                 BookTitleImpl node = new BookTitleImpl();
                 node.init(parser);

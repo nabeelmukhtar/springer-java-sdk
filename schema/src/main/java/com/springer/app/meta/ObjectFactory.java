@@ -63,14 +63,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Institutions }
-     * 
-     */
-    public Institutions createInstitutions() {
-        return new InstitutionsImpl();
-    }
-
-    /**
      * Create an instance of {@link Info }
      * 
      */
@@ -87,6 +79,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Institution }
+     * 
+     */
+    public Institution createInstitution() {
+        return new InstitutionImpl();
+    }
+
+    /**
      * Create an instance of {@link SubjectGroup }
      * 
      */
@@ -95,19 +95,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Institutions }
+     * 
+     */
+    public Institutions createInstitutions() {
+        return new InstitutionsImpl();
+    }
+
+    /**
      * Create an instance of {@link Authors }
      * 
      */
     public Authors createAuthors() {
         return new AuthorsImpl();
-    }
-
-    /**
-     * Create an instance of {@link Institution }
-     * 
-     */
-    public Institution createInstitution() {
-        return new InstitutionImpl();
     }
 
     /**

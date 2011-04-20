@@ -31,6 +31,10 @@ public class BookTitleImpl extends BaseSchemaEntity implements BookTitle {
                     EmphasisImpl node = new EmphasisImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("Superscript")) {
+                	SuperscriptImpl node = new SuperscriptImpl();
+                    node.init(parser);
+                    getContent().add(node);
                 } else {                // Consume something we don't understand.
                     LOG.warning("Found tag that we don't recognize: " + name);
                     XppUtils.skipSubTree(parser);

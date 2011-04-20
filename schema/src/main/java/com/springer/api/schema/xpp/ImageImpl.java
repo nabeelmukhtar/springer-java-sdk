@@ -26,7 +26,6 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected List<File> files;
     protected List<FullText> fullTexts;
     protected List<String> locations;
-    protected TableImpl table;
     protected List<ArticleTitle> articleTitles;
     protected Authors authors;
     protected List<String> dois;
@@ -54,6 +53,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected String language;
     protected String lang;
     protected List<String> appIds;
+    protected List<Table> tables;
     
     public List<String> getAPPIds() {
         if (appIds == null) {
@@ -94,11 +94,11 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     public void setLocations(List<String> value) {
         this.locations = value;
     }
-    public Table getTable() {
-        return table;
-    }
-    public void setTable(Table value) {
-        table = ((TableImpl) value);
+    public List<Table> getTables() {
+        if (tables == null) {
+            tables = new ArrayList<Table>();
+        }
+        return this.tables;
     }
     public List<ArticleTitle> getArticleTitles() {
         if (articleTitles == null) {
@@ -312,7 +312,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
             } else if (name.equals("Table")) {
                 TableImpl node = new TableImpl();
                 node.init(parser);
-                setTable(node);
+                getTables().add(node);
             } else if (name.equals("ArticleTitle")) {
                 ArticleTitleImpl node = new ArticleTitleImpl();
                 node.init(parser);

@@ -12,6 +12,7 @@ public class EmphasisImpl extends BaseSchemaEntity implements Emphasis {
     private final static long serialVersionUID = 2461660169443089969L;
     protected List<Object> content;    
     protected String type;
+    protected String fontCategory;
     public List<Object> getContent() {
         if (content == null) {
             content = new ArrayList<Object>();
@@ -24,11 +25,19 @@ public class EmphasisImpl extends BaseSchemaEntity implements Emphasis {
     public void setType(String value) {
         type = ((String) value);
     }
+    public String getFontCategory() {
+        return fontCategory;
+    }
+
+    public void setFontCategory(String value) {
+        this.fontCategory = value;
+    }
     
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        setFontCategory(XppUtils.getAttributeValueFromNode(parser, "FontCategory"));
         int eventType = parser.next();
         while (eventType == XmlPullParser.START_TAG || eventType == XmlPullParser.TEXT) {
         	if (eventType == XmlPullParser.START_TAG) {

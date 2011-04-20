@@ -11,6 +11,15 @@ public class BibEditorNameImpl extends BaseSchemaEntity implements BibEditorName
     protected String initials;
     protected String familyName;
     protected String particle;
+    protected String suffix;
+    
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String value) {
+        this.suffix = value;
+    }
     public String getInitials() {
         return initials;
     }
@@ -40,6 +49,8 @@ public class BibEditorNameImpl extends BaseSchemaEntity implements BibEditorName
                 setFamilyName(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Particle")) {
                 setParticle(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Suffix")) {
+                setSuffix(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

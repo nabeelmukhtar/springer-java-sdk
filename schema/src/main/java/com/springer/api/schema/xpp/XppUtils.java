@@ -17,11 +17,15 @@
 package com.springer.api.schema.xpp;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
+
+import com.springer.api.services.constant.ApplicationConstants;
 
 /**
  * The Class DomUtils.
@@ -30,6 +34,7 @@ import org.xmlpull.v1.XmlSerializer;
  * @version   1.0
  */
 public class XppUtils {
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(ApplicationConstants.DATE_FORMAT);
 
     /**
      * Sets the element value to node.
@@ -106,8 +111,11 @@ public class XppUtils {
     	if (isNullOrEmpty(value)) {
     		return null;
     	} else {
-    		// TODO-NM: Implement this method.
-            return null;
+            try {
+				return DATE_FORMAT.parse(value);
+			} catch (ParseException e) {
+				return null;
+			}
     	}
     }
 

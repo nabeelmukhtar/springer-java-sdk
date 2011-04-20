@@ -25,6 +25,7 @@ public class XppCodeGenerator {
 	private static final String SOURCE_DIR = "E:\\workspace\\opensource\\springer-java-sdk\\schema\\src\\main\\java\\com\\springer\\api\\schema\\xpp";
 	private static final String PACKAGE_NAME = "com.springer.api.schema.xpp";
 	private static final List<String> EXCLUDED_FILES = Arrays.asList("XppUtils.java", "ObjectFactory.java", "BaseSchemaEntity.java");
+	private static final List<String> INCLUDED_FILES = Arrays.asList("BibChapterImpl.java", "BibArticleImpl.java", "BibBookImpl.java", "BibCommentsImpl.java");
 
 	/**
 	 * @param args
@@ -34,7 +35,7 @@ public class XppCodeGenerator {
 
 			@Override
 			public boolean accept(File dir, String name) {
-				return name.endsWith(".java") && !EXCLUDED_FILES.contains(name);
+				return name.endsWith(".java") && !EXCLUDED_FILES.contains(name) && (INCLUDED_FILES.isEmpty() || INCLUDED_FILES.contains(name));
 		}});
 		
 		if (sourceFiles != null) {

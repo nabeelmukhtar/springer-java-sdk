@@ -1341,14 +1341,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArticleEditorialResponsibility }
-     * 
-     */
-    public ArticleEditorialResponsibilityImpl createArticleEditorialResponsibility() {
-        return new ArticleEditorialResponsibilityImpl();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */

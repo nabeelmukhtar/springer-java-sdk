@@ -7,7 +7,6 @@ import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.ArticleContext;
 import com.springer.api.schema.ArticleCopyright;
-import com.springer.api.schema.ArticleEditorialResponsibility;
 import com.springer.api.schema.ArticleGrants;
 import com.springer.api.schema.ArticleHistory;
 import com.springer.api.schema.ArticleInfo;
@@ -24,7 +23,7 @@ public class ArticleInfoImpl extends BaseSchemaEntity implements ArticleInfo {
     protected String articleFirstPage;
     protected String articleLastPage;
     protected ArticleHistoryImpl articleHistory;
-    protected ArticleEditorialResponsibilityImpl articleEditorialResponsibility;
+    protected String articleEditorialResponsibility;
     protected ArticleCopyrightImpl articleCopyright;
     protected ArticleGrantsImpl articleGrants;
     protected ArticleContextImpl articleContext;
@@ -88,11 +87,11 @@ public class ArticleInfoImpl extends BaseSchemaEntity implements ArticleInfo {
     public void setArticleHistory(ArticleHistory value) {
         articleHistory = ((ArticleHistoryImpl) value);
     }
-    public ArticleEditorialResponsibility getArticleEditorialResponsibility() {
+    public String getArticleEditorialResponsibility() {
         return articleEditorialResponsibility;
     }
-    public void setArticleEditorialResponsibility(ArticleEditorialResponsibility value) {
-        articleEditorialResponsibility = ((ArticleEditorialResponsibilityImpl) value);
+    public void setArticleEditorialResponsibility(String value) {
+        articleEditorialResponsibility = ((String) value);
     }
     public ArticleCopyright getArticleCopyright() {
         return articleCopyright;
@@ -178,9 +177,7 @@ public class ArticleInfoImpl extends BaseSchemaEntity implements ArticleInfo {
                 node.init(parser);
                 setArticleHistory(node);
             } else if (name.equals("ArticleEditorialResponsibility")) {
-                ArticleEditorialResponsibilityImpl node = new ArticleEditorialResponsibilityImpl();
-                node.init(parser);
-                setArticleEditorialResponsibility(node);
+                setArticleEditorialResponsibility(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("ArticleCopyright")) {
                 ArticleCopyrightImpl node = new ArticleCopyrightImpl();
                 node.init(parser);

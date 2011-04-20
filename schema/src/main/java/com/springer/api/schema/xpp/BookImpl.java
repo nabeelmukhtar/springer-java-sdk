@@ -9,6 +9,8 @@ import com.springer.api.schema.Book;
 import com.springer.api.schema.BookInfo;
 import com.springer.api.schema.Chapter;
 import com.springer.api.schema.EditorGroup;
+import com.springer.api.schema.Part;
+
 public class BookImpl extends BaseSchemaEntity implements Book {
     private final static long serialVersionUID = 2461660169443089969L;
     protected BookInfoImpl bookInfo;
@@ -16,6 +18,15 @@ public class BookImpl extends BaseSchemaEntity implements Book {
     protected ChapterImpl chapter;
     protected String language;
     protected String outputMedium;
+    protected PartImpl part;
+    
+    public Part getPart() {
+        return part;
+    }
+
+    public void setPart(Part value) {
+        this.part = ((PartImpl) value);
+    }
     public BookInfo getBookInfo() {
         return bookInfo;
     }
@@ -63,6 +74,10 @@ public class BookImpl extends BaseSchemaEntity implements Book {
                 ChapterImpl node = new ChapterImpl();
                 node.init(parser);
                 setChapter(node);
+            } else if (name.equals("Part")) {
+            	PartImpl node = new PartImpl();
+                node.init(parser);
+                setPart(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

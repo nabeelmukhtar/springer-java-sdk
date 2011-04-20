@@ -7,6 +7,7 @@ import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Abstract;
 import com.springer.api.schema.ArticleHeader;
+import com.springer.api.schema.ArticleNote;
 import com.springer.api.schema.AuthorGroup;
 import com.springer.api.schema.KeywordGroup;
 public class ArticleHeaderImpl extends BaseSchemaEntity implements ArticleHeader {
@@ -14,6 +15,14 @@ public class ArticleHeaderImpl extends BaseSchemaEntity implements ArticleHeader
     protected AuthorGroupImpl authorGroup;
     protected AbstractImpl _abstract;
     protected KeywordGroupImpl keywordGroup;
+    protected ArticleNoteImpl articleNote;
+    public ArticleNote getArticleNote() {
+        return articleNote;
+    }
+
+    public void setArticleNote(ArticleNote value) {
+        this.articleNote = ((ArticleNoteImpl) value);
+    }
     public AuthorGroup getAuthorGroup() {
         return authorGroup;
     }
@@ -49,7 +58,11 @@ public class ArticleHeaderImpl extends BaseSchemaEntity implements ArticleHeader
                 KeywordGroupImpl node = new KeywordGroupImpl();
                 node.init(parser);
                 setKeywordGroup(node);
-            } else {                // Consume something we don't understand.
+            } else if (name.equals("ArticleNote")) {
+            	ArticleNoteImpl node = new ArticleNoteImpl();
+                node.init(parser);
+                setArticleNote(node);
+            }  else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);
             }

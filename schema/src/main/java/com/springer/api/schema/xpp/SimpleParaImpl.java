@@ -41,6 +41,10 @@ public class SimpleParaImpl extends BaseSchemaEntity implements SimplePara {
                 	ExternalRefImpl node = new ExternalRefImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("InternalRef")) {
+                	InternalRefImpl node = new InternalRefImpl();
+                    node.init(parser);
+                    getContent().add(node);
                 } else {                // Consume something we don't understand.
                     LOG.warning("Found tag that we don't recognize: " + name);
                     XppUtils.skipSubTree(parser);

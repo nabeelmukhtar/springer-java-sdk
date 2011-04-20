@@ -29,8 +29,16 @@ public class BibUnstructuredImpl extends BaseSchemaEntity implements BibUnstruct
                     EmphasisImpl node = new EmphasisImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("Superscript")) {
+                	SuperscriptImpl node = new SuperscriptImpl();
+                    node.init(parser);
+                    getContent().add(node);
                 } else if (name.equals("ExternalRef")) {
                     ExternalRefImpl node = new ExternalRefImpl();
+                    node.init(parser);
+                    getContent().add(node);
+                } else if (name.equals("InlineEquation")) {
+                	InlineEquationImpl node = new InlineEquationImpl();
                     node.init(parser);
                     getContent().add(node);
                 } else {                // Consume something we don't understand.
