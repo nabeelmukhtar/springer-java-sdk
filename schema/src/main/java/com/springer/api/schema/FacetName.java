@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="subject"/>
  *     &lt;enumeration value="keyword"/>
  *     &lt;enumeration value="pub"/>
+ *     &lt;enumeration value="year"/>
  *     &lt;enumeration value="type"/>
  *     &lt;enumeration value="country"/>
  *     &lt;enumeration value="imagetype"/>
@@ -35,6 +36,8 @@ public enum FacetName {
     KEYWORD("keyword"),
     @XmlEnumValue("pub")
     PUB("pub"),
+    @XmlEnumValue("year")
+    YEAR("year"),
     @XmlEnumValue("type")
     TYPE("type"),
     @XmlEnumValue("country")

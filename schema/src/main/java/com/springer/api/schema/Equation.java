@@ -36,7 +36,7 @@ public interface Equation {
      *     {@link String }
      *     
      */
-    Long getEquationNumber();
+    String getEquationNumber();
 
     /**
      * Sets the value of the equationNumber property.
@@ -46,7 +46,7 @@ public interface Equation {
      *     {@link String }
      *     
      */
-    void setEquationNumber(Long value);
+    void setEquationNumber(String value);
 
     /**
      * Gets the value of the mediaObject property.

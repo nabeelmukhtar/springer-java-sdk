@@ -34,7 +34,7 @@ public class EquationImpl extends BaseSchemaEntity implements Equation {
     private final static long serialVersionUID = 2461660169443089969L;
     
     /** The equation number. */
-    protected Long equationNumber;
+    protected String equationNumber;
     
     /** The media object. */
     protected MediaObjectImpl mediaObject;
@@ -48,15 +48,15 @@ public class EquationImpl extends BaseSchemaEntity implements Equation {
     /* (non-Javadoc)
      * @see com.springer.api.schema.Equation#getEquationNumber()
      */
-    public Long getEquationNumber() {
+    public String getEquationNumber() {
         return equationNumber;
     }
     
     /* (non-Javadoc)
      * @see com.springer.api.schema.Equation#setEquationNumber(java.lang.Long)
      */
-    public void setEquationNumber(Long value) {
-        equationNumber = ((Long) value);
+    public void setEquationNumber(String value) {
+        equationNumber = ((String) value);
     }
     
     /* (non-Javadoc)
@@ -111,7 +111,7 @@ public class EquationImpl extends BaseSchemaEntity implements Equation {
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             if (name.equals("EquationNumber")) {
-                setEquationNumber(XppUtils.getElementValueAsLongFromNode(parser));
+                setEquationNumber(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("MediaObject")) {
                 MediaObjectImpl node = new MediaObjectImpl();
                 node.init(parser);

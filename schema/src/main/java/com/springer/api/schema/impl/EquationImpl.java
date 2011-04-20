@@ -8,11 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.w3._2001.xmlschema.Adapter2;
 
 import com.springer.api.schema.Equation;
 import com.springer.api.schema.EquationSource;
@@ -30,9 +26,7 @@ public class EquationImpl implements Serializable, Equation
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElement(name = "EquationNumber", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    protected Long equationNumber;
+    protected String equationNumber;
     @XmlElement(name = "MediaObject", required = true, type = MediaObjectImpl.class)
     protected MediaObjectImpl mediaObject;
     @XmlElement(name = "EquationSource", required = true, type = EquationSourceImpl.class)
@@ -40,11 +34,11 @@ public class EquationImpl implements Serializable, Equation
     @XmlAttribute(name = "ID", required = true)
     protected String id;
 
-    public Long getEquationNumber() {
+    public String getEquationNumber() {
         return equationNumber;
     }
 
-    public void setEquationNumber(Long value) {
+    public void setEquationNumber(String value) {
         this.equationNumber = value;
     }
 

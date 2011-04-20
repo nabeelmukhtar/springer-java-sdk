@@ -56,6 +56,7 @@
 	    <xs:enumeration value="subject"/>
 	    <xs:enumeration value="keyword"/>
 	    <xs:enumeration value="pub"/>
+	    <xs:enumeration value="year"/>
 	    <xs:enumeration value="type"/>
 	    <xs:enumeration value="country"/>
 	    <xs:enumeration value="imagetype"/>
@@ -1375,7 +1376,7 @@
       <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="EquationNumber" type="xs:integer"/>
+  <xs:element name="EquationNumber" type="xs:string"/>
   <xs:element name="Footnote">
     <xs:complexType>
       <xs:sequence>
