@@ -103,10 +103,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the iSXN.
-	  * 
-	  * @return the iSXN
-	  */
+ 	 * Gets the iSXN.
+ 	 * 
+ 	 * @return the iSXN
+ 	 */
 	 public String getISXN(){
 		return this.iSXN;
 	}
@@ -121,10 +121,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the article title.
-	  * 
-	  * @return the article title
-	  */
+ 	 * Gets the article title.
+ 	 * 
+ 	 * @return the article title
+ 	 */
 	 public String getArticleTitle(){
 		return this.articleTitle;
 	}
@@ -139,10 +139,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the authors.
-	  * 
-	  * @return the authors
-	  */
+ 	 * Gets the authors.
+ 	 * 
+ 	 * @return the authors
+ 	 */
 	 public List<Author> getAuthors(){
 		return this.authors;
 	}
@@ -157,10 +157,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the book doi.
-	  * 
-	  * @return the book doi
-	  */
+ 	 * Gets the book doi.
+ 	 * 
+ 	 * @return the book doi
+ 	 */
 	 public String getBookDOI(){
 		return this.bookDOI;
 	}
@@ -175,10 +175,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the book title id.
-	  * 
-	  * @return the book title id
-	  */
+ 	 * Gets the book title id.
+ 	 * 
+ 	 * @return the book title id
+ 	 */
 	 public String getBookTitleId(){
 		return this.bookTitleId;
 	}
@@ -193,10 +193,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the caption.
-	  * 
-	  * @return the caption
-	  */
+ 	 * Gets the caption.
+ 	 * 
+ 	 * @return the caption
+ 	 */
 	 public String getCaption(){
 		return this.caption;
 	}
@@ -211,10 +211,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the chapter id.
-	  * 
-	  * @return the chapter id
-	  */
+ 	 * Gets the chapter id.
+ 	 * 
+ 	 * @return the chapter id
+ 	 */
 	 public String getChapterId(){
 		return this.chapterId;
 	}
@@ -229,10 +229,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the file.
-	  * 
-	  * @return the file
-	  */
+ 	 * Gets the file.
+ 	 * 
+ 	 * @return the file
+ 	 */
 	 public List<File> getFile(){
 		return this.file;
 	}
@@ -247,10 +247,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the identifier.
-	  * 
-	  * @return the identifier
-	  */
+ 	 * Gets the identifier.
+ 	 * 
+ 	 * @return the identifier
+ 	 */
 	 public String getIdentifier(){
 		return this.identifier;
 	}
@@ -265,10 +265,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the image type.
-	  * 
-	  * @return the image type
-	  */
+ 	 * Gets the image type.
+ 	 * 
+ 	 * @return the image type
+ 	 */
 	 public String getImageType(){
 		return this.imageType;
 	}
@@ -283,10 +283,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the institutions.
-	  * 
-	  * @return the institutions
-	  */
+ 	 * Gets the institutions.
+ 	 * 
+ 	 * @return the institutions
+ 	 */
 	 public List<Institution> getInstitutions(){
 		return this.institutions;
 	}
@@ -301,10 +301,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the keywords.
-	  * 
-	  * @return the keywords
-	  */
+ 	 * Gets the keywords.
+ 	 * 
+ 	 * @return the keywords
+ 	 */
 	 public List<Keyword> getKeywords(){
 		return this.keywords;
 	}
@@ -319,10 +319,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the open access.
-	  * 
-	  * @return the open access
-	  */
+ 	 * Gets the open access.
+ 	 * 
+ 	 * @return the open access
+ 	 */
 	 public String getOpenAccess(){
 		return this.openAccess;
 	}
@@ -337,10 +337,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the provider.
-	  * 
-	  * @return the provider
-	  */
+ 	 * Gets the provider.
+ 	 * 
+ 	 * @return the provider
+ 	 */
 	 public String getProvider(){
 		return this.provider;
 	}
@@ -355,10 +355,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the pub date.
-	  * 
-	  * @return the pub date
-	  */
+ 	 * Gets the pub date.
+ 	 * 
+ 	 * @return the pub date
+ 	 */
 	 public String getPubDate(){
 		return this.pubDate;
 	}
@@ -373,10 +373,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the source title.
-	  * 
-	  * @return the source title
-	  */
+ 	 * Gets the source title.
+ 	 * 
+ 	 * @return the source title
+ 	 */
 	 public String getSourceTitle(){
 		return this.sourceTitle;
 	}
@@ -391,10 +391,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the source type.
-	  * 
-	  * @return the source type
-	  */
+ 	 * Gets the source type.
+ 	 * 
+ 	 * @return the source type
+ 	 */
 	 public String getSourceType(){
 		return this.sourceType;
 	}
@@ -409,10 +409,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the subject collection.
-	  * 
-	  * @return the subject collection
-	  */
+ 	 * Gets the subject collection.
+ 	 * 
+ 	 * @return the subject collection
+ 	 */
 	 public String getSubjectCollection(){
 		return this.subjectCollection;
 	}
@@ -427,10 +427,10 @@ public class Image{
 	}
  	
 	 /**
-	  * Gets the subjects.
-	  * 
-	  * @return the subjects
-	  */
+ 	 * Gets the subjects.
+ 	 * 
+ 	 * @return the subjects
+ 	 */
 	 public List<Subject> getSubjects(){
 		return this.subjects;
 	}

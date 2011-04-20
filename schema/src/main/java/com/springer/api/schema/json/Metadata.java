@@ -85,10 +85,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the creators.
-	  * 
-	  * @return the creators
-	  */
+ 	 * Gets the creators.
+ 	 * 
+ 	 * @return the creators
+ 	 */
 	 public List<Creator> getCreators(){
 		return this.creators;
 	}
@@ -103,10 +103,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the doi.
-	  * 
-	  * @return the doi
-	  */
+ 	 * Gets the doi.
+ 	 * 
+ 	 * @return the doi
+ 	 */
 	 public String getDoi(){
 		return this.doi;
 	}
@@ -121,10 +121,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the identifier.
-	  * 
-	  * @return the identifier
-	  */
+ 	 * Gets the identifier.
+ 	 * 
+ 	 * @return the identifier
+ 	 */
 	 public String getIdentifier(){
 		return this.identifier;
 	}
@@ -139,10 +139,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the isbn.
-	  * 
-	  * @return the isbn
-	  */
+ 	 * Gets the isbn.
+ 	 * 
+ 	 * @return the isbn
+ 	 */
 	 public String getIsbn(){
 		return this.isbn;
 	}
@@ -157,10 +157,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the issn.
-	  * 
-	  * @return the issn
-	  */
+ 	 * Gets the issn.
+ 	 * 
+ 	 * @return the issn
+ 	 */
 	 public String getIssn(){
 		return this.issn;
 	}
@@ -175,10 +175,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the number.
-	  * 
-	  * @return the number
-	  */
+ 	 * Gets the number.
+ 	 * 
+ 	 * @return the number
+ 	 */
 	 public String getNumber(){
 		return this.number;
 	}
@@ -193,10 +193,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the publication date.
-	  * 
-	  * @return the publication date
-	  */
+ 	 * Gets the publication date.
+ 	 * 
+ 	 * @return the publication date
+ 	 */
 	 public String getPublicationDate(){
 		return this.publicationDate;
 	}
@@ -211,10 +211,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the publication name.
-	  * 
-	  * @return the publication name
-	  */
+ 	 * Gets the publication name.
+ 	 * 
+ 	 * @return the publication name
+ 	 */
 	 public String getPublicationName(){
 		return this.publicationName;
 	}
@@ -229,10 +229,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the publisher.
-	  * 
-	  * @return the publisher
-	  */
+ 	 * Gets the publisher.
+ 	 * 
+ 	 * @return the publisher
+ 	 */
 	 public String getPublisher(){
 		return this.publisher;
 	}
@@ -247,10 +247,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the starting page.
-	  * 
-	  * @return the starting page
-	  */
+ 	 * Gets the starting page.
+ 	 * 
+ 	 * @return the starting page
+ 	 */
 	 public String getStartingPage(){
 		return this.startingPage;
 	}
@@ -265,10 +265,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the title.
-	  * 
-	  * @return the title
-	  */
+ 	 * Gets the title.
+ 	 * 
+ 	 * @return the title
+ 	 */
 	 public String getTitle(){
 		return this.title;
 	}
@@ -283,10 +283,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the url.
-	  * 
-	  * @return the url
-	  */
+ 	 * Gets the url.
+ 	 * 
+ 	 * @return the url
+ 	 */
 	 public String getUrl(){
 		return this.url;
 	}
@@ -301,10 +301,10 @@ public class Metadata{
 	}
  	
 	 /**
-	  * Gets the volume.
-	  * 
-	  * @return the volume
-	  */
+ 	 * Gets the volume.
+ 	 * 
+ 	 * @return the volume
+ 	 */
 	 public String getVolume(){
 		return this.volume;
 	}

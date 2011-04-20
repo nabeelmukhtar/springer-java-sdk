@@ -1,4 +1,17 @@
-/**
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
  * 
  */
 package com.springer.api.services.example;
@@ -18,17 +31,28 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElement.DEFAULT;
 
 /**
- * @author nmukhtar
- *
+ * The Class XppCodeGenerator.
  */
 public class XppCodeGenerator {
+	
+	/** The Constant SOURCE_DIR. */
 	private static final String SOURCE_DIR = "E:\\workspace\\opensource\\springer-java-sdk\\schema\\src\\main\\java\\com\\springer\\api\\schema\\xpp";
+	
+	/** The Constant PACKAGE_NAME. */
 	private static final String PACKAGE_NAME = "com.springer.api.schema.xpp";
+	
+	/** The Constant EXCLUDED_FILES. */
 	private static final List<String> EXCLUDED_FILES = Arrays.asList("XppUtils.java", "ObjectFactory.java", "BaseSchemaEntity.java");
+	
+	/** The Constant INCLUDED_FILES. */
 	private static final List<String> INCLUDED_FILES = Arrays.asList("EdsImpl.java");
 
 	/**
-	 * @param args
+	 * The main method.
+	 * 
+	 * @param args the arguments
+	 * 
+	 * @throws Exception the exception
 	 */
 	public static void main(String[] args) throws Exception {
 		File[] sourceFiles = new File(SOURCE_DIR).listFiles(new FileFilter() {
@@ -51,10 +75,23 @@ public class XppCodeGenerator {
 		}
 	}
 
+	/**
+	 * Backup file.
+	 * 
+	 * @param file the file
+	 */
 	private static void backupFile(File file) {
 		
 	}
 
+	/**
+	 * Generate code.
+	 * 
+	 * @param clazz the clazz
+	 * @param out the out
+	 * 
+	 * @throws Exception the exception
+	 */
 	private static void generateCode(Class<?> clazz, Writer out) throws Exception {
 		out.write("package " + PACKAGE_NAME + ";\r\n");
 		out.write("import java.io.IOException;\r\n");
@@ -216,6 +253,13 @@ public class XppCodeGenerator {
 		out.write("}\r\n");
 	}
 
+	/**
+	 * Camel.
+	 * 
+	 * @param name the name
+	 * 
+	 * @return the string
+	 */
 	private static String camel(String name) {
 		if (name.charAt(0) == '_') {
 			return Character.toUpperCase(name.charAt(1)) + name.substring(2);
@@ -224,6 +268,13 @@ public class XppCodeGenerator {
 		}
 	}
 	
+	/**
+	 * Inter.
+	 * 
+	 * @param name the name
+	 * 
+	 * @return the string
+	 */
 	private static String inter(String name) {
 		return name.replace("Impl", "");
 	}

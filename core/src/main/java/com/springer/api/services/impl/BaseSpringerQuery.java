@@ -91,10 +91,10 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	}
  	
 	 /**
-	  * Gets the facets.
-	  * 
-	  * @return the facets
-	  */
+ 	 * Gets the facets.
+ 	 * 
+ 	 * @return the facets
+ 	 */
 	 public List<Facet> getFacets(){
 		return this.facets;
 	}
@@ -109,10 +109,10 @@ public abstract class BaseSpringerQuery<E> extends SpringerApiGateway implements
 	}
  	
 	 /**
-	  * Gets the query.
-	  * 
-	  * @return the query
-	  */
+ 	 * Gets the query.
+ 	 * 
+ 	 * @return the query
+ 	 */
 	 public String getQuery(){
 		return this.query;
 	}

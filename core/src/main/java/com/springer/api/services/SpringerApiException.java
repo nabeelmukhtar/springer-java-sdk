@@ -19,65 +19,64 @@ package com.springer.api.services;
 import java.util.Date;
 
 /**
- * Class description
- *
- *
+ * The Class SpringerApiException.
  */
 public class SpringerApiException extends RuntimeException {
+	
+	/** The status code. */
 	private int statusCode;
+	
+	/** The error code. */
 	private String errorCode;
+	
+	/** The timestamp. */
 	private Date timestamp;
 
-    /**
-	 *
-	 */
+    /** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -4345556572105572685L;
 
 	/**
-     * Constructs ...
-     *
-     */
+	 * Instantiates a new springer api exception.
+	 */
     public SpringerApiException() {
         super();
     }
 
     /**
-     * Constructs ...
-     *
-     *
-     * @param message
+     * Instantiates a new springer api exception.
+     * 
+     * @param message the message
      */
     public SpringerApiException(String message) {
         super(message);
     }
 
     /**
-     * Constructs ...
-     *
-     *
-     * @param cause
+     * Instantiates a new springer api exception.
+     * 
+     * @param cause the cause
      */
     public SpringerApiException(Throwable cause) {
         super(cause);
     }
 
     /**
-     * Constructs ...
-     *
-     *
-     * @param message
-     * @param cause
+     * Instantiates a new springer api exception.
+     * 
+     * @param message the message
+     * @param cause the cause
      */
     public SpringerApiException(String message, Throwable cause) {
         super(message, cause);
     }
 
     /**
-     * Constructs ...
-     *
-     *
-     * @param message
-     * @param cause
+     * Instantiates a new springer api exception.
+     * 
+     * @param message the message
+     * @param statusCode the status code
+     * @param errorCode the error code
+     * @param timestamp the timestamp
      */
     public SpringerApiException(String message, int statusCode , String errorCode, Date timestamp) {
         super(message);
@@ -87,34 +86,44 @@ public class SpringerApiException extends RuntimeException {
     }
     
 	/**
-	 * @return the statusCode
+	 * Gets the status code.
+	 * 
+	 * @return the status code
 	 */
 	public int getStatusCode() {
 		return statusCode;
 	}
 
 	/**
-	 * @param statusCode the statusCode to set
+	 * Sets the status code.
+	 * 
+	 * @param statusCode the new status code
 	 */
 	public void setStatusCode(int statusCode) {
 		this.statusCode = statusCode;
 	}
 
 	/**
-	 * @return the errorCode
+	 * Gets the error code.
+	 * 
+	 * @return the error code
 	 */
 	public String getErrorCode() {
 		return errorCode;
 	}
 
 	/**
-	 * @param errorCode the errorCode to set
+	 * Sets the error code.
+	 * 
+	 * @param errorCode the new error code
 	 */
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
 	}
 
 	/**
+	 * Gets the timestamp.
+	 * 
 	 * @return the timestamp
 	 */
 	public Date getTimestamp() {
@@ -122,7 +131,9 @@ public class SpringerApiException extends RuntimeException {
 	}
 
 	/**
-	 * @param timestamp the timestamp to set
+	 * Sets the timestamp.
+	 * 
+	 * @param timestamp the new timestamp
 	 */
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;

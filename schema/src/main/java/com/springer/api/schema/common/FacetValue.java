@@ -48,10 +48,10 @@ public class FacetValue{
 	}
  	
 	 /**
-	  * Gets the value.
-	  * 
-	  * @return the value
-	  */
+ 	 * Gets the value.
+ 	 * 
+ 	 * @return the value
+ 	 */
 	 public String getValue(){
 		return this.value;
 	}

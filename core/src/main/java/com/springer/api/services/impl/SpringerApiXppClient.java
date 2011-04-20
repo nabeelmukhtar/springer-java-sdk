@@ -17,6 +17,7 @@
 package com.springer.api.services.impl;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +28,7 @@ import org.xmlpull.v1.XmlSerializer;
 import com.springer.api.schema.Response;
 import com.springer.api.schema.xpp.BaseSchemaEntity;
 import com.springer.api.schema.xpp.ResponseImpl;
+import com.springer.api.schema.xpp.XppUtils;
 import com.springer.api.services.SpringerApiClient;
 import com.springer.api.services.SpringerApiException;
 import com.springer.api.services.constant.ApplicationConstants;
@@ -35,14 +37,16 @@ import com.springer.api.services.constant.SpringerApiUrls;
 import com.springer.api.services.constant.SpringerApiUrls.SpringerApiUrlBuilder;
 
 /**
- * The Class SpringerApiJaxbClient.
+ * The Class SpringerApiXppClient.
  */
 public class SpringerApiXppClient extends SpringerApiGateway implements SpringerApiClient {
 	
+	/** The Constant XPP_CLASSES_MAP. */
 	private static final Map<Class<?>, Class<? extends BaseSchemaEntity>> XPP_CLASSES_MAP = new HashMap<Class<?>, Class<? extends BaseSchemaEntity>>();
 	
 	static {
 		XPP_CLASSES_MAP.put(Response.class, ResponseImpl.class);
+		XppUtils.setDateFormat(new SimpleDateFormat(ApplicationConstants.DATE_FORMAT));
 	}
 	
 
@@ -50,7 +54,7 @@ public class SpringerApiXppClient extends SpringerApiGateway implements Springer
     private String apiKey;
 
     /**
-     * Instantiates a new springer api jaxb client.
+     * Instantiates a new springer api xpp client.
      * 
      * @param apiKey the api key
      */
@@ -114,8 +118,11 @@ public class SpringerApiXppClient extends SpringerApiGateway implements Springer
 
     
     /**
-     * Method description
-     *
+     * Gets the schema entity by class.
+     * 
+     * @param clazz the clazz
+     * 
+     * @return the schema entity by class
      */
     private BaseSchemaEntity getSchemaEntityByClass(Class<?> clazz) {
     	if (XPP_CLASSES_MAP.containsKey(clazz)) {

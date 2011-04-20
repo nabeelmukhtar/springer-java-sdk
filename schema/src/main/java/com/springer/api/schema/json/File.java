@@ -48,10 +48,10 @@ public class File{
 	}
  	
 	 /**
-	  * Gets the type.
-	  * 
-	  * @return the type
-	  */
+ 	 * Gets the type.
+ 	 * 
+ 	 * @return the type
+ 	 */
 	 public String getType(){
 		return this.type;
 	}

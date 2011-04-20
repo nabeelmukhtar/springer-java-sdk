@@ -49,10 +49,10 @@ public class Facet{
 	}
  	
 	 /**
-	  * Gets the values.
-	  * 
-	  * @return the values
-	  */
+ 	 * Gets the values.
+ 	 * 
+ 	 * @return the values
+ 	 */
 	 public List<FacetValue> getValues(){
 		return this.values;
 	}

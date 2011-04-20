@@ -22,8 +22,32 @@ import com.springer.api.schema.Response;
  * The Interface SpringerApiClient.
  */
 public interface SpringerApiClient {
+	
+	/**
+	 * Images.
+	 * 
+	 * @param query the query
+	 * 
+	 * @return the response
+	 */
 	public Response images(String query);
+	
+	/**
+	 * Metadata.
+	 * 
+	 * @param query the query
+	 * 
+	 * @return the response
+	 */
 	public Response metadata(String query);
+	
+	/**
+	 * Open access.
+	 * 
+	 * @param query the query
+	 * 
+	 * @return the response
+	 */
 	public Response openAccess(String query);
 
 }

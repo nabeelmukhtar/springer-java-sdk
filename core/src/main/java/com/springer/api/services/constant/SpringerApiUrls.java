@@ -99,7 +99,6 @@ public final class SpringerApiUrls {
 	     * Instantiates a new springer api url builder.
 	     * 
 	     * @param urlFormat the url format
-	     * @param apiVersion the api version
 	     * @param format the format
 	     */
 	    public SpringerApiUrlBuilder(String urlFormat, String format) {
