@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 
 package com.springer.api.schema.xpp;
 
@@ -19,1330 +35,1679 @@ import com.springer.api.schema.*;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the com.springer.api.schema.impl package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
- * provided in this class.
- * 
+ * A factory for creating Object objects.
  */
 @XmlRegistry
 public class ObjectFactory {
 
+    /** The Constant _CopyrightHolderName_QNAME. */
     private final static QName _CopyrightHolderName_QNAME = new QName("", "CopyrightHolderName");
+    
+    /** The Constant _Total_QNAME. */
     private final static QName _Total_QNAME = new QName("", "total");
+    
+    /** The Constant _NumberInSeries_QNAME. */
     private final static QName _NumberInSeries_QNAME = new QName("", "NumberInSeries");
+    
+    /** The Constant _Format_QNAME. */
     private final static QName _Format_QNAME = new QName("", "Format");
+    
+    /** The Constant _EquationNumber_QNAME. */
     private final static QName _EquationNumber_QNAME = new QName("", "EquationNumber");
+    
+    /** The Constant _JournalTitle_QNAME. */
     private final static QName _JournalTitle_QNAME = new QName("", "JournalTitle");
+    
+    /** The Constant _BookPrintISBN_QNAME. */
     private final static QName _BookPrintISBN_QNAME = new QName("", "BookPrintISBN");
+    
+    /** The Constant _BookSequenceNumber_QNAME. */
     private final static QName _BookSequenceNumber_QNAME = new QName("", "BookSequenceNumber");
+    
+    /** The Constant _VolumeId_QNAME. */
     private final static QName _VolumeId_QNAME = new QName("", "VolumeId");
+    
+    /** The Constant _BookTitleID_QNAME. */
     private final static QName _BookTitleID_QNAME = new QName("", "BookTitleID");
+    
+    /** The Constant _InstitutionalAuthorName_QNAME. */
     private final static QName _InstitutionalAuthorName_QNAME = new QName("", "InstitutionalAuthorName");
+    
+    /** The Constant _BibComments_QNAME. */
     private final static QName _BibComments_QNAME = new QName("", "BibComments");
+    
+    /** The Constant _FamilyName_QNAME. */
     private final static QName _FamilyName_QNAME = new QName("", "FamilyName");
+    
+    /** The Constant _H1_QNAME. */
     private final static QName _H1_QNAME = new QName("", "h1");
+    
+    /** The Constant _ChapterID_QNAME. */
     private final static QName _ChapterID_QNAME = new QName("", "ChapterID");
+    
+    /** The Constant _FirstPage_QNAME. */
     private final static QName _FirstPage_QNAME = new QName("", "FirstPage");
+    
+    /** The Constant _PubDate_QNAME. */
     private final static QName _PubDate_QNAME = new QName("", "PubDate");
+    
+    /** The Constant _PublisherName_QNAME. */
     private final static QName _PublisherName_QNAME = new QName("", "PublisherName");
+    
+    /** The Constant _APPId_QNAME. */
     private final static QName _APPId_QNAME = new QName("", "APPId");
+    
+    /** The Constant _Country_QNAME. */
     private final static QName _Country_QNAME = new QName("", "Country");
+    
+    /** The Constant _Color_QNAME. */
     private final static QName _Color_QNAME = new QName("", "Color");
+    
+    /** The Constant _ConfEventDate_QNAME. */
     private final static QName _ConfEventDate_QNAME = new QName("", "ConfEventDate");
+    
+    /** The Constant _DateLoaded_QNAME. */
     private final static QName _DateLoaded_QNAME = new QName("", "DateLoaded");
+    
+    /** The Constant _Email_QNAME. */
     private final static QName _Email_QNAME = new QName("", "Email");
+    
+    /** The Constant _JournalAbbreviatedTitle_QNAME. */
     private final static QName _JournalAbbreviatedTitle_QNAME = new QName("", "JournalAbbreviatedTitle");
+    
+    /** The Constant _Start_QNAME. */
     private final static QName _Start_QNAME = new QName("", "start");
+    
+    /** The Constant _VolumeID_QNAME. */
     private final static QName _VolumeID_QNAME = new QName("", "VolumeID");
+    
+    /** The Constant _ArticleID_QNAME. */
     private final static QName _ArticleID_QNAME = new QName("", "ArticleID");
+    
+    /** The Constant _Provider_QNAME. */
     private final static QName _Provider_QNAME = new QName("", "Provider");
+    
+    /** The Constant _ChapterId_QNAME. */
     private final static QName _ChapterId_QNAME = new QName("", "ChapterId");
+    
+    /** The Constant _Street_QNAME. */
     private final static QName _Street_QNAME = new QName("", "Street");
+    
+    /** The Constant _OrgDivision_QNAME. */
     private final static QName _OrgDivision_QNAME = new QName("", "OrgDivision");
+    
+    /** The Constant _Query_QNAME. */
     private final static QName _Query_QNAME = new QName("", "query");
+    
+    /** The Constant _Particle_QNAME. */
     private final static QName _Particle_QNAME = new QName("", "Particle");
+    
+    /** The Constant _JournalID_QNAME. */
     private final static QName _JournalID_QNAME = new QName("", "JournalID");
+    
+    /** The Constant _ConfEventLocation_QNAME. */
     private final static QName _ConfEventLocation_QNAME = new QName("", "ConfEventLocation");
+    
+    /** The Constant _IssueId_QNAME. */
     private final static QName _IssueId_QNAME = new QName("", "IssueId");
+    
+    /** The Constant _VolumeIDStart_QNAME. */
     private final static QName _VolumeIDStart_QNAME = new QName("", "VolumeIDStart");
+    
+    /** The Constant _IssueArticleCount_QNAME. */
     private final static QName _IssueArticleCount_QNAME = new QName("", "IssueArticleCount");
+    
+    /** The Constant _GivenName_QNAME. */
     private final static QName _GivenName_QNAME = new QName("", "GivenName");
+    
+    /** The Constant _ChapterLastPage_QNAME. */
     private final static QName _ChapterLastPage_QNAME = new QName("", "ChapterLastPage");
+    
+    /** The Constant _CopyrightHolder_QNAME. */
     private final static QName _CopyrightHolder_QNAME = new QName("", "CopyrightHolder");
+    
+    /** The Constant _OpenAccess_QNAME. */
     private final static QName _OpenAccess_QNAME = new QName("", "OpenAccess");
+    
+    /** The Constant _URL_QNAME. */
     private final static QName _URL_QNAME = new QName("", "URL");
+    
+    /** The Constant _ArticleFirstPage_QNAME. */
     private final static QName _ArticleFirstPage_QNAME = new QName("", "ArticleFirstPage");
+    
+    /** The Constant _BookChapterCount_QNAME. */
     private final static QName _BookChapterCount_QNAME = new QName("", "BookChapterCount");
+    
+    /** The Constant _ArticleURI_QNAME. */
     private final static QName _ArticleURI_QNAME = new QName("", "ArticleURI");
+    
+    /** The Constant _CopyrightYear_QNAME. */
     private final static QName _CopyrightYear_QNAME = new QName("", "CopyrightYear");
+    
+    /** The Constant _Institution_QNAME. */
     private final static QName _Institution_QNAME = new QName("", "Institution");
+    
+    /** The Constant _IssueID_QNAME. */
     private final static QName _IssueID_QNAME = new QName("", "IssueID");
+    
+    /** The Constant _City_QNAME. */
     private final static QName _City_QNAME = new QName("", "City");
+    
+    /** The Constant _RefSource_QNAME. */
     private final static QName _RefSource_QNAME = new QName("", "RefSource");
+    
+    /** The Constant _PublisherURL_QNAME. */
     private final static QName _PublisherURL_QNAME = new QName("", "PublisherURL");
+    
+    /** The Constant _BookID_QNAME. */
     private final static QName _BookID_QNAME = new QName("", "BookID");
+    
+    /** The Constant _BookElectronicISBN_QNAME. */
     private final static QName _BookElectronicISBN_QNAME = new QName("", "BookElectronicISBN");
+    
+    /** The Constant _IssueHeader_QNAME. */
     private final static QName _IssueHeader_QNAME = new QName("", "IssueHeader");
+    
+    /** The Constant _BookTitleId_QNAME. */
     private final static QName _BookTitleId_QNAME = new QName("", "BookTitleId");
+    
+    /** The Constant _ImageType_QNAME. */
     private final static QName _ImageType_QNAME = new QName("", "ImageType");
+    
+    /** The Constant _SourceTitle_QNAME. */
     private final static QName _SourceTitle_QNAME = new QName("", "SourceTitle");
+    
+    /** The Constant _PricelistYear_QNAME. */
     private final static QName _PricelistYear_QNAME = new QName("", "PricelistYear");
+    
+    /** The Constant _DOI_QNAME. */
     private final static QName _DOI_QNAME = new QName("", "DOI");
+    
+    /** The Constant _Month_QNAME. */
     private final static QName _Month_QNAME = new QName("", "Month");
+    
+    /** The Constant _JournalSPIN_QNAME. */
     private final static QName _JournalSPIN_QNAME = new QName("", "JournalSPIN");
+    
+    /** The Constant _JournalPrintISSN_QNAME. */
     private final static QName _JournalPrintISSN_QNAME = new QName("", "JournalPrintISSN");
+    
+    /** The Constant _BookContext_QNAME. */
     private final static QName _BookContext_QNAME = new QName("", "BookContext");
+    
+    /** The Constant _BookDOI_QNAME. */
     private final static QName _BookDOI_QNAME = new QName("", "BookDOI");
+    
+    /** The Constant _VolumeIDEnd_QNAME. */
     private final static QName _VolumeIDEnd_QNAME = new QName("", "VolumeIDEnd");
+    
+    /** The Constant _SeriesID_QNAME. */
     private final static QName _SeriesID_QNAME = new QName("", "SeriesID");
+    
+    /** The Constant _JournalId_QNAME. */
     private final static QName _JournalId_QNAME = new QName("", "JournalId");
+    
+    /** The Constant _SeriesAbbreviatedTitle_QNAME. */
     private final static QName _SeriesAbbreviatedTitle_QNAME = new QName("", "SeriesAbbreviatedTitle");
+    
+    /** The Constant _InlineMediaObject_QNAME. */
     private final static QName _InlineMediaObject_QNAME = new QName("", "InlineMediaObject");
+    
+    /** The Constant _Postcode_QNAME. */
     private final static QName _Postcode_QNAME = new QName("", "Postcode");
+    
+    /** The Constant _JournalElectronicISSN_QNAME. */
     private final static QName _JournalElectronicISSN_QNAME = new QName("", "JournalElectronicISSN");
+    
+    /** The Constant _PublisherLocation_QNAME. */
     private final static QName _PublisherLocation_QNAME = new QName("", "PublisherLocation");
+    
+    /** The Constant _Phone_QNAME. */
     private final static QName _Phone_QNAME = new QName("", "Phone");
+    
+    /** The Constant _JournalSubTitle_QNAME. */
     private final static QName _JournalSubTitle_QNAME = new QName("", "JournalSubTitle");
+    
+    /** The Constant _Keyword_QNAME. */
     private final static QName _Keyword_QNAME = new QName("", "Keyword");
+    
+    /** The Constant _Type_QNAME. */
     private final static QName _Type_QNAME = new QName("", "Type");
+    
+    /** The Constant _ChapterSequenceNumber_QNAME. */
     private final static QName _ChapterSequenceNumber_QNAME = new QName("", "ChapterSequenceNumber");
+    
+    /** The Constant _Day_QNAME. */
     private final static QName _Day_QNAME = new QName("", "Day");
+    
+    /** The Constant _ApiKey_QNAME. */
     private final static QName _ApiKey_QNAME = new QName("", "apiKey");
+    
+    /** The Constant _Handle_QNAME. */
     private final static QName _Handle_QNAME = new QName("", "Handle");
+    
+    /** The Constant _Year_QNAME. */
     private final static QName _Year_QNAME = new QName("", "Year");
+    
+    /** The Constant _ArticleDOI_QNAME. */
     private final static QName _ArticleDOI_QNAME = new QName("", "ArticleDOI");
+    
+    /** The Constant _ChapterDOI_QNAME. */
     private final static QName _ChapterDOI_QNAME = new QName("", "ChapterDOI");
+    
+    /** The Constant _IssueIDEnd_QNAME. */
     private final static QName _IssueIDEnd_QNAME = new QName("", "IssueIDEnd");
+    
+    /** The Constant _SourceType_QNAME. */
     private final static QName _SourceType_QNAME = new QName("", "SourceType");
+    
+    /** The Constant _Fax_QNAME. */
     private final static QName _Fax_QNAME = new QName("", "Fax");
+    
+    /** The Constant _Location_QNAME. */
     private final static QName _Location_QNAME = new QName("", "Location");
+    
+    /** The Constant _ArticleLastPage_QNAME. */
     private final static QName _ArticleLastPage_QNAME = new QName("", "ArticleLastPage");
+    
+    /** The Constant _IssueIDStart_QNAME. */
     private final static QName _IssueIDStart_QNAME = new QName("", "IssueIDStart");
+    
+    /** The Constant _OrgName_QNAME. */
     private final static QName _OrgName_QNAME = new QName("", "OrgName");
+    
+    /** The Constant _LastPage_QNAME. */
     private final static QName _LastPage_QNAME = new QName("", "LastPage");
+    
+    /** The Constant _PageLength_QNAME. */
     private final static QName _PageLength_QNAME = new QName("", "pageLength");
+    
+    /** The Constant _ArticleSequenceNumber_QNAME. */
     private final static QName _ArticleSequenceNumber_QNAME = new QName("", "ArticleSequenceNumber");
+    
+    /** The Constant _ArticleCategory_QNAME. */
     private final static QName _ArticleCategory_QNAME = new QName("", "ArticleCategory");
+    
+    /** The Constant _ChapterFirstPage_QNAME. */
     private final static QName _ChapterFirstPage_QNAME = new QName("", "ChapterFirstPage");
+    
+    /** The Constant _CitationNumber_QNAME. */
     private final static QName _CitationNumber_QNAME = new QName("", "CitationNumber");
+    
+    /** The Constant _State_QNAME. */
     private final static QName _State_QNAME = new QName("", "State");
+    
+    /** The Constant _Initials_QNAME. */
     private final static QName _Initials_QNAME = new QName("", "Initials");
+    
+    /** The Constant _BookHeader_QNAME. */
     private final static QName _BookHeader_QNAME = new QName("", "BookHeader");
+    
+    /** The Constant _CaptionNumber_QNAME. */
     private final static QName _CaptionNumber_QNAME = new QName("", "CaptionNumber");
+    
+    /** The Constant _ItemNumber_QNAME. */
     private final static QName _ItemNumber_QNAME = new QName("", "ItemNumber");
+    
+    /** The Constant _Postbox_QNAME. */
     private final static QName _Postbox_QNAME = new QName("", "Postbox");
+    
+    /** The Constant _VolumeIssueCount_QNAME. */
     private final static QName _VolumeIssueCount_QNAME = new QName("", "VolumeIssueCount");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.springer.api.schema.impl
-     * 
+     * Instantiates a new object factory.
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Received }
+     * Creates a new Object object.
      * 
+     * @return the received impl
      */
     public ReceivedImpl createReceived() {
         return new ReceivedImpl();
     }
 
     /**
-     * Create an instance of {@link ImageObjectElement }
+     * Creates a new Object object.
      * 
+     * @return the image object element impl
      */
     public ImageObjectElementImpl createImageObjectElement() {
         return new ImageObjectElementImpl();
     }
 
     /**
-     * Create an instance of {@link EditorGroup }
+     * Creates a new Object object.
      * 
+     * @return the editor group impl
      */
     public EditorGroupImpl createEditorGroup() {
         return new EditorGroupImpl();
     }
 
     /**
-     * Create an instance of {@link Section3 }
+     * Creates a new Object object.
      * 
+     * @return the section3 impl
      */
     public Section3Impl createSection3() {
         return new Section3Impl();
     }
 
     /**
-     * Create an instance of {@link ChapterInfo }
+     * Creates a new Object object.
      * 
+     * @return the chapter info impl
      */
     public ChapterInfoImpl createChapterInfo() {
         return new ChapterInfoImpl();
     }
 
     /**
-     * Create an instance of {@link BodyPDFGrant }
+     * Creates a new Object object.
      * 
+     * @return the body pdf grant impl
      */
     public BodyPDFGrantImpl createBodyPDFGrant() {
         return new BodyPDFGrantImpl();
     }
 
     /**
-     * Create an instance of {@link PrintDate }
+     * Creates a new Object object.
      * 
+     * @return the prints the date impl
      */
     public PrintDateImpl createPrintDate() {
         return new PrintDateImpl();
     }
 
     /**
-     * Create an instance of {@link ESMGrant }
+     * Creates a new Object object.
      * 
+     * @return the ESM grant impl
      */
     public ESMGrantImpl createESMGrant() {
         return new ESMGrantImpl();
     }
 
     /**
-     * Create an instance of {@link BookTitle }
+     * Creates a new Object object.
      * 
+     * @return the book title impl
      */
     public BookTitleImpl createBookTitle() {
         return new BookTitleImpl();
     }
 
     /**
-     * Create an instance of {@link Series }
+     * Creates a new Object object.
      * 
+     * @return the series impl
      */
     public SeriesImpl createSeries() {
         return new SeriesImpl();
     }
 
     /**
-     * Create an instance of {@link Colspec }
+     * Creates a new Object object.
      * 
+     * @return the colspec impl
      */
     public ColspecImpl createColspec() {
         return new ColspecImpl();
     }
 
     /**
-     * Create an instance of {@link ListItem }
+     * Creates a new Object object.
      * 
+     * @return the list item impl
      */
     public ListItemImpl createListItem() {
         return new ListItemImpl();
     }
 
     /**
-     * Create an instance of {@link ExternalRef }
+     * Creates a new Object object.
      * 
+     * @return the external ref impl
      */
     public ExternalRefImpl createExternalRef() {
         return new ExternalRefImpl();
     }
 
     /**
-     * Create an instance of {@link Description }
+     * Creates a new Object object.
      * 
+     * @return the description impl
      */
     public DescriptionImpl createDescription() {
         return new DescriptionImpl();
     }
 
     /**
-     * Create an instance of {@link DefinitionList }
+     * Creates a new Object object.
      * 
+     * @return the definition list impl
      */
     public DefinitionListImpl createDefinitionList() {
         return new DefinitionListImpl();
     }
 
     /**
-     * Create an instance of {@link Affiliation }
+     * Creates a new Object object.
      * 
+     * @return the affiliation impl
      */
     public AffiliationImpl createAffiliation() {
         return new AffiliationImpl();
     }
 
     /**
-     * Create an instance of {@link Issue }
+     * Creates a new Object object.
      * 
+     * @return the issue impl
      */
     public IssueImpl createIssue() {
         return new IssueImpl();
     }
 
     /**
-     * Create an instance of {@link Journal }
+     * Creates a new Object object.
      * 
+     * @return the journal impl
      */
     public JournalImpl createJournal() {
         return new JournalImpl();
     }
 
     /**
-     * Create an instance of {@link JournalSubject }
+     * Creates a new Object object.
      * 
+     * @return the journal subject impl
      */
     public JournalSubjectImpl createJournalSubject() {
         return new JournalSubjectImpl();
     }
 
     /**
-     * Create an instance of {@link Image }
+     * Creates a new Object object.
      * 
+     * @return the image impl
      */
     public ImageImpl createImage() {
         return new ImageImpl();
     }
 
     /**
-     * Create an instance of {@link File }
+     * Creates a new Object object.
      * 
+     * @return the file impl
      */
     public FileImpl createFile() {
         return new FileImpl();
     }
 
     /**
-     * Create an instance of {@link TextObject }
+     * Creates a new Object object.
      * 
+     * @return the text object impl
      */
     public TextObjectImpl createTextObject() {
         return new TextObjectImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleBackmatter }
+     * Creates a new Object object.
      * 
+     * @return the article backmatter impl
      */
     public ArticleBackmatterImpl createArticleBackmatter() {
         return new ArticleBackmatterImpl();
     }
 
     /**
-     * Create an instance of {@link Tgroup }
+     * Creates a new Object object.
      * 
+     * @return the tgroup impl
      */
     public TgroupImpl createTgroup() {
         return new TgroupImpl();
     }
 
     /**
-     * Create an instance of {@link BibChapter }
+     * Creates a new Object object.
      * 
+     * @return the bib chapter impl
      */
     public BibChapterImpl createBibChapter() {
         return new BibChapterImpl();
     }
 
     /**
-     * Create an instance of {@link OnlineDate }
+     * Creates a new Object object.
      * 
+     * @return the online date impl
      */
     public OnlineDateImpl createOnlineDate() {
         return new OnlineDateImpl();
     }
 
     /**
-     * Create an instance of {@link SubjectCollection }
+     * Creates a new Object object.
      * 
+     * @return the subject collection impl
      */
     public SubjectCollectionImpl createSubjectCollection() {
         return new SubjectCollectionImpl();
     }
 
     /**
-     * Create an instance of {@link Figure }
+     * Creates a new Object object.
      * 
+     * @return the figure impl
      */
     public FigureImpl createFigure() {
         return new FigureImpl();
     }
 
     /**
-     * Create an instance of {@link BodyHTMLGrant }
+     * Creates a new Object object.
      * 
+     * @return the body html grant impl
      */
     public BodyHTMLGrantImpl createBodyHTMLGrant() {
         return new BodyHTMLGrantImpl();
     }
 
     /**
-     * Create an instance of {@link Entry }
+     * Creates a new Object object.
      * 
+     * @return the entry impl
      */
     public EntryImpl createEntry() {
         return new EntryImpl();
     }
 
     /**
-     * Create an instance of {@link UnorderedList }
+     * Creates a new Object object.
      * 
+     * @return the unordered list impl
      */
     public UnorderedListImpl createUnorderedList() {
         return new UnorderedListImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleHeader }
+     * Creates a new Object object.
      * 
+     * @return the article header impl
      */
     public ArticleHeaderImpl createArticleHeader() {
         return new ArticleHeaderImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterTitle }
+     * Creates a new Object object.
      * 
+     * @return the chapter title impl
      */
     public ChapterTitleImpl createChapterTitle() {
         return new ChapterTitleImpl();
     }
 
     /**
-     * Create an instance of {@link Keywords }
+     * Creates a new Object object.
      * 
+     * @return the keywords impl
      */
     public KeywordsImpl createKeywords() {
         return new KeywordsImpl();
     }
 
     /**
-     * Create an instance of {@link Acknowledgments }
+     * Creates a new Object object.
      * 
+     * @return the acknowledgments impl
      */
     public AcknowledgmentsImpl createAcknowledgments() {
         return new AcknowledgmentsImpl();
     }
 
     /**
-     * Create an instance of {@link InternalRef }
+     * Creates a new Object object.
      * 
+     * @return the internal ref impl
      */
     public InternalRefImpl createInternalRef() {
         return new InternalRefImpl();
     }
 
     /**
-     * Create an instance of {@link Heading }
+     * Creates a new Object object.
      * 
+     * @return the heading impl
      */
     public HeadingImpl createHeading() {
         return new HeadingImpl();
     }
 
     /**
-     * Create an instance of {@link EditorName }
+     * Creates a new Object object.
      * 
+     * @return the editor name impl
      */
     public EditorNameImpl createEditorName() {
         return new EditorNameImpl();
     }
 
     /**
-     * Create an instance of {@link Subject }
+     * Creates a new Object object.
      * 
+     * @return the subject impl
      */
     public SubjectImpl createSubject() {
         return new SubjectImpl();
     }
 
     /**
-     * Create an instance of {@link Thead }
+     * Creates a new Object object.
      * 
+     * @return the thead impl
      */
     public TheadImpl createThead() {
         return new TheadImpl();
     }
 
     /**
-     * Create an instance of {@link CaptionContent }
+     * Creates a new Object object.
      * 
+     * @return the caption content impl
      */
     public CaptionContentImpl createCaptionContent() {
         return new CaptionContentImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleNote }
+     * Creates a new Object object.
      * 
+     * @return the article note impl
      */
     public ArticleNoteImpl createArticleNote() {
         return new ArticleNoteImpl();
     }
 
     /**
-     * Create an instance of {@link FacetValue }
+     * Creates a new Object object.
      * 
+     * @return the facet value impl
      */
     public FacetValueImpl createFacetValue() {
         return new FacetValueImpl();
     }
 
     /**
-     * Create an instance of {@link VolumeInfo }
+     * Creates a new Object object.
      * 
+     * @return the volume info impl
      */
     public VolumeInfoImpl createVolumeInfo() {
         return new VolumeInfoImpl();
     }
 
     /**
-     * Create an instance of {@link BibBook }
+     * Creates a new Object object.
      * 
+     * @return the bib book impl
      */
     public BibBookImpl createBibBook() {
         return new BibBookImpl();
     }
 
     /**
-     * Create an instance of {@link FullText }
+     * Creates a new Object object.
      * 
+     * @return the full text impl
      */
     public FullTextImpl createFullText() {
         return new FullTextImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterContext }
+     * Creates a new Object object.
      * 
+     * @return the chapter context impl
      */
     public ChapterContextImpl createChapterContext() {
         return new ChapterContextImpl();
     }
 
     /**
-     * Create an instance of {@link JournalSubjectGroup }
+     * Creates a new Object object.
      * 
+     * @return the journal subject group impl
      */
     public JournalSubjectGroupImpl createJournalSubjectGroup() {
         return new JournalSubjectGroupImpl();
     }
 
     /**
-     * Create an instance of {@link Citation }
+     * Creates a new Object object.
      * 
+     * @return the citation impl
      */
     public CitationImpl createCitation() {
         return new CitationImpl();
     }
 
     /**
-     * Create an instance of {@link MediaObject }
+     * Creates a new Object object.
      * 
+     * @return the media object impl
      */
     public MediaObjectImpl createMediaObject() {
         return new MediaObjectImpl();
     }
 
     /**
-     * Create an instance of {@link FormalPara }
+     * Creates a new Object object.
      * 
+     * @return the formal para impl
      */
     public FormalParaImpl createFormalPara() {
         return new FormalParaImpl();
     }
 
     /**
-     * Create an instance of {@link BibEditorName }
+     * Creates a new Object object.
      * 
+     * @return the bib editor name impl
      */
     public BibEditorNameImpl createBibEditorName() {
         return new BibEditorNameImpl();
     }
 
     /**
-     * Create an instance of {@link RefTarget }
+     * Creates a new Object object.
      * 
+     * @return the ref target impl
      */
     public RefTargetImpl createRefTarget() {
         return new RefTargetImpl();
     }
 
     /**
-     * Create an instance of {@link Facets }
+     * Creates a new Object object.
      * 
+     * @return the facets impl
      */
     public FacetsImpl createFacets() {
         return new FacetsImpl();
     }
 
     /**
-     * Create an instance of {@link BlockQuote }
+     * Creates a new Object object.
      * 
+     * @return the block quote impl
      */
     public BlockQuoteImpl createBlockQuote() {
         return new BlockQuoteImpl();
     }
 
     /**
-     * Create an instance of {@link Path }
+     * Creates a new Object object.
      * 
+     * @return the path impl
      */
     public PathImpl createPath() {
         return new PathImpl();
     }
 
     /**
-     * Create an instance of {@link ImageObject }
+     * Creates a new Object object.
      * 
+     * @return the image object impl
      */
     public ImageObjectImpl createImageObject() {
         return new ImageObjectImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleHistory }
+     * Creates a new Object object.
      * 
+     * @return the article history impl
      */
     public ArticleHistoryImpl createArticleHistory() {
         return new ArticleHistoryImpl();
     }
 
     /**
-     * Create an instance of {@link IssueTitle }
+     * Creates a new Object object.
      * 
+     * @return the issue title impl
      */
     public IssueTitleImpl createIssueTitle() {
         return new IssueTitleImpl();
     }
 
     /**
-     * Create an instance of {@link Authors }
+     * Creates a new Object object.
      * 
+     * @return the authors impl
      */
     public AuthorsImpl createAuthors() {
         return new AuthorsImpl();
     }
 
     /**
-     * Create an instance of {@link Facet }
+     * Creates a new Object object.
      * 
+     * @return the facet impl
      */
     public FacetImpl createFacet() {
         return new FacetImpl();
     }
 
     /**
-     * Create an instance of {@link Institutions }
+     * Creates a new Object object.
      * 
+     * @return the institutions impl
      */
     public InstitutionsImpl createInstitutions() {
         return new InstitutionsImpl();
     }
 
     /**
-     * Create an instance of {@link Row }
+     * Creates a new Object object.
      * 
+     * @return the row impl
      */
     public RowImpl createRow() {
         return new RowImpl();
     }
 
     /**
-     * Create an instance of {@link Article }
+     * Creates a new Object object.
      * 
+     * @return the article impl
      */
     public ArticleImpl createArticle() {
         return new ArticleImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterCopyright }
+     * Creates a new Object object.
      * 
+     * @return the chapter copyright impl
      */
     public ChapterCopyrightImpl createChapterCopyright() {
         return new ChapterCopyrightImpl();
     }
 
     /**
-     * Create an instance of {@link AuthorGroup }
+     * Creates a new Object object.
      * 
+     * @return the author group impl
      */
     public AuthorGroupImpl createAuthorGroup() {
         return new AuthorGroupImpl();
     }
 
     /**
-     * Create an instance of {@link Footnote }
+     * Creates a new Object object.
      * 
+     * @return the footnote impl
      */
     public FootnoteImpl createFootnote() {
         return new FootnoteImpl();
     }
 
     /**
-     * Create an instance of {@link Equation }
+     * Creates a new Object object.
      * 
+     * @return the equation impl
      */
     public EquationImpl createEquation() {
         return new EquationImpl();
     }
 
     /**
-     * Create an instance of {@link Subscript }
+     * Creates a new Object object.
      * 
+     * @return the subscript impl
      */
     public SubscriptImpl createSubscript() {
         return new SubscriptImpl();
     }
 
     /**
-     * Create an instance of {@link Section2 }
+     * Creates a new Object object.
      * 
+     * @return the section2 impl
      */
     public Section2Impl createSection2() {
         return new Section2Impl();
     }
 
     /**
-     * Create an instance of {@link Volume }
+     * Creates a new Object object.
      * 
+     * @return the volume impl
      */
     public VolumeImpl createVolume() {
         return new VolumeImpl();
     }
 
     /**
-     * Create an instance of {@link Bibliography }
+     * Creates a new Object object.
      * 
+     * @return the bibliography impl
      */
     public BibliographyImpl createBibliography() {
         return new BibliographyImpl();
     }
 
     /**
-     * Create an instance of {@link BookCopyright }
+     * Creates a new Object object.
      * 
+     * @return the book copyright impl
      */
     public BookCopyrightImpl createBookCopyright() {
         return new BookCopyrightImpl();
     }
 
     /**
-     * Create an instance of {@link P }
+     * Creates a new Object object.
      * 
+     * @return the p impl
      */
     public PImpl createP() {
         return new PImpl();
     }
 
     /**
-     * Create an instance of {@link BookSubjectGroup }
+     * Creates a new Object object.
      * 
+     * @return the book subject group impl
      */
     public BookSubjectGroupImpl createBookSubjectGroup() {
         return new BookSubjectGroupImpl();
     }
 
     /**
-     * Create an instance of {@link ISXN }
+     * Creates a new Object object.
      * 
+     * @return the ISXN impl
      */
     public ISXNImpl createISXN() {
         return new ISXNImpl();
     }
 
     /**
-     * Create an instance of {@link Biography }
+     * Creates a new Object object.
      * 
+     * @return the biography impl
      */
     public BiographyImpl createBiography() {
         return new BiographyImpl();
     }
 
     /**
-     * Create an instance of {@link IssueInfo }
+     * Creates a new Object object.
      * 
+     * @return the issue info impl
      */
     public IssueInfoImpl createIssueInfo() {
         return new IssueInfoImpl();
     }
 
     /**
-     * Create an instance of {@link AbstractSection }
+     * Creates a new Object object.
      * 
+     * @return the abstract section impl
      */
     public AbstractSectionImpl createAbstractSection() {
         return new AbstractSectionImpl();
     }
 
     /**
-     * Create an instance of {@link Emphasis }
+     * Creates a new Object object.
      * 
+     * @return the emphasis impl
      */
     public EmphasisImpl createEmphasis() {
         return new EmphasisImpl();
     }
 
     /**
-     * Create an instance of {@link KeywordGroup }
+     * Creates a new Object object.
      * 
+     * @return the keyword group impl
      */
     public KeywordGroupImpl createKeywordGroup() {
         return new KeywordGroupImpl();
     }
 
     /**
-     * Create an instance of {@link Abstract }
+     * Creates a new Object object.
      * 
+     * @return the abstract impl
      */
     public AbstractImpl createAbstract() {
         return new AbstractImpl();
     }
 
     /**
-     * Create an instance of {@link Author }
+     * Creates a new Object object.
      * 
+     * @return the author impl
      */
     public AuthorImpl createAuthor() {
         return new AuthorImpl();
     }
 
     /**
-     * Create an instance of {@link Caption }
+     * Creates a new Object object.
      * 
+     * @return the caption impl
      */
     public CaptionImpl createCaption() {
         return new CaptionImpl();
     }
 
     /**
-     * Create an instance of {@link BookInfo }
+     * Creates a new Object object.
      * 
+     * @return the book info impl
      */
     public BookInfoImpl createBookInfo() {
         return new BookInfoImpl();
     }
 
     /**
-     * Create an instance of {@link SeriesTitle }
+     * Creates a new Object object.
      * 
+     * @return the series title impl
      */
     public SeriesTitleImpl createSeriesTitle() {
         return new SeriesTitleImpl();
     }
 
     /**
-     * Create an instance of {@link Accepted }
+     * Creates a new Object object.
      * 
+     * @return the accepted impl
      */
     public AcceptedImpl createAccepted() {
         return new AcceptedImpl();
     }
 
     /**
-     * Create an instance of {@link BookSubject }
+     * Creates a new Object object.
      * 
+     * @return the book subject impl
      */
     public BookSubjectImpl createBookSubject() {
         return new BookSubjectImpl();
     }
 
     /**
-     * Create an instance of {@link ItemContent }
+     * Creates a new Object object.
      * 
+     * @return the item content impl
      */
     public ItemContentImpl createItemContent() {
         return new ItemContentImpl();
     }
 
     /**
-     * Create an instance of {@link Publisher }
+     * Creates a new Object object.
      * 
+     * @return the publisher impl
      */
     public PublisherImpl createPublisher() {
         return new PublisherImpl();
     }
 
     /**
-     * Create an instance of {@link Images }
+     * Creates a new Object object.
      * 
+     * @return the images impl
      */
     public ImagesImpl createImages() {
         return new ImagesImpl();
     }
 
     /**
-     * Create an instance of {@link Body }
+     * Creates a new Object object.
      * 
+     * @return the body impl
      */
     public BodyImpl createBody() {
         return new BodyImpl();
     }
 
     /**
-     * Create an instance of {@link EquationSource }
+     * Creates a new Object object.
      * 
+     * @return the equation source impl
      */
     public EquationSourceImpl createEquationSource() {
         return new EquationSourceImpl();
     }
 
     /**
-     * Create an instance of {@link Tbody }
+     * Creates a new Object object.
      * 
+     * @return the tbody impl
      */
     public TbodyImpl createTbody() {
         return new TbodyImpl();
     }
 
     /**
-     * Create an instance of {@link CoverDate }
+     * Creates a new Object object.
      * 
+     * @return the cover date impl
      */
     public CoverDateImpl createCoverDate() {
         return new CoverDateImpl();
     }
 
     /**
-     * Create an instance of {@link IssueHistory }
+     * Creates a new Object object.
      * 
+     * @return the issue history impl
      */
     public IssueHistoryImpl createIssueHistory() {
         return new IssueHistoryImpl();
     }
 
     /**
-     * Create an instance of {@link Term }
+     * Creates a new Object object.
      * 
+     * @return the term impl
      */
     public TermImpl createTerm() {
         return new TermImpl();
     }
 
     /**
-     * Create an instance of {@link Book }
+     * Creates a new Object object.
      * 
+     * @return the book impl
      */
     public BookImpl createBook() {
         return new BookImpl();
     }
 
     /**
-     * Create an instance of {@link NoInitials }
+     * Creates a new Object object.
      * 
+     * @return the no initials impl
      */
     public NoInitialsImpl createNoInitials() {
         return new NoInitialsImpl();
     }
 
     /**
-     * Create an instance of {@link Table }
+     * Creates a new Object object.
      * 
+     * @return the table impl
      */
     public TableImpl createTable() {
         return new TableImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterBackmatter }
+     * Creates a new Object object.
      * 
+     * @return the chapter backmatter impl
      */
     public ChapterBackmatterImpl createChapterBackmatter() {
         return new ChapterBackmatterImpl();
     }
 
     /**
-     * Create an instance of {@link Contact }
+     * Creates a new Object object.
      * 
+     * @return the contact impl
      */
     public ContactImpl createContact() {
         return new ContactImpl();
     }
 
     /**
-     * Create an instance of {@link Revised }
+     * Creates a new Object object.
      * 
+     * @return the revised impl
      */
     public RevisedImpl createRevised() {
         return new RevisedImpl();
     }
 
     /**
-     * Create an instance of {@link AuthorName }
+     * Creates a new Object object.
      * 
+     * @return the author name impl
      */
     public AuthorNameImpl createAuthorName() {
         return new AuthorNameImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleInfo }
+     * Creates a new Object object.
      * 
+     * @return the article info impl
      */
     public ArticleInfoImpl createArticleInfo() {
         return new ArticleInfoImpl();
     }
 
     /**
-     * Create an instance of {@link Records }
+     * Creates a new Object object.
      * 
+     * @return the records impl
      */
     public RecordsImpl createRecords() {
         return new RecordsImpl();
     }
 
     /**
-     * Create an instance of {@link Editor }
+     * Creates a new Object object.
      * 
+     * @return the editor impl
      */
     public EditorImpl createEditor() {
         return new EditorImpl();
     }
 
     /**
-     * Create an instance of {@link JournalOnlineFirst }
+     * Creates a new Object object.
      * 
+     * @return the journal online first impl
      */
     public JournalOnlineFirstImpl createJournalOnlineFirst() {
         return new JournalOnlineFirstImpl();
     }
 
     /**
-     * Create an instance of {@link BibUnstructured }
+     * Creates a new Object object.
      * 
+     * @return the bib unstructured impl
      */
     public BibUnstructuredImpl createBibUnstructured() {
         return new BibUnstructuredImpl();
     }
 
     /**
-     * Create an instance of {@link OrderedList }
+     * Creates a new Object object.
      * 
+     * @return the ordered list impl
      */
     public OrderedListImpl createOrderedList() {
         return new OrderedListImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleSubTitle }
+     * Creates a new Object object.
      * 
+     * @return the article sub title impl
      */
     public ArticleSubTitleImpl createArticleSubTitle() {
         return new ArticleSubTitleImpl();
     }
 
     /**
-     * Create an instance of {@link BibAuthorName }
+     * Creates a new Object object.
      * 
+     * @return the bib author name impl
      */
     public BibAuthorNameImpl createBibAuthorName() {
         return new BibAuthorNameImpl();
     }
 
     /**
-     * Create an instance of {@link JournalInfo }
+     * Creates a new Object object.
      * 
+     * @return the journal info impl
      */
     public JournalInfoImpl createJournalInfo() {
         return new JournalInfoImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleGrants }
+     * Creates a new Object object.
      * 
+     * @return the article grants impl
      */
     public ArticleGrantsImpl createArticleGrants() {
         return new ArticleGrantsImpl();
     }
 
     /**
-     * Create an instance of {@link BibArticle }
+     * Creates a new Object object.
      * 
+     * @return the bib article impl
      */
     public BibArticleImpl createBibArticle() {
         return new BibArticleImpl();
     }
 
     /**
-     * Create an instance of {@link Eds }
+     * Creates a new Object object.
      * 
+     * @return the eds impl
      */
     public EdsImpl createEds() {
         return new EdsImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleTitle }
+     * Creates a new Object object.
      * 
+     * @return the article title impl
      */
     public ArticleTitleImpl createArticleTitle() {
         return new ArticleTitleImpl();
     }
 
     /**
-     * Create an instance of {@link PublisherInfo }
+     * Creates a new Object object.
      * 
+     * @return the publisher info impl
      */
     public PublisherInfoImpl createPublisherInfo() {
         return new PublisherInfoImpl();
     }
 
     /**
-     * Create an instance of {@link Tfooter }
+     * Creates a new Object object.
      * 
+     * @return the tfooter impl
      */
     public TfooterImpl createTfooter() {
         return new TfooterImpl();
     }
 
     /**
-     * Create an instance of {@link Section1 }
+     * Creates a new Object object.
      * 
+     * @return the section1 impl
      */
     public Section1Impl createSection1() {
         return new Section1Impl();
     }
 
     /**
-     * Create an instance of {@link Section4 }
+     * Creates a new Object object.
      * 
+     * @return the section4 impl
      */
     public Section4Impl createSection4() {
         return new Section4Impl();
     }
 
     /**
-     * Create an instance of {@link ArticleCopyright }
+     * Creates a new Object object.
      * 
+     * @return the article copyright impl
      */
     public ArticleCopyrightImpl createArticleCopyright() {
         return new ArticleCopyrightImpl();
     }
 
     /**
-     * Create an instance of {@link IssueCopyright }
+     * Creates a new Object object.
      * 
+     * @return the issue copyright impl
      */
     public IssueCopyrightImpl createIssueCopyright() {
         return new IssueCopyrightImpl();
     }
 
     /**
-     * Create an instance of {@link RegistrationDate }
+     * Creates a new Object object.
      * 
+     * @return the registration date impl
      */
     public RegistrationDateImpl createRegistrationDate() {
         return new RegistrationDateImpl();
     }
 
     /**
-     * Create an instance of {@link BibliographyGrant }
+     * Creates a new Object object.
      * 
+     * @return the bibliography grant impl
      */
     public BibliographyGrantImpl createBibliographyGrant() {
         return new BibliographyGrantImpl();
     }
 
     /**
-     * Create an instance of {@link MetadataGrant }
+     * Creates a new Object object.
      * 
+     * @return the metadata grant impl
      */
     public MetadataGrantImpl createMetadataGrant() {
         return new MetadataGrantImpl();
     }
 
     /**
-     * Create an instance of {@link SeriesID }
+     * Creates a new Object object.
      * 
+     * @return the series id impl
      */
     public SeriesIDImpl createSeriesID() {
         return new SeriesIDImpl();
     }
 
     /**
-     * Create an instance of {@link Superscript }
+     * Creates a new Object object.
      * 
+     * @return the superscript impl
      */
     public SuperscriptImpl createSuperscript() {
         return new SuperscriptImpl();
     }
 
     /**
-     * Create an instance of {@link Response }
+     * Creates a new Object object.
      * 
+     * @return the response impl
      */
     public ResponseImpl createResponse() {
         return new ResponseImpl();
     }
 
     /**
-     * Create an instance of {@link Result }
+     * Creates a new Object object.
      * 
+     * @return the result impl
      */
     public ResultImpl createResult() {
         return new ResultImpl();
     }
 
     /**
-     * Create an instance of {@link DefinitionListEntry }
+     * Creates a new Object object.
      * 
+     * @return the definition list entry impl
      */
     public DefinitionListEntryImpl createDefinitionListEntry() {
         return new DefinitionListEntryImpl();
     }
 
     /**
-     * Create an instance of {@link Chapter }
+     * Creates a new Object object.
      * 
+     * @return the chapter impl
      */
     public ChapterImpl createChapter() {
         return new ChapterImpl();
     }
 
     /**
-     * Create an instance of {@link ArticleContext }
+     * Creates a new Object object.
      * 
+     * @return the article context impl
      */
     public ArticleContextImpl createArticleContext() {
         return new ArticleContextImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterGrants }
+     * Creates a new Object object.
      * 
+     * @return the chapter grants impl
      */
     public ChapterGrantsImpl createChapterGrants() {
         return new ChapterGrantsImpl();
     }
 
     /**
-     * Create an instance of {@link EditorGroupElement }
+     * Creates a new Object object.
      * 
+     * @return the editor group element impl
      */
     public EditorGroupElementImpl createEditorGroupElement() {
         return new EditorGroupElementImpl();
     }
 
     /**
-     * Create an instance of {@link Appendix }
+     * Creates a new Object object.
      * 
+     * @return the appendix impl
      */
     public AppendixImpl createAppendix() {
         return new AppendixImpl();
     }
 
     /**
-     * Create an instance of {@link SeriesInfo }
+     * Creates a new Object object.
      * 
+     * @return the series info impl
      */
     public SeriesInfoImpl createSeriesInfo() {
         return new SeriesInfoImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterHeader }
+     * Creates a new Object object.
      * 
+     * @return the chapter header impl
      */
     public ChapterHeaderImpl createChapterHeader() {
         return new ChapterHeaderImpl();
     }
 
     /**
-     * Create an instance of {@link InlineEquation }
+     * Creates a new Object object.
      * 
+     * @return the inline equation impl
      */
     public InlineEquationImpl createInlineEquation() {
         return new InlineEquationImpl();
     }
 
     /**
-     * Create an instance of {@link ChapterHistory }
+     * Creates a new Object object.
      * 
+     * @return the chapter history impl
      */
     public ChapterHistoryImpl createChapterHistory() {
         return new ChapterHistoryImpl();
     }
 
     /**
-     * Create an instance of {@link Record }
+     * Creates a new Object object.
      * 
+     * @return the record impl
      */
     public RecordImpl createRecord() {
         return new RecordImpl();
     }
 
     /**
-     * Create an instance of {@link AbstractGrant }
+     * Creates a new Object object.
      * 
+     * @return the abstract grant impl
      */
     public AbstractGrantImpl createAbstractGrant() {
         return new AbstractGrantImpl();
     }
 
     /**
-     * Create an instance of {@link Para }
+     * Creates a new Object object.
      * 
+     * @return the para impl
      */
     public ParaImpl createPara() {
         return new ParaImpl();
     }
 
     /**
-     * Create an instance of {@link OrgAddress }
+     * Creates a new Object object.
      * 
+     * @return the org address impl
      */
     public OrgAddressImpl createOrgAddress() {
         return new OrgAddressImpl();
     }
 
     /**
-     * Create an instance of {@link Occurrence }
+     * Creates a new Object object.
      * 
+     * @return the occurrence impl
      */
     public OccurrenceImpl createOccurrence() {
         return new OccurrenceImpl();
     }
 
     /**
-     * Create an instance of {@link Subjects }
+     * Creates a new Object object.
      * 
+     * @return the subjects impl
      */
     public SubjectsImpl createSubjects() {
         return new SubjectsImpl();
     }
 
     /**
-     * Create an instance of {@link BodyRef }
+     * Creates a new Object object.
      * 
+     * @return the body ref impl
      */
     public BodyRefImpl createBodyRef() {
         return new BodyRefImpl();
     }
 
     /**
-     * Create an instance of {@link SimplePara }
+     * Creates a new Object object.
      * 
+     * @return the simple para impl
      */
     public SimpleParaImpl createSimplePara() {
         return new SimpleParaImpl();
     }
 
     /**
-     * Create an instance of {@link CitationRef }
+     * Creates a new Object object.
      * 
+     * @return the citation ref impl
      */
     public CitationRefImpl createCitationRef() {
         return new CitationRefImpl();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "CopyrightHolderName")
     public JAXBElement<String> createCopyrightHolderName(String value) {
@@ -1350,8 +1715,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "total")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1360,8 +1728,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "NumberInSeries")
     public JAXBElement<String> createNumberInSeries(String value) {
@@ -1369,8 +1740,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Format")
     public JAXBElement<String> createFormat(String value) {
@@ -1378,8 +1752,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "EquationNumber")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1388,8 +1765,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalTitle")
     public JAXBElement<String> createJournalTitle(String value) {
@@ -1397,8 +1777,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "BookPrintISBN")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1407,8 +1790,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "BookSequenceNumber")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1417,8 +1803,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "VolumeId")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1427,8 +1816,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "BookTitleID")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1437,8 +1829,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "InstitutionalAuthorName")
     public JAXBElement<String> createInstitutionalAuthorName(String value) {
@@ -1446,8 +1841,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "BibComments")
     public JAXBElement<String> createBibComments(String value) {
@@ -1455,8 +1853,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "FamilyName")
     public JAXBElement<String> createFamilyName(String value) {
@@ -1464,8 +1865,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "h1")
     public JAXBElement<String> createH1(String value) {
@@ -1473,8 +1877,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "ChapterID")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1483,8 +1890,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "FirstPage")
     public JAXBElement<String> createFirstPage(String value) {
@@ -1492,8 +1902,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "PubDate")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1502,8 +1915,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "PublisherName")
     public JAXBElement<String> createPublisherName(String value) {
@@ -1511,8 +1927,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "APPId")
     public JAXBElement<String> createAPPId(String value) {
@@ -1520,8 +1939,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Country")
     public JAXBElement<String> createCountry(String value) {
@@ -1529,8 +1951,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< boolean>
      */
     @XmlElementDecl(namespace = "", name = "Color")
     public JAXBElement<Boolean> createColor(Boolean value) {
@@ -1538,8 +1963,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ConfEventDate")
     public JAXBElement<String> createConfEventDate(String value) {
@@ -1547,8 +1975,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Date }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< date>
      */
     @XmlElementDecl(namespace = "", name = "DateLoaded")
     @XmlJavaTypeAdapter(Adapter1 .class)
@@ -1557,8 +1988,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Email")
     public JAXBElement<String> createEmail(String value) {
@@ -1566,8 +2000,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalAbbreviatedTitle")
     public JAXBElement<String> createJournalAbbreviatedTitle(String value) {
@@ -1575,8 +2012,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "start")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1585,8 +2025,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "VolumeID")
     public JAXBElement<String> createVolumeID(String value) {
@@ -1594,8 +2037,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1604,8 +2050,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Provider")
     public JAXBElement<String> createProvider(String value) {
@@ -1613,8 +2062,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "ChapterId")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1623,8 +2075,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Street")
     public JAXBElement<String> createStreet(String value) {
@@ -1632,8 +2087,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "OrgDivision")
     public JAXBElement<String> createOrgDivision(String value) {
@@ -1641,8 +2099,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "query")
     public JAXBElement<String> createQuery(String value) {
@@ -1650,8 +2111,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Particle")
     public JAXBElement<String> createParticle(String value) {
@@ -1659,8 +2123,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalID")
     public JAXBElement<String> createJournalID(String value) {
@@ -1668,8 +2135,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ConfEventLocation")
     public JAXBElement<String> createConfEventLocation(String value) {
@@ -1677,8 +2147,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "IssueId")
     public JAXBElement<String> createIssueId(String value) {
@@ -1686,8 +2159,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "VolumeIDStart")
     public JAXBElement<String> createVolumeIDStart(String value) {
@@ -1695,8 +2171,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "IssueArticleCount")
     public JAXBElement<String> createIssueArticleCount(String value) {
@@ -1704,8 +2183,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "GivenName")
     public JAXBElement<String> createGivenName(String value) {
@@ -1713,8 +2195,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "ChapterLastPage")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1723,8 +2208,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "CopyrightHolder")
     public JAXBElement<String> createCopyrightHolder(String value) {
@@ -1732,8 +2220,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< boolean>
      */
     @XmlElementDecl(namespace = "", name = "OpenAccess")
     public JAXBElement<Boolean> createOpenAccess(Boolean value) {
@@ -1741,8 +2232,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "URL")
     public JAXBElement<String> createURL(String value) {
@@ -1750,8 +2244,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleFirstPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1760,8 +2257,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "BookChapterCount")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1770,8 +2270,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleURI")
     public JAXBElement<String> createArticleURI(String value) {
@@ -1779,8 +2282,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "CopyrightYear")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1789,8 +2295,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Institution")
     public JAXBElement<String> createInstitution(String value) {
@@ -1798,8 +2307,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "IssueID")
     public JAXBElement<String> createIssueID(String value) {
@@ -1807,8 +2319,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "City")
     public JAXBElement<String> createCity(String value) {
@@ -1816,8 +2331,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "RefSource")
     public JAXBElement<String> createRefSource(String value) {
@@ -1825,8 +2343,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "PublisherURL")
     public JAXBElement<String> createPublisherURL(String value) {
@@ -1834,8 +2355,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "BookID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1844,8 +2368,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "BookElectronicISBN")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1854,8 +2381,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EditorGroupImpl }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< editor group impl>
      */
     @XmlElementDecl(namespace = "", name = "IssueHeader")
     public JAXBElement<EditorGroupImpl> createIssueHeader(EditorGroupImpl value) {
@@ -1863,8 +2393,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "BookTitleId")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1873,8 +2406,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ImageType")
     public JAXBElement<String> createImageType(String value) {
@@ -1882,8 +2418,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "SourceTitle")
     public JAXBElement<String> createSourceTitle(String value) {
@@ -1891,8 +2430,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "PricelistYear")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1901,8 +2443,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "DOI")
     public JAXBElement<String> createDOI(String value) {
@@ -1910,8 +2455,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Month")
     public JAXBElement<String> createMonth(String value) {
@@ -1919,8 +2467,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "JournalSPIN")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1929,8 +2480,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalPrintISSN")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1939,8 +2493,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SeriesIDImpl }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< series id impl>
      */
     @XmlElementDecl(namespace = "", name = "BookContext")
     public JAXBElement<SeriesIDImpl> createBookContext(SeriesIDImpl value) {
@@ -1948,8 +2505,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "BookDOI")
     public JAXBElement<String> createBookDOI(String value) {
@@ -1957,8 +2517,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "VolumeIDEnd")
     public JAXBElement<String> createVolumeIDEnd(String value) {
@@ -1966,8 +2529,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "SeriesID")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1976,8 +2542,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalId")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -1986,8 +2555,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "SeriesAbbreviatedTitle")
     public JAXBElement<String> createSeriesAbbreviatedTitle(String value) {
@@ -1995,8 +2567,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ImageObjectImpl }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< image object impl>
      */
     @XmlElementDecl(namespace = "", name = "InlineMediaObject")
     public JAXBElement<ImageObjectImpl> createInlineMediaObject(ImageObjectImpl value) {
@@ -2004,8 +2579,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Postcode")
     public JAXBElement<String> createPostcode(String value) {
@@ -2013,8 +2591,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalElectronicISSN")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -2023,8 +2604,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "PublisherLocation")
     public JAXBElement<String> createPublisherLocation(String value) {
@@ -2032,8 +2616,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Phone")
     public JAXBElement<String> createPhone(String value) {
@@ -2041,8 +2628,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "JournalSubTitle")
     public JAXBElement<String> createJournalSubTitle(String value) {
@@ -2050,8 +2640,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Keyword")
     public JAXBElement<String> createKeyword(String value) {
@@ -2059,8 +2652,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Type")
     public JAXBElement<String> createType(String value) {
@@ -2068,8 +2664,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "ChapterSequenceNumber")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -2078,8 +2677,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Day")
     public JAXBElement<String> createDay(String value) {
@@ -2087,8 +2689,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "apiKey")
     public JAXBElement<String> createApiKey(String value) {
@@ -2096,8 +2701,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Handle")
     public JAXBElement<String> createHandle(String value) {
@@ -2105,8 +2713,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Year")
     public JAXBElement<String> createYear(String value) {
@@ -2114,8 +2725,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleDOI")
     public JAXBElement<String> createArticleDOI(String value) {
@@ -2123,8 +2737,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ChapterDOI")
     public JAXBElement<String> createChapterDOI(String value) {
@@ -2132,8 +2749,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "IssueIDEnd")
     public JAXBElement<String> createIssueIDEnd(String value) {
@@ -2141,8 +2761,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "SourceType")
     public JAXBElement<String> createSourceType(String value) {
@@ -2150,8 +2773,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Fax")
     public JAXBElement<String> createFax(String value) {
@@ -2159,8 +2785,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Location")
     public JAXBElement<String> createLocation(String value) {
@@ -2168,8 +2797,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleLastPage")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -2178,8 +2810,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "IssueIDStart")
     public JAXBElement<String> createIssueIDStart(String value) {
@@ -2187,8 +2822,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "OrgName")
     public JAXBElement<String> createOrgName(String value) {
@@ -2196,8 +2834,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "LastPage")
     public JAXBElement<String> createLastPage(String value) {
@@ -2205,8 +2846,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "pageLength")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -2215,8 +2859,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleSequenceNumber")
     public JAXBElement<String> createArticleSequenceNumber(String value) {
@@ -2224,8 +2871,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ArticleCategory")
     public JAXBElement<String> createArticleCategory(String value) {
@@ -2233,8 +2883,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< long>
      */
     @XmlElementDecl(namespace = "", name = "ChapterFirstPage")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -2243,8 +2896,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "CitationNumber")
     public JAXBElement<String> createCitationNumber(String value) {
@@ -2252,8 +2908,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "State")
     public JAXBElement<String> createState(String value) {
@@ -2261,8 +2920,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Initials")
     public JAXBElement<String> createInitials(String value) {
@@ -2270,8 +2932,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EditorGroupImpl }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< editor group impl>
      */
     @XmlElementDecl(namespace = "", name = "BookHeader")
     public JAXBElement<EditorGroupImpl> createBookHeader(EditorGroupImpl value) {
@@ -2279,8 +2944,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "CaptionNumber")
     public JAXBElement<String> createCaptionNumber(String value) {
@@ -2288,8 +2956,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "ItemNumber")
     public JAXBElement<String> createItemNumber(String value) {
@@ -2297,8 +2968,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "Postbox")
     public JAXBElement<String> createPostbox(String value) {
@@ -2306,8 +2980,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Creates a new Object object.
      * 
+     * @param value the value
+     * 
+     * @return the JAXB element< string>
      */
     @XmlElementDecl(namespace = "", name = "VolumeIssueCount")
     public JAXBElement<String> createVolumeIssueCount(String value) {

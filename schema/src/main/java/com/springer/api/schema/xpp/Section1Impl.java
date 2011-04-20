@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 package com.springer.api.schema.xpp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,56 +28,130 @@ import com.springer.api.schema.Para;
 import com.springer.api.schema.Section1;
 import com.springer.api.schema.Section2;
 import com.springer.api.schema.Table;
+
+/**
+ * The Class Section1Impl.
+ */
 public class Section1Impl extends BaseSchemaEntity implements Section1 {
+    
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     protected HeadingImpl heading;
+    
+    /** The table. */
     protected TableImpl table;
+    
+    /** The paras. */
     protected List<Para> paras;
+    
+    /** The section2 s. */
     protected List<Section2> section2S;
+    
+    /** The id. */
     protected String id;
+    
+    /** The type. */
     protected String type;
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getHeading()
+     */
     public Heading getHeading() {
         return heading;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#setHeading(com.springer.api.schema.Heading)
+     */
     public void setHeading(Heading value) {
         heading = ((HeadingImpl) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getTable()
+     */
     public Table getTable() {
         return table;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#setTable(com.springer.api.schema.Table)
+     */
     public void setTable(Table value) {
         table = ((TableImpl) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getParas()
+     */
     public List<Para> getParas() {
         if (paras == null) {
             paras = new ArrayList<Para>();
         }
         return this.paras;
     }
+    
+    /**
+     * Sets the paras.
+     * 
+     * @param value the new paras
+     */
     public void setParas(List<Para> value) {
         this.paras = value;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getSection2s()
+     */
     public List<Section2> getSection2s() {
         if (section2S == null) {
             section2S = new ArrayList<Section2>();
         }
         return this.section2S;
     }
+    
+    /**
+     * Sets the section2s.
+     * 
+     * @param value the new section2s
+     */
     public void setSection2s(List<Section2> value) {
         this.section2S = value;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getID()
+     */
     public String getID() {
         return id;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#setID(java.lang.String)
+     */
     public void setID(String value) {
         id = ((String) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getType()
+     */
     public String getType() {
         return type;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#setType(java.lang.String)
+     */
     public void setType(String value) {
         type = ((String) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.xpp.BaseSchemaEntity#init(org.xmlpull.v1.XmlPullParser)
+     */
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
@@ -91,6 +181,10 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
             }
         }
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.xpp.BaseSchemaEntity#toXml(org.xmlpull.v1.XmlSerializer)
+     */
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {
     }

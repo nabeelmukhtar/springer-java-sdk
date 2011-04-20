@@ -1,3 +1,19 @@
+/*
+ * Copyright 2010-2011 Nabeel Mukhtar 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ */
 package com.springer.api.schema.xpp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,49 +28,113 @@ import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
 import com.springer.api.schema.Section3;
 import com.springer.api.schema.Section4;
+
+/**
+ * The Class Section3Impl.
+ */
 public class Section3Impl extends BaseSchemaEntity implements Section3 {
+    
+    /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;
+    
+    /** The heading. */
     protected HeadingImpl heading;
+    
+    /** The section4 s. */
     protected List<Section4> section4S;
+    
+    /** The paras. */
     protected List<Para> paras;
+    
+    /** The figure. */
     protected FigureImpl figure;
+    
+    /** The id. */
     protected String id;
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#getHeading()
+     */
     public Heading getHeading() {
         return heading;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#setHeading(com.springer.api.schema.Heading)
+     */
     public void setHeading(Heading value) {
         heading = ((HeadingImpl) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#getSection4s()
+     */
     public List<Section4> getSection4s() {
         if (section4S == null) {
             section4S = new ArrayList<Section4>();
         }
         return this.section4S;
     }
+    
+    /**
+     * Sets the section4s.
+     * 
+     * @param value the new section4s
+     */
     public void setSection4s(List<Section4> value) {
         this.section4S = value;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#getParas()
+     */
     public List<Para> getParas() {
         if (paras == null) {
             paras = new ArrayList<Para>();
         }
         return this.paras;
     }
+    
+    /**
+     * Sets the paras.
+     * 
+     * @param value the new paras
+     */
     public void setParas(List<Para> value) {
         this.paras = value;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#getFigure()
+     */
     public Figure getFigure() {
         return figure;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#setFigure(com.springer.api.schema.Figure)
+     */
     public void setFigure(Figure value) {
         figure = ((FigureImpl) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#getID()
+     */
     public String getID() {
         return id;
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section3#setID(java.lang.String)
+     */
     public void setID(String value) {
         id = ((String) value);
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.xpp.BaseSchemaEntity#init(org.xmlpull.v1.XmlPullParser)
+     */
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
@@ -83,6 +163,10 @@ public class Section3Impl extends BaseSchemaEntity implements Section3 {
             }
         }
     }
+    
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.xpp.BaseSchemaEntity#toXml(org.xmlpull.v1.XmlSerializer)
+     */
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {
     }

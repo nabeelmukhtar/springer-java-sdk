@@ -26,32 +26,31 @@ import org.xmlpull.v1.XmlSerializer;
 
 /**
  * The Class BaseSchemaEntity.
- * 
- * @author Nabeel Mukhtar
  */
 public abstract class BaseSchemaEntity implements Serializable {
 	
+    /** The LOG. */
     protected final Logger LOG = Logger.getLogger(getClass().getCanonicalName());
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4249791194912997698L;
 
 	/**
 	 * To xml.
 	 * 
-	 * @param serializer the document
-	 * @throws IOException TODO
+	 * @param serializer the serializer
+	 * 
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public abstract void toXml(XmlSerializer serializer) throws IOException;
 	
 	/**
 	 * Inits the.
 	 * 
-	 * @param parser the element
-	 * @throws IOException TODO
-	 * @throws XmlPullParserException TODO
+	 * @param parser the parser
+	 * 
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws XmlPullParserException the xml pull parser exception
 	 */
 	public abstract void init(XmlPullParser parser) throws IOException, XmlPullParserException;
 	

@@ -25,23 +25,31 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
-import com.springer.api.services.constant.ApplicationConstants;
-
 /**
- * The Class DomUtils.
- * 
- * @author    Nabeel Mukhtar
- * @version   1.0
+ * The Class XppUtils.
  */
 public class XppUtils {
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(ApplicationConstants.DATE_FORMAT);
+	
+	/** The DAT e_ format. */
+	private static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat();
+	
+	/**
+	 * Sets the date format.
+	 * 
+	 * @param format the new date format
+	 */
+	public static void setDateFormat(SimpleDateFormat format) {
+		DATE_FORMAT = format;
+	}
 
     /**
      * Sets the element value to node.
      * 
-     * @param node the node
+     * @param serializer the serializer
      * @param elementName the element name
      * @param elementValue the element value
+     * 
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public static void setElementValueToNode(XmlSerializer serializer, String elementName, Object elementValue) throws IOException {
     	if (elementValue != null) {
@@ -52,8 +60,10 @@ public class XppUtils {
     /**
      * Sets the element value.
      * 
-     * @param node the node
+     * @param serializer the serializer
      * @param elementValue the element value
+     * 
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public static void setElementValue(XmlSerializer serializer, Object elementValue) throws IOException {
     	if (elementValue != null) {
@@ -64,9 +74,11 @@ public class XppUtils {
     /**
      * Sets the attribute value to node.
      * 
-     * @param node the node
+     * @param serializer the serializer
      * @param attributeName the attribute name
      * @param attributeValue the attribute value
+     * 
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public static void setAttributeValueToNode(XmlSerializer serializer, String attributeName, Object attributeValue) throws IOException {
     	if (attributeValue != null) {
@@ -78,11 +90,11 @@ public class XppUtils {
      * Gets the element value from node.
      * 
      * @param node the node
-     * @param valueName the value name
      * 
      * @return the element value from node
-     * @throws IOException 
-     * @throws XmlPullParserException 
+     * 
+     * @throws XmlPullParserException the xml pull parser exception
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public static String getElementValueFromNode(XmlPullParser node) throws XmlPullParserException, IOException {
     	return node.nextText();
@@ -92,10 +104,11 @@ public class XppUtils {
      * Gets the element value as long from node.
      * 
      * @param node the node
-     * @param valueName the value name
      * 
      * @return the element value as long from node
-     * @throws XmlPullParserException 
+     * 
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws XmlPullParserException the xml pull parser exception
      */
     public static Long getElementValueAsLongFromNode(XmlPullParser node) throws IOException, XmlPullParserException {
     	String value = node.nextText();
@@ -106,6 +119,16 @@ public class XppUtils {
     	}
     }
     
+    /**
+     * Gets the element value as date from node.
+     * 
+     * @param node the node
+     * 
+     * @return the element value as date from node
+     * 
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws XmlPullParserException the xml pull parser exception
+     */
     public static Date getElementValueAsDateFromNode(XmlPullParser node) throws IOException, XmlPullParserException {
     	String value = node.nextText();
     	if (isNullOrEmpty(value)) {
@@ -148,6 +171,14 @@ public class XppUtils {
     	}
     }
     
+    /**
+     * Skip sub tree.
+     * 
+     * @param parser the parser
+     * 
+     * @throws XmlPullParserException the xml pull parser exception
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static void skipSubTree(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, null, null);
         int level = 1;
@@ -162,12 +193,12 @@ public class XppUtils {
     }
     
 	/**
-     * Checks if is null or empty.
-     * 
-     * @param string the string
-     * 
-     * @return true, if is null or empty
-     */
+	 * Checks if is null or empty.
+	 * 
+	 * @param string the string
+	 * 
+	 * @return true, if is null or empty
+	 */
     private static boolean isNullOrEmpty(String string) {
     	return (string == null || string.length() == 0);
     }
