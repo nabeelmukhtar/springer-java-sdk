@@ -15,7 +15,7 @@ package com.springer.app.meta;
  *       &lt;sequence>
  *         &lt;element ref="{http://www.springer.com/app/meta}OrgName"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}GeoOrg" minOccurs="0"/>
- *         &lt;element ref="{http://www.springer.com/app/meta}Country"/>
+ *         &lt;element ref="{http://www.springer.com/app/meta}Country" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="geo" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" />
  *     &lt;/restriction>

@@ -16,6 +16,7 @@ import com.springer.app.meta.impl.SubjectGroupImpl;
 import com.springer.app.meta.impl.SubjectImpl;
 import com.springer.app.meta.impl.TitleImpl;
 import org.w3._2001.xmlschema.Adapter1;
+import org.w3._2001.xmlschema.Adapter2;
 
 
 /**
@@ -44,11 +45,14 @@ public class ObjectFactory {
     private final static QName _Journal_QNAME = new QName("http://www.springer.com/app/meta", "Journal");
     private final static QName _PubName_QNAME = new QName("http://www.springer.com/app/meta", "PubName");
     private final static QName _ArticleFirstPage_QNAME = new QName("http://www.springer.com/app/meta", "ArticleFirstPage");
+    private final static QName _Book_QNAME = new QName("http://www.springer.com/app/meta", "Book");
     private final static QName _Author_QNAME = new QName("http://www.springer.com/app/meta", "Author");
+    private final static QName _IssueId_QNAME = new QName("http://www.springer.com/app/meta", "IssueId");
     private final static QName _ISXN_QNAME = new QName("http://www.springer.com/app/meta", "ISXN");
     private final static QName _Country_QNAME = new QName("http://www.springer.com/app/meta", "Country");
     private final static QName _DateLoaded_QNAME = new QName("http://www.springer.com/app/meta", "DateLoaded");
     private final static QName _Publication_QNAME = new QName("http://www.springer.com/app/meta", "Publication");
+    private final static QName _VolumeId_QNAME = new QName("http://www.springer.com/app/meta", "VolumeId");
     private final static QName _Date_QNAME = new QName("http://www.springer.com/app/meta", "Date");
 
     /**
@@ -67,30 +71,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubjectGroup }
-     * 
-     */
-    public SubjectGroup createSubjectGroup() {
-        return new SubjectGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Institution }
-     * 
-     */
-    public Institution createInstitution() {
-        return new InstitutionImpl();
-    }
-
-    /**
-     * Create an instance of {@link Authors }
-     * 
-     */
-    public Authors createAuthors() {
-        return new AuthorsImpl();
-    }
-
-    /**
      * Create an instance of {@link Info }
      * 
      */
@@ -104,6 +84,30 @@ public class ObjectFactory {
      */
     public Subject createSubject() {
         return new SubjectImpl();
+    }
+
+    /**
+     * Create an instance of {@link SubjectGroup }
+     * 
+     */
+    public SubjectGroup createSubjectGroup() {
+        return new SubjectGroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link Authors }
+     * 
+     */
+    public Authors createAuthors() {
+        return new AuthorsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Institution }
+     * 
+     */
+    public Institution createInstitution() {
+        return new InstitutionImpl();
     }
 
     /**
@@ -193,9 +197,28 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Book")
+    public JAXBElement<String> createBook(String value) {
+        return new JAXBElement<String>(_Book_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Author")
     public JAXBElement<String> createAuthor(String value) {
         return new JAXBElement<String>(_Author_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "IssueId")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    public JAXBElement<Long> createIssueId(Long value) {
+        return new JAXBElement<Long>(_IssueId_QNAME, Long.class, null, value);
     }
 
     /**
@@ -234,6 +257,16 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "Publication")
     public JAXBElement<String> createPublication(String value) {
         return new JAXBElement<String>(_Publication_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.springer.com/app/meta", name = "VolumeId")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    public JAXBElement<Long> createVolumeId(Long value) {
+        return new JAXBElement<Long>(_VolumeId_QNAME, Long.class, null, value);
     }
 
     /**

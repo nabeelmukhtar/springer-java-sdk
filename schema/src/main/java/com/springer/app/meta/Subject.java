@@ -12,6 +12,7 @@ package com.springer.app.meta;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;attribute name="Code" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *       &lt;attribute name="Priority" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
  *     &lt;/restriction>
@@ -43,6 +44,26 @@ public interface Subject {
      *     
      */
     void setContent(String value);
+
+    /**
+     * Gets the value of the code property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getCode();
+
+    /**
+     * Sets the value of the code property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setCode(String value);
 
     /**
      * Gets the value of the priority property.

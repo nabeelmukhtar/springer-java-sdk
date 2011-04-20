@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlSerializer;
 import com.springer.api.schema.Journal;
 import com.springer.api.schema.Publisher;
 import com.springer.api.schema.PublisherInfo;
+import com.springer.api.schema.Series;
 import com.springer.app.meta.Info;
 import com.springer.app.meta.xpp.InfoImpl;
 public class PublisherImpl extends BaseSchemaEntity implements Publisher {
@@ -16,6 +17,7 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
     protected JournalImpl journal;
     protected InfoImpl info;
     protected String lang;
+    protected SeriesImpl series;
     public PublisherInfo getPublisherInfo() {
         return publisherInfo;
     }
@@ -40,6 +42,13 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
     public void setLang(String value) {
         lang = ((String) value);
     }
+    public Series getSeries() {
+        return series;
+    }
+
+    public void setSeries(Series value) {
+        this.series = ((SeriesImpl) value);
+    }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
@@ -53,6 +62,10 @@ public class PublisherImpl extends BaseSchemaEntity implements Publisher {
                 JournalImpl node = new JournalImpl();
                 node.init(parser);
                 setJournal(node);
+            } else if (name.equals("Series")) {
+            	SeriesImpl node = new SeriesImpl();
+                node.init(parser);
+                setSeries(node);
             } else if (name.equals("meta:Info")) {
             	InfoImpl node = new InfoImpl();
             	node.init(parser);

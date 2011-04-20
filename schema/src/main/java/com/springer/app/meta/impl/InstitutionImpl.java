@@ -27,7 +27,7 @@ public class InstitutionImpl
     protected String orgName;
     @XmlElement(name = "GeoOrg")
     protected String geoOrg;
-    @XmlElement(name = "Country", required = true)
+    @XmlElement(name = "Country")
     protected String country;
     @XmlAttribute
     @XmlSchemaType(name = "anySimpleType")

@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
-import org.w3._2001.xmlschema.Adapter2;
 
 
 /**
@@ -84,13 +83,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "number")
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Long> createNumber(Long value) {
-        return new JAXBElement<Long>(_Number_QNAME, Long.class, null, value);
+    public JAXBElement<String> createNumber(String value) {
+        return new JAXBElement<String>(_Number_QNAME, String.class, null, value);
     }
 
     /**
@@ -123,13 +121,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://prismstandard.org/namespaces/basic/2.0/", name = "volume")
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Long> createVolume(Long value) {
-        return new JAXBElement<Long>(_Volume_QNAME, Long.class, null, value);
+    public JAXBElement<String> createVolume(String value) {
+        return new JAXBElement<String>(_Volume_QNAME, String.class, null, value);
     }
 
     /**

@@ -10,11 +10,19 @@ import com.springer.api.schema.TextObject;
 public class MediaObjectImpl extends ImageObjectImpl implements MediaObject {
     private final static long serialVersionUID = 2461660169443089969L;
     protected TextObjectImpl textObject;
+    protected String id;
     public TextObject getTextObject() {
         return textObject;
     }
     public void setTextObject(TextObject value) {
         textObject = ((TextObjectImpl) value);
+    }
+    public String getID() {
+        return id;
+    }
+
+    public void setID(String value) {
+        this.id = value;
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -34,6 +42,7 @@ public class MediaObjectImpl extends ImageObjectImpl implements MediaObject {
                 XppUtils.skipSubTree(parser);
             }
         }
+        setID(XppUtils.getAttributeValueFromNode(parser, "ID"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

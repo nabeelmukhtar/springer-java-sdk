@@ -21,8 +21,8 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     protected String doi;
     protected String publisher;
     protected String publicationDate;
-    protected Long volume;
-    protected Long number;
+    protected String volume;
+    protected String number;
     protected String startingPage;
     protected String url;
     protected String copyright;
@@ -83,17 +83,17 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
     public void setPublicationDate(String value) {
         publicationDate = ((String) value);
     }
-    public Long getVolume() {
+    public String getVolume() {
         return volume;
     }
-    public void setVolume(Long value) {
-        volume = ((Long) value);
+    public void setVolume(String value) {
+        volume = ((String) value);
     }
-    public Long getNumber() {
+    public String getNumber() {
         return number;
     }
-    public void setNumber(Long value) {
-        number = ((Long) value);
+    public void setNumber(String value) {
+        number = ((String) value);
     }
     public String getStartingPage() {
         return startingPage;
@@ -137,9 +137,9 @@ public class ArticleImpl extends BaseSchemaEntity implements Article {
             } else if (name.equals("prism:publicationDate")) {
                 setPublicationDate(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("prism:volume")) {
-                setVolume(XppUtils.getElementValueAsLongFromNode(parser));
+                setVolume(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("prism:number")) {
-                setNumber(XppUtils.getElementValueAsLongFromNode(parser));
+                setNumber(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("prism:startingPage")) {
                 setStartingPage(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("prism:url")) {

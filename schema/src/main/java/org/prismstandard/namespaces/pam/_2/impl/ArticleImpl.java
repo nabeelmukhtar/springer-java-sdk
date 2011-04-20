@@ -13,7 +13,6 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.prismstandard.namespaces.pam._2.Article;
-import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -63,14 +62,10 @@ public class ArticleImpl
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
     protected String publicationDate;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    protected Long volume;
-    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    protected Long number;
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
+    protected String volume;
+    @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
+    protected String number;
     @XmlElement(namespace = "http://prismstandard.org/namespaces/basic/2.0/")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
@@ -152,19 +147,19 @@ public class ArticleImpl
         this.publicationDate = value;
     }
 
-    public Long getVolume() {
+    public String getVolume() {
         return volume;
     }
 
-    public void setVolume(Long value) {
+    public void setVolume(String value) {
         this.volume = value;
     }
 
-    public Long getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Long value) {
+    public void setNumber(String value) {
         this.number = value;
     }
 

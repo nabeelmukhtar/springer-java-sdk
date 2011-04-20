@@ -1,5 +1,7 @@
 package com.springer.api.schema.xpp;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -11,7 +13,7 @@ import com.springer.api.schema.Para;
 public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
     private final static long serialVersionUID = 2461660169443089969L;
     protected HeadingImpl heading;
-    protected ParaImpl para;
+    protected List<Para> paras;
     protected String outputMedium;
     protected String renderingStyle;
     public Heading getHeading() {
@@ -20,11 +22,11 @@ public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
     public void setHeading(Heading value) {
         heading = ((HeadingImpl) value);
     }
-    public Para getPara() {
-        return para;
-    }
-    public void setPara(Para value) {
-        para = ((ParaImpl) value);
+    public List<Para> getParas() {
+        if (paras == null) {
+            paras = new ArrayList<Para>();
+        }
+        return this.paras;
     }
     public String getOutputMedium() {
         return outputMedium;
@@ -50,7 +52,7 @@ public class FormalParaImpl extends BaseSchemaEntity implements FormalPara {
             } else if (name.equals("Para")) {
                 ParaImpl node = new ParaImpl();
                 node.init(parser);
-                setPara(node);
+                getParas().add(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

@@ -15,6 +15,7 @@ import com.springer.api.schema.OrgAddress;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "postbox",
     "street",
     "cities",
     "postcodes",
@@ -37,7 +38,10 @@ public class OrgAddressImpl
     protected String state;
     @XmlElement(name = "Country")
     protected String country;
-
+    
+    @XmlElement(name = "Postbox")
+    protected String postbox;
+    
     public String getStreet() {
         return street;
     }
@@ -74,6 +78,13 @@ public class OrgAddressImpl
 
     public void setCountry(String value) {
         this.country = value;
+    }
+    public String getPostbox() {
+        return postbox;
+    }
+
+    public void setPostbox(String value) {
+        this.postbox = value;
     }
 
 }

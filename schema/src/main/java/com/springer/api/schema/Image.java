@@ -242,30 +242,6 @@ public interface Image {
     List<String> getDOIS();
 
     /**
-     * Gets the value of the institutions property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the institutions property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInstitutions().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Institutions }
-     * 
-     * 
-     */
-    List<Institutions> getInstitutions();
-
-    /**
      * Gets the value of the issueIds property.
      * 
      * <p>
@@ -312,6 +288,30 @@ public interface Image {
      * 
      */
     List<String> getJournalIds();
+
+    /**
+     * Gets the value of the journalIds property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the journalIds property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getJournalIds().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    List<String> getAPPIds();
 
     /**
      * Gets the value of the pubDates property.
@@ -490,25 +490,45 @@ public interface Image {
     void setISXN(ISXN value);
 
     /**
+     * Gets the value of the institutions property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Institutions }
+     *     
+     */
+    Institutions getInstitutions();
+
+    /**
+     * Sets the value of the institutions property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Institutions }
+     *     
+     */
+    void setInstitutions(Institutions value);
+
+    /**
      * Gets the value of the subjectCollection property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link SubjectCollection }
      *     
      */
-    String getSubjectCollection();
+    SubjectCollection getSubjectCollection();
 
     /**
      * Sets the value of the subjectCollection property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link SubjectCollection }
      *     
      */
-    void setSubjectCollection(String value);
-
+    void setSubjectCollection(SubjectCollection value);
+	
     /**
      * Gets the value of the subjects property.
      * 

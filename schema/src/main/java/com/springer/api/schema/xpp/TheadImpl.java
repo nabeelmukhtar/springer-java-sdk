@@ -1,5 +1,7 @@
 package com.springer.api.schema.xpp;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -9,12 +11,13 @@ import com.springer.api.schema.Row;
 import com.springer.api.schema.Thead;
 public class TheadImpl extends BaseSchemaEntity implements Thead {
     private final static long serialVersionUID = 2461660169443089969L;
-    protected RowImpl row;
-    public Row getRow() {
-        return row;
-    }
-    public void setRow(Row value) {
-        row = ((RowImpl) value);
+    protected List<Row> rows;
+
+    public List<Row> getRows() {
+        if (rows == null) {
+            rows = new ArrayList<Row>();
+        }
+        return this.rows;
     }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -24,7 +27,7 @@ public class TheadImpl extends BaseSchemaEntity implements Thead {
             if (name.equals("row")) {
                 RowImpl node = new RowImpl();
                 node.init(parser);
-                setRow(node);
+                getRows().add(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

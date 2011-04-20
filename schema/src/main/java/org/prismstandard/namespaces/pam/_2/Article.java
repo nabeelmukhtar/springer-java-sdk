@@ -231,7 +231,7 @@ public interface Article {
      *     {@link String }
      *     
      */
-    Long getVolume();
+    String getVolume();
 
     /**
      * Sets the value of the volume property.
@@ -241,7 +241,7 @@ public interface Article {
      *     {@link String }
      *     
      */
-    void setVolume(Long value);
+    void setVolume(String value);
 
     /**
      * Gets the value of the number property.
@@ -251,7 +251,7 @@ public interface Article {
      *     {@link String }
      *     
      */
-    Long getNumber();
+    String getNumber();
 
     /**
      * Sets the value of the number property.
@@ -261,7 +261,7 @@ public interface Article {
      *     {@link String }
      *     
      */
-    void setNumber(Long value);
+    void setNumber(String value);
 
     /**
      * Gets the value of the startingPage property.

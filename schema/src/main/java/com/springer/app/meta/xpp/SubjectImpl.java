@@ -13,6 +13,7 @@ public class SubjectImpl extends BaseSchemaEntity implements Subject {
     protected String content;
     protected Long priority;
     protected String type;
+    protected String code;
     public String getContent() {
         return content;
     }
@@ -31,11 +32,19 @@ public class SubjectImpl extends BaseSchemaEntity implements Subject {
     public void setType(String value) {
         type = ((String) value);
     }
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String value) {
+        this.code = value;
+    }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
         setPriority(XppUtils.getAttributeValueAsLongFromNode(parser, "Priority"));
         setType(XppUtils.getAttributeValueFromNode(parser, "Type"));
+        setCode(XppUtils.getAttributeValueFromNode(parser, "Code"));
         setContent(XppUtils.getElementValueFromNode(parser));
     }
     @Override

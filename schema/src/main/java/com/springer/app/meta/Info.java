@@ -23,9 +23,12 @@ import java.util.List;
  *         &lt;element ref="{http://www.springer.com/app/meta}DOI"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Title"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}ISXN"/>
+ *         &lt;element ref="{http://www.springer.com/app/meta}VolumeId" minOccurs="0"/>
+ *         &lt;element ref="{http://www.springer.com/app/meta}IssueId" minOccurs="0"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Journal" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}PubName" maxOccurs="unbounded"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}ArticleFirstPage" minOccurs="0"/>
+ *         &lt;element ref="{http://www.springer.com/app/meta}Book" minOccurs="0"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}Publication"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}PublicationType"/>
  *         &lt;element ref="{http://www.springer.com/app/meta}SubjectGroup"/>
@@ -201,6 +204,46 @@ public interface Info {
     void setISXN(String value);
 
     /**
+     * Gets the value of the volumeId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    Long getVolumeId();
+
+    /**
+     * Sets the value of the volumeId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setVolumeId(Long value);
+
+    /**
+     * Gets the value of the issueId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    Long getIssueId();
+
+    /**
+     * Sets the value of the issueId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setIssueId(Long value);
+
+    /**
      * Gets the value of the journals property.
      * 
      * <p>
@@ -267,6 +310,26 @@ public interface Info {
      *     
      */
     void setArticleFirstPage(String value);
+
+    /**
+     * Gets the value of the book property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getBook();
+
+    /**
+     * Sets the value of the book property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setBook(String value);
 
     /**
      * Gets the value of the publication property.

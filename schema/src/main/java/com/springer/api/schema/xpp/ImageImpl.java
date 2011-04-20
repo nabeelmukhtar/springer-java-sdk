@@ -17,6 +17,7 @@ import com.springer.api.schema.ISXN;
 import com.springer.api.schema.Image;
 import com.springer.api.schema.Institutions;
 import com.springer.api.schema.Keywords;
+import com.springer.api.schema.SubjectCollection;
 import com.springer.api.schema.Subjects;
 import com.springer.api.schema.Table;
 public class ImageImpl extends BaseSchemaEntity implements Image {
@@ -29,7 +30,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected List<ArticleTitle> articleTitles;
     protected Authors authors;
     protected List<String> dois;
-    protected List<Institutions> institutions;
+    protected Institutions institutions;
     protected List<String> issueIds;
     protected List<String> journalIds;
     protected List<String> pubDates;
@@ -40,7 +41,7 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected Long bookTitleId;
     protected String bookDOI;
     protected ISXNImpl isxn;
-    protected String subjectCollection;
+    protected SubjectCollectionImpl subjectCollection;
     protected SubjectsImpl subjects;
     protected List<String> copyrightHolders;
     protected List<Keywords> keywords;
@@ -52,6 +53,14 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     protected String id;
     protected String language;
     protected String lang;
+    protected List<String> appIds;
+    
+    public List<String> getAPPIds() {
+        if (appIds == null) {
+        	appIds = new ArrayList<String>();
+        }
+        return this.appIds;
+    }
     public Caption getCaption() {
         return caption;
     }
@@ -115,13 +124,10 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     public void setDOIS(List<String> value) {
         this.dois = value;
     }
-    public List<Institutions> getInstitutions() {
-        if (institutions == null) {
-            institutions = new ArrayList<Institutions>();
-        }
+    public Institutions getInstitutions() {
         return this.institutions;
     }
-    public void setInstitutions(List<Institutions> value) {
+    public void setInstitutions(Institutions value) {
         this.institutions = value;
     }
     public List<String> getIssueIds() {
@@ -202,11 +208,12 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
     public void setISXN(ISXN value) {
         isxn = ((ISXNImpl) value);
     }
-    public String getSubjectCollection() {
+    public SubjectCollection getSubjectCollection() {
         return subjectCollection;
     }
-    public void setSubjectCollection(String value) {
-        subjectCollection = ((String) value);
+
+    public void setSubjectCollection(SubjectCollection value) {
+        this.subjectCollection = ((SubjectCollectionImpl) value);
     }
     public Subjects getSubjects() {
         return subjects;
@@ -319,9 +326,11 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
             } else if (name.equals("Institutions")) {
                 InstitutionsImpl node = new InstitutionsImpl();
                 node.init(parser);
-                getInstitutions().add(node);
+                setInstitutions(node);
             } else if (name.equals("IssueId")) {
                 getIssueIds().add(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("APPId")) {
+                getAPPIds().add(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("JournalId")) {
                 getJournalIds().add(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("PubDate")) {
@@ -343,7 +352,9 @@ public class ImageImpl extends BaseSchemaEntity implements Image {
                 node.init(parser);
                 setISXN(node);
             } else if (name.equals("SubjectCollection")) {
-                setSubjectCollection(XppUtils.getElementValueFromNode(parser));
+            	SubjectCollectionImpl node = new SubjectCollectionImpl();
+            	node.init(parser);
+                setSubjectCollection(node);
             } else if (name.equals("Subjects")) {
                 SubjectsImpl node = new SubjectsImpl();
                 node.init(parser);

@@ -12,6 +12,7 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
     private final static long serialVersionUID = 2461660169443089969L;
     protected String language;
     protected List<Object> content;
+    protected String outputMedium;
     
     public List<Object> getContent() {
         if (content == null) {
@@ -25,9 +26,15 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
     public void setLanguage(String value) {
         language = ((String) value);
     }
+    public String getOutputMedium() {
+        return outputMedium;
+    }
+
+    public void setOutputMedium(String value) {
+        this.outputMedium = value;
+    }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, null, null);
         parser.require(XmlPullParser.START_TAG, null, null);
         int eventType = parser.next();
         while (eventType == XmlPullParser.START_TAG || eventType == XmlPullParser.TEXT) {
@@ -52,6 +59,7 @@ public class ArticleTitleImpl extends BaseSchemaEntity implements ArticleTitle {
         }
         
         setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

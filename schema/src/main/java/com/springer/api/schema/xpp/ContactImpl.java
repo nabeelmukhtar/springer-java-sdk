@@ -11,6 +11,14 @@ public class ContactImpl extends BaseSchemaEntity implements Contact {
     protected String phone;
     protected String fax;
     protected String email;
+    protected String url;
+    public String getURL() {
+        return url;
+    }
+
+    public void setURL(String value) {
+        this.url = value;
+    }
     public String getPhone() {
         return phone;
     }
@@ -40,6 +48,8 @@ public class ContactImpl extends BaseSchemaEntity implements Contact {
                 setFax(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Email")) {
                 setEmail(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("URL")) {
+                setURL(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

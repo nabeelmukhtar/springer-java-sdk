@@ -14,6 +14,7 @@ public class KeywordGroupImpl extends BaseSchemaEntity implements KeywordGroup {
     protected HeadingImpl heading;
     protected List<String> keywords;
     protected String language;
+    protected String outputMedium;
     public Heading getHeading() {
         return heading;
     }
@@ -35,6 +36,13 @@ public class KeywordGroupImpl extends BaseSchemaEntity implements KeywordGroup {
     public void setLanguage(String value) {
         language = ((String) value);
     }
+    public String getOutputMedium() {
+        return outputMedium;
+    }
+
+    public void setOutputMedium(String value) {
+        this.outputMedium = value;
+    }
     @Override
     public void init(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, null);
@@ -52,6 +60,7 @@ public class KeywordGroupImpl extends BaseSchemaEntity implements KeywordGroup {
             }
         }
         setLanguage(XppUtils.getAttributeValueFromNode(parser, "Language"));
+        setOutputMedium(XppUtils.getAttributeValueFromNode(parser, "OutputMedium"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

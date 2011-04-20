@@ -138,4 +138,23 @@ public interface OrgAddress {
      */
     void setCountry(String value);
 
+    /**
+     * Gets the value of the postbox property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getPostbox();
+
+    /**
+     * Sets the value of the postbox property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setPostbox(String value);
 }

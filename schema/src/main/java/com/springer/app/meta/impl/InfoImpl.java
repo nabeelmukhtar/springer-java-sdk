@@ -19,6 +19,7 @@ import com.springer.app.meta.Institutions;
 import com.springer.app.meta.SubjectGroup;
 import com.springer.app.meta.Title;
 import org.w3._2001.xmlschema.Adapter1;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -30,9 +31,12 @@ import org.w3._2001.xmlschema.Adapter1;
     "doi",
     "title",
     "isxn",
+    "volumeId",
+    "issueId",
     "journals",
     "pubNames",
     "articleFirstPage",
+    "book",
     "publication",
     "publicationType",
     "subjectGroup"
@@ -67,6 +71,14 @@ public class InfoImpl
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
     protected String isxn;
+    @XmlElement(name = "VolumeId", type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "integer")
+    protected Long volumeId;
+    @XmlElement(name = "IssueId", type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "integer")
+    protected Long issueId;
     @XmlElement(name = "Journal", required = true)
     protected List<String> journals;
     @XmlElement(name = "PubName", required = true)
@@ -75,6 +87,8 @@ public class InfoImpl
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NMTOKEN")
     protected String articleFirstPage;
+    @XmlElement(name = "Book")
+    protected String book;
     @XmlElement(name = "Publication", required = true)
     protected String publication;
     @XmlElement(name = "PublicationType", required = true)
@@ -148,6 +162,22 @@ public class InfoImpl
         this.isxn = value;
     }
 
+    public Long getVolumeId() {
+        return volumeId;
+    }
+
+    public void setVolumeId(Long value) {
+        this.volumeId = value;
+    }
+
+    public Long getIssueId() {
+        return issueId;
+    }
+
+    public void setIssueId(Long value) {
+        this.issueId = value;
+    }
+
     public List<String> getJournals() {
         if (journals == null) {
             journals = new ArrayList<String>();
@@ -168,6 +198,14 @@ public class InfoImpl
 
     public void setArticleFirstPage(String value) {
         this.articleFirstPage = value;
+    }
+
+    public String getBook() {
+        return book;
+    }
+
+    public void setBook(String value) {
+        this.book = value;
     }
 
     public String getPublication() {

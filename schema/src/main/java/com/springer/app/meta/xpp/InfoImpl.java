@@ -31,6 +31,9 @@ public class InfoImpl extends BaseSchemaEntity implements Info {
     protected String publication;
     protected String publicationType;
     protected SubjectGroupImpl subjectGroup;
+    protected Long volumeId;
+    protected Long issueId;
+    protected String book;
     public Date getDateLoaded() {
         return dateLoaded;
     }
@@ -78,6 +81,28 @@ public class InfoImpl extends BaseSchemaEntity implements Info {
     }
     public void setISXN(String value) {
         isxn = ((String) value);
+    }
+    public Long getVolumeId() {
+        return volumeId;
+    }
+
+    public void setVolumeId(Long value) {
+        this.volumeId = value;
+    }
+
+    public Long getIssueId() {
+        return issueId;
+    }
+
+    public void setIssueId(Long value) {
+        this.issueId = value;
+    }
+    public String getBook() {
+        return book;
+    }
+
+    public void setBook(String value) {
+        this.book = value;
     }
     public List<String> getJournals() {
         if (journals == null) {
@@ -158,6 +183,12 @@ public class InfoImpl extends BaseSchemaEntity implements Info {
                 setPublication(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("meta:PublicationType")) {
                 setPublicationType(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("meta:VolumeId")) {
+                setVolumeId(XppUtils.getElementValueAsLongFromNode(parser));
+            } else if (name.equals("meta:IssueId")) {
+                setIssueId(XppUtils.getElementValueAsLongFromNode(parser));
+            } else if (name.equals("meta:Book")) {
+                setBook(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("meta:SubjectGroup")) {
                 SubjectGroupImpl node = new SubjectGroupImpl();
                 node.init(parser);

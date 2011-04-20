@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,6 +15,10 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.w3._2001.xmlschema.Adapter1;
+import org.w3._2001.xmlschema.Adapter2;
+
 import com.springer.api.schema.ArticleTitle;
 import com.springer.api.schema.Authors;
 import com.springer.api.schema.Caption;
@@ -23,10 +28,9 @@ import com.springer.api.schema.ISXN;
 import com.springer.api.schema.Image;
 import com.springer.api.schema.Institutions;
 import com.springer.api.schema.Keywords;
+import com.springer.api.schema.SubjectCollection;
 import com.springer.api.schema.Subjects;
 import com.springer.api.schema.Table;
-import org.w3._2001.xmlschema.Adapter1;
-import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -41,6 +45,7 @@ import org.w3._2001.xmlschema.Adapter2;
     "institutions",
     "issueIds",
     "journalIds",
+    "appIds",
     "pubDates",
     "sourceTitles",
     "sourceTypes",
@@ -81,8 +86,10 @@ public class ImageImpl
     protected List<ArticleTitle> articleTitles;
     @XmlElement(name = "DOI", required = true)
     protected List<String> dois;
-    @XmlElement(name = "Institutions", required = true, type = InstitutionsImpl.class)
-    protected List<Institutions> institutions;
+    @XmlElement(name = "Institutions", type = InstitutionsImpl.class)
+    protected InstitutionsImpl institutions;
+    @XmlElement(name = "APPId", required = true)
+    protected List<String> appIds;
     @XmlElement(name = "IssueId", required = true)
     protected List<String> issueIds;
     @XmlElement(name = "JournalId", required = true)
@@ -113,8 +120,8 @@ public class ImageImpl
     protected String bookDOI;
     @XmlElement(name = "ISXN", required = true, type = ISXNImpl.class)
     protected ISXNImpl isxn;
-    @XmlElement(name = "SubjectCollection", required = true)
-    protected String subjectCollection;
+    @XmlElement(name = "SubjectCollection", required = true, type = SubjectCollectionImpl.class)
+    protected SubjectCollectionImpl subjectCollection;
     @XmlElement(name = "Subjects", required = true, type = SubjectsImpl.class)
     protected SubjectsImpl subjects;
     @XmlElement(name = "CopyrightHolder", required = true)
@@ -203,11 +210,12 @@ public class ImageImpl
         return this.dois;
     }
 
-    public List<Institutions> getInstitutions() {
-        if (institutions == null) {
-            institutions = new ArrayList<Institutions>();
-        }
-        return this.institutions;
+    public Institutions getInstitutions() {
+        return institutions;
+    }
+
+    public void setInstitutions(Institutions value) {
+        this.institutions = ((InstitutionsImpl) value);
     }
 
     public List<String> getIssueIds() {
@@ -217,6 +225,13 @@ public class ImageImpl
         return this.issueIds;
     }
 
+    public List<String> getAPPIds() {
+        if (appIds == null) {
+        	appIds = new ArrayList<String>();
+        }
+        return this.appIds;
+    }
+    
     public List<String> getJournalIds() {
         if (journalIds == null) {
             journalIds = new ArrayList<String>();
@@ -284,12 +299,12 @@ public class ImageImpl
         this.isxn = ((ISXNImpl) value);
     }
 
-    public String getSubjectCollection() {
+    public SubjectCollection getSubjectCollection() {
         return subjectCollection;
     }
 
-    public void setSubjectCollection(String value) {
-        this.subjectCollection = value;
+    public void setSubjectCollection(SubjectCollection value) {
+        this.subjectCollection = ((SubjectCollectionImpl) value);
     }
 
     public Subjects getSubjects() {

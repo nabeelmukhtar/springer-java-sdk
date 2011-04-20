@@ -26,6 +26,10 @@ public class SubjectImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlValue
     protected String content;
+    @XmlAttribute(name = "Code")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "NCName")
+    protected String code;
     @XmlAttribute(name = "Priority")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
@@ -41,6 +45,14 @@ public class SubjectImpl
 
     public void setContent(String value) {
         this.content = value;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String value) {
+        this.code = value;
     }
 
     public Long getPriority() {

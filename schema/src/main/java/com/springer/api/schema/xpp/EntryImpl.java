@@ -15,6 +15,14 @@ public class EntryImpl extends BaseSchemaEntity implements Entry {
     protected Long morerows;
     protected String nameend;
     protected String namest;
+    protected String _char;
+    public String getChar() {
+        return _char;
+    }
+
+    public void setChar(String value) {
+        this._char = value;
+    }
     public SimplePara getSimplePara() {
         return simplePara;
     }
@@ -70,6 +78,7 @@ public class EntryImpl extends BaseSchemaEntity implements Entry {
         setMorerows(XppUtils.getAttributeValueAsLongFromNode(parser, "morerows"));
         setNameend(XppUtils.getAttributeValueFromNode(parser, "nameend"));
         setNamest(XppUtils.getAttributeValueFromNode(parser, "namest"));
+        setChar(XppUtils.getAttributeValueFromNode(parser, "char"));
     }
     @Override
     public void toXml(XmlSerializer serializer) throws IOException {

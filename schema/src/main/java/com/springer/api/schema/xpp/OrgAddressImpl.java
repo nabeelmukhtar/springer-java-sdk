@@ -15,6 +15,14 @@ public class OrgAddressImpl extends BaseSchemaEntity implements OrgAddress {
     protected List<String> postcodes;
     protected String state;
     protected String country;
+    protected String postbox;
+    public String getPostbox() {
+        return postbox;
+    }
+
+    public void setPostbox(String value) {
+        this.postbox = value;
+    }
     public String getStreet() {
         return street;
     }
@@ -66,6 +74,8 @@ public class OrgAddressImpl extends BaseSchemaEntity implements OrgAddress {
                 setState(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Country")) {
                 setCountry(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Postbox")) {
+                setPostbox(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

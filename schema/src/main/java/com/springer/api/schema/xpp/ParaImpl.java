@@ -77,6 +77,22 @@ public class ParaImpl extends BaseSchemaEntity implements Para {
                     SubscriptImpl node = new SubscriptImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("InlineMediaObject")) {
+                	ImageObjectImpl node = new ImageObjectImpl();
+                    node.init(parser);
+                    getContent().add(node);
+                } else if (name.equals("UnorderedList")) {
+                	UnorderedListImpl node = new UnorderedListImpl();
+                    node.init(parser);
+                    getContent().add(node);
+                } else if (name.equals("OrderedList")) {
+                	OrderedListImpl node = new OrderedListImpl();
+                    node.init(parser);
+                    getContent().add(node);
+                } else if (name.equals("BlockQuote")) {
+                	BlockQuoteImpl node = new BlockQuoteImpl();
+                    node.init(parser);
+                    getContent().add(node);
                 } else {                // Consume something we don't understand.
                     LOG.warning("Found tag that we don't recognize: " + name);
                     XppUtils.skipSubTree(parser);
