@@ -10,8 +10,6 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
 
-import org.w3._1999.xhtml.P;
-import org.w3._1999.xhtml.impl.PImpl;
 import org.w3._2001.xmlschema.Adapter1;
 import org.w3._2001.xmlschema.Adapter2;
 
@@ -21,7 +19,7 @@ import com.springer.api.schema.*;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.springer.api.schema.impl package. 
+ * com.springer.api.schema in the com.springer.api.schema.impl package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -94,6 +92,7 @@ public class ObjectFactory {
     private final static QName _BookID_QNAME = new QName("", "BookID");
     private final static QName _BookElectronicISBN_QNAME = new QName("", "BookElectronicISBN");
     private final static QName _ConfEventName_QNAME = new QName("", "ConfEventName");
+    private final static QName _Em_QNAME = new QName("", "em");
     private final static QName _IssueHeader_QNAME = new QName("", "IssueHeader");
     private final static QName _BookTitleId_QNAME = new QName("", "BookTitleId");
     private final static QName _ImageType_QNAME = new QName("", "ImageType");
@@ -166,235 +165,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArticleInfo }
+     * Create an instance of {@link JournalOnlineFirst }
      * 
      */
-    public ArticleInfoImpl createArticleInfo() {
-        return new ArticleInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link TextObject }
-     * 
-     */
-    public TextObjectImpl createTextObject() {
-        return new TextObjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link Subjects }
-     * 
-     */
-    public SubjectsImpl createSubjects() {
-        return new SubjectsImpl();
-    }
-
-    /**
-     * Create an instance of {@link CitationRef }
-     * 
-     */
-    public CitationRefImpl createCitationRef() {
-        return new CitationRefImpl();
-    }
-
-    /**
-     * Create an instance of {@link Subscript }
-     * 
-     */
-    public SubscriptImpl createSubscript() {
-        return new SubscriptImpl();
-    }
-
-    /**
-     * Create an instance of {@link Footnote }
-     * 
-     */
-    public FootnoteImpl createFootnote() {
-        return new FootnoteImpl();
-    }
-
-    /**
-     * Create an instance of {@link Contact }
-     * 
-     */
-    public ContactImpl createContact() {
-        return new ContactImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibEditorName }
-     * 
-     */
-    public BibEditorNameImpl createBibEditorName() {
-        return new BibEditorNameImpl();
-    }
-
-    /**
-     * Create an instance of {@link Para }
-     * 
-     */
-    public ParaImpl createPara() {
-        return new ParaImpl();
-    }
-
-    /**
-     * Create an instance of {@link AbstractGrant }
-     * 
-     */
-    public AbstractGrantImpl createAbstractGrant() {
-        return new AbstractGrantImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleContext }
-     * 
-     */
-    public ArticleContextImpl createArticleContext() {
-        return new ArticleContextImpl();
-    }
-
-    /**
-     * Create an instance of {@link Tgroup }
-     * 
-     */
-    public TgroupImpl createTgroup() {
-        return new TgroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Thead }
-     * 
-     */
-    public TheadImpl createThead() {
-        return new TheadImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleGrants }
-     * 
-     */
-    public ArticleGrantsImpl createArticleGrants() {
-        return new ArticleGrantsImpl();
-    }
-
-    /**
-     * Create an instance of {@link Eds }
-     * 
-     */
-    public EdsImpl createEds() {
-        return new EdsImpl();
-    }
-
-    /**
-     * Create an instance of {@link IssueHistory }
-     * 
-     */
-    public IssueHistoryImpl createIssueHistory() {
-        return new IssueHistoryImpl();
-    }
-
-    /**
-     * Create an instance of {@link SeriesTitle }
-     * 
-     */
-    public SeriesTitleImpl createSeriesTitle() {
-        return new SeriesTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link Caption }
-     * 
-     */
-    public CaptionImpl createCaption() {
-        return new CaptionImpl();
-    }
-
-    /**
-     * Create an instance of {@link Article }
-     * 
-     */
-    public ArticleImpl createArticle() {
-        return new ArticleImpl();
-    }
-
-    /**
-     * Create an instance of {@link File }
-     * 
-     */
-    public FileImpl createFile() {
-        return new FileImpl();
-    }
-
-    /**
-     * Create an instance of {@link JournalSubjectGroup }
-     * 
-     */
-    public JournalSubjectGroupImpl createJournalSubjectGroup() {
-        return new JournalSubjectGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Path }
-     * 
-     */
-    public PathImpl createPath() {
-        return new PathImpl();
-    }
-
-    /**
-     * Create an instance of {@link AuthorName }
-     * 
-     */
-    public AuthorNameImpl createAuthorName() {
-        return new AuthorNameImpl();
-    }
-
-    /**
-     * Create an instance of {@link SubjectCollection }
-     * 
-     */
-    public SubjectCollectionImpl createSubjectCollection() {
-        return new SubjectCollectionImpl();
-    }
-
-    /**
-     * Create an instance of {@link Entry }
-     * 
-     */
-    public EntryImpl createEntry() {
-        return new EntryImpl();
-    }
-
-    /**
-     * Create an instance of {@link Affiliation }
-     * 
-     */
-    public AffiliationImpl createAffiliation() {
-        return new AffiliationImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterBackmatter }
-     * 
-     */
-    public ChapterBackmatterImpl createChapterBackmatter() {
-        return new ChapterBackmatterImpl();
-    }
-
-    /**
-     * Create an instance of {@link UnorderedList }
-     * 
-     */
-    public UnorderedListImpl createUnorderedList() {
-        return new UnorderedListImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibUnstructured }
-     * 
-     */
-    public BibUnstructuredImpl createBibUnstructured() {
-        return new BibUnstructuredImpl();
+    public JournalOnlineFirstImpl createJournalOnlineFirst() {
+        return new JournalOnlineFirstImpl();
     }
 
     /**
@@ -406,851 +181,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JournalInfo }
-     * 
-     */
-    public JournalInfoImpl createJournalInfo() {
-        return new JournalInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link IssueCopyright }
-     * 
-     */
-    public IssueCopyrightImpl createIssueCopyright() {
-        return new IssueCopyrightImpl();
-    }
-
-    /**
-     * Create an instance of {@link Revised }
-     * 
-     */
-    public RevisedImpl createRevised() {
-        return new RevisedImpl();
-    }
-
-    /**
-     * Create an instance of {@link EditorGroupElement }
-     * 
-     */
-    public EditorGroupElementImpl createEditorGroupElement() {
-        return new EditorGroupElementImpl();
-    }
-
-    /**
-     * Create an instance of {@link OrderedList }
-     * 
-     */
-    public OrderedListImpl createOrderedList() {
-        return new OrderedListImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterCopyright }
-     * 
-     */
-    public ChapterCopyrightImpl createChapterCopyright() {
-        return new ChapterCopyrightImpl();
-    }
-
-    /**
-     * Create an instance of {@link BlockQuote }
-     * 
-     */
-    public BlockQuoteImpl createBlockQuote() {
-        return new BlockQuoteImpl();
-    }
-
-    /**
-     * Create an instance of {@link AbstractSection }
-     * 
-     */
-    public AbstractSectionImpl createAbstractSection() {
-        return new AbstractSectionImpl();
-    }
-
-    /**
-     * Create an instance of {@link IssueInfo }
-     * 
-     */
-    public IssueInfoImpl createIssueInfo() {
-        return new IssueInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleBackmatter }
-     * 
-     */
-    public ArticleBackmatterImpl createArticleBackmatter() {
-        return new ArticleBackmatterImpl();
-    }
-
-    /**
-     * Create an instance of {@link KeywordGroup }
-     * 
-     */
-    public KeywordGroupImpl createKeywordGroup() {
-        return new KeywordGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Emphasis }
-     * 
-     */
-    public EmphasisImpl createEmphasis() {
-        return new EmphasisImpl();
-    }
-
-    /**
-     * Create an instance of {@link BookTitle }
-     * 
-     */
-    public BookTitleImpl createBookTitle() {
-        return new BookTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link Record }
-     * 
-     */
-    public RecordImpl createRecord() {
-        return new RecordImpl();
-    }
-
-    /**
-     * Create an instance of {@link MediaObject }
-     * 
-     */
-    public MediaObjectImpl createMediaObject() {
-        return new MediaObjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link P }
-     * 
-     */
-    public PImpl createP() {
-        return new PImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleHistory }
-     * 
-     */
-    public ArticleHistoryImpl createArticleHistory() {
-        return new ArticleHistoryImpl();
-    }
-
-    /**
-     * Create an instance of {@link Institutions }
-     * 
-     */
-    public InstitutionsImpl createInstitutions() {
-        return new InstitutionsImpl();
-    }
-
-    /**
-     * Create an instance of {@link PartInfo }
-     * 
-     */
-    public PartInfoImpl createPartInfo() {
-        return new PartInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link DefinitionList }
-     * 
-     */
-    public DefinitionListImpl createDefinitionList() {
-        return new DefinitionListImpl();
-    }
-
-    /**
-     * Create an instance of {@link Section4 }
-     * 
-     */
-    public Section4Impl createSection4() {
-        return new Section4Impl();
-    }
-
-    /**
-     * Create an instance of {@link Biography }
-     * 
-     */
-    public BiographyImpl createBiography() {
-        return new BiographyImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleTitle }
-     * 
-     */
-    public ArticleTitleImpl createArticleTitle() {
-        return new ArticleTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link Records }
-     * 
-     */
-    public RecordsImpl createRecords() {
-        return new RecordsImpl();
-    }
-
-    /**
-     * Create an instance of {@link RefSource }
-     * 
-     */
-    public RefSourceImpl createRefSource() {
-        return new RefSourceImpl();
-    }
-
-    /**
-     * Create an instance of {@link Journal }
-     * 
-     */
-    public JournalImpl createJournal() {
-        return new JournalImpl();
-    }
-
-    /**
-     * Create an instance of {@link InlineEquation }
-     * 
-     */
-    public InlineEquationImpl createInlineEquation() {
-        return new InlineEquationImpl();
-    }
-
-    /**
-     * Create an instance of {@link VolumeInfo }
-     * 
-     */
-    public VolumeInfoImpl createVolumeInfo() {
-        return new VolumeInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link Equation }
-     * 
-     */
-    public EquationImpl createEquation() {
-        return new EquationImpl();
-    }
-
-    /**
-     * Create an instance of {@link BodyHTMLGrant }
-     * 
-     */
-    public BodyHTMLGrantImpl createBodyHTMLGrant() {
-        return new BodyHTMLGrantImpl();
-    }
-
-    /**
-     * Create an instance of {@link Issue }
-     * 
-     */
-    public IssueImpl createIssue() {
-        return new IssueImpl();
-    }
-
-    /**
-     * Create an instance of {@link Section2 }
-     * 
-     */
-    public Section2Impl createSection2() {
-        return new Section2Impl();
-    }
-
-    /**
-     * Create an instance of {@link Abstract }
-     * 
-     */
-    public AbstractImpl createAbstract() {
-        return new AbstractImpl();
-    }
-
-    /**
-     * Create an instance of {@link ImageObjectElement }
-     * 
-     */
-    public ImageObjectElementImpl createImageObjectElement() {
-        return new ImageObjectElementImpl();
-    }
-
-    /**
-     * Create an instance of {@link BodyRef }
-     * 
-     */
-    public BodyRefImpl createBodyRef() {
-        return new BodyRefImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleNote }
-     * 
-     */
-    public ArticleNoteImpl createArticleNote() {
-        return new ArticleNoteImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleHeader }
-     * 
-     */
-    public ArticleHeaderImpl createArticleHeader() {
-        return new ArticleHeaderImpl();
-    }
-
-    /**
-     * Create an instance of {@link Volume }
-     * 
-     */
-    public VolumeImpl createVolume() {
-        return new VolumeImpl();
-    }
-
-    /**
-     * Create an instance of {@link RefTarget }
-     * 
-     */
-    public RefTargetImpl createRefTarget() {
-        return new RefTargetImpl();
-    }
-
-    /**
-     * Create an instance of {@link SeriesInfo }
-     * 
-     */
-    public SeriesInfoImpl createSeriesInfo() {
-        return new SeriesInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibChapter }
-     * 
-     */
-    public BibChapterImpl createBibChapter() {
-        return new BibChapterImpl();
-    }
-
-    /**
-     * Create an instance of {@link BookInfo }
-     * 
-     */
-    public BookInfoImpl createBookInfo() {
-        return new BookInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link Authors }
-     * 
-     */
-    public AuthorsImpl createAuthors() {
-        return new AuthorsImpl();
-    }
-
-    /**
-     * Create an instance of {@link Result }
-     * 
-     */
-    public ResultImpl createResult() {
-        return new ResultImpl();
-    }
-
-    /**
-     * Create an instance of {@link Response }
-     * 
-     */
-    public ResponseImpl createResponse() {
-        return new ResponseImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleCopyright }
-     * 
-     */
-    public ArticleCopyrightImpl createArticleCopyright() {
-        return new ArticleCopyrightImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterContext }
-     * 
-     */
-    public ChapterContextImpl createChapterContext() {
-        return new ChapterContextImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterHeader }
-     * 
-     */
-    public ChapterHeaderImpl createChapterHeader() {
-        return new ChapterHeaderImpl();
-    }
-
-    /**
-     * Create an instance of {@link Acknowledgments }
-     * 
-     */
-    public AcknowledgmentsImpl createAcknowledgments() {
-        return new AcknowledgmentsImpl();
-    }
-
-    /**
-     * Create an instance of {@link NoArticleTitle }
-     * 
-     */
-    public NoArticleTitleImpl createNoArticleTitle() {
-        return new NoArticleTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link ExternalRef }
-     * 
-     */
-    public ExternalRefImpl createExternalRef() {
-        return new ExternalRefImpl();
-    }
-
-    /**
-     * Create an instance of {@link Received }
-     * 
-     */
-    public ReceivedImpl createReceived() {
-        return new ReceivedImpl();
-    }
-
-    /**
-     * Create an instance of {@link AuthorGroup }
-     * 
-     */
-    public AuthorGroupImpl createAuthorGroup() {
-        return new AuthorGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterHistory }
-     * 
-     */
-    public ChapterHistoryImpl createChapterHistory() {
-        return new ChapterHistoryImpl();
-    }
-
-    /**
-     * Create an instance of {@link InternalRef }
-     * 
-     */
-    public InternalRefImpl createInternalRef() {
-        return new InternalRefImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterGrants }
-     * 
-     */
-    public ChapterGrantsImpl createChapterGrants() {
-        return new ChapterGrantsImpl();
-    }
-
-    /**
-     * Create an instance of {@link OrgAddress }
-     * 
-     */
-    public OrgAddressImpl createOrgAddress() {
-        return new OrgAddressImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterInfo }
-     * 
-     */
-    public ChapterInfoImpl createChapterInfo() {
-        return new ChapterInfoImpl();
-    }
-
-    /**
-     * Create an instance of {@link Appendix }
-     * 
-     */
-    public AppendixImpl createAppendix() {
-        return new AppendixImpl();
-    }
-
-    /**
-     * Create an instance of {@link Keywords }
-     * 
-     */
-    public KeywordsImpl createKeywords() {
-        return new KeywordsImpl();
-    }
-
-    /**
-     * Create an instance of {@link Description }
-     * 
-     */
-    public DescriptionImpl createDescription() {
-        return new DescriptionImpl();
-    }
-
-    /**
-     * Create an instance of {@link Tbody }
-     * 
-     */
-    public TbodyImpl createTbody() {
-        return new TbodyImpl();
-    }
-
-    /**
-     * Create an instance of {@link OnlineDate }
-     * 
-     */
-    public OnlineDateImpl createOnlineDate() {
-        return new OnlineDateImpl();
-    }
-
-    /**
-     * Create an instance of {@link Facets }
-     * 
-     */
-    public FacetsImpl createFacets() {
-        return new FacetsImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibAuthorName }
-     * 
-     */
-    public BibAuthorNameImpl createBibAuthorName() {
-        return new BibAuthorNameImpl();
-    }
-
-    /**
-     * Create an instance of {@link Series }
-     * 
-     */
-    public SeriesImpl createSeries() {
-        return new SeriesImpl();
-    }
-
-    /**
-     * Create an instance of {@link ListItem }
-     * 
-     */
-    public ListItemImpl createListItem() {
-        return new ListItemImpl();
-    }
-
-    /**
-     * Create an instance of {@link Facet }
-     * 
-     */
-    public FacetImpl createFacet() {
-        return new FacetImpl();
-    }
-
-    /**
-     * Create an instance of {@link Section3 }
-     * 
-     */
-    public Section3Impl createSection3() {
-        return new Section3Impl();
-    }
-
-    /**
-     * Create an instance of {@link Superscript }
-     * 
-     */
-    public SuperscriptImpl createSuperscript() {
-        return new SuperscriptImpl();
-    }
-
-    /**
-     * Create an instance of {@link Occurrence }
-     * 
-     */
-    public OccurrenceImpl createOccurrence() {
-        return new OccurrenceImpl();
-    }
-
-    /**
-     * Create an instance of {@link BodyPDFGrant }
-     * 
-     */
-    public BodyPDFGrantImpl createBodyPDFGrant() {
-        return new BodyPDFGrantImpl();
-    }
-
-    /**
-     * Create an instance of {@link JournalOnlineFirst }
-     * 
-     */
-    public JournalOnlineFirstImpl createJournalOnlineFirst() {
-        return new JournalOnlineFirstImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibComments }
-     * 
-     */
-    public BibCommentsImpl createBibComments() {
-        return new BibCommentsImpl();
-    }
-
-    /**
-     * Create an instance of {@link Term }
-     * 
-     */
-    public TermImpl createTerm() {
-        return new TermImpl();
-    }
-
-    /**
-     * Create an instance of {@link SeriesID }
-     * 
-     */
-    public SeriesIDImpl createSeriesID() {
-        return new SeriesIDImpl();
-    }
-
-    /**
-     * Create an instance of {@link Book }
-     * 
-     */
-    public BookImpl createBook() {
-        return new BookImpl();
-    }
-
-    /**
-     * Create an instance of {@link Heading }
-     * 
-     */
-    public HeadingImpl createHeading() {
-        return new HeadingImpl();
-    }
-
-    /**
-     * Create an instance of {@link Publisher }
-     * 
-     */
-    public PublisherImpl createPublisher() {
-        return new PublisherImpl();
-    }
-
-    /**
-     * Create an instance of {@link SimplePara }
-     * 
-     */
-    public SimpleParaImpl createSimplePara() {
-        return new SimpleParaImpl();
-    }
-
-    /**
-     * Create an instance of {@link ArticleSubTitle }
-     * 
-     */
-    public ArticleSubTitleImpl createArticleSubTitle() {
-        return new ArticleSubTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link Accepted }
-     * 
-     */
-    public AcceptedImpl createAccepted() {
-        return new AcceptedImpl();
-    }
-
-    /**
-     * Create an instance of {@link Body }
-     * 
-     */
-    public BodyImpl createBody() {
-        return new BodyImpl();
-    }
-
-    /**
-     * Create an instance of {@link Subject }
-     * 
-     */
-    public SubjectImpl createSubject() {
-        return new SubjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link Editor }
-     * 
-     */
-    public EditorImpl createEditor() {
-        return new EditorImpl();
-    }
-
-    /**
-     * Create an instance of {@link BibBook }
-     * 
-     */
-    public BibBookImpl createBibBook() {
-        return new BibBookImpl();
-    }
-
-    /**
-     * Create an instance of {@link BookSubjectGroup }
-     * 
-     */
-    public BookSubjectGroupImpl createBookSubjectGroup() {
-        return new BookSubjectGroupImpl();
-    }
-
-    /**
-     * Create an instance of {@link Figure }
-     * 
-     */
-    public FigureImpl createFigure() {
-        return new FigureImpl();
-    }
-
-    /**
-     * Create an instance of {@link Citation }
-     * 
-     */
-    public CitationImpl createCitation() {
-        return new CitationImpl();
-    }
-
-    /**
-     * Create an instance of {@link EquationSource }
-     * 
-     */
-    public EquationSourceImpl createEquationSource() {
-        return new EquationSourceImpl();
-    }
-
-    /**
-     * Create an instance of {@link DefinitionListEntry }
-     * 
-     */
-    public DefinitionListEntryImpl createDefinitionListEntry() {
-        return new DefinitionListEntryImpl();
-    }
-
-    /**
-     * Create an instance of {@link NoInitials }
-     * 
-     */
-    public NoInitialsImpl createNoInitials() {
-        return new NoInitialsImpl();
-    }
-
-    /**
-     * Create an instance of {@link ImageObject }
-     * 
-     */
-    public ImageObjectImpl createImageObject() {
-        return new ImageObjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link PrintDate }
-     * 
-     */
-    public PrintDateImpl createPrintDate() {
-        return new PrintDateImpl();
-    }
-
-    /**
-     * Create an instance of {@link BookCopyright }
-     * 
-     */
-    public BookCopyrightImpl createBookCopyright() {
-        return new BookCopyrightImpl();
-    }
-
-    /**
-     * Create an instance of {@link ItemContent }
-     * 
-     */
-    public ItemContentImpl createItemContent() {
-        return new ItemContentImpl();
-    }
-
-    /**
      * Create an instance of {@link BookSubject }
      * 
      */
     public BookSubjectImpl createBookSubject() {
         return new BookSubjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link Part }
-     * 
-     */
-    public PartImpl createPart() {
-        return new PartImpl();
-    }
-
-    /**
-     * Create an instance of {@link Chapter }
-     * 
-     */
-    public ChapterImpl createChapter() {
-        return new ChapterImpl();
-    }
-
-    /**
-     * Create an instance of {@link Row }
-     * 
-     */
-    public RowImpl createRow() {
-        return new RowImpl();
-    }
-
-    /**
-     * Create an instance of {@link ISXN }
-     * 
-     */
-    public ISXNImpl createISXN() {
-        return new ISXNImpl();
-    }
-
-    /**
-     * Create an instance of {@link ChapterTitle }
-     * 
-     */
-    public ChapterTitleImpl createChapterTitle() {
-        return new ChapterTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link Image }
-     * 
-     */
-    public ImageImpl createImage() {
-        return new ImageImpl();
-    }
-
-    /**
-     * Create an instance of {@link Table }
-     * 
-     */
-    public TableImpl createTable() {
-        return new TableImpl();
-    }
-
-    /**
-     * Create an instance of {@link CaptionContent }
-     * 
-     */
-    public CaptionContentImpl createCaptionContent() {
-        return new CaptionContentImpl();
-    }
-
-    /**
-     * Create an instance of {@link Colspec }
-     * 
-     */
-    public ColspecImpl createColspec() {
-        return new ColspecImpl();
     }
 
     /**
@@ -1262,59 +197,275 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BibArticle }
-     * 
-     */
-    public BibArticleImpl createBibArticle() {
-        return new BibArticleImpl();
-    }
-
-    /**
-     * Create an instance of {@link IssueTitle }
-     * 
-     */
-    public IssueTitleImpl createIssueTitle() {
-        return new IssueTitleImpl();
-    }
-
-    /**
-     * Create an instance of {@link JournalSubject }
-     * 
-     */
-    public JournalSubjectImpl createJournalSubject() {
-        return new JournalSubjectImpl();
-    }
-
-    /**
-     * Create an instance of {@link FormalPara }
-     * 
-     */
-    public FormalParaImpl createFormalPara() {
-        return new FormalParaImpl();
-    }
-
-    /**
-     * Create an instance of {@link RegistrationDate }
-     * 
-     */
-    public RegistrationDateImpl createRegistrationDate() {
-        return new RegistrationDateImpl();
-    }
-
-    /**
-     * Create an instance of {@link CoverDate }
-     * 
-     */
-    public CoverDateImpl createCoverDate() {
-        return new CoverDateImpl();
-    }
-
-    /**
      * Create an instance of {@link BibliographyGrant }
      * 
      */
     public BibliographyGrantImpl createBibliographyGrant() {
         return new BibliographyGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link Records }
+     * 
+     */
+    public RecordsImpl createRecords() {
+        return new RecordsImpl();
+    }
+
+    /**
+     * Create an instance of {@link BodyHTMLGrant }
+     * 
+     */
+    public BodyHTMLGrantImpl createBodyHTMLGrant() {
+        return new BodyHTMLGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link Section4 }
+     * 
+     */
+    public Section4Impl createSection4() {
+        return new Section4Impl();
+    }
+
+    /**
+     * Create an instance of {@link Response }
+     * 
+     */
+    public ResponseImpl createResponse() {
+        return new ResponseImpl();
+    }
+
+    /**
+     * Create an instance of {@link ListItem }
+     * 
+     */
+    public ListItemImpl createListItem() {
+        return new ListItemImpl();
+    }
+
+    /**
+     * Create an instance of {@link Caption }
+     * 
+     */
+    public CaptionImpl createCaption() {
+        return new CaptionImpl();
+    }
+
+    /**
+     * Create an instance of {@link ISXN }
+     * 
+     */
+    public ISXNImpl createISXN() {
+        return new ISXNImpl();
+    }
+
+    /**
+     * Create an instance of {@link Colspec }
+     * 
+     */
+    public ColspecImpl createColspec() {
+        return new ColspecImpl();
+    }
+
+    /**
+     * Create an instance of {@link VolumeInfo }
+     * 
+     */
+    public VolumeInfoImpl createVolumeInfo() {
+        return new VolumeInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link CaptionContent }
+     * 
+     */
+    public CaptionContentImpl createCaptionContent() {
+        return new CaptionContentImpl();
+    }
+
+    /**
+     * Create an instance of {@link Institutions }
+     * 
+     */
+    public InstitutionsImpl createInstitutions() {
+        return new InstitutionsImpl();
+    }
+
+    /**
+     * Create an instance of {@link File }
+     * 
+     */
+    public FileImpl createFile() {
+        return new FileImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibEditorName }
+     * 
+     */
+    public BibEditorNameImpl createBibEditorName() {
+        return new BibEditorNameImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterInfo }
+     * 
+     */
+    public ChapterInfoImpl createChapterInfo() {
+        return new ChapterInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link Journal }
+     * 
+     */
+    public JournalImpl createJournal() {
+        return new JournalImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleGrants }
+     * 
+     */
+    public ArticleGrantsImpl createArticleGrants() {
+        return new ArticleGrantsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Figure }
+     * 
+     */
+    public FigureImpl createFigure() {
+        return new FigureImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleHeader }
+     * 
+     */
+    public ArticleHeaderImpl createArticleHeader() {
+        return new ArticleHeaderImpl();
+    }
+
+    /**
+     * Create an instance of {@link PartContext }
+     * 
+     */
+    public PartContextImpl createPartContext() {
+        return new PartContextImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleSubTitle }
+     * 
+     */
+    public ArticleSubTitleImpl createArticleSubTitle() {
+        return new ArticleSubTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link IssueInfo }
+     * 
+     */
+    public IssueInfoImpl createIssueInfo() {
+        return new IssueInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link EquationSource }
+     * 
+     */
+    public EquationSourceImpl createEquationSource() {
+        return new EquationSourceImpl();
+    }
+
+    /**
+     * Create an instance of {@link ImageObject }
+     * 
+     */
+    public ImageObjectImpl createImageObject() {
+        return new ImageObjectImpl();
+    }
+
+    /**
+     * Create an instance of {@link Appendix }
+     * 
+     */
+    public AppendixImpl createAppendix() {
+        return new AppendixImpl();
+    }
+
+    /**
+     * Create an instance of {@link IssueCopyright }
+     * 
+     */
+    public IssueCopyrightImpl createIssueCopyright() {
+        return new IssueCopyrightImpl();
+    }
+
+    /**
+     * Create an instance of {@link Issue }
+     * 
+     */
+    public IssueImpl createIssue() {
+        return new IssueImpl();
+    }
+
+    /**
+     * Create an instance of {@link Footnote }
+     * 
+     */
+    public FootnoteImpl createFootnote() {
+        return new FootnoteImpl();
+    }
+
+    /**
+     * Create an instance of {@link OrderedList }
+     * 
+     */
+    public OrderedListImpl createOrderedList() {
+        return new OrderedListImpl();
+    }
+
+    /**
+     * Create an instance of {@link Row }
+     * 
+     */
+    public RowImpl createRow() {
+        return new RowImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterContext }
+     * 
+     */
+    public ChapterContextImpl createChapterContext() {
+        return new ChapterContextImpl();
+    }
+
+    /**
+     * Create an instance of {@link Series }
+     * 
+     */
+    public SeriesImpl createSeries() {
+        return new SeriesImpl();
+    }
+
+    /**
+     * Create an instance of {@link Article }
+     * 
+     */
+    public ArticleImpl createArticle() {
+        return new ArticleImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleHistory }
+     * 
+     */
+    public ArticleHistoryImpl createArticleHistory() {
+        return new ArticleHistoryImpl();
     }
 
     /**
@@ -1326,11 +477,131 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Section1 }
+     * Create an instance of {@link Path }
      * 
      */
-    public Section1Impl createSection1() {
-        return new Section1Impl();
+    public PathImpl createPath() {
+        return new PathImpl();
+    }
+
+    /**
+     * Create an instance of {@link Term }
+     * 
+     */
+    public TermImpl createTerm() {
+        return new TermImpl();
+    }
+
+    /**
+     * Create an instance of {@link DefinitionList }
+     * 
+     */
+    public DefinitionListImpl createDefinitionList() {
+        return new DefinitionListImpl();
+    }
+
+    /**
+     * Create an instance of {@link TextObject }
+     * 
+     */
+    public TextObjectImpl createTextObject() {
+        return new TextObjectImpl();
+    }
+
+    /**
+     * Create an instance of {@link InternalRef }
+     * 
+     */
+    public InternalRefImpl createInternalRef() {
+        return new InternalRefImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibArticle }
+     * 
+     */
+    public BibArticleImpl createBibArticle() {
+        return new BibArticleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Thead }
+     * 
+     */
+    public TheadImpl createThead() {
+        return new TheadImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterHeader }
+     * 
+     */
+    public ChapterHeaderImpl createChapterHeader() {
+        return new ChapterHeaderImpl();
+    }
+
+    /**
+     * Create an instance of {@link MediaObject }
+     * 
+     */
+    public MediaObjectImpl createMediaObject() {
+        return new MediaObjectImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibChapter }
+     * 
+     */
+    public BibChapterImpl createBibChapter() {
+        return new BibChapterImpl();
+    }
+
+    /**
+     * Create an instance of {@link Revised }
+     * 
+     */
+    public RevisedImpl createRevised() {
+        return new RevisedImpl();
+    }
+
+    /**
+     * Create an instance of {@link Section3 }
+     * 
+     */
+    public Section3Impl createSection3() {
+        return new Section3Impl();
+    }
+
+    /**
+     * Create an instance of {@link Affiliation }
+     * 
+     */
+    public AffiliationImpl createAffiliation() {
+        return new AffiliationImpl();
+    }
+
+    /**
+     * Create an instance of {@link Contact }
+     * 
+     */
+    public ContactImpl createContact() {
+        return new ContactImpl();
+    }
+
+    /**
+     * Create an instance of {@link SeriesID }
+     * 
+     */
+    public SeriesIDImpl createSeriesID() {
+        return new SeriesIDImpl();
+    }
+
+    /**
+     * Create an instance of {@link Images }
+     * 
+     */
+    public ImagesImpl createImages() {
+        return new ImagesImpl();
     }
 
     /**
@@ -1350,11 +621,299 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ChapterCopyright }
+     * 
+     */
+    public ChapterCopyrightImpl createChapterCopyright() {
+        return new ChapterCopyrightImpl();
+    }
+
+    /**
+     * Create an instance of {@link Tbody }
+     * 
+     */
+    public TbodyImpl createTbody() {
+        return new TbodyImpl();
+    }
+
+    /**
+     * Create an instance of {@link CitationRef }
+     * 
+     */
+    public CitationRefImpl createCitationRef() {
+        return new CitationRefImpl();
+    }
+
+    /**
+     * Create an instance of {@link UnorderedList }
+     * 
+     */
+    public UnorderedListImpl createUnorderedList() {
+        return new UnorderedListImpl();
+    }
+
+    /**
+     * Create an instance of {@link SeriesTitle }
+     * 
+     */
+    public SeriesTitleImpl createSeriesTitle() {
+        return new SeriesTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link P }
+     * 
+     */
+    public PImpl createP() {
+        return new PImpl();
+    }
+
+    /**
+     * Create an instance of {@link Description }
+     * 
+     */
+    public DescriptionImpl createDescription() {
+        return new DescriptionImpl();
+    }
+
+    /**
+     * Create an instance of {@link AuthorName }
+     * 
+     */
+    public AuthorNameImpl createAuthorName() {
+        return new AuthorNameImpl();
+    }
+
+    /**
+     * Create an instance of {@link Para }
+     * 
+     */
+    public ParaImpl createPara() {
+        return new ParaImpl();
+    }
+
+    /**
+     * Create an instance of {@link Entry }
+     * 
+     */
+    public EntryImpl createEntry() {
+        return new EntryImpl();
+    }
+
+    /**
+     * Create an instance of {@link SubjectCollection }
+     * 
+     */
+    public SubjectCollectionImpl createSubjectCollection() {
+        return new SubjectCollectionImpl();
+    }
+
+    /**
+     * Create an instance of {@link ExternalRef }
+     * 
+     */
+    public ExternalRefImpl createExternalRef() {
+        return new ExternalRefImpl();
+    }
+
+    /**
+     * Create an instance of {@link RefTarget }
+     * 
+     */
+    public RefTargetImpl createRefTarget() {
+        return new RefTargetImpl();
+    }
+
+    /**
+     * Create an instance of {@link Acknowledgments }
+     * 
+     */
+    public AcknowledgmentsImpl createAcknowledgments() {
+        return new AcknowledgmentsImpl();
+    }
+
+    /**
+     * Create an instance of {@link ImageObjectElement }
+     * 
+     */
+    public ImageObjectElementImpl createImageObjectElement() {
+        return new ImageObjectElementImpl();
+    }
+
+    /**
+     * Create an instance of {@link Subjects }
+     * 
+     */
+    public SubjectsImpl createSubjects() {
+        return new SubjectsImpl();
+    }
+
+    /**
+     * Create an instance of {@link KeywordGroup }
+     * 
+     */
+    public KeywordGroupImpl createKeywordGroup() {
+        return new KeywordGroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link Subject }
+     * 
+     */
+    public SubjectImpl createSubject() {
+        return new SubjectImpl();
+    }
+
+    /**
+     * Create an instance of {@link Tgroup }
+     * 
+     */
+    public TgroupImpl createTgroup() {
+        return new TgroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link Biography }
+     * 
+     */
+    public BiographyImpl createBiography() {
+        return new BiographyImpl();
+    }
+
+    /**
      * Create an instance of {@link FullText }
      * 
      */
     public FullTextImpl createFullText() {
         return new FullTextImpl();
+    }
+
+    /**
+     * Create an instance of {@link EditorGroupElement }
+     * 
+     */
+    public EditorGroupElementImpl createEditorGroupElement() {
+        return new EditorGroupElementImpl();
+    }
+
+    /**
+     * Create an instance of {@link Eds }
+     * 
+     */
+    public EdsImpl createEds() {
+        return new EdsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Facets }
+     * 
+     */
+    public FacetsImpl createFacets() {
+        return new FacetsImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterHistory }
+     * 
+     */
+    public ChapterHistoryImpl createChapterHistory() {
+        return new ChapterHistoryImpl();
+    }
+
+    /**
+     * Create an instance of {@link BodyRef }
+     * 
+     */
+    public BodyRefImpl createBodyRef() {
+        return new BodyRefImpl();
+    }
+
+    /**
+     * Create an instance of {@link RefSource }
+     * 
+     */
+    public RefSourceImpl createRefSource() {
+        return new RefSourceImpl();
+    }
+
+    /**
+     * Create an instance of {@link Image }
+     * 
+     */
+    public ImageImpl createImage() {
+        return new ImageImpl();
+    }
+
+    /**
+     * Create an instance of {@link AbstractGrant }
+     * 
+     */
+    public AbstractGrantImpl createAbstractGrant() {
+        return new AbstractGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleNote }
+     * 
+     */
+    public ArticleNoteImpl createArticleNote() {
+        return new ArticleNoteImpl();
+    }
+
+    /**
+     * Create an instance of {@link BodyPDFGrant }
+     * 
+     */
+    public BodyPDFGrantImpl createBodyPDFGrant() {
+        return new BodyPDFGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link DefinitionListEntry }
+     * 
+     */
+    public DefinitionListEntryImpl createDefinitionListEntry() {
+        return new DefinitionListEntryImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterTitle }
+     * 
+     */
+    public ChapterTitleImpl createChapterTitle() {
+        return new ChapterTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Received }
+     * 
+     */
+    public ReceivedImpl createReceived() {
+        return new ReceivedImpl();
+    }
+
+    /**
+     * Create an instance of {@link RegistrationDate }
+     * 
+     */
+    public RegistrationDateImpl createRegistrationDate() {
+        return new RegistrationDateImpl();
+    }
+
+    /**
+     * Create an instance of {@link BookCopyright }
+     * 
+     */
+    public BookCopyrightImpl createBookCopyright() {
+        return new BookCopyrightImpl();
+    }
+
+    /**
+     * Create an instance of {@link JournalSubject }
+     * 
+     */
+    public JournalSubjectImpl createJournalSubject() {
+        return new JournalSubjectImpl();
     }
 
     /**
@@ -1366,27 +925,187 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MetadataGrant }
+     * Create an instance of {@link Citation }
      * 
      */
-    public MetadataGrantImpl createMetadataGrant() {
-        return new MetadataGrantImpl();
+    public CitationImpl createCitation() {
+        return new CitationImpl();
     }
 
     /**
-     * Create an instance of {@link PartContext }
+     * Create an instance of {@link Section2 }
      * 
      */
-    public PartContextImpl createPartContext() {
-        return new PartContextImpl();
+    public Section2Impl createSection2() {
+        return new Section2Impl();
     }
 
     /**
-     * Create an instance of {@link Images }
+     * Create an instance of {@link OnlineDate }
      * 
      */
-    public ImagesImpl createImages() {
-        return new ImagesImpl();
+    public OnlineDateImpl createOnlineDate() {
+        return new OnlineDateImpl();
+    }
+
+    /**
+     * Create an instance of {@link JournalSubjectGroup }
+     * 
+     */
+    public JournalSubjectGroupImpl createJournalSubjectGroup() {
+        return new JournalSubjectGroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link Authors }
+     * 
+     */
+    public AuthorsImpl createAuthors() {
+        return new AuthorsImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibBook }
+     * 
+     */
+    public BibBookImpl createBibBook() {
+        return new BibBookImpl();
+    }
+
+    /**
+     * Create an instance of {@link AuthorGroup }
+     * 
+     */
+    public AuthorGroupImpl createAuthorGroup() {
+        return new AuthorGroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link BookTitle }
+     * 
+     */
+    public BookTitleImpl createBookTitle() {
+        return new BookTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Subscript }
+     * 
+     */
+    public SubscriptImpl createSubscript() {
+        return new SubscriptImpl();
+    }
+
+    /**
+     * Create an instance of {@link NoArticleTitle }
+     * 
+     */
+    public NoArticleTitleImpl createNoArticleTitle() {
+        return new NoArticleTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Book }
+     * 
+     */
+    public BookImpl createBook() {
+        return new BookImpl();
+    }
+
+    /**
+     * Create an instance of {@link Occurrence }
+     * 
+     */
+    public OccurrenceImpl createOccurrence() {
+        return new OccurrenceImpl();
+    }
+
+    /**
+     * Create an instance of {@link Facet }
+     * 
+     */
+    public FacetImpl createFacet() {
+        return new FacetImpl();
+    }
+
+    /**
+     * Create an instance of {@link Editor }
+     * 
+     */
+    public EditorImpl createEditor() {
+        return new EditorImpl();
+    }
+
+    /**
+     * Create an instance of {@link Result }
+     * 
+     */
+    public ResultImpl createResult() {
+        return new ResultImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleInfo }
+     * 
+     */
+    public ArticleInfoImpl createArticleInfo() {
+        return new ArticleInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link NoInitials }
+     * 
+     */
+    public NoInitialsImpl createNoInitials() {
+        return new NoInitialsImpl();
+    }
+
+    /**
+     * Create an instance of {@link ESMGrant }
+     * 
+     */
+    public ESMGrantImpl createESMGrant() {
+        return new ESMGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link SeriesInfo }
+     * 
+     */
+    public SeriesInfoImpl createSeriesInfo() {
+        return new SeriesInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link BlockQuote }
+     * 
+     */
+    public BlockQuoteImpl createBlockQuote() {
+        return new BlockQuoteImpl();
+    }
+
+    /**
+     * Create an instance of {@link JournalInfo }
+     * 
+     */
+    public JournalInfoImpl createJournalInfo() {
+        return new JournalInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link Chapter }
+     * 
+     */
+    public ChapterImpl createChapter() {
+        return new ChapterImpl();
+    }
+
+    /**
+     * Create an instance of {@link PartInfo }
+     * 
+     */
+    public PartInfoImpl createPartInfo() {
+        return new PartInfoImpl();
     }
 
     /**
@@ -1398,11 +1117,291 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ESMGrant }
+     * Create an instance of {@link MetadataGrant }
      * 
      */
-    public ESMGrantImpl createESMGrant() {
-        return new ESMGrantImpl();
+    public MetadataGrantImpl createMetadataGrant() {
+        return new MetadataGrantImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleBackmatter }
+     * 
+     */
+    public ArticleBackmatterImpl createArticleBackmatter() {
+        return new ArticleBackmatterImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibUnstructured }
+     * 
+     */
+    public BibUnstructuredImpl createBibUnstructured() {
+        return new BibUnstructuredImpl();
+    }
+
+    /**
+     * Create an instance of {@link IssueHistory }
+     * 
+     */
+    public IssueHistoryImpl createIssueHistory() {
+        return new IssueHistoryImpl();
+    }
+
+    /**
+     * Create an instance of {@link Superscript }
+     * 
+     */
+    public SuperscriptImpl createSuperscript() {
+        return new SuperscriptImpl();
+    }
+
+    /**
+     * Create an instance of {@link Body }
+     * 
+     */
+    public BodyImpl createBody() {
+        return new BodyImpl();
+    }
+
+    /**
+     * Create an instance of {@link Heading }
+     * 
+     */
+    public HeadingImpl createHeading() {
+        return new HeadingImpl();
+    }
+
+    /**
+     * Create an instance of {@link CoverDate }
+     * 
+     */
+    public CoverDateImpl createCoverDate() {
+        return new CoverDateImpl();
+    }
+
+    /**
+     * Create an instance of {@link InlineEquation }
+     * 
+     */
+    public InlineEquationImpl createInlineEquation() {
+        return new InlineEquationImpl();
+    }
+
+    /**
+     * Create an instance of {@link Publisher }
+     * 
+     */
+    public PublisherImpl createPublisher() {
+        return new PublisherImpl();
+    }
+
+    /**
+     * Create an instance of {@link ItemContent }
+     * 
+     */
+    public ItemContentImpl createItemContent() {
+        return new ItemContentImpl();
+    }
+
+    /**
+     * Create an instance of {@link Table }
+     * 
+     */
+    public TableImpl createTable() {
+        return new TableImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleCopyright }
+     * 
+     */
+    public ArticleCopyrightImpl createArticleCopyright() {
+        return new ArticleCopyrightImpl();
+    }
+
+    /**
+     * Create an instance of {@link Equation }
+     * 
+     */
+    public EquationImpl createEquation() {
+        return new EquationImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleTitle }
+     * 
+     */
+    public ArticleTitleImpl createArticleTitle() {
+        return new ArticleTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link Abstract }
+     * 
+     */
+    public AbstractImpl createAbstract() {
+        return new AbstractImpl();
+    }
+
+    /**
+     * Create an instance of {@link IssueTitle }
+     * 
+     */
+    public IssueTitleImpl createIssueTitle() {
+        return new IssueTitleImpl();
+    }
+
+    /**
+     * Create an instance of {@link AbstractSection }
+     * 
+     */
+    public AbstractSectionImpl createAbstractSection() {
+        return new AbstractSectionImpl();
+    }
+
+    /**
+     * Create an instance of {@link Volume }
+     * 
+     */
+    public VolumeImpl createVolume() {
+        return new VolumeImpl();
+    }
+
+    /**
+     * Create an instance of {@link Accepted }
+     * 
+     */
+    public AcceptedImpl createAccepted() {
+        return new AcceptedImpl();
+    }
+
+    /**
+     * Create an instance of {@link BookSubjectGroup }
+     * 
+     */
+    public BookSubjectGroupImpl createBookSubjectGroup() {
+        return new BookSubjectGroupImpl();
+    }
+
+    /**
+     * Create an instance of {@link SimplePara }
+     * 
+     */
+    public SimpleParaImpl createSimplePara() {
+        return new SimpleParaImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibComments }
+     * 
+     */
+    public BibCommentsImpl createBibComments() {
+        return new BibCommentsImpl();
+    }
+
+    /**
+     * Create an instance of {@link OrgAddress }
+     * 
+     */
+    public OrgAddressImpl createOrgAddress() {
+        return new OrgAddressImpl();
+    }
+
+    /**
+     * Create an instance of {@link ArticleContext }
+     * 
+     */
+    public ArticleContextImpl createArticleContext() {
+        return new ArticleContextImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterBackmatter }
+     * 
+     */
+    public ChapterBackmatterImpl createChapterBackmatter() {
+        return new ChapterBackmatterImpl();
+    }
+
+    /**
+     * Create an instance of {@link Emphasis }
+     * 
+     */
+    public EmphasisImpl createEmphasis() {
+        return new EmphasisImpl();
+    }
+
+    /**
+     * Create an instance of {@link Keywords }
+     * 
+     */
+    public KeywordsImpl createKeywords() {
+        return new KeywordsImpl();
+    }
+
+    /**
+     * Create an instance of {@link PrintDate }
+     * 
+     */
+    public PrintDateImpl createPrintDate() {
+        return new PrintDateImpl();
+    }
+
+    /**
+     * Create an instance of {@link BibAuthorName }
+     * 
+     */
+    public BibAuthorNameImpl createBibAuthorName() {
+        return new BibAuthorNameImpl();
+    }
+
+    /**
+     * Create an instance of {@link BookInfo }
+     * 
+     */
+    public BookInfoImpl createBookInfo() {
+        return new BookInfoImpl();
+    }
+
+    /**
+     * Create an instance of {@link Section1 }
+     * 
+     */
+    public Section1Impl createSection1() {
+        return new Section1Impl();
+    }
+
+    /**
+     * Create an instance of {@link Part }
+     * 
+     */
+    public PartImpl createPart() {
+        return new PartImpl();
+    }
+
+    /**
+     * Create an instance of {@link ChapterGrants }
+     * 
+     */
+    public ChapterGrantsImpl createChapterGrants() {
+        return new ChapterGrantsImpl();
+    }
+
+    /**
+     * Create an instance of {@link Record }
+     * 
+     */
+    public RecordImpl createRecord() {
+        return new RecordImpl();
+    }
+
+    /**
+     * Create an instance of {@link FormalPara }
+     * 
+     */
+    public FormalParaImpl createFormalPara() {
+        return new FormalParaImpl();
     }
 
     /**
@@ -1955,6 +1954,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "ConfEventName")
     public JAXBElement<String> createConfEventName(String value) {
         return new JAXBElement<String>(_ConfEventName_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "em")
+    public JAXBElement<String> createEm(String value) {
+        return new JAXBElement<String>(_Em_QNAME, String.class, null, value);
     }
 
     /**

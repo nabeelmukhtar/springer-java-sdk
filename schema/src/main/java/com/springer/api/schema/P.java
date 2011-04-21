@@ -1,6 +1,7 @@
 
 package com.springer.api.schema;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
 
@@ -15,12 +16,9 @@ import javax.xml.bind.JAXBElement;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}em" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}p" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}CaptionContent" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}CaptionNumber" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://www.w3.org/1999/xhtml}p" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://www.w3.org/1999/xhtml}sub" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="Language" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -28,7 +26,7 @@ import javax.xml.bind.JAXBElement;
  * 
  * 
  */
-public interface Caption {
+public interface P {
 
 
     /**
@@ -49,34 +47,12 @@ public interface Caption {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link P }
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link String }
-     * {@link CaptionContent }
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
      */
-    List<Object> getContent();
-
-    /**
-     * Gets the value of the language property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getLanguage();
-
-    /**
-     * Sets the value of the language property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setLanguage(String value);
+    List<Serializable> getContent();
 
 }

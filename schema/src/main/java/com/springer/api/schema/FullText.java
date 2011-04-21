@@ -3,7 +3,7 @@ package com.springer.api.schema;
 
 import java.util.List;
 
-import org.w3._1999.xhtml.P;
+import com.springer.api.schema.P;
 
 
 /**

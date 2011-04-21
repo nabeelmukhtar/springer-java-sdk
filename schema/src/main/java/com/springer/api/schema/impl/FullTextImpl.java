@@ -11,8 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import org.w3._1999.xhtml.P;
-import org.w3._1999.xhtml.impl.PImpl;
+import com.springer.api.schema.P;
 
 import com.springer.api.schema.FullText;
 

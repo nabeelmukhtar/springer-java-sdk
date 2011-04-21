@@ -85,6 +85,10 @@ public class CaptionImpl extends BaseSchemaEntity implements Caption {
                     CaptionContentImpl node = new CaptionContentImpl();
                     node.init(parser);
                     getContent().add(node);
+                } else if (name.equals("em")) {
+                	EmphasisImpl node = new EmphasisImpl();
+                	node.getContent().add(XppUtils.getElementValueFromNode(parser));
+                    getContent().add(node);
                 } else {                // Consume something we don't understand.
                     LOG.warning("Found tag that we don't recognize: " + name);
                     XppUtils.skipSubTree(parser);

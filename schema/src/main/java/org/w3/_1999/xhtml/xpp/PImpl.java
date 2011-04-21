@@ -30,7 +30,7 @@ import com.springer.api.schema.xpp.BaseSchemaEntity;
 /**
  * The Class PImpl.
  */
-public class PImpl extends BaseSchemaEntity implements P {
+public class PImpl extends BaseSchemaEntity implements P, com.springer.api.schema.P {
     
     /** The Constant serialVersionUID. */
     private final static long serialVersionUID = 2461660169443089969L;

@@ -1093,6 +1093,7 @@
   <xs:element name="Caption">
     <xs:complexType mixed="true">
       <xs:sequence>
+		<xs:element minOccurs="0" maxOccurs="unbounded" ref="em"/>      
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="p"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="CaptionContent"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="CaptionNumber"/>
@@ -1192,8 +1193,9 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
-		<xs:element ref="InlineEquation"/>
-		<xs:element ref="Superscript"/>		        
+		<xs:element minOccurs="0" maxOccurs="unbounded" ref="InlineEquation"/>
+		<xs:element minOccurs="0" maxOccurs="unbounded" ref="Superscript"/>
+		<xs:element minOccurs="0" maxOccurs="unbounded" ref="em"/>		        
       </xs:sequence>
       <xs:attribute name="Language" type="xs:string"/>
       <xs:attribute name="OutputMedium" type="xs:string"/>
@@ -1202,6 +1204,7 @@
   <xs:element name="Keyword" type="xs:string"/>
   <xs:element name="GivenName" type="xs:string"/>
   <xs:element name="FamilyName" type="xs:string"/>
+  <xs:element name="em" type="xs:string"/>
   <xs:element name="Contact">
     <xs:complexType>
       <xs:sequence>

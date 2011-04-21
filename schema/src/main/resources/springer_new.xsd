@@ -22,12 +22,13 @@
   <xs:element name="records">
     <xs:complexType>
       <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="pam:message"/>
         <xs:element maxOccurs="unbounded" ref="result"/>
         <xs:element maxOccurs="unbounded" ref="record"/>
-        <xs:element maxOccurs="unbounded" ref="pam:message"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="h1" type="xs:string"/>
   <xs:element name="record">
     <xs:complexType>
       <xs:sequence>
@@ -35,7 +36,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="h1" type="xs:string"/>
   <xs:element name="facets">
     <xs:complexType>
       <xs:sequence>
@@ -60,20 +60,17 @@
     <xs:complexType>
       <xs:sequence>
         <xs:sequence>
+          <xs:element ref="Publisher"/>
+          <xs:element ref="Images"/>
+        </xs:sequence>
+        <xs:sequence>
           <xs:element ref="total"/>
           <xs:element ref="start"/>
           <xs:element ref="pageLength"/>
         </xs:sequence>
-        <xs:sequence>
-          <xs:element ref="Publisher"/>
-          <xs:element ref="Images"/>
-        </xs:sequence>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="total" type="xs:integer"/>
-  <xs:element name="start" type="xs:integer"/>
-  <xs:element name="pageLength" type="xs:integer"/>
   <xs:element name="Publisher">
     <xs:complexType>
       <xs:sequence>
@@ -389,6 +386,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="total" type="xs:integer"/>
+  <xs:element name="start" type="xs:integer"/>
+  <xs:element name="pageLength" type="xs:integer"/>
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="p"/>
+        <xs:element ref="strong"/>
+        <xs:element ref="sub"/>
+        <xs:element ref="sup"/>
+        <xs:element ref="xhtml:p"/>
+        <xs:element ref="xhtml:sub"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="strong" type="xs:string"/>
+  <xs:element name="sub" type="xs:string"/>
+  <xs:element name="sup" type="xs:string"/>
   <xs:element name="Image">
     <xs:complexType>
       <xs:sequence>
@@ -467,7 +482,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Location" type="xs:string"/>
+  <xs:element name="Location" type="xs:anyURI"/>
   <xs:element name="Authors">
     <xs:complexType>
       <xs:sequence>
@@ -530,43 +545,19 @@
   <xs:element name="ArticleURI" type="xs:string"/>
   <xs:element name="Provider" type="xs:string"/>
   <xs:element name="DateLoaded" type="xs:dateTime"/>
-  <xs:element name="p">
-    <xs:complexType mixed="true">
-      <xs:sequence minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="p"/>
-        <xs:element ref="strong"/>
-        <xs:element ref="sub"/>
-        <xs:element ref="sup"/>
-        <xs:element ref="xhtml:p"/>
-        <xs:element ref="xhtml:sub"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="strong" type="xs:string"/>
-  <xs:element name="sub" type="xs:string"/>
-  <xs:element name="sup" type="xs:string"/>
   <xs:element name="PublisherName" type="xs:string"/>
   <xs:element name="PublisherLocation" type="xs:string"/>
-  <xs:element name="JournalID" type="xs:string"/>
-  <xs:element name="JournalTitle" type="xs:string"/>
-  <xs:element name="VolumeIDStart" type="xs:string"/>
-  <xs:element name="VolumeIDEnd" type="xs:string"/>
-  <xs:element name="IssueIDStart" type="xs:string"/>
-  <xs:element name="IssueIDEnd" type="xs:string"/>
-  <xs:element name="OnlineDate">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="Year"/>
-        <xs:element ref="Month"/>
-        <xs:element ref="Day"/>
-      </xs:sequence>
+  <xs:complexType name="SeriesID">
+    <xs:sequence>
+      <xs:element ref="SeriesID"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeriesID" type="xs:integer"/>
+  <xs:element name="SeriesTitle">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Language" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Year" type="xs:string"/>
-  <xs:element name="Month" type="xs:string"/>
-  <xs:element name="Day" type="xs:string"/>
-  <xs:element name="CopyrightHolderName" type="xs:string"/>
-  <xs:element name="CopyrightYear" type="xs:integer"/>
   <xs:complexType name="EditorGroup">
     <xs:sequence>
       <xs:element ref="EditorGroup"/>
@@ -598,6 +589,126 @@
       <xs:attribute name="DisplayOrder" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BookID" type="xs:NMTOKEN"/>
+  <xs:element name="BookTitle">
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Emphasis"/>
+        <xs:element ref="Superscript"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookDOI" type="xs:string"/>
+  <xs:element name="CopyrightHolderName" type="xs:string"/>
+  <xs:element name="CopyrightYear" type="xs:integer"/>
+  <xs:element name="SubjectCollection">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Code" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ChapterInfo"/>
+        <xs:element ref="ChapterHeader"/>
+        <xs:element ref="BodyRef"/>
+        <xs:element minOccurs="0" ref="ChapterBackmatter"/>
+      </xs:sequence>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+      <xs:attribute name="Language" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ChapterID"/>
+        <xs:element ref="ChapterDOI"/>
+        <xs:element ref="ChapterSequenceNumber"/>
+        <xs:element ref="ChapterTitle"/>
+        <xs:element ref="ChapterFirstPage"/>
+        <xs:element ref="ChapterLastPage"/>
+        <xs:element ref="ChapterCopyright"/>
+        <xs:element minOccurs="0" ref="ChapterHistory"/>
+        <xs:element ref="ChapterGrants"/>
+        <xs:element ref="ChapterContext"/>
+      </xs:sequence>
+      <xs:attribute name="ChapterType" use="required" type="xs:string"/>
+      <xs:attribute name="ContainsESM" use="required" type="xs:string"/>
+      <xs:attribute name="Language" type="xs:string"/>
+      <xs:attribute name="NumberingDepth" type="xs:integer"/>
+      <xs:attribute name="NumberingStyle" use="required" type="xs:string"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
+      <xs:attribute name="TocLevels" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterID" type="xs:integer"/>
+  <xs:element name="ChapterDOI" type="xs:string"/>
+  <xs:element name="ChapterSequenceNumber" type="xs:integer"/>
+  <xs:element name="ChapterFirstPage" type="xs:integer"/>
+  <xs:element name="ChapterLastPage" type="xs:integer"/>
+  <xs:element name="ChapterCopyright">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CopyrightHolderName"/>
+        <xs:element ref="CopyrightYear"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RegistrationDate"/>
+        <xs:element ref="OnlineDate"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterGrants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MetadataGrant"/>
+        <xs:element ref="AbstractGrant"/>
+        <xs:element ref="BodyPDFGrant"/>
+        <xs:element ref="BodyHTMLGrant"/>
+        <xs:element ref="BibliographyGrant"/>
+        <xs:element ref="ESMGrant"/>
+      </xs:sequence>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterContext">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="SeriesID">
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="PartID"/>
+            <xs:element ref="BookID"/>
+            <xs:element ref="BookTitle"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AuthorGroup"/>
+        <xs:element minOccurs="0" ref="Abstract"/>
+        <xs:element minOccurs="0" ref="KeywordGroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ArticleNote"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterBackmatter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ArticleNote"/>
+        <xs:element ref="Bibliography"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartID" type="xs:integer"/>
+  <xs:element name="JournalID" type="xs:string"/>
+  <xs:element name="JournalTitle" type="xs:string"/>
   <xs:element name="Article">
     <xs:complexType>
       <xs:sequence>
@@ -763,133 +874,22 @@
       <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name="SeriesID">
-    <xs:sequence>
-      <xs:element ref="SeriesID"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SeriesID" type="xs:integer"/>
-  <xs:element name="SeriesTitle">
-    <xs:complexType mixed="true">
-      <xs:attribute name="Language" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="BookID" type="xs:NMTOKEN"/>
-  <xs:element name="BookTitle">
-    <xs:complexType mixed="true">
-      <xs:sequence minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="Emphasis"/>
-        <xs:element ref="Superscript"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="BookDOI" type="xs:string"/>
-  <xs:element name="SubjectCollection">
-    <xs:complexType mixed="true">
-      <xs:attribute name="Code" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PartID" type="xs:integer"/>
-  <xs:element name="Chapter">
+  <xs:element name="VolumeIDStart" type="xs:string"/>
+  <xs:element name="VolumeIDEnd" type="xs:string"/>
+  <xs:element name="IssueIDStart" type="xs:string"/>
+  <xs:element name="IssueIDEnd" type="xs:string"/>
+  <xs:element name="OnlineDate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ChapterInfo"/>
-        <xs:element ref="ChapterHeader"/>
-        <xs:element ref="BodyRef"/>
-        <xs:element minOccurs="0" ref="ChapterBackmatter"/>
-      </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:string"/>
-      <xs:attribute name="Language" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterInfo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="ChapterID"/>
-        <xs:element ref="ChapterDOI"/>
-        <xs:element ref="ChapterSequenceNumber"/>
-        <xs:element ref="ChapterTitle"/>
-        <xs:element ref="ChapterFirstPage"/>
-        <xs:element ref="ChapterLastPage"/>
-        <xs:element ref="ChapterCopyright"/>
-        <xs:element minOccurs="0" ref="ChapterHistory"/>
-        <xs:element ref="ChapterGrants"/>
-        <xs:element ref="ChapterContext"/>
-      </xs:sequence>
-      <xs:attribute name="ChapterType" use="required" type="xs:string"/>
-      <xs:attribute name="ContainsESM" use="required" type="xs:string"/>
-      <xs:attribute name="Language" type="xs:string"/>
-      <xs:attribute name="NumberingDepth" type="xs:integer"/>
-      <xs:attribute name="NumberingStyle" use="required" type="xs:string"/>
-      <xs:attribute name="OutputMedium" type="xs:string"/>
-      <xs:attribute name="TocLevels" use="required" type="xs:integer"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterID" type="xs:integer"/>
-  <xs:element name="ChapterDOI" type="xs:string"/>
-  <xs:element name="ChapterSequenceNumber" type="xs:integer"/>
-  <xs:element name="ChapterFirstPage" type="xs:integer"/>
-  <xs:element name="ChapterLastPage" type="xs:integer"/>
-  <xs:element name="ChapterCopyright">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="CopyrightHolderName"/>
-        <xs:element ref="CopyrightYear"/>
+        <xs:element ref="Year"/>
+        <xs:element ref="Month"/>
+        <xs:element ref="Day"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ChapterHistory">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="RegistrationDate"/>
-        <xs:element ref="OnlineDate"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterGrants">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="MetadataGrant"/>
-        <xs:element ref="AbstractGrant"/>
-        <xs:element ref="BodyPDFGrant"/>
-        <xs:element ref="BodyHTMLGrant"/>
-        <xs:element ref="BibliographyGrant"/>
-        <xs:element ref="ESMGrant"/>
-      </xs:sequence>
-      <xs:attribute name="Type" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterContext">
-    <xs:complexType>
-      <xs:complexContent>
-        <xs:extension base="SeriesID">
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="PartID"/>
-            <xs:element ref="BookID"/>
-            <xs:element ref="BookTitle"/>
-          </xs:sequence>
-        </xs:extension>
-      </xs:complexContent>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterHeader">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="AuthorGroup"/>
-        <xs:element minOccurs="0" ref="Abstract"/>
-        <xs:element minOccurs="0" ref="KeywordGroup"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ArticleNote"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterBackmatter">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="ArticleNote"/>
-        <xs:element ref="Bibliography"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  <xs:element name="Year" type="xs:string"/>
+  <xs:element name="Month" type="xs:string"/>
+  <xs:element name="Day" type="xs:string"/>
   <xs:element name="Emphasis">
     <xs:complexType mixed="true">
       <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -904,6 +904,7 @@
   <xs:element name="Caption">
     <xs:complexType mixed="true">
       <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="em"/>
         <xs:element ref="p"/>
         <xs:element ref="CaptionContent"/>
         <xs:element ref="CaptionNumber"/>
@@ -1007,6 +1008,7 @@
         <xs:element ref="Emphasis"/>
         <xs:element ref="InlineEquation"/>
         <xs:element ref="Superscript"/>
+        <xs:element ref="em"/>
       </xs:sequence>
       <xs:attribute name="Language" type="xs:string"/>
       <xs:attribute name="OutputMedium" type="xs:string"/>
@@ -1061,6 +1063,18 @@
   <xs:element name="Postcode" type="xs:string"/>
   <xs:element name="State" type="xs:string"/>
   <xs:element name="Country" type="xs:string"/>
+  <xs:element name="Superscript">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChapterTitle">
+    <xs:complexType mixed="true">
+      <xs:attribute name="Language" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrationDate">
     <xs:complexType>
       <xs:sequence>
@@ -1148,6 +1162,135 @@
       <xs:attribute name="Type" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BodyRef">
+    <xs:complexType>
+      <xs:attribute name="FileRef" use="required" type="xs:anyURI"/>
+      <xs:attribute name="OutputMedium" type="xs:string"/>
+      <xs:attribute name="PDFType" type="xs:string"/>
+      <xs:attribute name="TargetType" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Bibliography">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Heading"/>
+        <xs:element maxOccurs="unbounded" ref="Citation"/>
+      </xs:sequence>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Citation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="CitationNumber"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="BibArticle"/>
+          <xs:element ref="BibBook"/>
+          <xs:element ref="BibChapter"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="BibUnstructured"/>
+      </xs:sequence>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CitationNumber" type="xs:string"/>
+  <xs:element name="BibArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="BibAuthorName"/>
+        <xs:element minOccurs="0" ref="Etal"/>
+        <xs:element ref="Year"/>
+        <xs:sequence>
+          <xs:element ref="ArticleTitle"/>
+          <xs:element ref="NoArticleTitle"/>
+        </xs:sequence>
+        <xs:element ref="JournalTitle"/>
+        <xs:element ref="VolumeID"/>
+        <xs:element minOccurs="0" ref="IssueID"/>
+        <xs:element ref="FirstPage"/>
+        <xs:element minOccurs="0" ref="LastPage"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Occurrence"/>
+        <xs:element minOccurs="0" ref="BibComments"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Etal">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="NoArticleTitle">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="VolumeID" type="xs:string"/>
+  <xs:element name="IssueID" type="xs:string"/>
+  <xs:element name="BibBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence>
+          <xs:element ref="InstitutionalAuthorName"/>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="BibEditorName"/>
+            <xs:element ref="Eds"/>
+          </xs:sequence>
+          <xs:element maxOccurs="unbounded" ref="BibAuthorName"/>
+        </xs:sequence>
+        <xs:element ref="Year"/>
+        <xs:element ref="BookTitle"/>
+        <xs:element minOccurs="0" ref="NumberInSeries"/>
+        <xs:element minOccurs="0" ref="SeriesTitle"/>
+        <xs:element minOccurs="0" ref="EditionNumber"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="PublisherName"/>
+          <xs:element ref="PublisherLocation"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Occurrence"/>
+        <xs:element minOccurs="0" ref="BibComments"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstitutionalAuthorName" type="xs:string"/>
+  <xs:element name="BibChapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="BibAuthorName"/>
+        <xs:element ref="Year"/>
+        <xs:element ref="ChapterTitle"/>
+        <xs:sequence minOccurs="0">
+          <xs:element maxOccurs="unbounded" ref="BibEditorName"/>
+          <xs:element ref="Eds"/>
+        </xs:sequence>
+        <xs:element ref="BookTitle"/>
+        <xs:element minOccurs="0" ref="ConfEventName"/>
+        <xs:element minOccurs="0" ref="ConfEventLocation"/>
+        <xs:element minOccurs="0" ref="ConfEventDate"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="EditionNumber"/>
+          <xs:element ref="SeriesTitle"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="NumberInSeries"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="PublisherName"/>
+          <xs:element ref="PublisherLocation"/>
+        </xs:sequence>
+        <xs:element minOccurs="0" ref="FirstPage"/>
+        <xs:element minOccurs="0" ref="LastPage"/>
+        <xs:element minOccurs="0" ref="Occurrence"/>
+        <xs:element minOccurs="0" ref="BibComments"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfEventName" type="xs:string"/>
+  <xs:element name="ConfEventLocation" type="xs:string"/>
+  <xs:element name="ConfEventDate" type="xs:string"/>
+  <xs:element name="BibUnstructured">
+    <xs:complexType mixed="true">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Emphasis"/>
+        <xs:element ref="ExternalRef"/>
+        <xs:element ref="InlineEquation"/>
+        <xs:element ref="Superscript"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Section1">
     <xs:complexType>
       <xs:sequence>
@@ -1210,14 +1353,6 @@
       <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="BodyRef">
-    <xs:complexType>
-      <xs:attribute name="FileRef" use="required" type="xs:anyURI"/>
-      <xs:attribute name="OutputMedium" type="xs:string"/>
-      <xs:attribute name="PDFType" type="xs:string"/>
-      <xs:attribute name="TargetType" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Heading">
     <xs:complexType mixed="true">
       <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1249,141 +1384,6 @@
       <xs:attribute name="RenderingStyle" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Bibliography">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="Heading"/>
-        <xs:element maxOccurs="unbounded" ref="Citation"/>
-      </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Citation">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="CitationNumber"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="BibArticle"/>
-          <xs:element ref="BibBook"/>
-          <xs:element ref="BibChapter"/>
-        </xs:sequence>
-        <xs:element minOccurs="0" ref="BibUnstructured"/>
-      </xs:sequence>
-      <xs:attribute name="ID" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CitationNumber" type="xs:string"/>
-  <xs:element name="BibArticle">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="BibAuthorName"/>
-        <xs:element minOccurs="0" ref="Etal"/>
-        <xs:element ref="Year"/>
-        <xs:sequence>
-          <xs:element ref="ArticleTitle"/>
-          <xs:element ref="NoArticleTitle"/>
-        </xs:sequence>
-        <xs:element ref="JournalTitle"/>
-        <xs:element ref="VolumeID"/>
-        <xs:element minOccurs="0" ref="IssueID"/>
-        <xs:element ref="FirstPage"/>
-        <xs:element minOccurs="0" ref="LastPage"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Occurrence"/>
-        <xs:element minOccurs="0" ref="BibComments"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Etal">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="NoArticleTitle">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="VolumeID" type="xs:string"/>
-  <xs:element name="IssueID" type="xs:string"/>
-  <xs:element name="BibBook">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="InstitutionalAuthorName"/>
-          <xs:element maxOccurs="unbounded" ref="BibAuthorName"/>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="BibEditorName"/>
-            <xs:element ref="Eds"/>
-          </xs:sequence>
-        </xs:sequence>
-        <xs:element ref="Year"/>
-        <xs:element ref="BookTitle"/>
-        <xs:element minOccurs="0" ref="SeriesTitle"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="EditionNumber"/>
-          <xs:element ref="NumberInSeries"/>
-        </xs:sequence>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="PublisherName"/>
-          <xs:element ref="PublisherLocation"/>
-        </xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Occurrence"/>
-        <xs:element minOccurs="0" ref="BibComments"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="InstitutionalAuthorName" type="xs:string"/>
-  <xs:element name="BibChapter">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="BibAuthorName"/>
-        <xs:element ref="Year"/>
-        <xs:element ref="ChapterTitle"/>
-        <xs:sequence minOccurs="0">
-          <xs:element maxOccurs="unbounded" ref="BibEditorName"/>
-          <xs:element ref="Eds"/>
-        </xs:sequence>
-        <xs:element ref="BookTitle"/>
-        <xs:element minOccurs="0" ref="ConfEventName"/>
-        <xs:element minOccurs="0" ref="ConfEventLocation"/>
-        <xs:element minOccurs="0" ref="ConfEventDate"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="EditionNumber"/>
-          <xs:element ref="SeriesTitle"/>
-        </xs:sequence>
-        <xs:element minOccurs="0" ref="NumberInSeries"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="PublisherName"/>
-          <xs:element ref="PublisherLocation"/>
-        </xs:sequence>
-        <xs:element minOccurs="0" ref="FirstPage"/>
-        <xs:element minOccurs="0" ref="LastPage"/>
-        <xs:element minOccurs="0" ref="Occurrence"/>
-        <xs:element minOccurs="0" ref="BibComments"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConfEventName" type="xs:string"/>
-  <xs:element name="ConfEventLocation" type="xs:string"/>
-  <xs:element name="ConfEventDate" type="xs:string"/>
-  <xs:element name="BibUnstructured">
-    <xs:complexType mixed="true">
-      <xs:sequence minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="Emphasis"/>
-        <xs:element ref="ExternalRef"/>
-        <xs:element ref="InlineEquation"/>
-        <xs:element ref="Superscript"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Superscript">
-    <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ChapterTitle">
-    <xs:complexType mixed="true">
-      <xs:attribute name="Language" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Subscript">
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -1391,6 +1391,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="em" type="xs:string"/>
   <xs:element name="row">
     <xs:complexType>
       <xs:sequence>
@@ -1523,22 +1524,59 @@
       <xs:attribute name="Mark" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Figure">
+  <xs:element name="BibAuthorName">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="Caption"/>
-        <xs:element ref="MediaObject"/>
+        <xs:sequence>
+          <xs:element ref="Initials"/>
+          <xs:element ref="NoInitials"/>
+        </xs:sequence>
+        <xs:element ref="FamilyName"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="Particle"/>
+          <xs:element ref="Suffix"/>
+        </xs:sequence>
       </xs:sequence>
-      <xs:attribute name="Category" use="required" type="xs:string"/>
-      <xs:attribute name="Float" use="required" type="xs:string"/>
-      <xs:attribute name="ID" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CitationRef">
+  <xs:element name="NoInitials">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="FirstPage" type="xs:string"/>
+  <xs:element name="LastPage" type="xs:string"/>
+  <xs:element name="Occurrence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Handle"/>
+      </xs:sequence>
+      <xs:attribute name="Type" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Handle" type="xs:string"/>
+  <xs:element name="BibComments">
     <xs:complexType mixed="true">
-      <xs:attribute name="CitationID" use="required" type="xs:string"/>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BibEditorName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Initials"/>
+        <xs:element ref="FamilyName"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="Particle"/>
+          <xs:element ref="Suffix"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eds">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="NumberInSeries" type="xs:string"/>
+  <xs:element name="EditionNumber" type="xs:integer"/>
   <xs:element name="ExternalRef">
     <xs:complexType>
       <xs:sequence>
@@ -1562,62 +1600,25 @@
       <xs:attribute name="TargetType" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Figure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Caption"/>
+        <xs:element ref="MediaObject"/>
+      </xs:sequence>
+      <xs:attribute name="Category" use="required" type="xs:string"/>
+      <xs:attribute name="Float" use="required" type="xs:string"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CitationRef">
+    <xs:complexType mixed="true">
+      <xs:attribute name="CitationID" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InternalRef">
     <xs:complexType mixed="true">
       <xs:attribute name="RefID" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="BibAuthorName">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:sequence>
-          <xs:element ref="Initials"/>
-          <xs:element ref="NoInitials"/>
-        </xs:sequence>
-        <xs:element ref="FamilyName"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="Particle"/>
-          <xs:element ref="Suffix"/>
-        </xs:sequence>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="NoInitials">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="BibEditorName">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="Initials"/>
-        <xs:element ref="FamilyName"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="Particle"/>
-          <xs:element ref="Suffix"/>
-        </xs:sequence>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Eds">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="EditionNumber" type="xs:integer"/>
-  <xs:element name="NumberInSeries" type="xs:string"/>
-  <xs:element name="FirstPage" type="xs:string"/>
-  <xs:element name="LastPage" type="xs:string"/>
-  <xs:element name="Occurrence">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="Handle"/>
-      </xs:sequence>
-      <xs:attribute name="Type" use="required" type="xs:string"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Handle" type="xs:string"/>
-  <xs:element name="BibComments">
-    <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Emphasis"/>
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InlineMediaObject" type="ImageObject"/>

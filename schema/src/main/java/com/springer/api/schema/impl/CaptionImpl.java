@@ -15,7 +15,6 @@ import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import org.w3._1999.xhtml.impl.PImpl;
 
 import com.springer.api.schema.Caption;
 
@@ -32,6 +31,7 @@ public class CaptionImpl
     @XmlElementRefs({
         @XmlElementRef(name = "p", type = PImpl.class),
         @XmlElementRef(name = "CaptionNumber", type = JAXBElement.class),
+        @XmlElementRef(name = "em", type = JAXBElement.class),
         @XmlElementRef(name = "CaptionContent", type = CaptionContentImpl.class)
     })
     @XmlMixed

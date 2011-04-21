@@ -19,7 +19,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3._1999.xhtml.P;
+import com.springer.api.schema.P;
+
 import org.w3._1999.xhtml.xpp.PImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

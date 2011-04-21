@@ -2,6 +2,7 @@
 package com.springer.api.schema;
 
 import java.util.List;
+import javax.xml.bind.JAXBElement;
 
 
 /**
@@ -15,8 +16,9 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}InlineEquation"/>
- *         &lt;element ref="{}Superscript"/>
+ *         &lt;element ref="{}InlineEquation" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Superscript" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}em" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="Language" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="OutputMedium" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -48,10 +50,11 @@ public interface ArticleTitle {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link InlineEquation }
-     * {@link Emphasis }
-     * {@link String }
      * {@link Superscript }
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link InlineEquation }
+     * {@link String }
+     * {@link Emphasis }
      * 
      * 
      */
@@ -96,5 +99,4 @@ public interface ArticleTitle {
      *     
      */
     void setOutputMedium(String value);
-
 }
