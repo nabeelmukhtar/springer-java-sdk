@@ -39,7 +39,7 @@ public class ImagesQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		ImagesQuery service = factory.createImagesQuery("j65srxyg73axn74fks3aj2p4");
+		ImagesQuery service = factory.createImagesQuery("");
 		List<Image> images = service.withQuery("mapreduce").list();
 		for (Image image : images) {
 			printResult(image);
