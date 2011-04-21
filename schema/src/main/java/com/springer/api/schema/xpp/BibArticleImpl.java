@@ -71,6 +71,7 @@ public class BibArticleImpl extends BaseSchemaEntity implements BibArticle {
     /** The occurrences. */
     protected List<Occurrence> occurrences;
     
+    /** The no article title. */
     protected NoArticleTitleImpl noArticleTitle;
     
     /* (non-Javadoc)
@@ -141,10 +142,16 @@ public class BibArticleImpl extends BaseSchemaEntity implements BibArticle {
         return articleTitle;
     }
     
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.BibArticle#getNoArticleTitle()
+     */
     public NoArticleTitle getNoArticleTitle() {
         return noArticleTitle;
     }
 
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.BibArticle#setNoArticleTitle(com.springer.api.schema.NoArticleTitle)
+     */
     public void setNoArticleTitle(NoArticleTitle value) {
         this.noArticleTitle = ((NoArticleTitleImpl) value);
     }

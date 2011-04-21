@@ -51,8 +51,10 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
     /** The section2 s. */
     protected List<Section2> section2S;
     
+    /** The formal paras. */
     protected List<FormalPara> formalParas;
     
+    /** The figures. */
     protected List<Figure> figures;    
     
     /** The id. */
@@ -85,6 +87,9 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
         return this.tables;
     }
 
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getFigures()
+     */
     public List<Figure> getFigures() {
         if (figures == null) {
             figures = new ArrayList<Figure>();
@@ -151,6 +156,9 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
         return type;
     }
     
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Section1#getFormalParas()
+     */
     public List<FormalPara> getFormalParas() {
         if (formalParas == null) {
             formalParas = new ArrayList<FormalPara>();

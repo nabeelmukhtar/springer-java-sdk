@@ -40,6 +40,7 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
     /** The align. */
     protected String align;
     
+    /** The _char. */
     protected String _char;    
     
     /* (non-Javadoc)
@@ -84,10 +85,16 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
         colnum = ((Long) value);
     }
     
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Colspec#getChar()
+     */
     public String getChar() {
         return _char;
     }
 
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.Colspec#setChar(java.lang.String)
+     */
     public void setChar(String value) {
         this._char = value;
     }

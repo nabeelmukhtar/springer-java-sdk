@@ -67,7 +67,7 @@ public class BibBookImpl extends BaseSchemaEntity implements BibBook {
     /** The bib comments. */
     protected BibCommentsImpl bibComments;
     
-    /** The occurrence. */
+    /** The occurrences. */
     protected List<Occurrence> occurrences;
     
     /* (non-Javadoc)

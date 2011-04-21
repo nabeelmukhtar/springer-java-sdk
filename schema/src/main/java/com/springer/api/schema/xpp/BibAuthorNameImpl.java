@@ -44,6 +44,7 @@ public class BibAuthorNameImpl extends BaseSchemaEntity implements BibAuthorName
     /** The particle. */
     protected String particle;
     
+    /** The suffix. */
     protected String suffix;
     
     /* (non-Javadoc)
@@ -102,10 +103,16 @@ public class BibAuthorNameImpl extends BaseSchemaEntity implements BibAuthorName
         particle = ((String) value);
     }
     
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.BibAuthorName#getSuffix()
+     */
     public String getSuffix() {
         return suffix;
     }
 
+    /* (non-Javadoc)
+     * @see com.springer.api.schema.BibAuthorName#setSuffix(java.lang.String)
+     */
     public void setSuffix(String value) {
         this.suffix = value;
     }
