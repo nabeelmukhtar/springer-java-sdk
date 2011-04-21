@@ -39,7 +39,7 @@ public class OpenAccessQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		OpenAccessQuery service = factory.createOpenAccessQuery("jqs3v62pb9q84z87b98mem59");
+		OpenAccessQuery service = factory.createOpenAccessQuery("");
 		List<OpenAccess> openaccess = service.withQuery("mapreduce").list();
 		for (OpenAccess oa : openaccess) {
 			printResult(oa);
