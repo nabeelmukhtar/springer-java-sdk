@@ -44,6 +44,8 @@ public class BibAuthorNameImpl extends BaseSchemaEntity implements BibAuthorName
     /** The particle. */
     protected String particle;
     
+    protected String suffix;
+    
     /* (non-Javadoc)
      * @see com.springer.api.schema.BibAuthorName#getInitials()
      */
@@ -100,6 +102,14 @@ public class BibAuthorNameImpl extends BaseSchemaEntity implements BibAuthorName
         particle = ((String) value);
     }
     
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String value) {
+        this.suffix = value;
+    }
+    
     /* (non-Javadoc)
      * @see com.springer.api.schema.xpp.BaseSchemaEntity#init(org.xmlpull.v1.XmlPullParser)
      */
@@ -118,6 +128,8 @@ public class BibAuthorNameImpl extends BaseSchemaEntity implements BibAuthorName
                 setFamilyName(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("Particle")) {
                 setParticle(XppUtils.getElementValueFromNode(parser));
+            } else if (name.equals("Suffix")) {
+                setSuffix(XppUtils.getElementValueFromNode(parser));
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

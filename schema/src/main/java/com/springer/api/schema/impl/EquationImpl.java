@@ -2,14 +2,12 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import com.springer.api.schema.Equation;
 import com.springer.api.schema.EquationSource;
 import com.springer.api.schema.MediaObject;
@@ -25,7 +23,7 @@ public class EquationImpl implements Serializable, Equation
 {
 
     private final static long serialVersionUID = 2461660169443089969L;
-    @XmlElement(name = "EquationNumber", type = String.class)
+    @XmlElement(name = "EquationNumber")
     protected String equationNumber;
     @XmlElement(name = "MediaObject", required = true, type = MediaObjectImpl.class)
     protected MediaObjectImpl mediaObject;

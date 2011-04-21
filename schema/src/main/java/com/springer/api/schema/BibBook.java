@@ -26,7 +26,7 @@ import java.util.List;
  *         &lt;element ref="{}PublisherName"/>
  *         &lt;element ref="{}PublisherLocation"/>
  *         &lt;element ref="{}BibComments"/>
- *         &lt;element ref="{}Occurrence"/>
+ *         &lt;element ref="{}Occurrence" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -283,23 +283,27 @@ public interface BibBook {
     void setBibComments(BibComments value);
 
     /**
-     * Gets the value of the occurrence property.
+     * Gets the value of the occurrences property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Occurrence }
-     *     
-     */
-    Occurrence getOccurrence();
-
-    /**
-     * Sets the value of the occurrence property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the occurrences property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Occurrence }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOccurrences().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Occurrence }
+     * 
+     * 
      */
-    void setOccurrence(Occurrence value);
+    List<Occurrence> getOccurrences();
 
 }

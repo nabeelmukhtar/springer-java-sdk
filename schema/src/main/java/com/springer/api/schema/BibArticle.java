@@ -19,6 +19,7 @@ import java.util.List;
  *         &lt;element ref="{}BibComments" minOccurs="0"/>
  *         &lt;element ref="{}Year"/>
  *         &lt;element ref="{}ArticleTitle"/>
+ *         &lt;element ref="{}NoArticleTitle"/>
  *         &lt;element ref="{}JournalTitle"/>
  *         &lt;element ref="{}VolumeID"/>
  *         &lt;element ref="{}IssueID" minOccurs="0"/>
@@ -139,6 +140,26 @@ public interface BibArticle {
      *     
      */
     void setArticleTitle(ArticleTitle value);
+
+    /**
+     * Gets the value of the noArticleTitle property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NoArticleTitle }
+     *     
+     */
+    NoArticleTitle getNoArticleTitle();
+
+    /**
+     * Sets the value of the noArticleTitle property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NoArticleTitle }
+     *     
+     */
+    void setNoArticleTitle(NoArticleTitle value);
 
     /**
      * Gets the value of the journalTitle property.

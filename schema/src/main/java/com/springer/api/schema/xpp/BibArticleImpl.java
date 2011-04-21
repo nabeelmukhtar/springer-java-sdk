@@ -18,10 +18,17 @@ package com.springer.api.schema.xpp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
-import com.springer.api.schema.*;
+
+import com.springer.api.schema.ArticleTitle;
+import com.springer.api.schema.BibArticle;
+import com.springer.api.schema.BibAuthorName;
+import com.springer.api.schema.BibComments;
+import com.springer.api.schema.NoArticleTitle;
+import com.springer.api.schema.Occurrence;
 
 /**
  * The Class BibArticleImpl.
@@ -63,6 +70,8 @@ public class BibArticleImpl extends BaseSchemaEntity implements BibArticle {
     
     /** The occurrences. */
     protected List<Occurrence> occurrences;
+    
+    protected NoArticleTitleImpl noArticleTitle;
     
     /* (non-Javadoc)
      * @see com.springer.api.schema.BibArticle#getBibAuthorNames()
@@ -130,6 +139,14 @@ public class BibArticleImpl extends BaseSchemaEntity implements BibArticle {
      */
     public ArticleTitle getArticleTitle() {
         return articleTitle;
+    }
+    
+    public NoArticleTitle getNoArticleTitle() {
+        return noArticleTitle;
+    }
+
+    public void setNoArticleTitle(NoArticleTitle value) {
+        this.noArticleTitle = ((NoArticleTitleImpl) value);
     }
     
     /* (non-Javadoc)
@@ -252,6 +269,10 @@ public class BibArticleImpl extends BaseSchemaEntity implements BibArticle {
                 ArticleTitleImpl node = new ArticleTitleImpl();
                 node.init(parser);
                 setArticleTitle(node);
+            } else if (name.equals("NoArticleTitle")) {
+            	NoArticleTitleImpl node = new NoArticleTitleImpl();
+                node.init(parser);
+                setNoArticleTitle(node);
             } else if (name.equals("JournalTitle")) {
                 setJournalTitle(XppUtils.getElementValueFromNode(parser));
             } else if (name.equals("VolumeID")) {

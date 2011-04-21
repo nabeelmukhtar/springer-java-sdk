@@ -13,17 +13,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.springer.api.schema.Figure;
+import com.springer.api.schema.FormalPara;
 import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
 import com.springer.api.schema.Section3;
 import com.springer.api.schema.Section4;
+import com.springer.api.schema.Table;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "heading",
     "section4S",
     "paras",
-    "figure"
+    "formalParas",
+    "figures",
+    "tables"
 })
 @XmlRootElement(name = "Section3")
 public class Section3Impl
@@ -37,8 +41,12 @@ public class Section3Impl
     protected List<Section4> section4S;
     @XmlElement(name = "Para", type = ParaImpl.class)
     protected List<Para> paras;
+    @XmlElement(name = "FormalPara", type = FormalParaImpl.class)
+    protected List<FormalPara> formalParas;
     @XmlElement(name = "Figure", type = FigureImpl.class)
-    protected FigureImpl figure;
+    protected List<Figure> figures;
+    @XmlElement(name = "Table", type = TableImpl.class)
+    protected List<Table> tables;
     @XmlAttribute(name = "ID", required = true)
     protected String id;
 
@@ -63,13 +71,26 @@ public class Section3Impl
         }
         return this.paras;
     }
-
-    public Figure getFigure() {
-        return figure;
+    
+    public List<FormalPara> getFormalParas() {
+        if (formalParas == null) {
+            formalParas = new ArrayList<FormalPara>();
+        }
+        return this.formalParas;
+    }
+    
+    public List<Figure> getFigures() {
+        if (figures == null) {
+            figures = new ArrayList<Figure>();
+        }
+        return this.figures;
     }
 
-    public void setFigure(Figure value) {
-        this.figure = ((FigureImpl) value);
+    public List<Table> getTables() {
+        if (tables == null) {
+            tables = new ArrayList<Table>();
+        }
+        return this.tables;
     }
 
     public String getID() {

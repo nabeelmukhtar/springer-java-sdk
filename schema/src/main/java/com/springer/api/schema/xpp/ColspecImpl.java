@@ -40,6 +40,8 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
     /** The align. */
     protected String align;
     
+    protected String _char;    
+    
     /* (non-Javadoc)
      * @see com.springer.api.schema.Colspec#getAlign()
      */
@@ -82,6 +84,14 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
         colnum = ((Long) value);
     }
     
+    public String getChar() {
+        return _char;
+    }
+
+    public void setChar(String value) {
+        this._char = value;
+    }
+    
     /* (non-Javadoc)
      * @see com.springer.api.schema.xpp.BaseSchemaEntity#init(org.xmlpull.v1.XmlPullParser)
      */
@@ -91,6 +101,7 @@ public class ColspecImpl extends BaseSchemaEntity implements Colspec {
         setColname(XppUtils.getAttributeValueFromNode(parser, "colname"));
         setColnum(XppUtils.getAttributeValueAsLongFromNode(parser, "colnum"));
         setAlign(XppUtils.getAttributeValueFromNode(parser, "align"));
+        setChar(XppUtils.getAttributeValueFromNode(parser, "char"));
         while (parser.nextTag() == XmlPullParser.START_TAG) {
             String name = parser.getName();
             LOG.warning("Found tag that we don't recognize: " + name);

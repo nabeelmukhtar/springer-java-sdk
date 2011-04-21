@@ -24,10 +24,12 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import com.springer.api.schema.Figure;
+import com.springer.api.schema.FormalPara;
 import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
 import com.springer.api.schema.Section3;
 import com.springer.api.schema.Section4;
+import com.springer.api.schema.Table;
 
 /**
  * The Class Section3Impl.
@@ -46,8 +48,13 @@ public class Section3Impl extends BaseSchemaEntity implements Section3 {
     /** The paras. */
     protected List<Para> paras;
     
+    /** The formal paras. */
+    protected List<FormalPara> formalParas;
+    
     /** The figure. */
-    protected FigureImpl figure;
+    protected List<Figure> figures;
+    
+    protected List<Table> tables;
     
     /** The id. */
     protected String id;
@@ -95,6 +102,13 @@ public class Section3Impl extends BaseSchemaEntity implements Section3 {
         return this.paras;
     }
     
+    public List<FormalPara> getFormalParas() {
+        if (formalParas == null) {
+            formalParas = new ArrayList<FormalPara>();
+        }
+        return this.formalParas;
+    }
+    
     /**
      * Sets the paras.
      * 
@@ -104,18 +118,18 @@ public class Section3Impl extends BaseSchemaEntity implements Section3 {
         this.paras = value;
     }
     
-    /* (non-Javadoc)
-     * @see com.springer.api.schema.Section3#getFigure()
-     */
-    public Figure getFigure() {
-        return figure;
+    public List<Figure> getFigures() {
+        if (figures == null) {
+            figures = new ArrayList<Figure>();
+        }
+        return this.figures;
     }
-    
-    /* (non-Javadoc)
-     * @see com.springer.api.schema.Section3#setFigure(com.springer.api.schema.Figure)
-     */
-    public void setFigure(Figure value) {
-        figure = ((FigureImpl) value);
+
+    public List<Table> getTables() {
+        if (tables == null) {
+            tables = new ArrayList<Table>();
+        }
+        return this.tables;
     }
     
     /* (non-Javadoc)
@@ -153,10 +167,18 @@ public class Section3Impl extends BaseSchemaEntity implements Section3 {
                 ParaImpl node = new ParaImpl();
                 node.init(parser);
                 getParas().add(node);
+            } else if (name.equals("FormalPara")) {
+            	FormalParaImpl node = new FormalParaImpl();
+                node.init(parser);
+                getFormalParas().add(node);
             } else if (name.equals("Figure")) {
                 FigureImpl node = new FigureImpl();
                 node.init(parser);
-                setFigure(node);
+                getFigures().add(node);
+            } else if (name.equals("Table")) {
+            	TableImpl node = new TableImpl();
+                node.init(parser);
+                getTables().add(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

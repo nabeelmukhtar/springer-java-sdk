@@ -15,8 +15,10 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Heading"/>
- *         &lt;element ref="{}Table" minOccurs="0"/>
+ *         &lt;element ref="{}Table" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Figure" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element ref="{}Para" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}FormalPara" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element ref="{}Section2" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="ID" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -52,24 +54,52 @@ public interface Section1 {
     void setHeading(Heading value);
 
     /**
-     * Gets the value of the table property.
+     * Gets the value of the tables property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Table }
-     *     
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tables property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTables().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Table }
+     * 
+     * 
      */
-    Table getTable();
+    List<Table> getTables();
 
     /**
-     * Sets the value of the table property.
+     * Gets the value of the figures property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Table }
-     *     
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the figures property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFigures().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Figure }
+     * 
+     * 
      */
-    void setTable(Table value);
+    List<Figure> getFigures();
 
     /**
      * Gets the value of the paras property.
@@ -94,6 +124,30 @@ public interface Section1 {
      * 
      */
     List<Para> getParas();
+
+    /**
+     * Gets the value of the formalParas property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the formalParas property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFormalParas().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FormalPara }
+     * 
+     * 
+     */
+    List<FormalPara> getFormalParas();
 
     /**
      * Gets the value of the section2S property.

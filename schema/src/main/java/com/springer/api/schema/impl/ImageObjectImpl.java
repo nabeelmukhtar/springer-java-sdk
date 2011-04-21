@@ -2,13 +2,11 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-
 import com.springer.api.schema.ImageObject;
 import com.springer.api.schema.ImageObjectElement;
 

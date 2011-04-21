@@ -68,7 +68,7 @@ public class BibBookImpl extends BaseSchemaEntity implements BibBook {
     protected BibCommentsImpl bibComments;
     
     /** The occurrence. */
-    protected OccurrenceImpl occurrence;
+    protected List<Occurrence> occurrences;
     
     /* (non-Javadoc)
      * @see com.springer.api.schema.BibBook#getInstitutionalAuthorName()
@@ -244,17 +244,13 @@ public class BibBookImpl extends BaseSchemaEntity implements BibBook {
     }
     
     /* (non-Javadoc)
-     * @see com.springer.api.schema.BibBook#getOccurrence()
+     * @see com.springer.api.schema.BibBook#getOccurrences()
      */
-    public Occurrence getOccurrence() {
-        return occurrence;
-    }
-    
-    /* (non-Javadoc)
-     * @see com.springer.api.schema.BibBook#setOccurrence(com.springer.api.schema.Occurrence)
-     */
-    public void setOccurrence(Occurrence value) {
-        occurrence = ((OccurrenceImpl) value);
+    public List<Occurrence> getOccurrences() {
+        if (occurrences == null) {
+            occurrences = new ArrayList<Occurrence>();
+        }
+        return this.occurrences;
     }
     
     /* (non-Javadoc)
@@ -304,7 +300,7 @@ public class BibBookImpl extends BaseSchemaEntity implements BibBook {
             } else if (name.equals("Occurrence")) {
                 OccurrenceImpl node = new OccurrenceImpl();
                 node.init(parser);
-                setOccurrence(node);
+                getOccurrences().add(node);
             } else {                // Consume something we don't understand.
                 LOG.warning("Found tag that we don't recognize: " + name);
                 XppUtils.skipSubTree(parser);

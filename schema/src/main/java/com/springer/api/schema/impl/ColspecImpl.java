@@ -2,7 +2,6 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -10,10 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.w3._2001.xmlschema.Adapter2;
-
 import com.springer.api.schema.Colspec;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -25,6 +22,9 @@ public class ColspecImpl
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlAttribute
     protected String align;
+    @XmlAttribute(name = "char")
+    @XmlSchemaType(name = "anySimpleType")
+    protected String _char;
     @XmlAttribute(required = true)
     protected String colname;
     @XmlAttribute(required = true)
@@ -38,6 +38,14 @@ public class ColspecImpl
 
     public void setAlign(String value) {
         this.align = value;
+    }
+
+    public String getChar() {
+        return _char;
+    }
+
+    public void setChar(String value) {
+        this._char = value;
     }
 
     public String getColname() {

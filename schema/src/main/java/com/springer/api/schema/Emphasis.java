@@ -15,6 +15,7 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Subscript" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element ref="{}Superscript" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -47,9 +48,10 @@ public interface Emphasis {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link Emphasis }
+     * {@link Subscript }
      * {@link String }
      * {@link Superscript }
-     * {@link Emphasis }
      * 
      * 
      */

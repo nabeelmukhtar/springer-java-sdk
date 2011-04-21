@@ -15,6 +15,7 @@ import java.util.List;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element ref="{}Emphasis" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Subscript" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -45,6 +46,7 @@ public interface Heading {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * {@link Subscript }
      * {@link Emphasis }
      * 
      * 

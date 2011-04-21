@@ -19,6 +19,7 @@ package com.springer.api.schema;
  *         &lt;/sequence>
  *         &lt;element ref="{}FamilyName"/>
  *         &lt;element ref="{}Particle" minOccurs="0"/>
+ *         &lt;element ref="{}Suffix" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -109,5 +110,25 @@ public interface BibAuthorName {
      *     
      */
     void setParticle(String value);
+
+    /**
+     * Gets the value of the suffix property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    String getSuffix();
+
+    /**
+     * Sets the value of the suffix property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    void setSuffix(String value);
 
 }

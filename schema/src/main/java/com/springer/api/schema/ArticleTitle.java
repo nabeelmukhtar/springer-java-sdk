@@ -48,10 +48,10 @@ public interface ArticleTitle {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link InlineEquation }
+     * {@link Emphasis }
      * {@link String }
      * {@link Superscript }
-     * {@link Emphasis }
-     * {@link InlineEquation }
      * 
      * 
      */

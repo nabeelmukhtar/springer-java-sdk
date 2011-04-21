@@ -61,24 +61,24 @@ public interface Para {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link UnorderedList }
-     * {@link Superscript }
-     * {@link DefinitionList }
-     * {@link Figure }
-     * {@link OrderedList }
-     * {@link Table }
-     * {@link MediaObject }
+     * {@link InlineEquation }
+     * {@link Equation }
      * {@link CitationRef }
+     * {@link BlockQuote }
+     * {@link Subscript }
      * {@link Footnote }
      * {@link JAXBElement }{@code <}{@link ImageObject }{@code >}
-     * {@link String }
+     * {@link Table }
+     * {@link UnorderedList }
      * {@link ExternalRef }
-     * {@link Subscript }
-     * {@link Equation }
-     * {@link BlockQuote }
-     * {@link InternalRef }
+     * {@link String }
+     * {@link Figure }
      * {@link Emphasis }
-     * {@link InlineEquation }
+     * {@link MediaObject }
+     * {@link DefinitionList }
+     * {@link Superscript }
+     * {@link OrderedList }
+     * {@link InternalRef }
      * 
      * 
      */

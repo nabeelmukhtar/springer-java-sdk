@@ -23,6 +23,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
+import com.springer.api.schema.Figure;
+import com.springer.api.schema.FormalPara;
 import com.springer.api.schema.Heading;
 import com.springer.api.schema.Para;
 import com.springer.api.schema.Section1;
@@ -40,14 +42,18 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
     /** The heading. */
     protected HeadingImpl heading;
     
-    /** The table. */
-    protected TableImpl table;
+    /** The tables. */
+    protected List<Table> tables;
     
     /** The paras. */
     protected List<Para> paras;
     
     /** The section2 s. */
     protected List<Section2> section2S;
+    
+    protected List<FormalPara> formalParas;
+    
+    protected List<Figure> figures;    
     
     /** The id. */
     protected String id;
@@ -72,15 +78,18 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
     /* (non-Javadoc)
      * @see com.springer.api.schema.Section1#getTable()
      */
-    public Table getTable() {
-        return table;
+    public List<Table> getTables() {
+        if (tables == null) {
+            tables = new ArrayList<Table>();
+        }
+        return this.tables;
     }
-    
-    /* (non-Javadoc)
-     * @see com.springer.api.schema.Section1#setTable(com.springer.api.schema.Table)
-     */
-    public void setTable(Table value) {
-        table = ((TableImpl) value);
+
+    public List<Figure> getFigures() {
+        if (figures == null) {
+            figures = new ArrayList<Figure>();
+        }
+        return this.figures;
     }
     
     /* (non-Javadoc)
@@ -142,6 +151,13 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
         return type;
     }
     
+    public List<FormalPara> getFormalParas() {
+        if (formalParas == null) {
+            formalParas = new ArrayList<FormalPara>();
+        }
+        return this.formalParas;
+    }
+    
     /* (non-Javadoc)
      * @see com.springer.api.schema.Section1#setType(java.lang.String)
      */
@@ -166,11 +182,19 @@ public class Section1Impl extends BaseSchemaEntity implements Section1 {
             } else if (name.equals("Table")) {
                 TableImpl node = new TableImpl();
                 node.init(parser);
-                setTable(node);
+                getTables().add(node);
             } else if (name.equals("Para")) {
                 ParaImpl node = new ParaImpl();
                 node.init(parser);
                 getParas().add(node);
+            } else if (name.equals("FormalPara")) {
+            	FormalParaImpl node = new FormalParaImpl();
+                node.init(parser);
+                getFormalParas().add(node);
+            } else if (name.equals("Figure")) {
+            	FigureImpl node = new FigureImpl();
+                node.init(parser);
+                getFigures().add(node);
             } else if (name.equals("Section2")) {
                 Section2Impl node = new Section2Impl();
                 node.init(parser);

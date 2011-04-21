@@ -4,17 +4,16 @@ package com.springer.api.schema.impl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import com.springer.api.schema.ArticleTitle;
 import com.springer.api.schema.BibArticle;
 import com.springer.api.schema.BibAuthorName;
 import com.springer.api.schema.BibComments;
+import com.springer.api.schema.NoArticleTitle;
 import com.springer.api.schema.Occurrence;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -24,6 +23,7 @@ import com.springer.api.schema.Occurrence;
     "bibComments",
     "year",
     "articleTitle",
+    "noArticleTitle",
     "journalTitle",
     "volumeID",
     "issueID",
@@ -47,6 +47,8 @@ public class BibArticleImpl
     protected String year;
     @XmlElement(name = "ArticleTitle", required = true, type = ArticleTitleImpl.class)
     protected ArticleTitleImpl articleTitle;
+    @XmlElement(name = "NoArticleTitle", required = true, type = NoArticleTitleImpl.class)
+    protected NoArticleTitleImpl noArticleTitle;
     @XmlElement(name = "JournalTitle", required = true)
     protected String journalTitle;
     @XmlElement(name = "VolumeID", required = true)
@@ -97,6 +99,14 @@ public class BibArticleImpl
 
     public void setArticleTitle(ArticleTitle value) {
         this.articleTitle = ((ArticleTitleImpl) value);
+    }
+
+    public NoArticleTitle getNoArticleTitle() {
+        return noArticleTitle;
+    }
+
+    public void setNoArticleTitle(NoArticleTitle value) {
+        this.noArticleTitle = ((NoArticleTitleImpl) value);
     }
 
     public String getJournalTitle() {

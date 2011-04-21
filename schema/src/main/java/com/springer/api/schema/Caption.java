@@ -49,9 +49,9 @@ public interface Caption {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link CaptionContent }
-     * {@link String }
      * {@link P }
      * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link String }
      * 
      * 
      */

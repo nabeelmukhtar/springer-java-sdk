@@ -2,13 +2,11 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import com.springer.api.schema.BibAuthorName;
 import com.springer.api.schema.NoInitials;
 
@@ -17,7 +15,8 @@ import com.springer.api.schema.NoInitials;
     "initials",
     "noInitials",
     "familyName",
-    "particle"
+    "particle",
+    "suffix"
 })
 @XmlRootElement(name = "BibAuthorName")
 public class BibAuthorNameImpl
@@ -33,6 +32,8 @@ public class BibAuthorNameImpl
     protected String familyName;
     @XmlElement(name = "Particle")
     protected String particle;
+    @XmlElement(name = "Suffix")
+    protected String suffix;
 
     public String getInitials() {
         return initials;
@@ -64,6 +65,14 @@ public class BibAuthorNameImpl
 
     public void setParticle(String value) {
         this.particle = value;
+    }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String value) {
+        this.suffix = value;
     }
 
 }

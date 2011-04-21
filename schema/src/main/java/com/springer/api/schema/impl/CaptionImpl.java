@@ -30,9 +30,9 @@ public class CaptionImpl
 
     private final static long serialVersionUID = 2461660169443089969L;
     @XmlElementRefs({
+        @XmlElementRef(name = "p", type = PImpl.class),
         @XmlElementRef(name = "CaptionNumber", type = JAXBElement.class),
-        @XmlElementRef(name = "CaptionContent", type = CaptionContentImpl.class),
-        @XmlElementRef(name = "p", type = PImpl.class)
+        @XmlElementRef(name = "CaptionContent", type = CaptionContentImpl.class)
     })
     @XmlMixed
     protected List<Object> content;

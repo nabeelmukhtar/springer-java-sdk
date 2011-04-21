@@ -1279,6 +1279,7 @@
         <xs:element ref="Heading"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Section4"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Para"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FormalPara"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Figure"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="Table"/>
       </xs:sequence>

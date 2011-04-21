@@ -47,11 +47,11 @@ public interface BibUnstructured {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link InlineEquation }
+     * {@link Emphasis }
+     * {@link ExternalRef }
      * {@link String }
      * {@link Superscript }
-     * {@link Emphasis }
-     * {@link InlineEquation }
-     * {@link ExternalRef }
      * 
      * 
      */

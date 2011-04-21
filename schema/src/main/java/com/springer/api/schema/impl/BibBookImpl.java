@@ -35,7 +35,7 @@ import org.w3._2001.xmlschema.Adapter2;
     "publisherName",
     "publisherLocation",
     "bibComments",
-    "occurrence"
+    "occurrences"
 })
 @XmlRootElement(name = "BibBook")
 public class BibBookImpl
@@ -70,7 +70,7 @@ public class BibBookImpl
     @XmlElement(name = "BibComments", required = true, type = BibCommentsImpl.class)
     protected BibCommentsImpl bibComments;
     @XmlElement(name = "Occurrence", required = true, type = OccurrenceImpl.class)
-    protected OccurrenceImpl occurrence;
+    protected List<Occurrence> occurrences;
 
     public String getInstitutionalAuthorName() {
         return institutionalAuthorName;
@@ -167,12 +167,11 @@ public class BibBookImpl
         this.bibComments = ((BibCommentsImpl) value);
     }
 
-    public Occurrence getOccurrence() {
-        return occurrence;
-    }
-
-    public void setOccurrence(Occurrence value) {
-        this.occurrence = ((OccurrenceImpl) value);
+    public List<Occurrence> getOccurrences() {
+        if (occurrences == null) {
+            occurrences = new ArrayList<Occurrence>();
+        }
+        return this.occurrences;
     }
 
 }

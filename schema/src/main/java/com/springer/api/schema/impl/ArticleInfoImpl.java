@@ -2,7 +2,6 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -12,9 +11,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.w3._2001.xmlschema.Adapter2;
-
 import com.springer.api.schema.ArticleContext;
 import com.springer.api.schema.ArticleCopyright;
 import com.springer.api.schema.ArticleGrants;
@@ -22,6 +18,7 @@ import com.springer.api.schema.ArticleHistory;
 import com.springer.api.schema.ArticleInfo;
 import com.springer.api.schema.ArticleSubTitle;
 import com.springer.api.schema.ArticleTitle;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {

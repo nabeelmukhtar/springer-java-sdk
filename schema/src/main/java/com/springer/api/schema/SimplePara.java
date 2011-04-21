@@ -19,6 +19,8 @@ import java.util.List;
  *         &lt;element ref="{}ExternalRef" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element ref="{}Superscript" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element ref="{}InternalRef" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}InlineEquation" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{}Subscript" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -48,12 +50,14 @@ public interface SimplePara {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CitationRef }
-     * {@link String }
-     * {@link InternalRef }
+     * {@link InlineEquation }
      * {@link Emphasis }
+     * {@link CitationRef }
+     * {@link Subscript }
      * {@link Superscript }
+     * {@link InternalRef }
      * {@link ExternalRef }
+     * {@link String }
      * 
      * 
      */

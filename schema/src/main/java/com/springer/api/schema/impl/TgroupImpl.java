@@ -4,7 +4,6 @@ package com.springer.api.schema.impl;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -13,13 +12,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import org.w3._2001.xmlschema.Adapter2;
-
 import com.springer.api.schema.Colspec;
 import com.springer.api.schema.Tbody;
 import com.springer.api.schema.Tgroup;
 import com.springer.api.schema.Thead;
+import org.w3._2001.xmlschema.Adapter2;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {

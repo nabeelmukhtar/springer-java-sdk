@@ -2,7 +2,6 @@
 package com.springer.api.schema.impl;
 
 import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -12,13 +11,12 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
+import com.springer.app.meta.Info;
+import com.springer.app.meta.impl.InfoImpl;
 import com.springer.api.schema.Journal;
 import com.springer.api.schema.Publisher;
 import com.springer.api.schema.PublisherInfo;
 import com.springer.api.schema.Series;
-import com.springer.app.meta.Info;
-import com.springer.app.meta.impl.InfoImpl;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
