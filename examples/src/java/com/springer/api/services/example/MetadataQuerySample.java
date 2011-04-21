@@ -39,7 +39,7 @@ public class MetadataQuerySample {
      */
 	public static void main(String[] args) throws Exception {
 		SpringerQueryFactory factory = SpringerQueryFactory.newInstance();
-		MetadataQuery service = factory.createMetadataQuery("gunwy4dr9rkvpbv4nq3effqy");
+		MetadataQuery service = factory.createMetadataQuery("");
 		List<Metadata> metadata = service.withQuery("mapreduce").list();
 		for (Metadata data : metadata) {
 			printResult(data);
